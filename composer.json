@@ -1,19 +1,19 @@
 {
     "name": "magik092/amazon-selling-partner-api-php",
     "description": "Amazon Selling Partner API PHP Client",
-    "version": "1.37",
+    "version": "1.38",
     "autoload": {
         "psr-4": {
             "Webcom\\Amazon\\Rest\\": "src"
         }
     },
     "require": {
-        "aws/aws-sdk-php": "^3.171",
         "php": ">=7.4",
-        "guzzlehttp/guzzle": "~6.5"
+        "aws/aws-sdk-php": "3.188.1",
+        "guzzlehttp/guzzle": "^7.5"
     },
     "require-dev": {
-        "symfony/var-dumper": "^3.4",
-        "ramsey/uuid": "^4.1"
+        "symfony/var-dumper": "^5.4",
+        "ramsey/uuid": "^4.2"
     }
 }
