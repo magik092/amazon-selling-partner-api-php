@@ -1,6 +1,6 @@
 <?php
 /**
- * GetOrderItemsBuyerInfoResponseV0
+ * ExceptionDatesV0
  *
  * PHP version 7.2
  *
@@ -34,10 +34,10 @@ use \ArrayAccess;
 use \Webcom\Amazon\Rest\ObjectSerializer;
 
 /**
- * GetOrderItemsBuyerInfoResponseV0 Class Doc Comment
+ * ExceptionDatesV0 Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderItemsBuyerInfo operation.
+ * @description Dates when the business is closed or open with a different time window.
  * @package  Webcom\Amazon\Rest\OrdersApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -45,38 +45,87 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ExceptionDatesV0 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
-
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
-    protected static $openAPIModelName = 'GetOrderItemsBuyerInfoResponse';
-
+     * The original name of the model.
+     *
+     * @var string
+     */
+    protected static $openAPIModelName = 'ExceptionDates';
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
-        'payload' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\OrderItemsBuyerInfoListV0',
-        'errors' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\ErrorV0[]'
+        'exceptionDate' => 'string',
+        'isOpen'        => 'bool',
+        'openIntervals' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\OpenIntervalV0[]',
     ];
+    /**
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
+    protected static $openAPIFormats = [
+        'exceptionDate' => null,
+        'isOpen'        => null,
+        'openIntervals' => null,
+    ];
+    /**
+     * Array of attributes where the key is the local name,
+     * and the value is the original name
+     *
+     * @var string[]
+     */
+    protected static $attributeMap = [
+        'exceptionDate' => 'ExceptionDate',
+        'isOpen'        => 'IsOpen',
+        'openIntervals' => 'OpenIntervals',
+    ];
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     *
+     * @var string[]
+     */
+    protected static $setters = [
+        'exceptionDate' => 'setExceptionDate',
+        'isOpen'        => 'setIsOpen',
+        'openIntervals' => 'setOpenIntervals',
+    ];
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     *
+     * @var string[]
+     */
+    protected static $getters = [
+        'exceptionDate' => 'getExceptionDate',
+        'isOpen'        => 'getIsOpen',
+        'openIntervals' => 'getOpenIntervals',
+    ];
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
-    protected static $openAPIFormats = [
-        'payload' => null,
-        'errors' => null
-    ];
+     * Constructor
+     *
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
+     */
+    public function __construct(array $data = null)
+    {
+        $this->container['exceptionDate'] = $data['exceptionDate'] ?? null;
+        $this->container['isOpen'] = $data['isOpen'] ?? null;
+        $this->container['openIntervals'] = $data['openIntervals'] ?? null;
+    }
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,37 +146,6 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
     {
         return self::$openAPIFormats;
     }
-
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @var string[]
-     */
-    protected static $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors'
-    ];
-
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @var string[]
-     */
-    protected static $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors'
-    ];
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @var string[]
-     */
-    protected static $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors'
-    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -171,22 +189,14 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Associative array for storing property values
+     * Validate all the properties in the model
+     * return true if all passed
      *
-     * @var mixed[]
+     * @return bool True if all properties are valid
      */
-    protected $container = [];
-
-    /**
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
-     */
-    public function __construct(array $data = null)
+    public function valid()
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        return count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -202,64 +212,77 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Validate all the properties in the model
-     * return true if all passed
+     * Gets exceptionDate
      *
-     * @return bool True if all properties are valid
+     * @return string|null
      */
-    public function valid()
+    public function getExceptionDate()
     {
-        return count($this->listInvalidProperties()) === 0;
-    }
-
-
-    /**
-     * Gets payload
-     *
-     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\OrderItemsBuyerInfoListV0|null
-     */
-    public function getPayload()
-    {
-        return $this->container['payload'];
+        return $this->container['exceptionDate'];
     }
 
     /**
-     * Sets payload
+     * Sets exceptionDate
      *
-     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\OrderItemsBuyerInfoListV0|null $payload payload
+     * @param string|null $exceptionDate Date when the business is closed, in ISO-8601 date format.
      *
      * @return self
      */
-    public function setPayload($payload)
+    public function setExceptionDate($exceptionDate)
     {
-        $this->container['payload'] = $payload;
+        $this->container['exceptionDate'] = $exceptionDate;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets isOpen
      *
-     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\ErrorV0[]|null
+     * @return bool|null
      */
-    public function getErrors()
+    public function getIsOpen()
     {
-        return $this->container['errors'];
+        return $this->container['isOpen'];
     }
 
     /**
-     * Sets errors
+     * Sets isOpen
      *
-     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\ErrorV0[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param bool|null $isOpen Boolean indicating if the business is closed or open on that date.
      *
      * @return self
      */
-    public function setErrors($errors)
+    public function setIsOpen($isOpen)
     {
-        $this->container['errors'] = $errors;
+        $this->container['isOpen'] = $isOpen;
 
         return $this;
     }
+
+    /**
+     * Gets openIntervals
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\OpenIntervalV0[]|null
+     */
+    public function getOpenIntervals()
+    {
+        return $this->container['openIntervals'];
+    }
+
+    /**
+     * Sets openIntervals
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\OpenIntervalV0[]|null $openIntervals Time window during the day when the business is open.
+     *
+     * @return self
+     */
+    public function setOpenIntervals($openIntervals)
+    {
+        $this->container['openIntervals'] = $openIntervals;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -288,7 +311,7 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
      * Sets value based on offset.
      *
      * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
+     * @param mixed $value Value to be set
      *
      * @return void
      */
@@ -322,7 +345,7 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
      */
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

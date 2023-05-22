@@ -1,6 +1,6 @@
 <?php
 /**
- * ShipmentStatusV0
+ * EasyShipShipmentStatusV0
  *
  * PHP version 7.2
  *
@@ -28,25 +28,39 @@
  */
 
 namespace Webcom\Amazon\Rest\OrdersApiV0\Model;
+
 use \Webcom\Amazon\Rest\ObjectSerializer;
 
 /**
- * ShipmentStatusV0 Class Doc Comment
+ * EasyShipShipmentStatusV0 Class Doc Comment
  *
  * @category Class
- * @description The shipment status to apply.
+ * @description The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.
  * @package  Webcom\Amazon\Rest\OrdersApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ShipmentStatusV0
+class EasyShipShipmentStatusV0
 {
     /**
      * Possible values of this enum
      */
-    const READY_FOR_PICKUP = 'ReadyForPickup';
+    const PENDING_SCHEDULE = 'PendingSchedule';
+    const PENDING_PICK_UP = 'PendingPickUp';
+    const PENDING_DROP_OFF = 'PendingDropOff';
+    const LABEL_CANCELED = 'LabelCanceled';
     const PICKED_UP = 'PickedUp';
-    const REFUSED_PICKUP = 'RefusedPickup';
+    const DROPPED_OFF = 'DroppedOff';
+    const AT_ORIGIN_FC = 'AtOriginFC';
+    const AT_DESTINATION_FC = 'AtDestinationFC';
+    const DELIVERED = 'Delivered';
+    const REJECTED_BY_BUYER = 'RejectedByBuyer';
+    const UNDELIVERABLE = 'Undeliverable';
+    const RETURNING_TO_SELLER = 'ReturningToSeller';
+    const RETURNED_TO_SELLER = 'ReturnedToSeller';
+    const LOST = 'Lost';
+    const OUT_FOR_DELIVERY = 'OutForDelivery';
+    const DAMAGED = 'Damaged';
 
     /**
      * Gets allowable values of the enum
@@ -55,9 +69,22 @@ class ShipmentStatusV0
     public static function getAllowableEnumValues()
     {
         return [
-            self::READY_FOR_PICKUP,
+            self::PENDING_SCHEDULE,
+            self::PENDING_PICK_UP,
+            self::PENDING_DROP_OFF,
+            self::LABEL_CANCELED,
             self::PICKED_UP,
-            self::REFUSED_PICKUP,
+            self::DROPPED_OFF,
+            self::AT_ORIGIN_FC,
+            self::AT_DESTINATION_FC,
+            self::DELIVERED,
+            self::REJECTED_BY_BUYER,
+            self::UNDELIVERABLE,
+            self::RETURNING_TO_SELLER,
+            self::RETURNED_TO_SELLER,
+            self::LOST,
+            self::OUT_FOR_DELIVERY,
+            self::DAMAGED,
         ];
     }
 }

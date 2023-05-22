@@ -1,6 +1,6 @@
 <?php
 /**
- * ShipmentStatusV0
+ * OtherDeliveryAttributesV0
  *
  * PHP version 7.2
  *
@@ -28,25 +28,26 @@
  */
 
 namespace Webcom\Amazon\Rest\OrdersApiV0\Model;
+
 use \Webcom\Amazon\Rest\ObjectSerializer;
 
 /**
- * ShipmentStatusV0 Class Doc Comment
+ * OtherDeliveryAttributesV0 Class Doc Comment
  *
  * @category Class
- * @description The shipment status to apply.
+ * @description Miscellaneous delivery attributes associated with the shipping address.
  * @package  Webcom\Amazon\Rest\OrdersApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ShipmentStatusV0
+class OtherDeliveryAttributesV0
 {
     /**
      * Possible values of this enum
      */
-    const READY_FOR_PICKUP = 'ReadyForPickup';
-    const PICKED_UP = 'PickedUp';
-    const REFUSED_PICKUP = 'RefusedPickup';
+    const HAS_ACCESS_POINT = 'HAS_ACCESS_POINT';
+    const PALLET_ENABLED = 'PALLET_ENABLED';
+    const PALLET_DISABLED = 'PALLET_DISABLED';
 
     /**
      * Gets allowable values of the enum
@@ -55,9 +56,9 @@ class ShipmentStatusV0
     public static function getAllowableEnumValues()
     {
         return [
-            self::READY_FOR_PICKUP,
-            self::PICKED_UP,
-            self::REFUSED_PICKUP,
+            self::HAS_ACCESS_POINT,
+            self::PALLET_ENABLED,
+            self::PALLET_DISABLED,
         ];
     }
 }

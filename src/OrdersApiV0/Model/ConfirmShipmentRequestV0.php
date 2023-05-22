@@ -1,6 +1,6 @@
 <?php
 /**
- * AutomatedShippingSettingsV0
+ * ConfirmShipmentRequestV0
  *
  * PHP version 7.2
  *
@@ -34,10 +34,10 @@ use \ArrayAccess;
 use \Webcom\Amazon\Rest\ObjectSerializer;
 
 /**
- * AutomatedShippingSettingsV0 Class Doc Comment
+ * ConfirmShipmentRequestV0 Class Doc Comment
  *
  * @category Class
- * @description Contains information regarding the Shipping Settings Automation program, such as whether the order&#39;s shipping settings were generated automatically, and what those settings are.
+ * @description The request schema for an shipment confirmation.
  * @package  Webcom\Amazon\Rest\OrdersApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -45,40 +45,88 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AutomatedShippingSettingsV0 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ConfirmShipmentRequestV0 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
-
+    const COD_COLLECTION_METHOD_DIRECT_PAYMENT = 'DirectPayment';
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
-    protected static $openAPIModelName = 'AutomatedShippingSettings';
-
+     * The original name of the model.
+     *
+     * @var string
+     */
+    protected static $openAPIModelName = 'ConfirmShipmentRequest';
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
-        'hasAutomatedShippingSettings' => 'bool',
-        'automatedCarrier' => 'string',
-        'automatedShipMethod' => 'string'
+        'packageDetail'       => '\Webcom\Amazon\Rest\OrdersApiV0\Model\PackageDetailV0',
+        'codCollectionMethod' => 'string',
+        'marketplaceId'       => 'string',
     ];
+    /**
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
+    protected static $openAPIFormats = [
+        'packageDetail'       => null,
+        'codCollectionMethod' => null,
+        'marketplaceId'       => null,
+    ];
+    /**
+     * Array of attributes where the key is the local name,
+     * and the value is the original name
+     *
+     * @var string[]
+     */
+    protected static $attributeMap = [
+        'packageDetail'       => 'packageDetail',
+        'codCollectionMethod' => 'codCollectionMethod',
+        'marketplaceId'       => 'marketplaceId',
+    ];
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     *
+     * @var string[]
+     */
+    protected static $setters = [
+        'packageDetail'       => 'setPackageDetail',
+        'codCollectionMethod' => 'setCodCollectionMethod',
+        'marketplaceId'       => 'setMarketplaceId',
+    ];
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     *
+     * @var string[]
+     */
+    protected static $getters = [
+        'packageDetail'       => 'getPackageDetail',
+        'codCollectionMethod' => 'getCodCollectionMethod',
+        'marketplaceId'       => 'getMarketplaceId',
+    ];
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
-    protected static $openAPIFormats = [
-        'hasAutomatedShippingSettings' => null,
-        'automatedCarrier' => null,
-        'automatedShipMethod' => null
-    ];
+     * Constructor
+     *
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
+     */
+    public function __construct(array $data = null)
+    {
+        $this->container['packageDetail'] = $data['packageDetail'] ?? null;
+        $this->container['codCollectionMethod'] = $data['codCollectionMethod'] ?? null;
+        $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
+    }
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -99,40 +147,6 @@ class AutomatedShippingSettingsV0 implements ModelInterface, ArrayAccess, \JsonS
     {
         return self::$openAPIFormats;
     }
-
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @var string[]
-     */
-    protected static $attributeMap = [
-        'hasAutomatedShippingSettings' => 'HasAutomatedShippingSettings',
-        'automatedCarrier' => 'AutomatedCarrier',
-        'automatedShipMethod' => 'AutomatedShipMethod'
-    ];
-
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @var string[]
-     */
-    protected static $setters = [
-        'hasAutomatedShippingSettings' => 'setHasAutomatedShippingSettings',
-        'automatedCarrier' => 'setAutomatedCarrier',
-        'automatedShipMethod' => 'setAutomatedShipMethod'
-    ];
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @var string[]
-     */
-    protected static $getters = [
-        'hasAutomatedShippingSettings' => 'getHasAutomatedShippingSettings',
-        'automatedCarrier' => 'getAutomatedCarrier',
-        'automatedShipMethod' => 'getAutomatedShipMethod'
-    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -176,23 +190,14 @@ class AutomatedShippingSettingsV0 implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Associative array for storing property values
+     * Validate all the properties in the model
+     * return true if all passed
      *
-     * @var mixed[]
+     * @return bool True if all properties are valid
      */
-    protected $container = [];
-
-    /**
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
-     */
-    public function __construct(array $data = null)
+    public function valid()
     {
-        $this->container['hasAutomatedShippingSettings'] = $data['hasAutomatedShippingSettings'] ?? null;
-        $this->container['automatedCarrier'] = $data['automatedCarrier'] ?? null;
-        $this->container['automatedShipMethod'] = $data['automatedShipMethod'] ?? null;
+        return count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -204,92 +209,118 @@ class AutomatedShippingSettingsV0 implements ModelInterface, ArrayAccess, \JsonS
     {
         $invalidProperties = [];
 
+        if ($this->container['packageDetail'] === null) {
+            $invalidProperties[] = "'packageDetail' can't be null";
+        }
+        $allowedValues = $this->getCodCollectionMethodAllowableValues();
+        if (!is_null($this->container['codCollectionMethod']) && !in_array($this->container['codCollectionMethod'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'codCollectionMethod', must be one of '%s'",
+                $this->container['codCollectionMethod'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        if ($this->container['marketplaceId'] === null) {
+            $invalidProperties[] = "'marketplaceId' can't be null";
+        }
         return $invalidProperties;
     }
 
     /**
-     * Validate all the properties in the model
-     * return true if all passed
+     * Gets allowable values of the enum
      *
-     * @return bool True if all properties are valid
+     * @return string[]
      */
-    public function valid()
+    public function getCodCollectionMethodAllowableValues()
     {
-        return count($this->listInvalidProperties()) === 0;
-    }
-
-
-    /**
-     * Gets hasAutomatedShippingSettings
-     *
-     * @return bool|null
-     */
-    public function getHasAutomatedShippingSettings()
-    {
-        return $this->container['hasAutomatedShippingSettings'];
+        return [
+            self::COD_COLLECTION_METHOD_DIRECT_PAYMENT,
+        ];
     }
 
     /**
-     * Sets hasAutomatedShippingSettings
+     * Gets packageDetail
      *
-     * @param bool|null $hasAutomatedShippingSettings When true, this order has automated shipping settings generated by Amazon. This order could be identified as an SSA order.
+     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\PackageDetailV0
+     */
+    public function getPackageDetail()
+    {
+        return $this->container['packageDetail'];
+    }
+
+    /**
+     * Sets packageDetail
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\PackageDetailV0 $packageDetail packageDetail
      *
      * @return self
      */
-    public function setHasAutomatedShippingSettings($hasAutomatedShippingSettings)
+    public function setPackageDetail($packageDetail)
     {
-        $this->container['hasAutomatedShippingSettings'] = $hasAutomatedShippingSettings;
+        $this->container['packageDetail'] = $packageDetail;
 
         return $this;
     }
 
     /**
-     * Gets automatedCarrier
+     * Gets codCollectionMethod
      *
      * @return string|null
      */
-    public function getAutomatedCarrier()
+    public function getCodCollectionMethod()
     {
-        return $this->container['automatedCarrier'];
+        return $this->container['codCollectionMethod'];
     }
 
     /**
-     * Sets automatedCarrier
+     * Sets codCollectionMethod
      *
-     * @param string|null $automatedCarrier Auto-generated carrier for SSA orders.
+     * @param string|null $codCollectionMethod The cod collection method, support in JP only.
      *
      * @return self
      */
-    public function setAutomatedCarrier($automatedCarrier)
+    public function setCodCollectionMethod($codCollectionMethod)
     {
-        $this->container['automatedCarrier'] = $automatedCarrier;
+        $allowedValues = $this->getCodCollectionMethodAllowableValues();
+        if (!is_null($codCollectionMethod) && !in_array($codCollectionMethod, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'codCollectionMethod', must be one of '%s'",
+                    $codCollectionMethod,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['codCollectionMethod'] = $codCollectionMethod;
 
         return $this;
     }
 
     /**
-     * Gets automatedShipMethod
+     * Gets marketplaceId
      *
-     * @return string|null
+     * @return string
      */
-    public function getAutomatedShipMethod()
+    public function getMarketplaceId()
     {
-        return $this->container['automatedShipMethod'];
+        return $this->container['marketplaceId'];
     }
 
     /**
-     * Sets automatedShipMethod
+     * Sets marketplaceId
      *
-     * @param string|null $automatedShipMethod Auto-generated ship method for SSA orders.
+     * @param string $marketplaceId The unobfuscated marketplace identifier.
      *
      * @return self
      */
-    public function setAutomatedShipMethod($automatedShipMethod)
+    public function setMarketplaceId($marketplaceId)
     {
-        $this->container['automatedShipMethod'] = $automatedShipMethod;
+        $this->container['marketplaceId'] = $marketplaceId;
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -318,7 +349,7 @@ class AutomatedShippingSettingsV0 implements ModelInterface, ArrayAccess, \JsonS
      * Sets value based on offset.
      *
      * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
+     * @param mixed $value Value to be set
      *
      * @return void
      */
@@ -352,7 +383,7 @@ class AutomatedShippingSettingsV0 implements ModelInterface, ArrayAccess, \JsonS
      */
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

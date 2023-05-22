@@ -1,6 +1,6 @@
 <?php
 /**
- * GetOrderItemsBuyerInfoResponseV0
+ * DeliveryPreferencesV0
  *
  * PHP version 7.2
  *
@@ -34,10 +34,10 @@ use \ArrayAccess;
 use \Webcom\Amazon\Rest\ObjectSerializer;
 
 /**
- * GetOrderItemsBuyerInfoResponseV0 Class Doc Comment
+ * DeliveryPreferencesV0 Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderItemsBuyerInfo operation.
+ * @description Contains all of the delivery instructions provided by the customer for the shipping address.
  * @package  Webcom\Amazon\Rest\OrdersApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -45,38 +45,93 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \JsonSerializable
+class DeliveryPreferencesV0 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
-
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
-    protected static $openAPIModelName = 'GetOrderItemsBuyerInfoResponse';
-
+     * The original name of the model.
+     *
+     * @var string
+     */
+    protected static $openAPIModelName = 'DeliveryPreferences';
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
-        'payload' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\OrderItemsBuyerInfoListV0',
-        'errors' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\ErrorV0[]'
+        'dropOffLocation'       => 'string',
+        'preferredDeliveryTime' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\PreferredDeliveryTimeV0',
+        'otherAttributes'       => '\Webcom\Amazon\Rest\OrdersApiV0\Model\OtherDeliveryAttributesV0[]',
+        'addressInstructions'   => 'string',
     ];
+    /**
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
+    protected static $openAPIFormats = [
+        'dropOffLocation'       => null,
+        'preferredDeliveryTime' => null,
+        'otherAttributes'       => null,
+        'addressInstructions'   => null,
+    ];
+    /**
+     * Array of attributes where the key is the local name,
+     * and the value is the original name
+     *
+     * @var string[]
+     */
+    protected static $attributeMap = [
+        'dropOffLocation'       => 'DropOffLocation',
+        'preferredDeliveryTime' => 'PreferredDeliveryTime',
+        'otherAttributes'       => 'OtherAttributes',
+        'addressInstructions'   => 'AddressInstructions',
+    ];
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     *
+     * @var string[]
+     */
+    protected static $setters = [
+        'dropOffLocation'       => 'setDropOffLocation',
+        'preferredDeliveryTime' => 'setPreferredDeliveryTime',
+        'otherAttributes'       => 'setOtherAttributes',
+        'addressInstructions'   => 'setAddressInstructions',
+    ];
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     *
+     * @var string[]
+     */
+    protected static $getters = [
+        'dropOffLocation'       => 'getDropOffLocation',
+        'preferredDeliveryTime' => 'getPreferredDeliveryTime',
+        'otherAttributes'       => 'getOtherAttributes',
+        'addressInstructions'   => 'getAddressInstructions',
+    ];
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
-    protected static $openAPIFormats = [
-        'payload' => null,
-        'errors' => null
-    ];
+     * Constructor
+     *
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
+     */
+    public function __construct(array $data = null)
+    {
+        $this->container['dropOffLocation'] = $data['dropOffLocation'] ?? null;
+        $this->container['preferredDeliveryTime'] = $data['preferredDeliveryTime'] ?? null;
+        $this->container['otherAttributes'] = $data['otherAttributes'] ?? null;
+        $this->container['addressInstructions'] = $data['addressInstructions'] ?? null;
+    }
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,37 +152,6 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
     {
         return self::$openAPIFormats;
     }
-
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @var string[]
-     */
-    protected static $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors'
-    ];
-
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @var string[]
-     */
-    protected static $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors'
-    ];
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @var string[]
-     */
-    protected static $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors'
-    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -171,22 +195,14 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Associative array for storing property values
+     * Validate all the properties in the model
+     * return true if all passed
      *
-     * @var mixed[]
+     * @return bool True if all properties are valid
      */
-    protected $container = [];
-
-    /**
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
-     */
-    public function __construct(array $data = null)
+    public function valid()
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        return count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -202,64 +218,101 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Validate all the properties in the model
-     * return true if all passed
+     * Gets dropOffLocation
      *
-     * @return bool True if all properties are valid
+     * @return string|null
      */
-    public function valid()
+    public function getDropOffLocation()
     {
-        return count($this->listInvalidProperties()) === 0;
-    }
-
-
-    /**
-     * Gets payload
-     *
-     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\OrderItemsBuyerInfoListV0|null
-     */
-    public function getPayload()
-    {
-        return $this->container['payload'];
+        return $this->container['dropOffLocation'];
     }
 
     /**
-     * Sets payload
+     * Sets dropOffLocation
      *
-     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\OrderItemsBuyerInfoListV0|null $payload payload
+     * @param string|null $dropOffLocation Drop-off location selected by the customer.
      *
      * @return self
      */
-    public function setPayload($payload)
+    public function setDropOffLocation($dropOffLocation)
     {
-        $this->container['payload'] = $payload;
+        $this->container['dropOffLocation'] = $dropOffLocation;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets preferredDeliveryTime
      *
-     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\ErrorV0[]|null
+     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\PreferredDeliveryTimeV0|null
      */
-    public function getErrors()
+    public function getPreferredDeliveryTime()
     {
-        return $this->container['errors'];
+        return $this->container['preferredDeliveryTime'];
     }
 
     /**
-     * Sets errors
+     * Sets preferredDeliveryTime
      *
-     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\ErrorV0[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\PreferredDeliveryTimeV0|null $preferredDeliveryTime preferredDeliveryTime
      *
      * @return self
      */
-    public function setErrors($errors)
+    public function setPreferredDeliveryTime($preferredDeliveryTime)
     {
-        $this->container['errors'] = $errors;
+        $this->container['preferredDeliveryTime'] = $preferredDeliveryTime;
 
         return $this;
     }
+
+    /**
+     * Gets otherAttributes
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\OtherDeliveryAttributesV0[]|null
+     */
+    public function getOtherAttributes()
+    {
+        return $this->container['otherAttributes'];
+    }
+
+    /**
+     * Sets otherAttributes
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\OtherDeliveryAttributesV0[]|null $otherAttributes Enumerated list of miscellaneous delivery attributes associated with the shipping address.
+     *
+     * @return self
+     */
+    public function setOtherAttributes($otherAttributes)
+    {
+        $this->container['otherAttributes'] = $otherAttributes;
+
+        return $this;
+    }
+
+    /**
+     * Gets addressInstructions
+     *
+     * @return string|null
+     */
+    public function getAddressInstructions()
+    {
+        return $this->container['addressInstructions'];
+    }
+
+    /**
+     * Sets addressInstructions
+     *
+     * @param string|null $addressInstructions Building instructions, nearby landmark or navigation instructions.
+     *
+     * @return self
+     */
+    public function setAddressInstructions($addressInstructions)
+    {
+        $this->container['addressInstructions'] = $addressInstructions;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -288,7 +341,7 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
      * Sets value based on offset.
      *
      * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
+     * @param mixed $value Value to be set
      *
      * @return void
      */
@@ -322,7 +375,7 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
      */
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

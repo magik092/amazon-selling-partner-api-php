@@ -1,6 +1,6 @@
 <?php
 /**
- * ShipmentStatusV0
+ * ElectronicInvoiceStatusV0
  *
  * PHP version 7.2
  *
@@ -28,25 +28,28 @@
  */
 
 namespace Webcom\Amazon\Rest\OrdersApiV0\Model;
+
 use \Webcom\Amazon\Rest\ObjectSerializer;
 
 /**
- * ShipmentStatusV0 Class Doc Comment
+ * ElectronicInvoiceStatusV0 Class Doc Comment
  *
  * @category Class
- * @description The shipment status to apply.
+ * @description The status of the electronic invoice.
  * @package  Webcom\Amazon\Rest\OrdersApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ShipmentStatusV0
+class ElectronicInvoiceStatusV0
 {
     /**
      * Possible values of this enum
      */
-    const READY_FOR_PICKUP = 'ReadyForPickup';
-    const PICKED_UP = 'PickedUp';
-    const REFUSED_PICKUP = 'RefusedPickup';
+    const NOT_REQUIRED = 'NotRequired';
+    const NOT_FOUND = 'NotFound';
+    const PROCESSING = 'Processing';
+    const ERRORED = 'Errored';
+    const ACCEPTED = 'Accepted';
 
     /**
      * Gets allowable values of the enum
@@ -55,9 +58,11 @@ class ShipmentStatusV0
     public static function getAllowableEnumValues()
     {
         return [
-            self::READY_FOR_PICKUP,
-            self::PICKED_UP,
-            self::REFUSED_PICKUP,
+            self::NOT_REQUIRED,
+            self::NOT_FOUND,
+            self::PROCESSING,
+            self::ERRORED,
+            self::ACCEPTED,
         ];
     }
 }

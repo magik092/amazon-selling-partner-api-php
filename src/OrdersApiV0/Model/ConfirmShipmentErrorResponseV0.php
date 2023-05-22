@@ -1,6 +1,6 @@
 <?php
 /**
- * GetOrderItemsBuyerInfoResponseV0
+ * ConfirmShipmentErrorResponseV0
  *
  * PHP version 7.2
  *
@@ -34,10 +34,10 @@ use \ArrayAccess;
 use \Webcom\Amazon\Rest\ObjectSerializer;
 
 /**
- * GetOrderItemsBuyerInfoResponseV0 Class Doc Comment
+ * ConfirmShipmentErrorResponseV0 Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getOrderItemsBuyerInfo operation.
+ * @description The error response schema for an shipment confirmation.
  * @package  Webcom\Amazon\Rest\OrdersApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -45,38 +45,75 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ConfirmShipmentErrorResponseV0 implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
-
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
-    protected static $openAPIModelName = 'GetOrderItemsBuyerInfoResponse';
-
+     * The original name of the model.
+     *
+     * @var string
+     */
+    protected static $openAPIModelName = 'ConfirmShipmentErrorResponse';
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
-        'payload' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\OrderItemsBuyerInfoListV0',
-        'errors' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\ErrorV0[]'
+        'errors' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\ErrorV0[]',
     ];
+    /**
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
+    protected static $openAPIFormats = [
+        'errors' => null,
+    ];
+    /**
+     * Array of attributes where the key is the local name,
+     * and the value is the original name
+     *
+     * @var string[]
+     */
+    protected static $attributeMap = [
+        'errors' => 'errors',
+    ];
+    /**
+     * Array of attributes to setter functions (for deserialization of responses)
+     *
+     * @var string[]
+     */
+    protected static $setters = [
+        'errors' => 'setErrors',
+    ];
+    /**
+     * Array of attributes to getter functions (for serialization of requests)
+     *
+     * @var string[]
+     */
+    protected static $getters = [
+        'errors' => 'getErrors',
+    ];
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
-    protected static $openAPIFormats = [
-        'payload' => null,
-        'errors' => null
-    ];
+     * Constructor
+     *
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
+     */
+    public function __construct(array $data = null)
+    {
+        $this->container['errors'] = $data['errors'] ?? null;
+    }
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,37 +134,6 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
     {
         return self::$openAPIFormats;
     }
-
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @var string[]
-     */
-    protected static $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors'
-    ];
-
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @var string[]
-     */
-    protected static $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors'
-    ];
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @var string[]
-     */
-    protected static $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors'
-    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -171,22 +177,14 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
     }
 
     /**
-     * Associative array for storing property values
+     * Validate all the properties in the model
+     * return true if all passed
      *
-     * @var mixed[]
+     * @return bool True if all properties are valid
      */
-    protected $container = [];
-
-    /**
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
-     */
-    public function __construct(array $data = null)
+    public function valid()
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        return count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -199,42 +197,6 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
         $invalidProperties = [];
 
         return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
-    }
-
-
-    /**
-     * Gets payload
-     *
-     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\OrderItemsBuyerInfoListV0|null
-     */
-    public function getPayload()
-    {
-        return $this->container['payload'];
-    }
-
-    /**
-     * Sets payload
-     *
-     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\OrderItemsBuyerInfoListV0|null $payload payload
-     *
-     * @return self
-     */
-    public function setPayload($payload)
-    {
-        $this->container['payload'] = $payload;
-
-        return $this;
     }
 
     /**
@@ -260,6 +222,7 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
 
         return $this;
     }
+
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -288,7 +251,7 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
      * Sets value based on offset.
      *
      * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
+     * @param mixed $value Value to be set
      *
      * @return void
      */
@@ -322,7 +285,7 @@ class GetOrderItemsBuyerInfoResponseV0 implements ModelInterface, ArrayAccess, \
      */
     public function jsonSerialize()
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

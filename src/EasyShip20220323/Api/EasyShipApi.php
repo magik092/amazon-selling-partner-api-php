@@ -126,7 +126,7 @@ class EasyShipApi
      */
     public function createScheduledPackage($createScheduledPackageRequest)
     {
-        list($response) = $this->createScheduledPackageWithHttpInfo($createScheduledPackageRequest);
+        [$response] = $this->createScheduledPackageWithHttpInfo($createScheduledPackageRequest);
         return $response;
     }
 
@@ -381,10 +381,10 @@ class EasyShipApi
      *
      *
      *
-     * @param  \Webcom\Amazon\Rest\EasyShip20220323\Model\CreateScheduledPackageRequest20220323 $createScheduledPackageRequest (required)
+     * @param \Webcom\Amazon\Rest\EasyShip20220323\Model\CreateScheduledPackageRequest20220323 $createScheduledPackageRequest (required)
      *
-     * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @throws \InvalidArgumentException
      */
     public function createScheduledPackageAsync($createScheduledPackageRequest)
     {
@@ -401,10 +401,10 @@ class EasyShipApi
      *
      *
      *
-     * @param  \Webcom\Amazon\Rest\EasyShip20220323\Model\CreateScheduledPackageRequest20220323 $createScheduledPackageRequest (required)
+     * @param \Webcom\Amazon\Rest\EasyShip20220323\Model\CreateScheduledPackageRequest20220323 $createScheduledPackageRequest (required)
      *
-     * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @throws \InvalidArgumentException
      */
     public function createScheduledPackageAsyncWithHttpInfo($createScheduledPackageRequest)
     {
@@ -547,7 +547,7 @@ class EasyShipApi
      */
     public function createScheduledPackageBulk($createScheduledPackagesRequest)
     {
-        list($response) = $this->createScheduledPackageBulkWithHttpInfo($createScheduledPackagesRequest);
+        [$response] = $this->createScheduledPackageBulkWithHttpInfo($createScheduledPackagesRequest);
         return $response;
     }
 
@@ -802,10 +802,10 @@ class EasyShipApi
      *
      *
      *
-     * @param  \Webcom\Amazon\Rest\EasyShip20220323\Model\CreateScheduledPackagesRequest20220323 $createScheduledPackagesRequest (required)
+     * @param \Webcom\Amazon\Rest\EasyShip20220323\Model\CreateScheduledPackagesRequest20220323 $createScheduledPackagesRequest (required)
      *
-     * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @throws \InvalidArgumentException
      */
     public function createScheduledPackageBulkAsync($createScheduledPackagesRequest)
     {
@@ -822,7 +822,7 @@ class EasyShipApi
      *
      *
      *
-     * @param  \Webcom\Amazon\Rest\EasyShip20220323\Model\CreateScheduledPackagesRequest20220323 $createScheduledPackagesRequest (required)
+     * @param \Webcom\Amazon\Rest\EasyShip20220323\Model\CreateScheduledPackagesRequest20220323 $createScheduledPackagesRequest (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -969,7 +969,7 @@ class EasyShipApi
      */
     public function getScheduledPackage($amazonOrderId, $marketplaceId)
     {
-        list($response) = $this->getScheduledPackageWithHttpInfo($amazonOrderId, $marketplaceId);
+        [$response] = $this->getScheduledPackageWithHttpInfo($amazonOrderId, $marketplaceId);
         return $response;
     }
 
@@ -1225,8 +1225,8 @@ class EasyShipApi
      *
      *
      *
-     * @param  string $amazonOrderId An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship. (required)
-     * @param  string $marketplaceId An identifier for the marketplace in which the seller is selling. (required)
+     * @param string $amazonOrderId An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship. (required)
+     * @param string $marketplaceId An identifier for the marketplace in which the seller is selling. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1246,8 +1246,8 @@ class EasyShipApi
      *
      *
      *
-     * @param  string $amazonOrderId An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship. (required)
-     * @param  string $marketplaceId An identifier for the marketplace in which the seller is selling. (required)
+     * @param string $amazonOrderId An Amazon-defined order identifier. Identifies the order that the seller wants to deliver using Amazon Easy Ship. (required)
+     * @param string $marketplaceId An identifier for the marketplace in which the seller is selling. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1422,7 +1422,7 @@ class EasyShipApi
      */
     public function listHandoverSlots($listHandoverSlotsRequest = null)
     {
-        list($response) = $this->listHandoverSlotsWithHttpInfo($listHandoverSlotsRequest);
+        [$response] = $this->listHandoverSlotsWithHttpInfo($listHandoverSlotsRequest);
         return $response;
     }
 
@@ -1677,7 +1677,7 @@ class EasyShipApi
      *
      *
      *
-     * @param  \Webcom\Amazon\Rest\EasyShip20220323\Model\ListHandoverSlotsRequest20220323 $listHandoverSlotsRequest (optional)
+     * @param \Webcom\Amazon\Rest\EasyShip20220323\Model\ListHandoverSlotsRequest20220323 $listHandoverSlotsRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1697,7 +1697,7 @@ class EasyShipApi
      *
      *
      *
-     * @param  \Webcom\Amazon\Rest\EasyShip20220323\Model\ListHandoverSlotsRequest20220323 $listHandoverSlotsRequest (optional)
+     * @param \Webcom\Amazon\Rest\EasyShip20220323\Model\ListHandoverSlotsRequest20220323 $listHandoverSlotsRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1837,7 +1837,7 @@ class EasyShipApi
      */
     public function updateScheduledPackages($updateScheduledPackagesRequest = null)
     {
-        list($response) = $this->updateScheduledPackagesWithHttpInfo($updateScheduledPackagesRequest);
+        [$response] = $this->updateScheduledPackagesWithHttpInfo($updateScheduledPackagesRequest);
         return $response;
     }
 
@@ -2092,7 +2092,7 @@ class EasyShipApi
      *
      *
      *
-     * @param  \Webcom\Amazon\Rest\EasyShip20220323\Model\UpdateScheduledPackagesRequest20220323 $updateScheduledPackagesRequest (optional)
+     * @param \Webcom\Amazon\Rest\EasyShip20220323\Model\UpdateScheduledPackagesRequest20220323 $updateScheduledPackagesRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2112,7 +2112,7 @@ class EasyShipApi
      *
      *
      *
-     * @param  \Webcom\Amazon\Rest\EasyShip20220323\Model\UpdateScheduledPackagesRequest20220323 $updateScheduledPackagesRequest (optional)
+     * @param \Webcom\Amazon\Rest\EasyShip20220323\Model\UpdateScheduledPackagesRequest20220323 $updateScheduledPackagesRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface

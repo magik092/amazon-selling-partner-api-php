@@ -1,6 +1,6 @@
 <?php
 /**
- * ShipmentStatusV0
+ * VerificationStatusV0
  *
  * PHP version 7.2
  *
@@ -28,25 +28,28 @@
  */
 
 namespace Webcom\Amazon\Rest\OrdersApiV0\Model;
+
 use \Webcom\Amazon\Rest\ObjectSerializer;
 
 /**
- * ShipmentStatusV0 Class Doc Comment
+ * VerificationStatusV0 Class Doc Comment
  *
  * @category Class
- * @description The shipment status to apply.
+ * @description The verification status of the order.
  * @package  Webcom\Amazon\Rest\OrdersApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ShipmentStatusV0
+class VerificationStatusV0
 {
     /**
      * Possible values of this enum
      */
-    const READY_FOR_PICKUP = 'ReadyForPickup';
-    const PICKED_UP = 'PickedUp';
-    const REFUSED_PICKUP = 'RefusedPickup';
+    const PENDING = 'Pending';
+    const APPROVED = 'Approved';
+    const REJECTED = 'Rejected';
+    const EXPIRED = 'Expired';
+    const CANCELLED = 'Cancelled';
 
     /**
      * Gets allowable values of the enum
@@ -55,9 +58,11 @@ class ShipmentStatusV0
     public static function getAllowableEnumValues()
     {
         return [
-            self::READY_FOR_PICKUP,
-            self::PICKED_UP,
-            self::REFUSED_PICKUP,
+            self::PENDING,
+            self::APPROVED,
+            self::REJECTED,
+            self::EXPIRED,
+            self::CANCELLED,
         ];
     }
 }
