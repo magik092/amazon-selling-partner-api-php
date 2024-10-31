@@ -245,7 +245,7 @@ class ItemDetailsV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerProductIdentifier
      *
-     * @param string|null $buyerProductIdentifier The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
+     * @param string|null $buyerProductIdentifier The buyer-selected product identification for the item. Either `buyerProductIdentifier` or `vendorProductIdentifier` must be submitted.
      *
      * @return self
      */
@@ -269,7 +269,7 @@ class ItemDetailsV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vendorProductIdentifier
      *
-     * @param string|null $vendorProductIdentifier The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
+     * @param string|null $vendorProductIdentifier The vendor selected product identification for the item. Either `buyerProductIdentifier` or `vendorProductIdentifier` must be submitted.
      *
      * @return self
      */
@@ -317,7 +317,7 @@ class ItemDetailsV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets isObsolete
      *
-     * @param bool|null $isObsolete When true, the item is permanently unavailable.
+     * @param bool|null $isObsolete When `true`, the item is permanently unavailable.
      *
      * @return self
      */

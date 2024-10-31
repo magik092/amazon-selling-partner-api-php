@@ -287,7 +287,7 @@ class ReportSchedule20210630 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets reportType
      *
-     * @param string $reportType The report type.
+     * @param string $reportType The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      *
      * @return self
      */
@@ -359,7 +359,7 @@ class ReportSchedule20210630 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets period
      *
-     * @param string $period An ISO 8601 period value that indicates how often a report should be created.
+     * @param string $period An <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> period value that indicates how often a report should be created.
      *
      * @return self
      */
@@ -383,7 +383,7 @@ class ReportSchedule20210630 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets nextReportCreationTime
      *
-     * @param \DateTime|null $nextReportCreationTime The date and time when the schedule will create its next report, in ISO 8601 date time format.
+     * @param \DateTime|null $nextReportCreationTime The date and time when the schedule will create its next report, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      *
      * @return self
      */

@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * InvalidASINV0 Class Doc Comment
  *
  * @category Class
+ * @description Contains details about an invalid ASIN
  * @package  Webcom\Amazon\Rest\FulfillmentInboundApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

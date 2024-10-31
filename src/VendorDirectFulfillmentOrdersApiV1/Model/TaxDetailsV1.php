@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TaxDetailsV1 Class Doc Comment
  *
  * @category Class
+ * @description The order&#39;s tax details.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -254,7 +254,7 @@ class TrackingEvent20200701 implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets eventDate
      *
-     * @param \DateTime $eventDate eventDate
+     * @param \DateTime $eventDate Date timestamp
      *
      * @return self
      */

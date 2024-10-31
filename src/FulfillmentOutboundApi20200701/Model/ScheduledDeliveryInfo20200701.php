@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ScheduledDeliveryInfo20200701 Class Doc Comment
  *
  * @category Class
- * @description Delivery information for a scheduled delivery.
+ * @description Delivery information for a scheduled delivery. This is only available in the JP marketplace.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

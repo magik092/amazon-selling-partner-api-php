@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TransactionStatus Class Doc Comment
  *
  * @category Class
+ * @description Represents the status of a transaction.
  * @package  Webcom\Amazon\Rest\VendorTransactionStatusApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

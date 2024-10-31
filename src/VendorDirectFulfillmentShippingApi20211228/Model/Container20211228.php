@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Container20211228 Class Doc Comment
  *
  * @category Class
+ * @description A container for shipping and packing items.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -291,6 +292,9 @@ class Container20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
         if ($this->container['containerIdentifier'] === null) {
             $invalidProperties[] = "'containerIdentifier' can't be null";
         }
+        if ($this->container['weight'] === null) {
+            $invalidProperties[] = "'weight' can't be null";
+        }
         if ($this->container['packedItems'] === null) {
             $invalidProperties[] = "'packedItems' can't be null";
         }
@@ -452,7 +456,7 @@ class Container20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets shipMethod
      *
-     * @param string|null $shipMethod The shipment method.
+     * @param string|null $shipMethod The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.
      *
      * @return self
      */
@@ -562,7 +566,7 @@ class Container20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets weight
      *
-     * @return \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\Weight20211228|null
+     * @return \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\Weight20211228
      */
     public function getWeight()
     {
@@ -572,7 +576,7 @@ class Container20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets weight
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\Weight20211228|null $weight weight
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\Weight20211228 $weight weight
      *
      * @return self
      */

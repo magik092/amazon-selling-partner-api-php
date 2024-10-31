@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Listings Items
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  * 
@@ -65,7 +65,8 @@ class ListingsItemSubmissionResponse20210801 implements ModelInterface, ArrayAcc
         'sku' => 'string',
         'status' => 'string',
         'submissionId' => 'string',
-        'issues' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Issue20210801[]'
+        'issues' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Issue20210801[]',
+        'identifiers' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemIdentifiersByMarketplace20210801[]'
     ];
 
     /**
@@ -79,7 +80,8 @@ class ListingsItemSubmissionResponse20210801 implements ModelInterface, ArrayAcc
         'sku' => null,
         'status' => null,
         'submissionId' => null,
-        'issues' => null
+        'issues' => null,
+        'identifiers' => null
     ];
 
     /**
@@ -112,7 +114,8 @@ class ListingsItemSubmissionResponse20210801 implements ModelInterface, ArrayAcc
         'sku' => 'sku',
         'status' => 'status',
         'submissionId' => 'submissionId',
-        'issues' => 'issues'
+        'issues' => 'issues',
+        'identifiers' => 'identifiers'
     ];
 
     /**
@@ -124,7 +127,8 @@ class ListingsItemSubmissionResponse20210801 implements ModelInterface, ArrayAcc
         'sku' => 'setSku',
         'status' => 'setStatus',
         'submissionId' => 'setSubmissionId',
-        'issues' => 'setIssues'
+        'issues' => 'setIssues',
+        'identifiers' => 'setIdentifiers'
     ];
 
     /**
@@ -136,7 +140,8 @@ class ListingsItemSubmissionResponse20210801 implements ModelInterface, ArrayAcc
         'sku' => 'getSku',
         'status' => 'getStatus',
         'submissionId' => 'getSubmissionId',
-        'issues' => 'getIssues'
+        'issues' => 'getIssues',
+        'identifiers' => 'getIdentifiers'
     ];
 
     /**
@@ -182,6 +187,7 @@ class ListingsItemSubmissionResponse20210801 implements ModelInterface, ArrayAcc
 
     const STATUS_ACCEPTED = 'ACCEPTED';
     const STATUS_INVALID = 'INVALID';
+    const STATUS_VALID = 'VALID';
     
 
     
@@ -195,6 +201,7 @@ class ListingsItemSubmissionResponse20210801 implements ModelInterface, ArrayAcc
         return [
             self::STATUS_ACCEPTED,
             self::STATUS_INVALID,
+            self::STATUS_VALID,
         ];
     }
     
@@ -218,6 +225,7 @@ class ListingsItemSubmissionResponse20210801 implements ModelInterface, ArrayAcc
         $this->container['status'] = $data['status'] ?? null;
         $this->container['submissionId'] = $data['submissionId'] ?? null;
         $this->container['issues'] = $data['issues'] ?? null;
+        $this->container['identifiers'] = $data['identifiers'] ?? null;
     }
 
     /**
@@ -364,6 +372,30 @@ class ListingsItemSubmissionResponse20210801 implements ModelInterface, ArrayAcc
     public function setIssues($issues)
     {
         $this->container['issues'] = $issues;
+
+        return $this;
+    }
+
+    /**
+     * Gets identifiers
+     *
+     * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemIdentifiersByMarketplace20210801[]|null
+     */
+    public function getIdentifiers()
+    {
+        return $this->container['identifiers'];
+    }
+
+    /**
+     * Sets identifiers
+     *
+     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemIdentifiersByMarketplace20210801[]|null $identifiers Identity attributes associated with the item in the Amazon catalog, such as the ASIN.
+     *
+     * @return self
+     */
+    public function setIdentifiers($identifiers)
+    {
+        $this->container['identifiers'] = $identifiers;
 
         return $this;
     }

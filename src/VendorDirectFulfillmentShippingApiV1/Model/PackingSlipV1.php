@@ -268,7 +268,7 @@ class PackingSlipV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchaseOrderNumber
      *
-     * @param string $purchaseOrderNumber Purchase order number of the shipment that the packing slip is for.
+     * @param string $purchaseOrderNumber Purchase order number of the shipment that corresponds to the packing slip.
      *
      * @return self
      */

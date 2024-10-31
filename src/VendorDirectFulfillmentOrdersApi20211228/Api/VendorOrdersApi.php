@@ -1040,7 +1040,7 @@ class VendorOrdersApi
     /**
      * Operation submitAcknowledgement
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body The request body containing the acknowledgement to an order (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1055,7 +1055,7 @@ class VendorOrdersApi
     /**
      * Operation submitAcknowledgementWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body The request body containing the acknowledgement to an order (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1303,7 +1303,7 @@ class VendorOrdersApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body The request body containing the acknowledgement to an order (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1323,7 +1323,7 @@ class VendorOrdersApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body The request body containing the acknowledgement to an order (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1370,7 +1370,7 @@ class VendorOrdersApi
     /**
      * Create request for operation 'submitAcknowledgement'
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\SubmitAcknowledgementRequest20211228 $body The request body containing the acknowledgement to an order (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

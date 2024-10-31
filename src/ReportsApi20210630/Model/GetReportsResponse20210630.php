@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetReportsResponse20210630 Class Doc Comment
  *
  * @category Class
- * @description The response for the getReports operation.
+ * @description The response for the &#x60;getReports&#x60; operation.
  * @package  Webcom\Amazon\Rest\ReportsApi20210630
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -257,7 +257,7 @@ class GetReportsResponse20210630 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets nextToken
      *
-     * @param string|null $nextToken Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.
+     * @param string|null $nextToken Returned when the number of results exceeds `pageSize`. To get the next page of results, call `getReports` with this token as the only parameter.
      *
      * @return self
      */

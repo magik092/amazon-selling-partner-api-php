@@ -452,7 +452,7 @@ class InboundShipmentInfoV0 implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets confirmedNeedByDate
      *
-     * @param \DateTime|null $confirmedNeedByDate confirmedNeedByDate
+     * @param \DateTime|null $confirmedNeedByDate Type containing date in string format
      *
      * @return self
      */

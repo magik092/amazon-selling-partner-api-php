@@ -118,7 +118,7 @@ class VendorDFSandboxtransactionstatusApi
     /**
      * Operation getOrderScenarios
      *
-     * @param  string $transactionId The transaction identifier returned in the response to the generateOrderScenarios operation. (required)
+     * @param  string $transactionId The transaction identifier returned in the response for the &#x60;generateOrderScenarios&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +133,7 @@ class VendorDFSandboxtransactionstatusApi
     /**
      * Operation getOrderScenariosWithHttpInfo
      *
-     * @param  string $transactionId The transaction identifier returned in the response to the generateOrderScenarios operation. (required)
+     * @param  string $transactionId The transaction identifier returned in the response for the &#x60;generateOrderScenarios&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -381,7 +381,7 @@ class VendorDFSandboxtransactionstatusApi
      *
      * 
      *
-     * @param  string $transactionId The transaction identifier returned in the response to the generateOrderScenarios operation. (required)
+     * @param  string $transactionId The transaction identifier returned in the response for the &#x60;generateOrderScenarios&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -401,7 +401,7 @@ class VendorDFSandboxtransactionstatusApi
      *
      * 
      *
-     * @param  string $transactionId The transaction identifier returned in the response to the generateOrderScenarios operation. (required)
+     * @param  string $transactionId The transaction identifier returned in the response for the &#x60;generateOrderScenarios&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -448,7 +448,7 @@ class VendorDFSandboxtransactionstatusApi
     /**
      * Create request for operation 'getOrderScenarios'
      *
-     * @param  string $transactionId The transaction identifier returned in the response to the generateOrderScenarios operation. (required)
+     * @param  string $transactionId The transaction identifier returned in the response for the &#x60;generateOrderScenarios&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -34,7 +34,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * IntendedBoxContentsSourceV0 Class Doc Comment
  *
  * @category Class
- * @description How the seller intends to provide box contents information for a shipment.
+ * @description How the seller intends to provide box contents information for a shipment. Leaving this field blank is equivalent to selecting &#x60;NONE&#x60;, which will incur a fee if the seller does not provide box contents information.
  * @package  Webcom\Amazon\Rest\FulfillmentInboundApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -118,7 +118,7 @@ class VendorInvoiceApi
     /**
      * Operation submitInvoice
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body The request body that contains one or more invoices for vendor orders. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +133,7 @@ class VendorInvoiceApi
     /**
      * Operation submitInvoiceWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body The request body that contains one or more invoices for vendor orders. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -381,7 +381,7 @@ class VendorInvoiceApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body The request body that contains one or more invoices for vendor orders. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -401,7 +401,7 @@ class VendorInvoiceApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body The request body that contains one or more invoices for vendor orders. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -448,7 +448,7 @@ class VendorInvoiceApi
     /**
      * Create request for operation 'submitInvoice'
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\SubmitInvoiceRequestV1 $body The request body that contains one or more invoices for vendor orders. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

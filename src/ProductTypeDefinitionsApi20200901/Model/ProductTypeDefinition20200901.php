@@ -70,6 +70,7 @@ class ProductTypeDefinition20200901 implements ModelInterface, ArrayAccess, \Jso
         'locale' => 'string',
         'marketplaceIds' => 'string[]',
         'productType' => 'string',
+        'displayName' => 'string',
         'productTypeVersion' => '\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ProductTypeVersion20200901'
     ];
 
@@ -89,6 +90,7 @@ class ProductTypeDefinition20200901 implements ModelInterface, ArrayAccess, \Jso
         'locale' => null,
         'marketplaceIds' => null,
         'productType' => null,
+        'displayName' => null,
         'productTypeVersion' => null
     ];
 
@@ -127,6 +129,7 @@ class ProductTypeDefinition20200901 implements ModelInterface, ArrayAccess, \Jso
         'locale' => 'locale',
         'marketplaceIds' => 'marketplaceIds',
         'productType' => 'productType',
+        'displayName' => 'displayName',
         'productTypeVersion' => 'productTypeVersion'
     ];
 
@@ -144,6 +147,7 @@ class ProductTypeDefinition20200901 implements ModelInterface, ArrayAccess, \Jso
         'locale' => 'setLocale',
         'marketplaceIds' => 'setMarketplaceIds',
         'productType' => 'setProductType',
+        'displayName' => 'setDisplayName',
         'productTypeVersion' => 'setProductTypeVersion'
     ];
 
@@ -161,6 +165,7 @@ class ProductTypeDefinition20200901 implements ModelInterface, ArrayAccess, \Jso
         'locale' => 'getLocale',
         'marketplaceIds' => 'getMarketplaceIds',
         'productType' => 'getProductType',
+        'displayName' => 'getDisplayName',
         'productTypeVersion' => 'getProductTypeVersion'
     ];
 
@@ -264,6 +269,7 @@ class ProductTypeDefinition20200901 implements ModelInterface, ArrayAccess, \Jso
         $this->container['locale'] = $data['locale'] ?? null;
         $this->container['marketplaceIds'] = $data['marketplaceIds'] ?? null;
         $this->container['productType'] = $data['productType'] ?? null;
+        $this->container['displayName'] = $data['displayName'] ?? null;
         $this->container['productTypeVersion'] = $data['productTypeVersion'] ?? null;
     }
 
@@ -314,6 +320,9 @@ class ProductTypeDefinition20200901 implements ModelInterface, ArrayAccess, \Jso
         }
         if ($this->container['productType'] === null) {
             $invalidProperties[] = "'productType' can't be null";
+        }
+        if ($this->container['displayName'] === null) {
+            $invalidProperties[] = "'displayName' can't be null";
         }
         if ($this->container['productTypeVersion'] === null) {
             $invalidProperties[] = "'productTypeVersion' can't be null";
@@ -541,6 +550,30 @@ class ProductTypeDefinition20200901 implements ModelInterface, ArrayAccess, \Jso
     public function setProductType($productType)
     {
         $this->container['productType'] = $productType;
+
+        return $this;
+    }
+
+    /**
+     * Gets displayName
+     *
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->container['displayName'];
+    }
+
+    /**
+     * Sets displayName
+     *
+     * @param string $displayName Human-readable and localized description of the Amazon product type.
+     *
+     * @return self
+     */
+    public function setDisplayName($displayName)
+    {
+        $this->container['displayName'] = $displayName;
 
         return $this;
     }

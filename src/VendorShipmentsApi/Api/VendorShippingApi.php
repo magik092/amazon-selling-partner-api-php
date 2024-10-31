@@ -116,9 +116,708 @@ class VendorShippingApi
     }
 
     /**
+     * Operation getShipmentDetails
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort in ascending or descending order by purchase order creation date. (optional)
+     * @param  string $nextToken Used for pagination when there are more shipments than the specified result size limit. (optional)
+     * @param  \DateTime $createdAfter Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $createdBefore Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedBefore Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedAfter Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedBefore Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedAfter Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpAfter Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpBefore Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpAfter Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $currentShipmentStatus Get Shipment Details by passing Current shipment status. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment Details by passing Vendor Shipment ID (optional)
+     * @param  string $buyerReferenceNumber Get Shipment Details by passing buyer Reference ID (optional)
+     * @param  string $buyerWarehouseCode Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\VendorShipmentsApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse
+     */
+    public function getShipmentDetails($limit = null, $sortOrder = null, $nextToken = null, $createdAfter = null, $createdBefore = null, $shipmentConfirmedBefore = null, $shipmentConfirmedAfter = null, $packageLabelCreatedBefore = null, $packageLabelCreatedAfter = null, $shippedBefore = null, $shippedAfter = null, $estimatedDeliveryBefore = null, $estimatedDeliveryAfter = null, $shipmentDeliveryBefore = null, $shipmentDeliveryAfter = null, $requestedPickUpBefore = null, $requestedPickUpAfter = null, $scheduledPickUpBefore = null, $scheduledPickUpAfter = null, $currentShipmentStatus = null, $vendorShipmentIdentifier = null, $buyerReferenceNumber = null, $buyerWarehouseCode = null, $sellerWarehouseCode = null)
+    {
+        list($response) = $this->getShipmentDetailsWithHttpInfo($limit, $sortOrder, $nextToken, $createdAfter, $createdBefore, $shipmentConfirmedBefore, $shipmentConfirmedAfter, $packageLabelCreatedBefore, $packageLabelCreatedAfter, $shippedBefore, $shippedAfter, $estimatedDeliveryBefore, $estimatedDeliveryAfter, $shipmentDeliveryBefore, $shipmentDeliveryAfter, $requestedPickUpBefore, $requestedPickUpAfter, $scheduledPickUpBefore, $scheduledPickUpAfter, $currentShipmentStatus, $vendorShipmentIdentifier, $buyerReferenceNumber, $buyerWarehouseCode, $sellerWarehouseCode);
+        return $response;
+    }
+
+    /**
+     * Operation getShipmentDetailsWithHttpInfo
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort in ascending or descending order by purchase order creation date. (optional)
+     * @param  string $nextToken Used for pagination when there are more shipments than the specified result size limit. (optional)
+     * @param  \DateTime $createdAfter Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $createdBefore Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedBefore Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedAfter Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedBefore Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedAfter Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpAfter Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpBefore Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpAfter Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $currentShipmentStatus Get Shipment Details by passing Current shipment status. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment Details by passing Vendor Shipment ID (optional)
+     * @param  string $buyerReferenceNumber Get Shipment Details by passing buyer Reference ID (optional)
+     * @param  string $buyerWarehouseCode Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\VendorShipmentsApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getShipmentDetailsWithHttpInfo($limit = null, $sortOrder = null, $nextToken = null, $createdAfter = null, $createdBefore = null, $shipmentConfirmedBefore = null, $shipmentConfirmedAfter = null, $packageLabelCreatedBefore = null, $packageLabelCreatedAfter = null, $shippedBefore = null, $shippedAfter = null, $estimatedDeliveryBefore = null, $estimatedDeliveryAfter = null, $shipmentDeliveryBefore = null, $shipmentDeliveryAfter = null, $requestedPickUpBefore = null, $requestedPickUpAfter = null, $scheduledPickUpBefore = null, $scheduledPickUpAfter = null, $currentShipmentStatus = null, $vendorShipmentIdentifier = null, $buyerReferenceNumber = null, $buyerWarehouseCode = null, $sellerWarehouseCode = null)
+    {
+        $request = $this->getShipmentDetailsRequest($limit, $sortOrder, $nextToken, $createdAfter, $createdBefore, $shipmentConfirmedBefore, $shipmentConfirmedAfter, $packageLabelCreatedBefore, $packageLabelCreatedAfter, $shippedBefore, $shippedAfter, $estimatedDeliveryBefore, $estimatedDeliveryAfter, $shipmentDeliveryBefore, $shipmentDeliveryAfter, $requestedPickUpBefore, $requestedPickUpAfter, $scheduledPickUpBefore, $scheduledPickUpAfter, $currentShipmentStatus, $vendorShipmentIdentifier, $buyerReferenceNumber, $buyerWarehouseCode, $sellerWarehouseCode);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getShipmentDetailsAsync
+     *
+     * 
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort in ascending or descending order by purchase order creation date. (optional)
+     * @param  string $nextToken Used for pagination when there are more shipments than the specified result size limit. (optional)
+     * @param  \DateTime $createdAfter Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $createdBefore Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedBefore Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedAfter Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedBefore Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedAfter Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpAfter Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpBefore Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpAfter Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $currentShipmentStatus Get Shipment Details by passing Current shipment status. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment Details by passing Vendor Shipment ID (optional)
+     * @param  string $buyerReferenceNumber Get Shipment Details by passing buyer Reference ID (optional)
+     * @param  string $buyerWarehouseCode Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getShipmentDetailsAsync($limit = null, $sortOrder = null, $nextToken = null, $createdAfter = null, $createdBefore = null, $shipmentConfirmedBefore = null, $shipmentConfirmedAfter = null, $packageLabelCreatedBefore = null, $packageLabelCreatedAfter = null, $shippedBefore = null, $shippedAfter = null, $estimatedDeliveryBefore = null, $estimatedDeliveryAfter = null, $shipmentDeliveryBefore = null, $shipmentDeliveryAfter = null, $requestedPickUpBefore = null, $requestedPickUpAfter = null, $scheduledPickUpBefore = null, $scheduledPickUpAfter = null, $currentShipmentStatus = null, $vendorShipmentIdentifier = null, $buyerReferenceNumber = null, $buyerWarehouseCode = null, $sellerWarehouseCode = null)
+    {
+        return $this->getShipmentDetailsAsyncWithHttpInfo($limit, $sortOrder, $nextToken, $createdAfter, $createdBefore, $shipmentConfirmedBefore, $shipmentConfirmedAfter, $packageLabelCreatedBefore, $packageLabelCreatedAfter, $shippedBefore, $shippedAfter, $estimatedDeliveryBefore, $estimatedDeliveryAfter, $shipmentDeliveryBefore, $shipmentDeliveryAfter, $requestedPickUpBefore, $requestedPickUpAfter, $scheduledPickUpBefore, $scheduledPickUpAfter, $currentShipmentStatus, $vendorShipmentIdentifier, $buyerReferenceNumber, $buyerWarehouseCode, $sellerWarehouseCode)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getShipmentDetailsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort in ascending or descending order by purchase order creation date. (optional)
+     * @param  string $nextToken Used for pagination when there are more shipments than the specified result size limit. (optional)
+     * @param  \DateTime $createdAfter Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $createdBefore Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedBefore Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedAfter Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedBefore Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedAfter Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpAfter Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpBefore Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpAfter Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $currentShipmentStatus Get Shipment Details by passing Current shipment status. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment Details by passing Vendor Shipment ID (optional)
+     * @param  string $buyerReferenceNumber Get Shipment Details by passing buyer Reference ID (optional)
+     * @param  string $buyerWarehouseCode Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getShipmentDetailsAsyncWithHttpInfo($limit = null, $sortOrder = null, $nextToken = null, $createdAfter = null, $createdBefore = null, $shipmentConfirmedBefore = null, $shipmentConfirmedAfter = null, $packageLabelCreatedBefore = null, $packageLabelCreatedAfter = null, $shippedBefore = null, $shippedAfter = null, $estimatedDeliveryBefore = null, $estimatedDeliveryAfter = null, $shipmentDeliveryBefore = null, $shipmentDeliveryAfter = null, $requestedPickUpBefore = null, $requestedPickUpAfter = null, $scheduledPickUpBefore = null, $scheduledPickUpAfter = null, $currentShipmentStatus = null, $vendorShipmentIdentifier = null, $buyerReferenceNumber = null, $buyerWarehouseCode = null, $sellerWarehouseCode = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentDetailsResponse';
+        $request = $this->getShipmentDetailsRequest($limit, $sortOrder, $nextToken, $createdAfter, $createdBefore, $shipmentConfirmedBefore, $shipmentConfirmedAfter, $packageLabelCreatedBefore, $packageLabelCreatedAfter, $shippedBefore, $shippedAfter, $estimatedDeliveryBefore, $estimatedDeliveryAfter, $shipmentDeliveryBefore, $shipmentDeliveryAfter, $requestedPickUpBefore, $requestedPickUpAfter, $scheduledPickUpBefore, $scheduledPickUpAfter, $currentShipmentStatus, $vendorShipmentIdentifier, $buyerReferenceNumber, $buyerWarehouseCode, $sellerWarehouseCode);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getShipmentDetails'
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort in ascending or descending order by purchase order creation date. (optional)
+     * @param  string $nextToken Used for pagination when there are more shipments than the specified result size limit. (optional)
+     * @param  \DateTime $createdAfter Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $createdBefore Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedBefore Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentConfirmedAfter Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedBefore Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $packageLabelCreatedAfter Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $requestedPickUpAfter Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpBefore Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $scheduledPickUpAfter Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $currentShipmentStatus Get Shipment Details by passing Current shipment status. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment Details by passing Vendor Shipment ID (optional)
+     * @param  string $buyerReferenceNumber Get Shipment Details by passing buyer Reference ID (optional)
+     * @param  string $buyerWarehouseCode Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getShipmentDetailsRequest($limit = null, $sortOrder = null, $nextToken = null, $createdAfter = null, $createdBefore = null, $shipmentConfirmedBefore = null, $shipmentConfirmedAfter = null, $packageLabelCreatedBefore = null, $packageLabelCreatedAfter = null, $shippedBefore = null, $shippedAfter = null, $estimatedDeliveryBefore = null, $estimatedDeliveryAfter = null, $shipmentDeliveryBefore = null, $shipmentDeliveryAfter = null, $requestedPickUpBefore = null, $requestedPickUpAfter = null, $scheduledPickUpBefore = null, $scheduledPickUpAfter = null, $currentShipmentStatus = null, $vendorShipmentIdentifier = null, $buyerReferenceNumber = null, $buyerWarehouseCode = null, $sellerWarehouseCode = null)
+    {
+        if ($limit !== null && $limit > 50) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentDetails, must be smaller than or equal to 50.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentDetails, must be bigger than or equal to 1.');
+        }
+
+
+        $resourcePath = '/vendor/shipping/v1/shipments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($limit)) {
+            $limit = ObjectSerializer::serializeCollection($limit, '', true);
+        }
+        if ($limit !== null) {
+            $queryParams['limit'] = $limit;
+        }
+        // query params
+        if (is_array($sortOrder)) {
+            $sortOrder = ObjectSerializer::serializeCollection($sortOrder, '', true);
+        }
+        if ($sortOrder !== null) {
+            $queryParams['sortOrder'] = $sortOrder;
+        }
+        // query params
+        if (is_array($nextToken)) {
+            $nextToken = ObjectSerializer::serializeCollection($nextToken, '', true);
+        }
+        if ($nextToken !== null) {
+            $queryParams['nextToken'] = $nextToken;
+        }
+        // query params
+        if (is_array($createdAfter)) {
+            $createdAfter = ObjectSerializer::serializeCollection($createdAfter, '', true);
+        }
+        if ($createdAfter !== null) {
+            $queryParams['createdAfter'] = $createdAfter;
+        }
+        // query params
+        if (is_array($createdBefore)) {
+            $createdBefore = ObjectSerializer::serializeCollection($createdBefore, '', true);
+        }
+        if ($createdBefore !== null) {
+            $queryParams['createdBefore'] = $createdBefore;
+        }
+        // query params
+        if (is_array($shipmentConfirmedBefore)) {
+            $shipmentConfirmedBefore = ObjectSerializer::serializeCollection($shipmentConfirmedBefore, '', true);
+        }
+        if ($shipmentConfirmedBefore !== null) {
+            $queryParams['shipmentConfirmedBefore'] = $shipmentConfirmedBefore;
+        }
+        // query params
+        if (is_array($shipmentConfirmedAfter)) {
+            $shipmentConfirmedAfter = ObjectSerializer::serializeCollection($shipmentConfirmedAfter, '', true);
+        }
+        if ($shipmentConfirmedAfter !== null) {
+            $queryParams['shipmentConfirmedAfter'] = $shipmentConfirmedAfter;
+        }
+        // query params
+        if (is_array($packageLabelCreatedBefore)) {
+            $packageLabelCreatedBefore = ObjectSerializer::serializeCollection($packageLabelCreatedBefore, '', true);
+        }
+        if ($packageLabelCreatedBefore !== null) {
+            $queryParams['packageLabelCreatedBefore'] = $packageLabelCreatedBefore;
+        }
+        // query params
+        if (is_array($packageLabelCreatedAfter)) {
+            $packageLabelCreatedAfter = ObjectSerializer::serializeCollection($packageLabelCreatedAfter, '', true);
+        }
+        if ($packageLabelCreatedAfter !== null) {
+            $queryParams['packageLabelCreatedAfter'] = $packageLabelCreatedAfter;
+        }
+        // query params
+        if (is_array($shippedBefore)) {
+            $shippedBefore = ObjectSerializer::serializeCollection($shippedBefore, '', true);
+        }
+        if ($shippedBefore !== null) {
+            $queryParams['shippedBefore'] = $shippedBefore;
+        }
+        // query params
+        if (is_array($shippedAfter)) {
+            $shippedAfter = ObjectSerializer::serializeCollection($shippedAfter, '', true);
+        }
+        if ($shippedAfter !== null) {
+            $queryParams['shippedAfter'] = $shippedAfter;
+        }
+        // query params
+        if (is_array($estimatedDeliveryBefore)) {
+            $estimatedDeliveryBefore = ObjectSerializer::serializeCollection($estimatedDeliveryBefore, '', true);
+        }
+        if ($estimatedDeliveryBefore !== null) {
+            $queryParams['estimatedDeliveryBefore'] = $estimatedDeliveryBefore;
+        }
+        // query params
+        if (is_array($estimatedDeliveryAfter)) {
+            $estimatedDeliveryAfter = ObjectSerializer::serializeCollection($estimatedDeliveryAfter, '', true);
+        }
+        if ($estimatedDeliveryAfter !== null) {
+            $queryParams['estimatedDeliveryAfter'] = $estimatedDeliveryAfter;
+        }
+        // query params
+        if (is_array($shipmentDeliveryBefore)) {
+            $shipmentDeliveryBefore = ObjectSerializer::serializeCollection($shipmentDeliveryBefore, '', true);
+        }
+        if ($shipmentDeliveryBefore !== null) {
+            $queryParams['shipmentDeliveryBefore'] = $shipmentDeliveryBefore;
+        }
+        // query params
+        if (is_array($shipmentDeliveryAfter)) {
+            $shipmentDeliveryAfter = ObjectSerializer::serializeCollection($shipmentDeliveryAfter, '', true);
+        }
+        if ($shipmentDeliveryAfter !== null) {
+            $queryParams['shipmentDeliveryAfter'] = $shipmentDeliveryAfter;
+        }
+        // query params
+        if (is_array($requestedPickUpBefore)) {
+            $requestedPickUpBefore = ObjectSerializer::serializeCollection($requestedPickUpBefore, '', true);
+        }
+        if ($requestedPickUpBefore !== null) {
+            $queryParams['requestedPickUpBefore'] = $requestedPickUpBefore;
+        }
+        // query params
+        if (is_array($requestedPickUpAfter)) {
+            $requestedPickUpAfter = ObjectSerializer::serializeCollection($requestedPickUpAfter, '', true);
+        }
+        if ($requestedPickUpAfter !== null) {
+            $queryParams['requestedPickUpAfter'] = $requestedPickUpAfter;
+        }
+        // query params
+        if (is_array($scheduledPickUpBefore)) {
+            $scheduledPickUpBefore = ObjectSerializer::serializeCollection($scheduledPickUpBefore, '', true);
+        }
+        if ($scheduledPickUpBefore !== null) {
+            $queryParams['scheduledPickUpBefore'] = $scheduledPickUpBefore;
+        }
+        // query params
+        if (is_array($scheduledPickUpAfter)) {
+            $scheduledPickUpAfter = ObjectSerializer::serializeCollection($scheduledPickUpAfter, '', true);
+        }
+        if ($scheduledPickUpAfter !== null) {
+            $queryParams['scheduledPickUpAfter'] = $scheduledPickUpAfter;
+        }
+        // query params
+        if (is_array($currentShipmentStatus)) {
+            $currentShipmentStatus = ObjectSerializer::serializeCollection($currentShipmentStatus, '', true);
+        }
+        if ($currentShipmentStatus !== null) {
+            $queryParams['currentShipmentStatus'] = $currentShipmentStatus;
+        }
+        // query params
+        if (is_array($vendorShipmentIdentifier)) {
+            $vendorShipmentIdentifier = ObjectSerializer::serializeCollection($vendorShipmentIdentifier, '', true);
+        }
+        if ($vendorShipmentIdentifier !== null) {
+            $queryParams['vendorShipmentIdentifier'] = $vendorShipmentIdentifier;
+        }
+        // query params
+        if (is_array($buyerReferenceNumber)) {
+            $buyerReferenceNumber = ObjectSerializer::serializeCollection($buyerReferenceNumber, '', true);
+        }
+        if ($buyerReferenceNumber !== null) {
+            $queryParams['buyerReferenceNumber'] = $buyerReferenceNumber;
+        }
+        // query params
+        if (is_array($buyerWarehouseCode)) {
+            $buyerWarehouseCode = ObjectSerializer::serializeCollection($buyerWarehouseCode, '', true);
+        }
+        if ($buyerWarehouseCode !== null) {
+            $queryParams['buyerWarehouseCode'] = $buyerWarehouseCode;
+        }
+        // query params
+        if (is_array($sellerWarehouseCode)) {
+            $sellerWarehouseCode = ObjectSerializer::serializeCollection($sellerWarehouseCode, '', true);
+        }
+        if ($sellerWarehouseCode !== null) {
+            $queryParams['sellerWarehouseCode'] = $sellerWarehouseCode;
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation submitShipmentConfirmations
      *
-     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body body (required)
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorShipmentsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +832,7 @@ class VendorShippingApi
     /**
      * Operation submitShipmentConfirmationsWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorShipmentsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -381,7 +1080,7 @@ class VendorShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -401,7 +1100,7 @@ class VendorShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -448,7 +1147,7 @@ class VendorShippingApi
     /**
      * Create request for operation 'submitShipmentConfirmations'
      *
-     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -463,6 +1162,427 @@ class VendorShippingApi
         }
 
         $resourcePath = '/vendor/shipping/v1/shipmentConfirmations';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation submitShipments
+     *
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipments $body A request to submit shipment request. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\VendorShipmentsApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse
+     */
+    public function submitShipments($body)
+    {
+        list($response) = $this->submitShipmentsWithHttpInfo($body);
+        return $response;
+    }
+
+    /**
+     * Operation submitShipmentsWithHttpInfo
+     *
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipments $body A request to submit shipment request. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\VendorShipmentsApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function submitShipmentsWithHttpInfo($body)
+    {
+        $request = $this->submitShipmentsRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 202:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 202:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation submitShipmentsAsync
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipments $body A request to submit shipment request. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitShipmentsAsync($body)
+    {
+        return $this->submitShipmentsAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation submitShipmentsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipments $body A request to submit shipment request. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitShipmentsAsyncWithHttpInfo($body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsResponse';
+        $request = $this->submitShipmentsRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'submitShipments'
+     *
+     * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipments $body A request to submit shipment request. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function submitShipmentsRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling submitShipments'
+            );
+        }
+
+        $resourcePath = '/vendor/shipping/v1/shipments';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

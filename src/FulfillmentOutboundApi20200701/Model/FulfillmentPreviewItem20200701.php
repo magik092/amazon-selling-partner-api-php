@@ -329,7 +329,7 @@ class FulfillmentPreviewItem20200701 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets sellerFulfillmentOrderItemId
      *
-     * @param string $sellerFulfillmentOrderItemId A fulfillment order item identifier that the seller created with a call to the createFulfillmentOrder operation.
+     * @param string $sellerFulfillmentOrderItemId A fulfillment order item identifier that the seller created with a call to the `createFulfillmentOrder` operation.
      *
      * @return self
      */

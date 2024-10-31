@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SubmitShipmentStatusUpdatesRequestV1 Class Doc Comment
  *
  * @category Class
+ * @description Represents the request payload for submitting updates to the status of shipments, containing an array of one or more &#x60;ShipmentStatusUpdate&#x60; objects.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class SubmitShipmentStatusUpdatesRequestV1 implements ModelInterface, ArrayAcces
     /**
      * Sets shipmentStatusUpdates
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\ShipmentStatusUpdateV1[]|null $shipmentStatusUpdates shipmentStatusUpdates
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\ShipmentStatusUpdateV1[]|null $shipmentStatusUpdates Contains a list of one or more `ShipmentStatusUpdate` objects, each representing an update to the status of a specific shipment.
      *
      * @return self
      */

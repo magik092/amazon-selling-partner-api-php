@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CustomerInvoiceV1 Class Doc Comment
  *
  * @category Class
+ * @description Represents a customer invoice associated with a purchase order.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -268,7 +269,7 @@ class CustomerInvoiceV1 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets content
      *
-     * @param string $content The Base64encoded customer invoice.
+     * @param string $content The `Base64encoded` customer invoice.
      *
      * @return self
      */

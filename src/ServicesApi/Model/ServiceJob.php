@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -72,6 +72,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointments' => '\Webcom\Amazon\Rest\ServicesApi\Model\Appointment[]',
         'serviceOrderId' => 'string',
         'marketplaceId' => 'string',
+        'storeId' => 'string',
         'buyer' => '\Webcom\Amazon\Rest\ServicesApi\Model\Buyer',
         'associatedItems' => '\Webcom\Amazon\Rest\ServicesApi\Model\AssociatedItem[]',
         'serviceLocation' => '\Webcom\Amazon\Rest\ServicesApi\Model\ServiceLocation'
@@ -95,6 +96,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointments' => null,
         'serviceOrderId' => null,
         'marketplaceId' => null,
+        'storeId' => null,
         'buyer' => null,
         'associatedItems' => null,
         'serviceLocation' => null
@@ -137,6 +139,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointments' => 'appointments',
         'serviceOrderId' => 'serviceOrderId',
         'marketplaceId' => 'marketplaceId',
+        'storeId' => 'storeId',
         'buyer' => 'buyer',
         'associatedItems' => 'associatedItems',
         'serviceLocation' => 'serviceLocation'
@@ -158,6 +161,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointments' => 'setAppointments',
         'serviceOrderId' => 'setServiceOrderId',
         'marketplaceId' => 'setMarketplaceId',
+        'storeId' => 'setStoreId',
         'buyer' => 'setBuyer',
         'associatedItems' => 'setAssociatedItems',
         'serviceLocation' => 'setServiceLocation'
@@ -179,6 +183,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'appointments' => 'getAppointments',
         'serviceOrderId' => 'getServiceOrderId',
         'marketplaceId' => 'getMarketplaceId',
+        'storeId' => 'getStoreId',
         'buyer' => 'getBuyer',
         'associatedItems' => 'getAssociatedItems',
         'serviceLocation' => 'getServiceLocation'
@@ -279,6 +284,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['appointments'] = $data['appointments'] ?? null;
         $this->container['serviceOrderId'] = $data['serviceOrderId'] ?? null;
         $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
+        $this->container['storeId'] = $data['storeId'] ?? null;
         $this->container['buyer'] = $data['buyer'] ?? null;
         $this->container['associatedItems'] = $data['associatedItems'] ?? null;
         $this->container['serviceLocation'] = $data['serviceLocation'] ?? null;
@@ -322,6 +328,14 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "invalid value for 'marketplaceId', must be conform to the pattern /^[A-Z0-9]*$/.";
         }
 
+        if (!is_null($this->container['storeId']) && (mb_strlen($this->container['storeId']) > 100)) {
+            $invalidProperties[] = "invalid value for 'storeId', the character length must be smaller than or equal to 100.";
+        }
+
+        if (!is_null($this->container['storeId']) && (mb_strlen($this->container['storeId']) < 1)) {
+            $invalidProperties[] = "invalid value for 'storeId', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -350,7 +364,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets createTime
      *
-     * @param \DateTime|null $createTime The date and time of the creation of the job, in ISO 8601 format.
+     * @param \DateTime|null $createTime The date and time of the creation of the job in ISO 8601 format.
      *
      * @return self
      */
@@ -602,6 +616,37 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['marketplaceId'] = $marketplaceId;
+
+        return $this;
+    }
+
+    /**
+     * Gets storeId
+     *
+     * @return string|null
+     */
+    public function getStoreId()
+    {
+        return $this->container['storeId'];
+    }
+
+    /**
+     * Sets storeId
+     *
+     * @param string|null $storeId The Amazon-defined identifier for the region scope.
+     *
+     * @return self
+     */
+    public function setStoreId($storeId)
+    {
+        if (!is_null($storeId) && (mb_strlen($storeId) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $storeId when calling ServiceJob., must be smaller than or equal to 100.');
+        }
+        if (!is_null($storeId) && (mb_strlen($storeId) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $storeId when calling ServiceJob., must be bigger than or equal to 1.');
+        }
+
+        $this->container['storeId'] = $storeId;
 
         return $this;
     }

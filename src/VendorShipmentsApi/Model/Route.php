@@ -227,7 +227,7 @@ class Route implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stops
      *
-     * @param \Webcom\Amazon\Rest\VendorShipmentsApi\Model\Stop[] $stops stops
+     * @param \Webcom\Amazon\Rest\VendorShipmentsApi\Model\Stop[] $stops The port or location involved in transporting the cargo, as specified in transportation contracts or operational plans.
      *
      * @return self
      */

@@ -224,7 +224,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets shipmentConfirmations
      *
-     * @param \Webcom\Amazon\Rest\VendorShipmentsApi\Model\ShipmentConfirmation[]|null $shipmentConfirmations shipmentConfirmations
+     * @param \Webcom\Amazon\Rest\VendorShipmentsApi\Model\ShipmentConfirmation[]|null $shipmentConfirmations A list of one or more shipment confirmations.
      *
      * @return self
      */

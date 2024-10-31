@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ImportDetails Class Doc Comment
  *
  * @category Class
+ * @description Provide these fields only if this shipment is a direct import.
  * @package  Webcom\Amazon\Rest\VendorShipmentsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -66,7 +67,8 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\Route',
         'importContainers' => 'string',
         'billableWeight' => '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\Weight',
-        'estimatedShipByDate' => '\DateTime'
+        'estimatedShipByDate' => '\DateTime',
+        'handlingInstructions' => 'string'
     ];
 
     /**
@@ -82,7 +84,8 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => null,
         'importContainers' => null,
         'billableWeight' => null,
-        'estimatedShipByDate' => 'date-time'
+        'estimatedShipByDate' => 'date-time',
+        'handlingInstructions' => null
     ];
 
     /**
@@ -117,7 +120,8 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => 'route',
         'importContainers' => 'importContainers',
         'billableWeight' => 'billableWeight',
-        'estimatedShipByDate' => 'estimatedShipByDate'
+        'estimatedShipByDate' => 'estimatedShipByDate',
+        'handlingInstructions' => 'handlingInstructions'
     ];
 
     /**
@@ -131,7 +135,8 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => 'setRoute',
         'importContainers' => 'setImportContainers',
         'billableWeight' => 'setBillableWeight',
-        'estimatedShipByDate' => 'setEstimatedShipByDate'
+        'estimatedShipByDate' => 'setEstimatedShipByDate',
+        'handlingInstructions' => 'setHandlingInstructions'
     ];
 
     /**
@@ -145,7 +150,8 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         'route' => 'getRoute',
         'importContainers' => 'getImportContainers',
         'billableWeight' => 'getBillableWeight',
-        'estimatedShipByDate' => 'getEstimatedShipByDate'
+        'estimatedShipByDate' => 'getEstimatedShipByDate',
+        'handlingInstructions' => 'getHandlingInstructions'
     ];
 
     /**
@@ -195,6 +201,10 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     const METHOD_OF_PAYMENT_FOB_PORT_OF_CALL = 'FOBPortOfCall';
     const METHOD_OF_PAYMENT_PREPAID_BY_SELLER = 'PrepaidBySeller';
     const METHOD_OF_PAYMENT_PAID_BY_SELLER = 'PaidBySeller';
+    const HANDLING_INSTRUCTIONS_OVERSIZED = 'Oversized';
+    const HANDLING_INSTRUCTIONS_FRAGILE = 'Fragile';
+    const HANDLING_INSTRUCTIONS_FOOD = 'Food';
+    const HANDLING_INSTRUCTIONS_HANDLE_WITH_CARE = 'HandleWithCare';
     
 
     
@@ -212,6 +222,21 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
             self::METHOD_OF_PAYMENT_FOB_PORT_OF_CALL,
             self::METHOD_OF_PAYMENT_PREPAID_BY_SELLER,
             self::METHOD_OF_PAYMENT_PAID_BY_SELLER,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getHandlingInstructionsAllowableValues()
+    {
+        return [
+            self::HANDLING_INSTRUCTIONS_OVERSIZED,
+            self::HANDLING_INSTRUCTIONS_FRAGILE,
+            self::HANDLING_INSTRUCTIONS_FOOD,
+            self::HANDLING_INSTRUCTIONS_HANDLE_WITH_CARE,
         ];
     }
     
@@ -237,6 +262,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['importContainers'] = $data['importContainers'] ?? null;
         $this->container['billableWeight'] = $data['billableWeight'] ?? null;
         $this->container['estimatedShipByDate'] = $data['estimatedShipByDate'] ?? null;
+        $this->container['handlingInstructions'] = $data['handlingInstructions'] ?? null;
     }
 
     /**
@@ -259,6 +285,15 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (!is_null($this->container['importContainers']) && (mb_strlen($this->container['importContainers']) > 64)) {
             $invalidProperties[] = "invalid value for 'importContainers', the character length must be smaller than or equal to 64.";
+        }
+
+        $allowedValues = $this->getHandlingInstructionsAllowableValues();
+        if (!is_null($this->container['handlingInstructions']) && !in_array($this->container['handlingInstructions'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'handlingInstructions', must be one of '%s'",
+                $this->container['handlingInstructions'],
+                implode("', '", $allowedValues)
+            );
         }
 
         return $invalidProperties;
@@ -430,6 +465,40 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEstimatedShipByDate($estimatedShipByDate)
     {
         $this->container['estimatedShipByDate'] = $estimatedShipByDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets handlingInstructions
+     *
+     * @return string|null
+     */
+    public function getHandlingInstructions()
+    {
+        return $this->container['handlingInstructions'];
+    }
+
+    /**
+     * Sets handlingInstructions
+     *
+     * @param string|null $handlingInstructions Identification of the instructions on how specified item/carton/pallet should be handled.
+     *
+     * @return self
+     */
+    public function setHandlingInstructions($handlingInstructions)
+    {
+        $allowedValues = $this->getHandlingInstructionsAllowableValues();
+        if (!is_null($handlingInstructions) && !in_array($handlingInstructions, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'handlingInstructions', must be one of '%s'",
+                    $handlingInstructions,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['handlingInstructions'] = $handlingInstructions;
 
         return $this;
     }

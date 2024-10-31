@@ -413,7 +413,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchaseOrderNumber
      *
-     * @param string|null $purchaseOrderNumber The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
+     * @param string|null $purchaseOrderNumber The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`.
      *
      * @return self
      */
@@ -437,7 +437,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hsnCode
      *
-     * @param string|null $hsnCode HSN Tax code. The HSN number cannot contain alphabets.
+     * @param string|null $hsnCode The HSN Tax code. The HSN number cannot contain alphabets.
      *
      * @return self
      */

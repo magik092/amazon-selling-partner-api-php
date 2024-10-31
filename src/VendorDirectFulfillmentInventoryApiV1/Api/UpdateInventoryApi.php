@@ -119,7 +119,7 @@ class UpdateInventoryApi
      * Operation submitInventoryUpdate
      *
      * @param  string $warehouseId Identifier for the warehouse for which to update inventory. (required)
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body The request body that contains the inventory update data to submit. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -135,7 +135,7 @@ class UpdateInventoryApi
      * Operation submitInventoryUpdateWithHttpInfo
      *
      * @param  string $warehouseId Identifier for the warehouse for which to update inventory. (required)
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body The request body that contains the inventory update data to submit. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -384,7 +384,7 @@ class UpdateInventoryApi
      * 
      *
      * @param  string $warehouseId Identifier for the warehouse for which to update inventory. (required)
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body The request body that contains the inventory update data to submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -405,7 +405,7 @@ class UpdateInventoryApi
      * 
      *
      * @param  string $warehouseId Identifier for the warehouse for which to update inventory. (required)
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body The request body that contains the inventory update data to submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -453,7 +453,7 @@ class UpdateInventoryApi
      * Create request for operation 'submitInventoryUpdate'
      *
      * @param  string $warehouseId Identifier for the warehouse for which to update inventory. (required)
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1\Model\SubmitInventoryUpdateRequestV1 $body The request body that contains the inventory update data to submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

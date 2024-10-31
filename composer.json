@@ -1,7 +1,7 @@
 {
     "name": "magik092/amazon-selling-partner-api-php",
     "description": "Amazon Selling Partner API PHP Client",
-    "version": "1.39",
+    "version": "1.40",
     "autoload": {
         "psr-4": {
             "Webcom\\Amazon\\Rest\\": "src"

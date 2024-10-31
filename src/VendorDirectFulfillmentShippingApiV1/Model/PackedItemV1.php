@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PackedItemV1 Class Doc Comment
  *
  * @category Class
+ * @description Represents an item that has been packed into a container for shipping.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -271,7 +272,7 @@ class PackedItemV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerProductIdentifier
      *
-     * @param string|null $buyerProductIdentifier Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+     * @param string|null $buyerProductIdentifier Buyer's Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
      *
      * @return self
      */

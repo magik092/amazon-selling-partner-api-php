@@ -67,7 +67,10 @@ class ItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'itemWeight' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\WeightV0',
         'itemDescription' => 'string',
         'transparencyCodeList' => 'string[]',
-        'itemLevelSellerInputsList' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\AdditionalSellerInputsV0[]'
+        'itemLevelSellerInputsList' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\AdditionalSellerInputsV0[]',
+        'liquidVolume' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\LiquidVolumeV0',
+        'isHazmat' => 'bool',
+        'dangerousGoodsDetails' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\DangerousGoodsDetailsV0'
     ];
 
     /**
@@ -83,7 +86,10 @@ class ItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'itemWeight' => null,
         'itemDescription' => null,
         'transparencyCodeList' => null,
-        'itemLevelSellerInputsList' => null
+        'itemLevelSellerInputsList' => null,
+        'liquidVolume' => null,
+        'isHazmat' => null,
+        'dangerousGoodsDetails' => null
     ];
 
     /**
@@ -118,7 +124,10 @@ class ItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'itemWeight' => 'ItemWeight',
         'itemDescription' => 'ItemDescription',
         'transparencyCodeList' => 'TransparencyCodeList',
-        'itemLevelSellerInputsList' => 'ItemLevelSellerInputsList'
+        'itemLevelSellerInputsList' => 'ItemLevelSellerInputsList',
+        'liquidVolume' => 'LiquidVolume',
+        'isHazmat' => 'IsHazmat',
+        'dangerousGoodsDetails' => 'DangerousGoodsDetails'
     ];
 
     /**
@@ -132,7 +141,10 @@ class ItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'itemWeight' => 'setItemWeight',
         'itemDescription' => 'setItemDescription',
         'transparencyCodeList' => 'setTransparencyCodeList',
-        'itemLevelSellerInputsList' => 'setItemLevelSellerInputsList'
+        'itemLevelSellerInputsList' => 'setItemLevelSellerInputsList',
+        'liquidVolume' => 'setLiquidVolume',
+        'isHazmat' => 'setIsHazmat',
+        'dangerousGoodsDetails' => 'setDangerousGoodsDetails'
     ];
 
     /**
@@ -146,7 +158,10 @@ class ItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'itemWeight' => 'getItemWeight',
         'itemDescription' => 'getItemDescription',
         'transparencyCodeList' => 'getTransparencyCodeList',
-        'itemLevelSellerInputsList' => 'getItemLevelSellerInputsList'
+        'itemLevelSellerInputsList' => 'getItemLevelSellerInputsList',
+        'liquidVolume' => 'getLiquidVolume',
+        'isHazmat' => 'getIsHazmat',
+        'dangerousGoodsDetails' => 'getDangerousGoodsDetails'
     ];
 
     /**
@@ -215,6 +230,9 @@ class ItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['itemDescription'] = $data['itemDescription'] ?? null;
         $this->container['transparencyCodeList'] = $data['transparencyCodeList'] ?? null;
         $this->container['itemLevelSellerInputsList'] = $data['itemLevelSellerInputsList'] ?? null;
+        $this->container['liquidVolume'] = $data['liquidVolume'] ?? null;
+        $this->container['isHazmat'] = $data['isHazmat'] ?? null;
+        $this->container['dangerousGoodsDetails'] = $data['dangerousGoodsDetails'] ?? null;
     }
 
     /**
@@ -387,6 +405,78 @@ class ItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setItemLevelSellerInputsList($itemLevelSellerInputsList)
     {
         $this->container['itemLevelSellerInputsList'] = $itemLevelSellerInputsList;
+
+        return $this;
+    }
+
+    /**
+     * Gets liquidVolume
+     *
+     * @return \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\LiquidVolumeV0|null
+     */
+    public function getLiquidVolume()
+    {
+        return $this->container['liquidVolume'];
+    }
+
+    /**
+     * Sets liquidVolume
+     *
+     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\LiquidVolumeV0|null $liquidVolume liquidVolume
+     *
+     * @return self
+     */
+    public function setLiquidVolume($liquidVolume)
+    {
+        $this->container['liquidVolume'] = $liquidVolume;
+
+        return $this;
+    }
+
+    /**
+     * Gets isHazmat
+     *
+     * @return bool|null
+     */
+    public function getIsHazmat()
+    {
+        return $this->container['isHazmat'];
+    }
+
+    /**
+     * Sets isHazmat
+     *
+     * @param bool|null $isHazmat When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
+     *
+     * @return self
+     */
+    public function setIsHazmat($isHazmat)
+    {
+        $this->container['isHazmat'] = $isHazmat;
+
+        return $this;
+    }
+
+    /**
+     * Gets dangerousGoodsDetails
+     *
+     * @return \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\DangerousGoodsDetailsV0|null
+     */
+    public function getDangerousGoodsDetails()
+    {
+        return $this->container['dangerousGoodsDetails'];
+    }
+
+    /**
+     * Sets dangerousGoodsDetails
+     *
+     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\DangerousGoodsDetailsV0|null $dangerousGoodsDetails dangerousGoodsDetails
+     *
+     * @return self
+     */
+    public function setDangerousGoodsDetails($dangerousGoodsDetails)
+    {
+        $this->container['dangerousGoodsDetails'] = $dangerousGoodsDetails;
 
         return $this;
     }

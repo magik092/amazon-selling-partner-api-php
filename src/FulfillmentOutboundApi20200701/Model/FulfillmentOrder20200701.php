@@ -344,7 +344,7 @@ class FulfillmentOrder20200701 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets sellerFulfillmentOrderId
      *
-     * @param string $sellerFulfillmentOrderId The fulfillment order identifier submitted with the createFulfillmentOrder operation.
+     * @param string $sellerFulfillmentOrderId The fulfillment order identifier submitted with the `createFulfillmentOrder` operation.
      *
      * @return self
      */
@@ -392,7 +392,7 @@ class FulfillmentOrder20200701 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets displayableOrderId
      *
-     * @param string $displayableOrderId A fulfillment order identifier submitted with the createFulfillmentOrder operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
+     * @param string $displayableOrderId A fulfillment order identifier submitted with the `createFulfillmentOrder` operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
      *
      * @return self
      */
@@ -416,7 +416,7 @@ class FulfillmentOrder20200701 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets displayableOrderDate
      *
-     * @param \DateTime $displayableOrderDate displayableOrderDate
+     * @param \DateTime $displayableOrderDate Date timestamp
      *
      * @return self
      */
@@ -440,7 +440,7 @@ class FulfillmentOrder20200701 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets displayableOrderComment
      *
-     * @param string $displayableOrderComment A text block submitted with the createFulfillmentOrder operation. Displays in recipient-facing materials such as the packing slip.
+     * @param string $displayableOrderComment A text block submitted with the `createFulfillmentOrder` operation. Displays in recipient-facing materials such as the packing slip.
      *
      * @return self
      */
@@ -608,7 +608,7 @@ class FulfillmentOrder20200701 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets receivedDate
      *
-     * @param \DateTime $receivedDate receivedDate
+     * @param \DateTime $receivedDate Date timestamp
      *
      * @return self
      */
@@ -656,7 +656,7 @@ class FulfillmentOrder20200701 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets statusUpdatedDate
      *
-     * @param \DateTime $statusUpdatedDate statusUpdatedDate
+     * @param \DateTime $statusUpdatedDate Date timestamp
      *
      * @return self
      */

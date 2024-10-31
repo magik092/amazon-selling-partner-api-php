@@ -63,6 +63,7 @@ class ProductType20200901 implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'displayName' => 'string',
         'marketplaceIds' => 'string[]'
     ];
 
@@ -75,6 +76,7 @@ class ProductType20200901 implements ModelInterface, ArrayAccess, \JsonSerializa
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'displayName' => null,
         'marketplaceIds' => null
     ];
 
@@ -106,6 +108,7 @@ class ProductType20200901 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'displayName' => 'displayName',
         'marketplaceIds' => 'marketplaceIds'
     ];
 
@@ -116,6 +119,7 @@ class ProductType20200901 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $setters = [
         'name' => 'setName',
+        'displayName' => 'setDisplayName',
         'marketplaceIds' => 'setMarketplaceIds'
     ];
 
@@ -126,6 +130,7 @@ class ProductType20200901 implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     protected static $getters = [
         'name' => 'getName',
+        'displayName' => 'getDisplayName',
         'marketplaceIds' => 'getMarketplaceIds'
     ];
 
@@ -190,6 +195,7 @@ class ProductType20200901 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['displayName'] = $data['displayName'] ?? null;
         $this->container['marketplaceIds'] = $data['marketplaceIds'] ?? null;
     }
 
@@ -204,6 +210,9 @@ class ProductType20200901 implements ModelInterface, ArrayAccess, \JsonSerializa
 
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['displayName'] === null) {
+            $invalidProperties[] = "'displayName' can't be null";
         }
         if ($this->container['marketplaceIds'] === null) {
             $invalidProperties[] = "'marketplaceIds' can't be null";
@@ -243,6 +252,30 @@ class ProductType20200901 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets displayName
+     *
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->container['displayName'];
+    }
+
+    /**
+     * Sets displayName
+     *
+     * @param string $displayName The human-readable and localized description of the Amazon product type.
+     *
+     * @return self
+     */
+    public function setDisplayName($displayName)
+    {
+        $this->container['displayName'] = $displayName;
 
         return $this;
     }

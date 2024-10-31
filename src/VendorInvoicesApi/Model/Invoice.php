@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Invoice Class Doc Comment
  *
  * @category Class
+ * @description Represents an invoice or credit note document with details about the transaction, parties involved, and line items.
  * @package  Webcom\Amazon\Rest\VendorInvoicesApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -428,7 +429,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date
      *
-     * @param \DateTime $date Defines a date and time according to ISO8601.
+     * @param \DateTime $date Defines a date and time according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>.
      *
      * @return self
      */

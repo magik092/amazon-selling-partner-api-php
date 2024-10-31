@@ -341,7 +341,7 @@ class FulfillmentOrderItem20200701 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets sellerFulfillmentOrderItemId
      *
-     * @param string $sellerFulfillmentOrderItemId A fulfillment order item identifier submitted with a call to the createFulfillmentOrder operation.
+     * @param string $sellerFulfillmentOrderItemId A fulfillment order item identifier submitted with a call to the `createFulfillmentOrder` operation.
      *
      * @return self
      */
@@ -533,7 +533,7 @@ class FulfillmentOrderItem20200701 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets estimatedShipDate
      *
-     * @param \DateTime|null $estimatedShipDate estimatedShipDate
+     * @param \DateTime|null $estimatedShipDate Date timestamp
      *
      * @return self
      */
@@ -557,7 +557,7 @@ class FulfillmentOrderItem20200701 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets estimatedArrivalDate
      *
-     * @param \DateTime|null $estimatedArrivalDate estimatedArrivalDate
+     * @param \DateTime|null $estimatedArrivalDate Date timestamp
      *
      * @return self
      */

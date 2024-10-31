@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PackageTrackingDetails20200701 Class Doc Comment
  *
  * @category Class
+ * @description Tracking details of package
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -424,7 +425,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets carrierURL
      *
-     * @param string|null $carrierURL The URL of the carrier’s website.
+     * @param string|null $carrierURL The URL of the carrier's website.
      *
      * @return self
      */
@@ -448,7 +449,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets shipDate
      *
-     * @param \DateTime|null $shipDate shipDate
+     * @param \DateTime|null $shipDate Date timestamp
      *
      * @return self
      */
@@ -472,7 +473,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets estimatedArrivalDate
      *
-     * @param \DateTime|null $estimatedArrivalDate estimatedArrivalDate
+     * @param \DateTime|null $estimatedArrivalDate Date timestamp
      *
      * @return self
      */
@@ -544,7 +545,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets currentStatusDescription
      *
-     * @param string|null $currentStatusDescription Description corresponding to the CurrentStatus value.
+     * @param string|null $currentStatusDescription Description corresponding to the `CurrentStatus` value.
      *
      * @return self
      */

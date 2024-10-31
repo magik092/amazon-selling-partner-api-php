@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderDetailsTaxTotalV1 Class Doc Comment
  *
  * @category Class
+ * @description The total tax object within the shipment that relates to the order.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

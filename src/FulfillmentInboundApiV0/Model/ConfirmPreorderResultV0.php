@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ConfirmPreorderResultV0 Class Doc Comment
  *
  * @category Class
+ * @description Result for confirm preorder operation
  * @package  Webcom\Amazon\Rest\FulfillmentInboundApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -229,7 +230,7 @@ class ConfirmPreorderResultV0 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets confirmedNeedByDate
      *
-     * @param \DateTime|null $confirmedNeedByDate confirmedNeedByDate
+     * @param \DateTime|null $confirmedNeedByDate Type containing date in string format
      *
      * @return self
      */
@@ -253,7 +254,7 @@ class ConfirmPreorderResultV0 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets confirmedFulfillableDate
      *
-     * @param \DateTime|null $confirmedFulfillableDate confirmedFulfillableDate
+     * @param \DateTime|null $confirmedFulfillableDate Type containing date in string format
      *
      * @return self
      */

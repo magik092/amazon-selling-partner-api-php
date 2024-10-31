@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Transaction20211028 Class Doc Comment
  *
  * @category Class
- * @description The transaction details including the status. If the transaction was successful, also includes the requested test order data.
+ * @description The transaction details that include the status. If the transaction is successful, also includes the requested test order data.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -268,7 +268,7 @@ class Transaction20211028 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets transactionId
      *
-     * @param string $transactionId The unique identifier returned in the response to the generateOrderScenarios request.
+     * @param string $transactionId The unique identifier returned in the response for the `generateOrderScenarios` request.
      *
      * @return self
      */

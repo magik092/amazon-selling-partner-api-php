@@ -12,7 +12,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -576,6 +576,951 @@ class ServiceApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation assignAppointmentResources
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body body (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse
+     */
+    public function assignAppointmentResources($serviceJobId, $appointmentId, $body)
+    {
+        list($response) = $this->assignAppointmentResourcesWithHttpInfo($serviceJobId, $appointmentId, $body);
+        return $response;
+    }
+
+    /**
+     * Operation assignAppointmentResourcesWithHttpInfo
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse|\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function assignAppointmentResourcesWithHttpInfo($serviceJobId, $appointmentId, $body)
+    {
+        $request = $this->assignAppointmentResourcesRequest($serviceJobId, $appointmentId, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation assignAppointmentResourcesAsync
+     *
+     * 
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function assignAppointmentResourcesAsync($serviceJobId, $appointmentId, $body)
+    {
+        return $this->assignAppointmentResourcesAsyncWithHttpInfo($serviceJobId, $appointmentId, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation assignAppointmentResourcesAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function assignAppointmentResourcesAsyncWithHttpInfo($serviceJobId, $appointmentId, $body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesResponse';
+        $request = $this->assignAppointmentResourcesRequest($serviceJobId, $appointmentId, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'assignAppointmentResources'
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function assignAppointmentResourcesRequest($serviceJobId, $appointmentId, $body)
+    {
+        // verify the required parameter 'serviceJobId' is set
+        if ($serviceJobId === null || (is_array($serviceJobId) && count($serviceJobId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $serviceJobId when calling assignAppointmentResources'
+            );
+        }
+        if (strlen($serviceJobId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$serviceJobId" when calling ServiceApi.assignAppointmentResources, must be smaller than or equal to 100.');
+        }
+        if (strlen($serviceJobId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$serviceJobId" when calling ServiceApi.assignAppointmentResources, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'appointmentId' is set
+        if ($appointmentId === null || (is_array($appointmentId) && count($appointmentId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $appointmentId when calling assignAppointmentResources'
+            );
+        }
+        if (strlen($appointmentId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$appointmentId" when calling ServiceApi.assignAppointmentResources, must be smaller than or equal to 100.');
+        }
+        if (strlen($appointmentId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$appointmentId" when calling ServiceApi.assignAppointmentResources, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling assignAppointmentResources'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/resources';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($serviceJobId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'serviceJobId' . '}',
+                ObjectSerializer::toPathValue($serviceJobId),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($appointmentId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'appointmentId' . '}',
+                ObjectSerializer::toPathValue($appointmentId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation cancelReservation
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse
+     */
+    public function cancelReservation($reservationId, $marketplaceIds)
+    {
+        list($response) = $this->cancelReservationWithHttpInfo($reservationId, $marketplaceIds);
+        return $response;
+    }
+
+    /**
+     * Operation cancelReservationWithHttpInfo
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function cancelReservationWithHttpInfo($reservationId, $marketplaceIds)
+    {
+        $request = $this->cancelReservationRequest($reservationId, $marketplaceIds);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 204:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 204:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation cancelReservationAsync
+     *
+     * 
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cancelReservationAsync($reservationId, $marketplaceIds)
+    {
+        return $this->cancelReservationAsyncWithHttpInfo($reservationId, $marketplaceIds)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation cancelReservationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function cancelReservationAsyncWithHttpInfo($reservationId, $marketplaceIds)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\CancelReservationResponse';
+        $request = $this->cancelReservationRequest($reservationId, $marketplaceIds);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'cancelReservation'
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function cancelReservationRequest($reservationId, $marketplaceIds)
+    {
+        // verify the required parameter 'reservationId' is set
+        if ($reservationId === null || (is_array($reservationId) && count($reservationId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $reservationId when calling cancelReservation'
+            );
+        }
+        if (strlen($reservationId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$reservationId" when calling ServiceApi.cancelReservation, must be smaller than or equal to 100.');
+        }
+        if (strlen($reservationId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$reservationId" when calling ServiceApi.cancelReservation, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling cancelReservation'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ServiceApi.cancelReservation, number of items must be less than or equal to 1.');
+        }
+
+
+        $resourcePath = '/service/v1/reservation/{reservationId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+
+
+        // path params
+        if ($reservationId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'reservationId' . '}',
+                ObjectSerializer::toPathValue($reservationId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1511,6 +2456,2861 @@ class ServiceApi
     }
 
     /**
+     * Operation createReservation
+     *
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse
+     */
+    public function createReservation($marketplaceIds, $body)
+    {
+        list($response) = $this->createReservationWithHttpInfo($marketplaceIds, $body);
+        return $response;
+    }
+
+    /**
+     * Operation createReservationWithHttpInfo
+     *
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createReservationWithHttpInfo($marketplaceIds, $body)
+    {
+        $request = $this->createReservationRequest($marketplaceIds, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createReservationAsync
+     *
+     * 
+     *
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createReservationAsync($marketplaceIds, $body)
+    {
+        return $this->createReservationAsyncWithHttpInfo($marketplaceIds, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createReservationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createReservationAsyncWithHttpInfo($marketplaceIds, $body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationResponse';
+        $request = $this->createReservationRequest($marketplaceIds, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createReservation'
+     *
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\CreateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createReservationRequest($marketplaceIds, $body)
+    {
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling createReservation'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ServiceApi.createReservation, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createReservation'
+            );
+        }
+
+        $resourcePath = '/service/v1/reservation';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createServiceDocumentUploadDestination
+     *
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination
+     */
+    public function createServiceDocumentUploadDestination($body)
+    {
+        list($response) = $this->createServiceDocumentUploadDestinationWithHttpInfo($body);
+        return $response;
+    }
+
+    /**
+     * Operation createServiceDocumentUploadDestinationWithHttpInfo
+     *
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination|\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createServiceDocumentUploadDestinationWithHttpInfo($body)
+    {
+        $request = $this->createServiceDocumentUploadDestinationRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createServiceDocumentUploadDestinationAsync
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createServiceDocumentUploadDestinationAsync($body)
+    {
+        return $this->createServiceDocumentUploadDestinationAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createServiceDocumentUploadDestinationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createServiceDocumentUploadDestinationAsyncWithHttpInfo($body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\CreateServiceDocumentUploadDestination';
+        $request = $this->createServiceDocumentUploadDestinationRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createServiceDocumentUploadDestination'
+     *
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\ServiceUploadDocument $body Upload document operation input details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createServiceDocumentUploadDestinationRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createServiceDocumentUploadDestination'
+            );
+        }
+
+        $resourcePath = '/service/v1/documents';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAppointmentSlots
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $storeId Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse
+     */
+    public function getAppointmentSlots($asin, $storeId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        list($response) = $this->getAppointmentSlotsWithHttpInfo($asin, $storeId, $marketplaceIds, $startTime, $endTime);
+        return $response;
+    }
+
+    /**
+     * Operation getAppointmentSlotsWithHttpInfo
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $storeId Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAppointmentSlotsWithHttpInfo($asin, $storeId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        $request = $this->getAppointmentSlotsRequest($asin, $storeId, $marketplaceIds, $startTime, $endTime);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAppointmentSlotsAsync
+     *
+     * 
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $storeId Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmentSlotsAsync($asin, $storeId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        return $this->getAppointmentSlotsAsyncWithHttpInfo($asin, $storeId, $marketplaceIds, $startTime, $endTime)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAppointmentSlotsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $storeId Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmentSlotsAsyncWithHttpInfo($asin, $storeId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse';
+        $request = $this->getAppointmentSlotsRequest($asin, $storeId, $marketplaceIds, $startTime, $endTime);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAppointmentSlots'
+     *
+     * @param  string $asin ASIN associated with the service. (required)
+     * @param  string $storeId Store identifier defining the region scope to retrive appointment slots. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace for which appointment slots are queried (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAppointmentSlotsRequest($asin, $storeId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        // verify the required parameter 'asin' is set
+        if ($asin === null || (is_array($asin) && count($asin) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $asin when calling getAppointmentSlots'
+            );
+        }
+        // verify the required parameter 'storeId' is set
+        if ($storeId === null || (is_array($storeId) && count($storeId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $storeId when calling getAppointmentSlots'
+            );
+        }
+        if (strlen($storeId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$storeId" when calling ServiceApi.getAppointmentSlots, must be smaller than or equal to 100.');
+        }
+        if (strlen($storeId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$storeId" when calling ServiceApi.getAppointmentSlots, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling getAppointmentSlots'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ServiceApi.getAppointmentSlots, number of items must be less than or equal to 1.');
+        }
+
+
+        $resourcePath = '/service/v1/appointmentSlots';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($asin)) {
+            $asin = ObjectSerializer::serializeCollection($asin, '', true);
+        }
+        if ($asin !== null) {
+            $queryParams['asin'] = $asin;
+        }
+        // query params
+        if (is_array($storeId)) {
+            $storeId = ObjectSerializer::serializeCollection($storeId, '', true);
+        }
+        if ($storeId !== null) {
+            $queryParams['storeId'] = $storeId;
+        }
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+        // query params
+        if (is_array($startTime)) {
+            $startTime = ObjectSerializer::serializeCollection($startTime, '', true);
+        }
+        if ($startTime !== null) {
+            $queryParams['startTime'] = $startTime;
+        }
+        // query params
+        if (is_array($endTime)) {
+            $endTime = ObjectSerializer::serializeCollection($endTime, '', true);
+        }
+        if ($endTime !== null) {
+            $queryParams['endTime'] = $endTime;
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAppointmmentSlotsByJobId
+     *
+     * @param  string $serviceJobId A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse
+     */
+    public function getAppointmmentSlotsByJobId($serviceJobId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        list($response) = $this->getAppointmmentSlotsByJobIdWithHttpInfo($serviceJobId, $marketplaceIds, $startTime, $endTime);
+        return $response;
+    }
+
+    /**
+     * Operation getAppointmmentSlotsByJobIdWithHttpInfo
+     *
+     * @param  string $serviceJobId A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAppointmmentSlotsByJobIdWithHttpInfo($serviceJobId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        $request = $this->getAppointmmentSlotsByJobIdRequest($serviceJobId, $marketplaceIds, $startTime, $endTime);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAppointmmentSlotsByJobIdAsync
+     *
+     * 
+     *
+     * @param  string $serviceJobId A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmmentSlotsByJobIdAsync($serviceJobId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        return $this->getAppointmmentSlotsByJobIdAsyncWithHttpInfo($serviceJobId, $marketplaceIds, $startTime, $endTime)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAppointmmentSlotsByJobIdAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $serviceJobId A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAppointmmentSlotsByJobIdAsyncWithHttpInfo($serviceJobId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\GetAppointmentSlotsResponse';
+        $request = $this->getAppointmmentSlotsByJobIdRequest($serviceJobId, $marketplaceIds, $startTime, $endTime);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAppointmmentSlotsByJobId'
+     *
+     * @param  string $serviceJobId A service job identifier to retrive appointment slots for associated service. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  string $startTime A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
+     * @param  string $endTime A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAppointmmentSlotsByJobIdRequest($serviceJobId, $marketplaceIds, $startTime = null, $endTime = null)
+    {
+        // verify the required parameter 'serviceJobId' is set
+        if ($serviceJobId === null || (is_array($serviceJobId) && count($serviceJobId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $serviceJobId when calling getAppointmmentSlotsByJobId'
+            );
+        }
+        if (strlen($serviceJobId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$serviceJobId" when calling ServiceApi.getAppointmmentSlotsByJobId, must be smaller than or equal to 100.');
+        }
+        if (strlen($serviceJobId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$serviceJobId" when calling ServiceApi.getAppointmmentSlotsByJobId, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling getAppointmmentSlotsByJobId'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ServiceApi.getAppointmmentSlotsByJobId, number of items must be less than or equal to 1.');
+        }
+
+
+        $resourcePath = '/service/v1/serviceJobs/{serviceJobId}/appointmentSlots';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+        // query params
+        if (is_array($startTime)) {
+            $startTime = ObjectSerializer::serializeCollection($startTime, '', true);
+        }
+        if ($startTime !== null) {
+            $queryParams['startTime'] = $startTime;
+        }
+        // query params
+        if (is_array($endTime)) {
+            $endTime = ObjectSerializer::serializeCollection($endTime, '', true);
+        }
+        if ($endTime !== null) {
+            $queryParams['endTime'] = $endTime;
+        }
+
+
+        // path params
+        if ($serviceJobId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'serviceJobId' . '}',
+                ObjectSerializer::toPathValue($serviceJobId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getFixedSlotCapacity
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacity|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors
+     */
+    public function getFixedSlotCapacity($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        list($response) = $this->getFixedSlotCapacityWithHttpInfo($resourceId, $marketplaceIds, $body, $nextPageToken);
+        return $response;
+    }
+
+    /**
+     * Operation getFixedSlotCapacityWithHttpInfo
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacity|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getFixedSlotCapacityWithHttpInfo($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        $request = $this->getFixedSlotCapacityRequest($resourceId, $marketplaceIds, $body, $nextPageToken);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacity' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacity', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacity';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacity',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getFixedSlotCapacityAsync
+     *
+     * 
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFixedSlotCapacityAsync($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        return $this->getFixedSlotCapacityAsyncWithHttpInfo($resourceId, $marketplaceIds, $body, $nextPageToken)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getFixedSlotCapacityAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFixedSlotCapacityAsyncWithHttpInfo($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacity';
+        $request = $this->getFixedSlotCapacityRequest($resourceId, $marketplaceIds, $body, $nextPageToken);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getFixedSlotCapacity'
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\FixedSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getFixedSlotCapacityRequest($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        // verify the required parameter 'resourceId' is set
+        if ($resourceId === null || (is_array($resourceId) && count($resourceId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $resourceId when calling getFixedSlotCapacity'
+            );
+        }
+        if (strlen($resourceId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$resourceId" when calling ServiceApi.getFixedSlotCapacity, must be smaller than or equal to 100.');
+        }
+        if (strlen($resourceId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$resourceId" when calling ServiceApi.getFixedSlotCapacity, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling getFixedSlotCapacity'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ServiceApi.getFixedSlotCapacity, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling getFixedSlotCapacity'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceResources/{resourceId}/capacity/fixed';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+        // query params
+        if (is_array($nextPageToken)) {
+            $nextPageToken = ObjectSerializer::serializeCollection($nextPageToken, '', true);
+        }
+        if ($nextPageToken !== null) {
+            $queryParams['nextPageToken'] = $nextPageToken;
+        }
+
+
+        // path params
+        if ($resourceId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'resourceId' . '}',
+                ObjectSerializer::toPathValue($resourceId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getRangeSlotCapacity
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacity|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors
+     */
+    public function getRangeSlotCapacity($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        list($response) = $this->getRangeSlotCapacityWithHttpInfo($resourceId, $marketplaceIds, $body, $nextPageToken);
+        return $response;
+    }
+
+    /**
+     * Operation getRangeSlotCapacityWithHttpInfo
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacity|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors|\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getRangeSlotCapacityWithHttpInfo($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        $request = $this->getRangeSlotCapacityRequest($resourceId, $marketplaceIds, $body, $nextPageToken);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacity' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacity', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacity';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacity',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityErrors',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getRangeSlotCapacityAsync
+     *
+     * 
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRangeSlotCapacityAsync($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        return $this->getRangeSlotCapacityAsyncWithHttpInfo($resourceId, $marketplaceIds, $body, $nextPageToken)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getRangeSlotCapacityAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getRangeSlotCapacityAsyncWithHttpInfo($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacity';
+        $request = $this->getRangeSlotCapacityRequest($resourceId, $marketplaceIds, $body, $nextPageToken);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getRangeSlotCapacity'
+     *
+     * @param  string $resourceId Resource Identifier. (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\RangeSlotCapacityQuery $body Request body. (required)
+     * @param  string $nextPageToken Next page token returned in the response of your previous request. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getRangeSlotCapacityRequest($resourceId, $marketplaceIds, $body, $nextPageToken = null)
+    {
+        // verify the required parameter 'resourceId' is set
+        if ($resourceId === null || (is_array($resourceId) && count($resourceId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $resourceId when calling getRangeSlotCapacity'
+            );
+        }
+        if (strlen($resourceId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$resourceId" when calling ServiceApi.getRangeSlotCapacity, must be smaller than or equal to 100.');
+        }
+        if (strlen($resourceId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$resourceId" when calling ServiceApi.getRangeSlotCapacity, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling getRangeSlotCapacity'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ServiceApi.getRangeSlotCapacity, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling getRangeSlotCapacity'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceResources/{resourceId}/capacity/range';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+        // query params
+        if (is_array($nextPageToken)) {
+            $nextPageToken = ObjectSerializer::serializeCollection($nextPageToken, '', true);
+        }
+        if ($nextPageToken !== null) {
+            $queryParams['nextPageToken'] = $nextPageToken;
+        }
+
+
+        // path params
+        if ($resourceId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'resourceId' . '}',
+                ObjectSerializer::toPathValue($resourceId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getServiceJobByServiceJobId
      *
      * @param  string $serviceJobId A service job identifier. (required)
@@ -1970,20 +5770,23 @@ class ServiceApi
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sortField Sort fields on which you want to sort the output. (optional)
      * @param  string $sortOrder Sort order for the query you want to perform. (optional)
-     * @param  string $createdAfter A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $createdBefore A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $lastUpdatedAfter A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $lastUpdatedBefore A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $scheduleStartDate A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $scheduleEndDate A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $createdAfter A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $createdBefore A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $lastUpdatedAfter A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $lastUpdatedBefore A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $scheduleStartDate A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $scheduleEndDate A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $requiredSkills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $storeIds List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse
      */
-    public function getServiceJobs($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null)
+    public function getServiceJobs($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
-        list($response) = $this->getServiceJobsWithHttpInfo($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate);
+        list($response) = $this->getServiceJobsWithHttpInfo($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
         return $response;
     }
 
@@ -1997,20 +5800,23 @@ class ServiceApi
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sortField Sort fields on which you want to sort the output. (optional)
      * @param  string $sortOrder Sort order for the query you want to perform. (optional)
-     * @param  string $createdAfter A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $createdBefore A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $lastUpdatedAfter A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $lastUpdatedBefore A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $scheduleStartDate A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $scheduleEndDate A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $createdAfter A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $createdBefore A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $lastUpdatedAfter A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $lastUpdatedBefore A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $scheduleStartDate A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $scheduleEndDate A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $requiredSkills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $storeIds List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getServiceJobsWithHttpInfo($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null)
+    public function getServiceJobsWithHttpInfo($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
-        $request = $this->getServiceJobsRequest($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate);
+        $request = $this->getServiceJobsRequest($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2257,19 +6063,22 @@ class ServiceApi
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sortField Sort fields on which you want to sort the output. (optional)
      * @param  string $sortOrder Sort order for the query you want to perform. (optional)
-     * @param  string $createdAfter A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $createdBefore A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $lastUpdatedAfter A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $lastUpdatedBefore A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $scheduleStartDate A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $scheduleEndDate A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $createdAfter A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $createdBefore A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $lastUpdatedAfter A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $lastUpdatedBefore A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $scheduleStartDate A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $scheduleEndDate A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $requiredSkills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $storeIds List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceJobsAsync($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null)
+    public function getServiceJobsAsync($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
-        return $this->getServiceJobsAsyncWithHttpInfo($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate)
+        return $this->getServiceJobsAsyncWithHttpInfo($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2289,20 +6098,23 @@ class ServiceApi
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sortField Sort fields on which you want to sort the output. (optional)
      * @param  string $sortOrder Sort order for the query you want to perform. (optional)
-     * @param  string $createdAfter A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $createdBefore A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $lastUpdatedAfter A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $lastUpdatedBefore A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $scheduleStartDate A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $scheduleEndDate A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $createdAfter A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $createdBefore A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $lastUpdatedAfter A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $lastUpdatedBefore A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $scheduleStartDate A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $scheduleEndDate A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $requiredSkills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $storeIds List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceJobsAsyncWithHttpInfo($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null)
+    public function getServiceJobsAsyncWithHttpInfo($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
         $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse';
-        $request = $this->getServiceJobsRequest($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate);
+        $request = $this->getServiceJobsRequest($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2348,17 +6160,20 @@ class ServiceApi
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param  string $sortField Sort fields on which you want to sort the output. (optional)
      * @param  string $sortOrder Sort order for the query you want to perform. (optional)
-     * @param  string $createdAfter A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $createdBefore A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $lastUpdatedAfter A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param  string $lastUpdatedBefore A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param  string $scheduleStartDate A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param  string $scheduleEndDate A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $createdAfter A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $createdBefore A date used for selecting jobs created at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $lastUpdatedAfter A date used for selecting jobs updated at or after a specified time. Must be in ISO 8601 format. Required if &#x60;createdAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
+     * @param  string $lastUpdatedBefore A date used for selecting jobs updated at or before a specified time. Must be in ISO 8601 format. (optional)
+     * @param  string $scheduleStartDate A date used for filtering jobs schedules at or after a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string $scheduleEndDate A date used for filtering jobs schedules at or before a specified time. Must be in ISO 8601 format. Schedule end date should not be earlier than schedule start date. (optional)
+     * @param  string[] $asins List of Amazon Standard Identification Numbers (ASIN) of the items. Max values supported is 20. (optional)
+     * @param  string[] $requiredSkills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
+     * @param  string[] $storeIds List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getServiceJobsRequest($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null)
+    public function getServiceJobsRequest($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
         // verify the required parameter 'marketplaceIds' is set
         if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
@@ -2382,6 +6197,27 @@ class ServiceApi
         }
         if ($pageSize !== null && $pageSize < 1) {
             throw new \InvalidArgumentException('invalid value for "$pageSize" when calling ServiceApi.getServiceJobs, must be bigger than or equal to 1.');
+        }
+
+        if ($asins !== null && count($asins) > 20) {
+            throw new \InvalidArgumentException('invalid value for "$asins" when calling ServiceApi.getServiceJobs, number of items must be less than or equal to 20.');
+        }
+        if ($asins !== null && count($asins) < 1) {
+            throw new \InvalidArgumentException('invalid value for "$asins" when calling ServiceApi.getServiceJobs, number of items must be greater than or equal to 1.');
+        }
+
+        if ($requiredSkills !== null && count($requiredSkills) > 20) {
+            throw new \InvalidArgumentException('invalid value for "$requiredSkills" when calling ServiceApi.getServiceJobs, number of items must be less than or equal to 20.');
+        }
+        if ($requiredSkills !== null && count($requiredSkills) < 1) {
+            throw new \InvalidArgumentException('invalid value for "$requiredSkills" when calling ServiceApi.getServiceJobs, number of items must be greater than or equal to 1.');
+        }
+
+        if ($storeIds !== null && count($storeIds) > 50) {
+            throw new \InvalidArgumentException('invalid value for "$storeIds" when calling ServiceApi.getServiceJobs, number of items must be less than or equal to 50.');
+        }
+        if ($storeIds !== null && count($storeIds) < 1) {
+            throw new \InvalidArgumentException('invalid value for "$storeIds" when calling ServiceApi.getServiceJobs, number of items must be greater than or equal to 1.');
         }
 
 
@@ -2482,6 +6318,27 @@ class ServiceApi
         }
         if ($marketplaceIds !== null) {
             $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+        // query params
+        if (is_array($asins)) {
+            $asins = ObjectSerializer::serializeCollection($asins, 'form', true);
+        }
+        if ($asins !== null) {
+            $queryParams['asins'] = $asins;
+        }
+        // query params
+        if (is_array($requiredSkills)) {
+            $requiredSkills = ObjectSerializer::serializeCollection($requiredSkills, 'form', true);
+        }
+        if ($requiredSkills !== null) {
+            $queryParams['requiredSkills'] = $requiredSkills;
+        }
+        // query params
+        if (is_array($storeIds)) {
+            $storeIds = ObjectSerializer::serializeCollection($storeIds, 'form', true);
+        }
+        if ($storeIds !== null) {
+            $queryParams['storeIds'] = $storeIds;
         }
 
 
@@ -3031,6 +6888,1437 @@ class ServiceApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation setAppointmentFulfillmentData
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return string|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]
+     */
+    public function setAppointmentFulfillmentData($serviceJobId, $appointmentId, $body)
+    {
+        list($response) = $this->setAppointmentFulfillmentDataWithHttpInfo($serviceJobId, $appointmentId, $body);
+        return $response;
+    }
+
+    /**
+     * Operation setAppointmentFulfillmentDataWithHttpInfo
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of string|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[]|\Webcom\Amazon\Rest\ServicesApi\Model\Error[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function setAppointmentFulfillmentDataWithHttpInfo($serviceJobId, $appointmentId, $body)
+    {
+        $request = $this->setAppointmentFulfillmentDataRequest($serviceJobId, $appointmentId, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 204:
+                    if ('string' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, 'string', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\Error[]' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = 'string';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 204:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\Error[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation setAppointmentFulfillmentDataAsync
+     *
+     * 
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function setAppointmentFulfillmentDataAsync($serviceJobId, $appointmentId, $body)
+    {
+        return $this->setAppointmentFulfillmentDataAsyncWithHttpInfo($serviceJobId, $appointmentId, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation setAppointmentFulfillmentDataAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function setAppointmentFulfillmentDataAsyncWithHttpInfo($serviceJobId, $appointmentId, $body)
+    {
+        $returnType = 'string';
+        $request = $this->setAppointmentFulfillmentDataRequest($serviceJobId, $appointmentId, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'setAppointmentFulfillmentData'
+     *
+     * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
+     * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function setAppointmentFulfillmentDataRequest($serviceJobId, $appointmentId, $body)
+    {
+        // verify the required parameter 'serviceJobId' is set
+        if ($serviceJobId === null || (is_array($serviceJobId) && count($serviceJobId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $serviceJobId when calling setAppointmentFulfillmentData'
+            );
+        }
+        if (strlen($serviceJobId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$serviceJobId" when calling ServiceApi.setAppointmentFulfillmentData, must be smaller than or equal to 100.');
+        }
+        if (strlen($serviceJobId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$serviceJobId" when calling ServiceApi.setAppointmentFulfillmentData, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'appointmentId' is set
+        if ($appointmentId === null || (is_array($appointmentId) && count($appointmentId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $appointmentId when calling setAppointmentFulfillmentData'
+            );
+        }
+        if (strlen($appointmentId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$appointmentId" when calling ServiceApi.setAppointmentFulfillmentData, must be smaller than or equal to 100.');
+        }
+        if (strlen($appointmentId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$appointmentId" when calling ServiceApi.setAppointmentFulfillmentData, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling setAppointmentFulfillmentData'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}/fulfillment';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($serviceJobId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'serviceJobId' . '}',
+                ObjectSerializer::toPathValue($serviceJobId),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($appointmentId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'appointmentId' . '}',
+                ObjectSerializer::toPathValue($appointmentId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateReservation
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse
+     */
+    public function updateReservation($reservationId, $marketplaceIds, $body)
+    {
+        list($response) = $this->updateReservationWithHttpInfo($reservationId, $marketplaceIds, $body);
+        return $response;
+    }
+
+    /**
+     * Operation updateReservationWithHttpInfo
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateReservationWithHttpInfo($reservationId, $marketplaceIds, $body)
+    {
+        $request = $this->updateReservationRequest($reservationId, $marketplaceIds, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateReservationAsync
+     *
+     * 
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateReservationAsync($reservationId, $marketplaceIds, $body)
+    {
+        return $this->updateReservationAsyncWithHttpInfo($reservationId, $marketplaceIds, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateReservationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateReservationAsyncWithHttpInfo($reservationId, $marketplaceIds, $body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationResponse';
+        $request = $this->updateReservationRequest($reservationId, $marketplaceIds, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateReservation'
+     *
+     * @param  string $reservationId Reservation Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateReservationRequest $body Reservation details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateReservationRequest($reservationId, $marketplaceIds, $body)
+    {
+        // verify the required parameter 'reservationId' is set
+        if ($reservationId === null || (is_array($reservationId) && count($reservationId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $reservationId when calling updateReservation'
+            );
+        }
+        if (strlen($reservationId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$reservationId" when calling ServiceApi.updateReservation, must be smaller than or equal to 100.');
+        }
+        if (strlen($reservationId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$reservationId" when calling ServiceApi.updateReservation, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling updateReservation'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ServiceApi.updateReservation, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling updateReservation'
+            );
+        }
+
+        $resourcePath = '/service/v1/reservation/{reservationId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+
+
+        // path params
+        if ($reservationId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'reservationId' . '}',
+                ObjectSerializer::toPathValue($reservationId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateSchedule
+     *
+     * @param  string $resourceId Resource (store) Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse
+     */
+    public function updateSchedule($resourceId, $marketplaceIds, $body)
+    {
+        list($response) = $this->updateScheduleWithHttpInfo($resourceId, $marketplaceIds, $body);
+        return $response;
+    }
+
+    /**
+     * Operation updateScheduleWithHttpInfo
+     *
+     * @param  string $resourceId Resource (store) Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse|\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateScheduleWithHttpInfo($resourceId, $marketplaceIds, $body)
+    {
+        $request = $this->updateScheduleRequest($resourceId, $marketplaceIds, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateScheduleAsync
+     *
+     * 
+     *
+     * @param  string $resourceId Resource (store) Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateScheduleAsync($resourceId, $marketplaceIds, $body)
+    {
+        return $this->updateScheduleAsyncWithHttpInfo($resourceId, $marketplaceIds, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateScheduleAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $resourceId Resource (store) Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateScheduleAsyncWithHttpInfo($resourceId, $marketplaceIds, $body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleResponse';
+        $request = $this->updateScheduleRequest($resourceId, $marketplaceIds, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateSchedule'
+     *
+     * @param  string $resourceId Resource (store) Identifier (required)
+     * @param  string[] $marketplaceIds An identifier for the marketplace in which the resource operates. (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\UpdateScheduleRequest $body Schedule details (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateScheduleRequest($resourceId, $marketplaceIds, $body)
+    {
+        // verify the required parameter 'resourceId' is set
+        if ($resourceId === null || (is_array($resourceId) && count($resourceId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $resourceId when calling updateSchedule'
+            );
+        }
+        if (strlen($resourceId) > 100) {
+            throw new \InvalidArgumentException('invalid length for "$resourceId" when calling ServiceApi.updateSchedule, must be smaller than or equal to 100.');
+        }
+        if (strlen($resourceId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$resourceId" when calling ServiceApi.updateSchedule, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling updateSchedule'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ServiceApi.updateSchedule, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling updateSchedule'
+            );
+        }
+
+        $resourcePath = '/service/v1/serviceResources/{resourceId}/schedules';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+
+
+        // path params
+        if ($resourceId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'resourceId' . '}',
+                ObjectSerializer::toPathValue($resourceId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

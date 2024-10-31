@@ -10,7 +10,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
 use Webcom\Amazon\Rest\AESCryptoStreamFactory;
 use Webcom\Amazon\Rest\AmazonTransportClient;
-use Webcom\Amazon\Rest\FeedsApi20200904\Model\CreateFeedDocumentResult20200904;
+use Webcom\Amazon\Rest\FeedsApi20210630\Model\CreateFeedDocumentResponse20210630;
 use Webcom\Amazon\Rest\FeedsApi20200904\Model\FeedDocument20200904;
 use Webcom\Amazon\Rest\FeedsApi20210630\Model\FeedDocument20210630;
 use Webcom\Amazon\Rest\ReportsApi20200904\Model\ReportDocument20200904;
@@ -39,7 +39,7 @@ class ResourcesApi
 
     /**
      * Upload document to CreateFeedDocumentResult resource URI
-     * @param CreateFeedDocumentResult20200904 $documentResult
+     * @param CreateFeedDocumentResponse20210630 $documentResult
      * @param string $contentType
      * @param string $plainDocument
      * @throws ApiException

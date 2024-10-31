@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderItem20211228 Class Doc Comment
  *
  * @category Class
+ * @description An item within an order
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -70,7 +71,8 @@ class OrderItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'giftDetails' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\GiftDetails20211228',
         'netPrice' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\Money20211228',
         'taxDetails' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\TaxItemDetails20211228',
-        'totalPrice' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\Money20211228'
+        'totalPrice' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\Money20211228',
+        'buyerCustomizedInfo' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\BuyerCustomizedInfoDetail20211228'
     ];
 
     /**
@@ -90,7 +92,8 @@ class OrderItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'giftDetails' => null,
         'netPrice' => null,
         'taxDetails' => null,
-        'totalPrice' => null
+        'totalPrice' => null,
+        'buyerCustomizedInfo' => null
     ];
 
     /**
@@ -129,7 +132,8 @@ class OrderItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'giftDetails' => 'giftDetails',
         'netPrice' => 'netPrice',
         'taxDetails' => 'taxDetails',
-        'totalPrice' => 'totalPrice'
+        'totalPrice' => 'totalPrice',
+        'buyerCustomizedInfo' => 'buyerCustomizedInfo'
     ];
 
     /**
@@ -147,7 +151,8 @@ class OrderItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'giftDetails' => 'setGiftDetails',
         'netPrice' => 'setNetPrice',
         'taxDetails' => 'setTaxDetails',
-        'totalPrice' => 'setTotalPrice'
+        'totalPrice' => 'setTotalPrice',
+        'buyerCustomizedInfo' => 'setBuyerCustomizedInfo'
     ];
 
     /**
@@ -165,7 +170,8 @@ class OrderItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'giftDetails' => 'getGiftDetails',
         'netPrice' => 'getNetPrice',
         'taxDetails' => 'getTaxDetails',
-        'totalPrice' => 'getTotalPrice'
+        'totalPrice' => 'getTotalPrice',
+        'buyerCustomizedInfo' => 'getBuyerCustomizedInfo'
     ];
 
     /**
@@ -238,6 +244,7 @@ class OrderItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['netPrice'] = $data['netPrice'] ?? null;
         $this->container['taxDetails'] = $data['taxDetails'] ?? null;
         $this->container['totalPrice'] = $data['totalPrice'] ?? null;
+        $this->container['buyerCustomizedInfo'] = $data['buyerCustomizedInfo'] ?? null;
     }
 
     /**
@@ -509,6 +516,30 @@ class OrderItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setTotalPrice($totalPrice)
     {
         $this->container['totalPrice'] = $totalPrice;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyerCustomizedInfo
+     *
+     * @return \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\BuyerCustomizedInfoDetail20211228|null
+     */
+    public function getBuyerCustomizedInfo()
+    {
+        return $this->container['buyerCustomizedInfo'];
+    }
+
+    /**
+     * Sets buyerCustomizedInfo
+     *
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\BuyerCustomizedInfoDetail20211228|null $buyerCustomizedInfo buyerCustomizedInfo
+     *
+     * @return self
+     */
+    public function setBuyerCustomizedInfo($buyerCustomizedInfo)
+    {
+        $this->container['buyerCustomizedInfo'] = $buyerCustomizedInfo;
 
         return $this;
     }

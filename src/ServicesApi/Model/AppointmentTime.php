@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -240,7 +240,7 @@ class AppointmentTime implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets startTime
      *
-     * @param \DateTime $startTime The date and time of the start of the appointment window, in ISO 8601 format.
+     * @param \DateTime $startTime The date and time of the start of the appointment window in ISO 8601 format.
      *
      * @return self
      */

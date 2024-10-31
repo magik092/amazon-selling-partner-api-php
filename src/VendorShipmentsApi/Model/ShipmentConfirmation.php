@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ShipmentConfirmation Class Doc Comment
  *
  * @category Class
+ * @description A list of one or more shipment confirmations.
  * @package  Webcom\Amazon\Rest\VendorShipmentsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -65,7 +66,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipmentConfirmationType' => 'string',
         'shipmentType' => 'string',
         'shipmentStructure' => 'string',
-        'transportationDetails' => '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\TransportationDetails',
+        'transportationDetails' => '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\TransportationDetailsForShipmentConfirmation',
         'amazonReferenceNumber' => 'string',
         'shipmentConfirmationDate' => '\DateTime',
         'shippedDate' => '\DateTime',
@@ -540,7 +541,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets transportationDetails
      *
-     * @return \Webcom\Amazon\Rest\VendorShipmentsApi\Model\TransportationDetails|null
+     * @return \Webcom\Amazon\Rest\VendorShipmentsApi\Model\TransportationDetailsForShipmentConfirmation|null
      */
     public function getTransportationDetails()
     {
@@ -550,7 +551,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets transportationDetails
      *
-     * @param \Webcom\Amazon\Rest\VendorShipmentsApi\Model\TransportationDetails|null $transportationDetails transportationDetails
+     * @param \Webcom\Amazon\Rest\VendorShipmentsApi\Model\TransportationDetailsForShipmentConfirmation|null $transportationDetails transportationDetails
      *
      * @return self
      */
@@ -622,7 +623,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets shippedDate
      *
-     * @param \DateTime|null $shippedDate The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.
+     * @param \DateTime|null $shippedDate The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the buyer destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.
      *
      * @return self
      */
@@ -646,7 +647,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets estimatedDeliveryDate
      *
-     * @param \DateTime|null $estimatedDeliveryDate The date and time on which the shipment is expected to reach buyer's warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation.
+     * @param \DateTime|null $estimatedDeliveryDate The date and time on which the shipment is estimated to reach buyer's warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation.
      *
      * @return self
      */

@@ -294,7 +294,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets taxRegistrationNumber
      *
-     * @param string $taxRegistrationNumber The tax registration number for the entity. For example, VAT ID.
+     * @param string $taxRegistrationNumber The tax registration number for the entity. For example, VAT ID, Consumption Tax ID.
      *
      * @return self
      */

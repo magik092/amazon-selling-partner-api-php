@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Listings Items
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  * 
@@ -65,7 +65,8 @@ class ItemOfferByMarketplace20210801 implements ModelInterface, ArrayAccess, \Js
         'marketplaceId' => 'string',
         'offerType' => 'string',
         'price' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Money20210801',
-        'points' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Points20210801'
+        'points' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Points20210801',
+        'audience' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Audience20210801'
     ];
 
     /**
@@ -79,7 +80,8 @@ class ItemOfferByMarketplace20210801 implements ModelInterface, ArrayAccess, \Js
         'marketplaceId' => null,
         'offerType' => null,
         'price' => null,
-        'points' => null
+        'points' => null,
+        'audience' => null
     ];
 
     /**
@@ -112,7 +114,8 @@ class ItemOfferByMarketplace20210801 implements ModelInterface, ArrayAccess, \Js
         'marketplaceId' => 'marketplaceId',
         'offerType' => 'offerType',
         'price' => 'price',
-        'points' => 'points'
+        'points' => 'points',
+        'audience' => 'audience'
     ];
 
     /**
@@ -124,7 +127,8 @@ class ItemOfferByMarketplace20210801 implements ModelInterface, ArrayAccess, \Js
         'marketplaceId' => 'setMarketplaceId',
         'offerType' => 'setOfferType',
         'price' => 'setPrice',
-        'points' => 'setPoints'
+        'points' => 'setPoints',
+        'audience' => 'setAudience'
     ];
 
     /**
@@ -136,7 +140,8 @@ class ItemOfferByMarketplace20210801 implements ModelInterface, ArrayAccess, \Js
         'marketplaceId' => 'getMarketplaceId',
         'offerType' => 'getOfferType',
         'price' => 'getPrice',
-        'points' => 'getPoints'
+        'points' => 'getPoints',
+        'audience' => 'getAudience'
     ];
 
     /**
@@ -218,6 +223,7 @@ class ItemOfferByMarketplace20210801 implements ModelInterface, ArrayAccess, \Js
         $this->container['offerType'] = $data['offerType'] ?? null;
         $this->container['price'] = $data['price'] ?? null;
         $this->container['points'] = $data['points'] ?? null;
+        $this->container['audience'] = $data['audience'] ?? null;
     }
 
     /**
@@ -275,7 +281,7 @@ class ItemOfferByMarketplace20210801 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets marketplaceId
      *
-     * @param string $marketplaceId Amazon marketplace identifier.
+     * @param string $marketplaceId The Amazon marketplace identifier.
      *
      * @return self
      */
@@ -364,6 +370,30 @@ class ItemOfferByMarketplace20210801 implements ModelInterface, ArrayAccess, \Js
     public function setPoints($points)
     {
         $this->container['points'] = $points;
+
+        return $this;
+    }
+
+    /**
+     * Gets audience
+     *
+     * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Audience20210801|null
+     */
+    public function getAudience()
+    {
+        return $this->container['audience'];
+    }
+
+    /**
+     * Sets audience
+     *
+     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Audience20210801|null $audience audience
+     *
+     * @return self
+     */
+    public function setAudience($audience)
+    {
+        $this->container['audience'] = $audience;
 
         return $this;
     }

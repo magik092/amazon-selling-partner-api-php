@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Pagination20211228 Class Doc Comment
  *
  * @category Class
+ * @description The pagination elements required to retrieve the remaining data.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

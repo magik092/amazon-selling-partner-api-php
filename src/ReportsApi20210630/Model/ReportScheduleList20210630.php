@@ -227,7 +227,7 @@ class ReportScheduleList20210630 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets reportSchedules
      *
-     * @param \Webcom\Amazon\Rest\ReportsApi20210630\Model\ReportSchedule20210630[] $reportSchedules reportSchedules
+     * @param \Webcom\Amazon\Rest\ReportsApi20210630\Model\ReportSchedule20210630[] $reportSchedules Detailed information about a report schedule.
      *
      * @return self
      */

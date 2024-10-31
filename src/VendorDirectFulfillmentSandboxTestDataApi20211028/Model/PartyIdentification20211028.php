@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PartyIdentification20211028 Class Doc Comment
  *
  * @category Class
- * @description The identification object for the party information. For example, warehouse code or vendor code. Please refer to specific party for more details.
+ * @description The identification object for the party information. For example, warehouse code or vendor code.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -227,7 +227,7 @@ class PartyIdentification20211028 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets partyId
      *
-     * @param string $partyId Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
+     * @param string $partyId Assigned identification for the party. For example, warehouse code or vendor code.
      *
      * @return self
      */

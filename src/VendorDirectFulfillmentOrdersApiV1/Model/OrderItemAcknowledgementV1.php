@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderItemAcknowledgementV1 Class Doc Comment
  *
  * @category Class
+ * @description Individual item details within the acknowledged order.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Finances
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -66,6 +66,7 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantOrderId' => 'string',
         'orderId' => 'string',
         'transactionType' => 'string',
+        'storeName' => 'string',
         'removalShipmentItemList' => '\Webcom\Amazon\Rest\FinancesApiV0\Model\RemovalShipmentItemV0[]'
     ];
 
@@ -81,6 +82,7 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantOrderId' => null,
         'orderId' => null,
         'transactionType' => null,
+        'storeName' => null,
         'removalShipmentItemList' => null
     ];
 
@@ -115,6 +117,7 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantOrderId' => 'MerchantOrderId',
         'orderId' => 'OrderId',
         'transactionType' => 'TransactionType',
+        'storeName' => 'StoreName',
         'removalShipmentItemList' => 'RemovalShipmentItemList'
     ];
 
@@ -128,6 +131,7 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantOrderId' => 'setMerchantOrderId',
         'orderId' => 'setOrderId',
         'transactionType' => 'setTransactionType',
+        'storeName' => 'setStoreName',
         'removalShipmentItemList' => 'setRemovalShipmentItemList'
     ];
 
@@ -141,6 +145,7 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
         'merchantOrderId' => 'getMerchantOrderId',
         'orderId' => 'getOrderId',
         'transactionType' => 'getTransactionType',
+        'storeName' => 'getStoreName',
         'removalShipmentItemList' => 'getRemovalShipmentItemList'
     ];
 
@@ -208,6 +213,7 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
         $this->container['merchantOrderId'] = $data['merchantOrderId'] ?? null;
         $this->container['orderId'] = $data['orderId'] ?? null;
         $this->container['transactionType'] = $data['transactionType'] ?? null;
+        $this->container['storeName'] = $data['storeName'] ?? null;
         $this->container['removalShipmentItemList'] = $data['removalShipmentItemList'] ?? null;
     }
 
@@ -248,7 +254,7 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets postedDate
      *
-     * @param \DateTime|null $postedDate postedDate
+     * @param \DateTime|null $postedDate A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      *
      * @return self
      */
@@ -272,7 +278,7 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets merchantOrderId
      *
-     * @param string|null $merchantOrderId The merchant removal orderId.
+     * @param string|null $merchantOrderId The merchant removal `orderId`.
      *
      * @return self
      */
@@ -320,13 +326,37 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets transactionType
      *
-     * @param string|null $transactionType The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION
+     * @param string|null $transactionType The type of removal order.  Possible values:  * `WHOLESALE_LIQUIDATION`
      *
      * @return self
      */
     public function setTransactionType($transactionType)
     {
         $this->container['transactionType'] = $transactionType;
+
+        return $this;
+    }
+
+    /**
+     * Gets storeName
+     *
+     * @return string|null
+     */
+    public function getStoreName()
+    {
+        return $this->container['storeName'];
+    }
+
+    /**
+     * Sets storeName
+     *
+     * @param string|null $storeName The name of the store where the event occurred.
+     *
+     * @return self
+     */
+    public function setStoreName($storeName)
+    {
+        $this->container['storeName'] = $storeName;
 
         return $this;
     }
@@ -344,7 +374,7 @@ class RemovalShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets removalShipmentItemList
      *
-     * @param \Webcom\Amazon\Rest\FinancesApiV0\Model\RemovalShipmentItemV0[]|null $removalShipmentItemList A list of information about removal shipment items.
+     * @param \Webcom\Amazon\Rest\FinancesApiV0\Model\RemovalShipmentItemV0[]|null $removalShipmentItemList A list of `RemovalShipmentItem`.
      *
      * @return self
      */

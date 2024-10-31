@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SubmitShipmentConfirmationsResponseV1 Class Doc Comment
  *
  * @category Class
- * @description The response schema for the submitShipmentConfirmations operation.
+ * @description The response schema for the &#x60;submitShipmentConfirmations&#x60; operation.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

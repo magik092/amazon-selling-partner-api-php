@@ -416,7 +416,7 @@ class InboundShipmentItemV0 implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets releaseDate
      *
-     * @param \DateTime|null $releaseDate releaseDate
+     * @param \DateTime|null $releaseDate Type containing date in string format
      *
      * @return self
      */

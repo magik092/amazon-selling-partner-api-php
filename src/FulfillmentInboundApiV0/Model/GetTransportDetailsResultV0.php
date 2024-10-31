@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetTransportDetailsResultV0 Class Doc Comment
  *
  * @category Class
+ * @description Result for the get transport details operation
  * @package  Webcom\Amazon\Rest\FulfillmentInboundApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

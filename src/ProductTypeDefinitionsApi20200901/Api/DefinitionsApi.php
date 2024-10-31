@@ -620,15 +620,18 @@ class DefinitionsApi
      * Operation searchDefinitionsProductTypes
      *
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
+     * @param  string[] $keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
+     * @param  string $itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
+     * @param  string $locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
+     * @param  string $searchLocale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ProductTypeList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901
      */
-    public function searchDefinitionsProductTypes($marketplaceIds, $keywords = null)
+    public function searchDefinitionsProductTypes($marketplaceIds, $keywords = null, $itemName = null, $locale = null, $searchLocale = null)
     {
-        list($response) = $this->searchDefinitionsProductTypesWithHttpInfo($marketplaceIds, $keywords);
+        list($response) = $this->searchDefinitionsProductTypesWithHttpInfo($marketplaceIds, $keywords, $itemName, $locale, $searchLocale);
         return $response;
     }
 
@@ -636,15 +639,18 @@ class DefinitionsApi
      * Operation searchDefinitionsProductTypesWithHttpInfo
      *
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
+     * @param  string[] $keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
+     * @param  string $itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
+     * @param  string $locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
+     * @param  string $searchLocale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ProductTypeList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901|\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ErrorList20200901, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchDefinitionsProductTypesWithHttpInfo($marketplaceIds, $keywords = null)
+    public function searchDefinitionsProductTypesWithHttpInfo($marketplaceIds, $keywords = null, $itemName = null, $locale = null, $searchLocale = null)
     {
-        $request = $this->searchDefinitionsProductTypesRequest($marketplaceIds, $keywords);
+        $request = $this->searchDefinitionsProductTypesRequest($marketplaceIds, $keywords, $itemName, $locale, $searchLocale);
 
         try {
             $options = $this->createHttpClientOption();
@@ -885,14 +891,17 @@ class DefinitionsApi
      * 
      *
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
+     * @param  string[] $keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
+     * @param  string $itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
+     * @param  string $locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
+     * @param  string $searchLocale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchDefinitionsProductTypesAsync($marketplaceIds, $keywords = null)
+    public function searchDefinitionsProductTypesAsync($marketplaceIds, $keywords = null, $itemName = null, $locale = null, $searchLocale = null)
     {
-        return $this->searchDefinitionsProductTypesAsyncWithHttpInfo($marketplaceIds, $keywords)
+        return $this->searchDefinitionsProductTypesAsyncWithHttpInfo($marketplaceIds, $keywords, $itemName, $locale, $searchLocale)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -906,15 +915,18 @@ class DefinitionsApi
      * 
      *
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
+     * @param  string[] $keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
+     * @param  string $itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
+     * @param  string $locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
+     * @param  string $searchLocale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchDefinitionsProductTypesAsyncWithHttpInfo($marketplaceIds, $keywords = null)
+    public function searchDefinitionsProductTypesAsyncWithHttpInfo($marketplaceIds, $keywords = null, $itemName = null, $locale = null, $searchLocale = null)
     {
         $returnType = '\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ProductTypeList20200901';
-        $request = $this->searchDefinitionsProductTypesRequest($marketplaceIds, $keywords);
+        $request = $this->searchDefinitionsProductTypesRequest($marketplaceIds, $keywords, $itemName, $locale, $searchLocale);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -954,12 +966,15 @@ class DefinitionsApi
      * Create request for operation 'searchDefinitionsProductTypes'
      *
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
+     * @param  string[] $keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
+     * @param  string $itemName The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
+     * @param  string $locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
+     * @param  string $searchLocale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function searchDefinitionsProductTypesRequest($marketplaceIds, $keywords = null)
+    public function searchDefinitionsProductTypesRequest($marketplaceIds, $keywords = null, $itemName = null, $locale = null, $searchLocale = null)
     {
         // verify the required parameter 'marketplaceIds' is set
         if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
@@ -988,6 +1003,27 @@ class DefinitionsApi
         }
         if ($marketplaceIds !== null) {
             $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+        // query params
+        if (is_array($itemName)) {
+            $itemName = ObjectSerializer::serializeCollection($itemName, '', true);
+        }
+        if ($itemName !== null) {
+            $queryParams['itemName'] = $itemName;
+        }
+        // query params
+        if (is_array($locale)) {
+            $locale = ObjectSerializer::serializeCollection($locale, '', true);
+        }
+        if ($locale !== null) {
+            $queryParams['locale'] = $locale;
+        }
+        // query params
+        if (is_array($searchLocale)) {
+            $searchLocale = ObjectSerializer::serializeCollection($searchLocale, '', true);
+        }
+        if ($searchLocale !== null) {
+            $queryParams['searchLocale'] = $searchLocale;
         }
 
 

@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ListReturnReasonCodesResult20200701 Class Doc Comment
  *
  * @category Class
+ * @description The request for the listReturnReasonCodes operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

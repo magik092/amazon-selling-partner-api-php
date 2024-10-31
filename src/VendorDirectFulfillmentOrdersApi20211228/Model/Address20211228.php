@@ -302,7 +302,7 @@ class Address20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name The name of the person, business or institution at that address.
+     * @param string $name The name of the person, business or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class Address20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attention
      *
-     * @param string|null $attention The attention name of the person at that address.
+     * @param string|null $attention The attention name of the person at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -350,7 +350,7 @@ class Address20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets addressLine1
      *
-     * @param string $addressLine1 First line of the address.
+     * @param string $addressLine1 First line of the address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -374,7 +374,7 @@ class Address20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets addressLine2
      *
-     * @param string|null $addressLine2 Additional address information, if required.
+     * @param string|null $addressLine2 Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -398,7 +398,7 @@ class Address20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets addressLine3
      *
-     * @param string|null $addressLine3 Additional address information, if required.
+     * @param string|null $addressLine3 Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class Address20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string|null $city The city where the person, business or institution is located.
+     * @param string|null $city The city where the person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -446,7 +446,7 @@ class Address20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets county
      *
-     * @param string|null $county The county where person, business or institution is located.
+     * @param string|null $county The county where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -470,7 +470,7 @@ class Address20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets district
      *
-     * @param string|null $district The district where person, business or institution is located.
+     * @param string|null $district The district where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -566,7 +566,7 @@ class Address20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets phone
      *
-     * @param string|null $phone The phone number of the person, business or institution located at that address.
+     * @param string|null $phone The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */

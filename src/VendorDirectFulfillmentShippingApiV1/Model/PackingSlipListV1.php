@@ -254,7 +254,7 @@ class PackingSlipListV1 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets packingSlips
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\PackingSlipV1[]|null $packingSlips packingSlips
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\PackingSlipV1[]|null $packingSlips An array of packing slip objects.
      *
      * @return self
      */

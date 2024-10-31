@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ShippingLabel20211228 Class Doc Comment
  *
  * @category Class
+ * @description Shipping label information for an order. Includes the purchase order number, selling party, ship from party, label format, and package details.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

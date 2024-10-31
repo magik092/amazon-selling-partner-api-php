@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SubmitInventoryUpdateResponseV1 Class Doc Comment
  *
  * @category Class
- * @description The response schema for the submitInventoryUpdate operation.
+ * @description The response schema for the &#x60;submitInventoryUpdate&#x60; operation.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

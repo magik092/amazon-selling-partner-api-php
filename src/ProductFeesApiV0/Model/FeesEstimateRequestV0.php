@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * FeesEstimateRequestV0 Class Doc Comment
  *
  * @category Class
+ * @description A product, marketplace, and proposed price used to request estimated fees.
  * @package  Webcom\Amazon\Rest\ProductFeesApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

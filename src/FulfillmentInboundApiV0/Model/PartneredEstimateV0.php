@@ -263,7 +263,7 @@ class PartneredEstimateV0 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets confirmDeadline
      *
-     * @param \DateTime|null $confirmDeadline confirmDeadline
+     * @param \DateTime|null $confirmDeadline Timestamp in ISO 8601 format.
      *
      * @return self
      */
@@ -287,7 +287,7 @@ class PartneredEstimateV0 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets voidDeadline
      *
-     * @param \DateTime|null $voidDeadline voidDeadline
+     * @param \DateTime|null $voidDeadline Timestamp in ISO 8601 format.
      *
      * @return self
      */

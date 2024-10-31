@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide)
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * The version of the OpenAPI document: v1
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Subscription Class Doc Comment
  *
  * @category Class
- * @description Represents a subscription to receive notifications.
+ * @description Information about the subscription.
  * @package  Webcom\Amazon\Rest\NotificationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -64,7 +64,8 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'subscriptionId' => 'string',
         'payloadVersion' => 'string',
-        'destinationId' => 'string'
+        'destinationId' => 'string',
+        'processingDirective' => '\Webcom\Amazon\Rest\NotificationsApi\Model\ProcessingDirective'
     ];
 
     /**
@@ -77,7 +78,8 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'subscriptionId' => null,
         'payloadVersion' => null,
-        'destinationId' => null
+        'destinationId' => null,
+        'processingDirective' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'subscriptionId' => 'subscriptionId',
         'payloadVersion' => 'payloadVersion',
-        'destinationId' => 'destinationId'
+        'destinationId' => 'destinationId',
+        'processingDirective' => 'processingDirective'
     ];
 
     /**
@@ -120,7 +123,8 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'subscriptionId' => 'setSubscriptionId',
         'payloadVersion' => 'setPayloadVersion',
-        'destinationId' => 'setDestinationId'
+        'destinationId' => 'setDestinationId',
+        'processingDirective' => 'setProcessingDirective'
     ];
 
     /**
@@ -131,7 +135,8 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'subscriptionId' => 'getSubscriptionId',
         'payloadVersion' => 'getPayloadVersion',
-        'destinationId' => 'getDestinationId'
+        'destinationId' => 'getDestinationId',
+        'processingDirective' => 'getProcessingDirective'
     ];
 
     /**
@@ -197,6 +202,7 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['subscriptionId'] = $data['subscriptionId'] ?? null;
         $this->container['payloadVersion'] = $data['payloadVersion'] ?? null;
         $this->container['destinationId'] = $data['destinationId'] ?? null;
+        $this->container['processingDirective'] = $data['processingDirective'] ?? null;
     }
 
     /**
@@ -300,6 +306,30 @@ class Subscription implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDestinationId($destinationId)
     {
         $this->container['destinationId'] = $destinationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingDirective
+     *
+     * @return \Webcom\Amazon\Rest\NotificationsApi\Model\ProcessingDirective|null
+     */
+    public function getProcessingDirective()
+    {
+        return $this->container['processingDirective'];
+    }
+
+    /**
+     * Sets processingDirective
+     *
+     * @param \Webcom\Amazon\Rest\NotificationsApi\Model\ProcessingDirective|null $processingDirective processingDirective
+     *
+     * @return self
+     */
+    public function setProcessingDirective($processingDirective)
+    {
+        $this->container['processingDirective'] = $processingDirective;
 
         return $this;
     }

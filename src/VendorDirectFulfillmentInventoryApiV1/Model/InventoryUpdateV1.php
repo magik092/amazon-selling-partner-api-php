@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * InventoryUpdateV1 Class Doc Comment
  *
  * @category Class
+ * @description Inventory details required to update some or all items for the requested warehouse.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -268,7 +269,7 @@ class InventoryUpdateV1 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets isFullUpdate
      *
-     * @param bool $isFullUpdate When true, this request contains a full feed. Otherwise, this request contains a partial feed. When sending a full feed, you must send information about all items in the warehouse. Any items not in the full feed are updated as not available. When sending a partial feed, only include the items that need an update to inventory. The status of other items will remain unchanged.
+     * @param bool $isFullUpdate When `true`, this request contains a full feed. When `false`, this request contains a partial feed. When sending a full feed, you must send information about all items in the warehouse. Any items not in the full feed are updated as not available. When sending a partial feed, only include the items that need an inventory update. The status of other items will remain unchanged.
      *
      * @return self
      */

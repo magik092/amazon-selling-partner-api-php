@@ -324,7 +324,7 @@ class ItemQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets unitSize
      *
-     * @param int|null $unitSize The case size, if the unit of measure value is Cases.
+     * @param int|null $unitSize The case size, if the unit of measure value is `Cases`.
      *
      * @return self
      */

@@ -118,7 +118,7 @@ class VendorDFSandboxApi
     /**
      * Operation generateOrderScenarios
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body The request payload that contain parameters to generate test order data scenarios. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +133,7 @@ class VendorDFSandboxApi
     /**
      * Operation generateOrderScenariosWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body The request payload that contain parameters to generate test order data scenarios. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -381,7 +381,7 @@ class VendorDFSandboxApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body The request payload that contain parameters to generate test order data scenarios. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -401,7 +401,7 @@ class VendorDFSandboxApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body The request payload that contain parameters to generate test order data scenarios. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -448,7 +448,7 @@ class VendorDFSandboxApi
     /**
      * Create request for operation 'generateOrderScenarios'
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028\Model\GenerateOrderScenarioRequest20211028 $body The request payload that contain parameters to generate test order data scenarios. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

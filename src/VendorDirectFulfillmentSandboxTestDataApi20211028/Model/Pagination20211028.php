@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Pagination20211028 Class Doc Comment
  *
  * @category Class
- * @description A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return.
+ * @description A generated string used to pass information to your next request. If &#x60;NextToken&#x60; is returned, pass the value of &#x60;NextToken&#x60; to the next request. If &#x60;NextToken&#x60; is not returned, there are no more order items to return.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -224,7 +224,7 @@ class Pagination20211028 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets nextToken
      *
-     * @param string|null $nextToken nextToken
+     * @param string|null $nextToken A generated token that retrieves the next set of results. This token is specified in the next request.
      *
      * @return self
      */

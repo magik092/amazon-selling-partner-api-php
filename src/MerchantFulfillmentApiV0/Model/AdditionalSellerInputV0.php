@@ -368,7 +368,7 @@ class AdditionalSellerInputV0 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets valueAsTimestamp
      *
-     * @param \DateTime|null $valueAsTimestamp valueAsTimestamp
+     * @param \DateTime|null $valueAsTimestamp Date-time formatted timestamp.
      *
      * @return self
      */

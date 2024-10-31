@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CreateFulfillmentOrderRequest20200701 Class Doc Comment
  *
  * @category Class
- * @description The request body schema for the createFulfillmentOrder operation.
+ * @description The request body schema for the &#x60;createFulfillmentOrder&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -70,13 +70,15 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
         'shippingSpeedCategory' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ShippingSpeedCategory20200701',
         'deliveryWindow' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DeliveryWindow20200701',
         'destinationAddress' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\Address20200701',
+        'deliveryPreferences' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DeliveryPreferences20200701',
         'fulfillmentAction' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\FulfillmentAction20200701',
         'fulfillmentPolicy' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\FulfillmentPolicy20200701',
         'codSettings' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CODSettings20200701',
         'shipFromCountryCode' => 'string',
         'notificationEmails' => 'string[]',
         'featureConstraints' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\FeatureSettings20200701[]',
-        'items' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderItem20200701[]'
+        'items' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderItem20200701[]',
+        'paymentInformation' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\PaymentInformation20200701[]'
     ];
 
     /**
@@ -95,13 +97,15 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
         'shippingSpeedCategory' => null,
         'deliveryWindow' => null,
         'destinationAddress' => null,
+        'deliveryPreferences' => null,
         'fulfillmentAction' => null,
         'fulfillmentPolicy' => null,
         'codSettings' => null,
         'shipFromCountryCode' => null,
         'notificationEmails' => null,
         'featureConstraints' => null,
-        'items' => null
+        'items' => null,
+        'paymentInformation' => null
     ];
 
     /**
@@ -139,13 +143,15 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
         'shippingSpeedCategory' => 'shippingSpeedCategory',
         'deliveryWindow' => 'deliveryWindow',
         'destinationAddress' => 'destinationAddress',
+        'deliveryPreferences' => 'deliveryPreferences',
         'fulfillmentAction' => 'fulfillmentAction',
         'fulfillmentPolicy' => 'fulfillmentPolicy',
         'codSettings' => 'codSettings',
         'shipFromCountryCode' => 'shipFromCountryCode',
         'notificationEmails' => 'notificationEmails',
         'featureConstraints' => 'featureConstraints',
-        'items' => 'items'
+        'items' => 'items',
+        'paymentInformation' => 'paymentInformation'
     ];
 
     /**
@@ -162,13 +168,15 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
         'shippingSpeedCategory' => 'setShippingSpeedCategory',
         'deliveryWindow' => 'setDeliveryWindow',
         'destinationAddress' => 'setDestinationAddress',
+        'deliveryPreferences' => 'setDeliveryPreferences',
         'fulfillmentAction' => 'setFulfillmentAction',
         'fulfillmentPolicy' => 'setFulfillmentPolicy',
         'codSettings' => 'setCodSettings',
         'shipFromCountryCode' => 'setShipFromCountryCode',
         'notificationEmails' => 'setNotificationEmails',
         'featureConstraints' => 'setFeatureConstraints',
-        'items' => 'setItems'
+        'items' => 'setItems',
+        'paymentInformation' => 'setPaymentInformation'
     ];
 
     /**
@@ -185,13 +193,15 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
         'shippingSpeedCategory' => 'getShippingSpeedCategory',
         'deliveryWindow' => 'getDeliveryWindow',
         'destinationAddress' => 'getDestinationAddress',
+        'deliveryPreferences' => 'getDeliveryPreferences',
         'fulfillmentAction' => 'getFulfillmentAction',
         'fulfillmentPolicy' => 'getFulfillmentPolicy',
         'codSettings' => 'getCodSettings',
         'shipFromCountryCode' => 'getShipFromCountryCode',
         'notificationEmails' => 'getNotificationEmails',
         'featureConstraints' => 'getFeatureConstraints',
-        'items' => 'getItems'
+        'items' => 'getItems',
+        'paymentInformation' => 'getPaymentInformation'
     ];
 
     /**
@@ -262,6 +272,7 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
         $this->container['shippingSpeedCategory'] = $data['shippingSpeedCategory'] ?? null;
         $this->container['deliveryWindow'] = $data['deliveryWindow'] ?? null;
         $this->container['destinationAddress'] = $data['destinationAddress'] ?? null;
+        $this->container['deliveryPreferences'] = $data['deliveryPreferences'] ?? null;
         $this->container['fulfillmentAction'] = $data['fulfillmentAction'] ?? null;
         $this->container['fulfillmentPolicy'] = $data['fulfillmentPolicy'] ?? null;
         $this->container['codSettings'] = $data['codSettings'] ?? null;
@@ -269,6 +280,7 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
         $this->container['notificationEmails'] = $data['notificationEmails'] ?? null;
         $this->container['featureConstraints'] = $data['featureConstraints'] ?? null;
         $this->container['items'] = $data['items'] ?? null;
+        $this->container['paymentInformation'] = $data['paymentInformation'] ?? null;
     }
 
     /**
@@ -300,8 +312,8 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
         if ($this->container['displayableOrderComment'] === null) {
             $invalidProperties[] = "'displayableOrderComment' can't be null";
         }
-        if ((mb_strlen($this->container['displayableOrderComment']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'displayableOrderComment', the character length must be smaller than or equal to 1000.";
+        if ((mb_strlen($this->container['displayableOrderComment']) > 750)) {
+            $invalidProperties[] = "invalid value for 'displayableOrderComment', the character length must be smaller than or equal to 750.";
         }
 
         if ($this->container['shippingSpeedCategory'] === null) {
@@ -365,7 +377,7 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
     /**
      * Sets sellerFulfillmentOrderId
      *
-     * @param string $sellerFulfillmentOrderId A fulfillment order identifier that the seller creates to track their fulfillment order. The SellerFulfillmentOrderId must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use.
+     * @param string $sellerFulfillmentOrderId A fulfillment order identifier that the seller creates to track their fulfillment order. The `SellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use.
      *
      * @return self
      */
@@ -393,7 +405,7 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
     /**
      * Sets displayableOrderId
      *
-     * @param string $displayableOrderId A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.  The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
+     * @param string $displayableOrderId A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.  The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
      *
      * @return self
      */
@@ -421,7 +433,7 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
     /**
      * Sets displayableOrderDate
      *
-     * @param \DateTime $displayableOrderDate displayableOrderDate
+     * @param \DateTime $displayableOrderDate Date timestamp
      *
      * @return self
      */
@@ -451,8 +463,8 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
      */
     public function setDisplayableOrderComment($displayableOrderComment)
     {
-        if ((mb_strlen($displayableOrderComment) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $displayableOrderComment when calling CreateFulfillmentOrderRequest20200701., must be smaller than or equal to 1000.');
+        if ((mb_strlen($displayableOrderComment) > 750)) {
+            throw new \InvalidArgumentException('invalid length for $displayableOrderComment when calling CreateFulfillmentOrderRequest20200701., must be smaller than or equal to 750.');
         }
 
         $this->container['displayableOrderComment'] = $displayableOrderComment;
@@ -528,6 +540,30 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
     public function setDestinationAddress($destinationAddress)
     {
         $this->container['destinationAddress'] = $destinationAddress;
+
+        return $this;
+    }
+
+    /**
+     * Gets deliveryPreferences
+     *
+     * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DeliveryPreferences20200701|null
+     */
+    public function getDeliveryPreferences()
+    {
+        return $this->container['deliveryPreferences'];
+    }
+
+    /**
+     * Sets deliveryPreferences
+     *
+     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DeliveryPreferences20200701|null $deliveryPreferences deliveryPreferences
+     *
+     * @return self
+     */
+    public function setDeliveryPreferences($deliveryPreferences)
+    {
+        $this->container['deliveryPreferences'] = $deliveryPreferences;
 
         return $this;
     }
@@ -696,6 +732,30 @@ class CreateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
     public function setItems($items)
     {
         $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInformation
+     *
+     * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\PaymentInformation20200701[]|null
+     */
+    public function getPaymentInformation()
+    {
+        return $this->container['paymentInformation'];
+    }
+
+    /**
+     * Sets paymentInformation
+     *
+     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\PaymentInformation20200701[]|null $paymentInformation An array of various payment attributes related to this fulfillment order.
+     *
+     * @return self
+     */
+    public function setPaymentInformation($paymentInformation)
+    {
+        $this->container['paymentInformation'] = $paymentInformation;
 
         return $this;
     }

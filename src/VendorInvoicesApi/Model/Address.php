@@ -393,7 +393,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string|null $city The city where the person, business or institution is located.
+     * @param string|null $city The city where the person, business, or institution is located.
      *
      * @return self
      */
@@ -417,7 +417,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets county
      *
-     * @param string|null $county The county where person, business or institution is located.
+     * @param string|null $county The county where person, business, or institution is located.
      *
      * @return self
      */
@@ -441,7 +441,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets district
      *
-     * @param string|null $district The district where person, business or institution is located.
+     * @param string|null $district The district where person, business, or institution is located.
      *
      * @return self
      */
@@ -465,7 +465,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stateOrRegion
      *
-     * @param string|null $stateOrRegion The state or region where person, business or institution is located.
+     * @param string|null $stateOrRegion The state or region where person, business, or institution is located.
      *
      * @return self
      */
@@ -489,7 +489,7 @@ class Address implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets postalOrZipCode
      *
-     * @param string|null $postalOrZipCode The postal or zip code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
+     * @param string|null $postalOrZipCode The postal or zip code of that address. It contains a series of letters, digits, or both, sometimes including spaces or punctuation.
      *
      * @return self
      */

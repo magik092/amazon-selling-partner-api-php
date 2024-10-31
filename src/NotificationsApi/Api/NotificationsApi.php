@@ -12,7 +12,7 @@
 /**
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide)
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * The version of the OpenAPI document: v1
  * 
@@ -559,7 +559,7 @@ class NotificationsApi
     /**
      * Operation createSubscription
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body body (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
@@ -575,7 +575,7 @@ class NotificationsApi
     /**
      * Operation createSubscriptionWithHttpInfo
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
@@ -844,7 +844,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body (required)
      *
      * @throws \InvalidArgumentException
@@ -865,7 +865,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body (required)
      *
      * @throws \InvalidArgumentException
@@ -913,7 +913,7 @@ class NotificationsApi
     /**
      * Create request for operation 'createSubscription'
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body (required)
      *
      * @throws \InvalidArgumentException
@@ -1463,7 +1463,7 @@ class NotificationsApi
      * Operation deleteSubscriptionById
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1479,7 +1479,7 @@ class NotificationsApi
      * Operation deleteSubscriptionByIdWithHttpInfo
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1748,7 +1748,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1769,7 +1769,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1817,7 +1817,7 @@ class NotificationsApi
      * Create request for operation 'deleteSubscriptionById'
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2791,30 +2791,32 @@ class NotificationsApi
     /**
      * Operation getSubscription
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse
      */
-    public function getSubscription($notificationType)
+    public function getSubscription($notificationType, $payloadVersion = null)
     {
-        list($response) = $this->getSubscriptionWithHttpInfo($notificationType);
+        list($response) = $this->getSubscriptionWithHttpInfo($notificationType, $payloadVersion);
         return $response;
     }
 
     /**
      * Operation getSubscriptionWithHttpInfo
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getSubscriptionWithHttpInfo($notificationType)
+    public function getSubscriptionWithHttpInfo($notificationType, $payloadVersion = null)
     {
-        $request = $this->getSubscriptionRequest($notificationType);
+        $request = $this->getSubscriptionRequest($notificationType, $payloadVersion);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3054,14 +3056,15 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionAsync($notificationType)
+    public function getSubscriptionAsync($notificationType, $payloadVersion = null)
     {
-        return $this->getSubscriptionAsyncWithHttpInfo($notificationType)
+        return $this->getSubscriptionAsyncWithHttpInfo($notificationType, $payloadVersion)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3074,15 +3077,16 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getSubscriptionAsyncWithHttpInfo($notificationType)
+    public function getSubscriptionAsyncWithHttpInfo($notificationType, $payloadVersion = null)
     {
         $returnType = '\Webcom\Amazon\Rest\NotificationsApi\Model\GetSubscriptionResponse';
-        $request = $this->getSubscriptionRequest($notificationType);
+        $request = $this->getSubscriptionRequest($notificationType, $payloadVersion);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3121,12 +3125,13 @@ class NotificationsApi
     /**
      * Create request for operation 'getSubscription'
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getSubscriptionRequest($notificationType)
+    public function getSubscriptionRequest($notificationType, $payloadVersion = null)
     {
         // verify the required parameter 'notificationType' is set
         if ($notificationType === null || (is_array($notificationType) && count($notificationType) === 0)) {
@@ -3142,6 +3147,13 @@ class NotificationsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if (is_array($payloadVersion)) {
+            $payloadVersion = ObjectSerializer::serializeCollection($payloadVersion, '', true);
+        }
+        if ($payloadVersion !== null) {
+            $queryParams['payloadVersion'] = $payloadVersion;
+        }
 
 
         // path params
@@ -3215,7 +3227,7 @@ class NotificationsApi
      * Operation getSubscriptionById
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3231,7 +3243,7 @@ class NotificationsApi
      * Operation getSubscriptionByIdWithHttpInfo
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3500,7 +3512,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3521,7 +3533,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3569,7 +3581,7 @@ class NotificationsApi
      * Create request for operation 'getSubscriptionById'
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

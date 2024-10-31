@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Expiry Class Doc Comment
  *
  * @category Class
+ * @description Expiry refers to the collection of dates required  for certain items. These could be either expiryDate or mfgDate and expiryAfterDuration. These are mandatory for perishable items.
  * @package  Webcom\Amazon\Rest\VendorShipmentsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

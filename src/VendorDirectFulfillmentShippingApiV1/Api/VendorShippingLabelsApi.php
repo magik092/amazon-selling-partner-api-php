@@ -118,7 +118,7 @@ class VendorShippingLabelsApi
     /**
      * Operation getShippingLabel
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +133,7 @@ class VendorShippingLabelsApi
     /**
      * Operation getShippingLabelWithHttpInfo
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -381,7 +381,7 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -401,7 +401,7 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -448,7 +448,7 @@ class VendorShippingLabelsApi
     /**
      * Create request for operation 'getShippingLabel'
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -545,9 +545,9 @@ class VendorShippingLabelsApi
     /**
      * Operation getShippingLabels
      *
-     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -565,9 +565,9 @@ class VendorShippingLabelsApi
     /**
      * Operation getShippingLabelsWithHttpInfo
      *
-     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -798,9 +798,9 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -823,9 +823,9 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -875,9 +875,9 @@ class VendorShippingLabelsApi
     /**
      * Create request for operation 'getShippingLabels'
      *
-     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Shipping labels that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Shipping labels that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned. (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -1020,7 +1020,7 @@ class VendorShippingLabelsApi
     /**
      * Operation submitShippingLabelRequest
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body Request body containing one or more shipping labels data. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1035,7 +1035,7 @@ class VendorShippingLabelsApi
     /**
      * Operation submitShippingLabelRequestWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body Request body containing one or more shipping labels data. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1283,7 +1283,7 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body Request body containing one or more shipping labels data. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1303,7 +1303,7 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body Request body containing one or more shipping labels data. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1350,7 +1350,7 @@ class VendorShippingLabelsApi
     /**
      * Create request for operation 'submitShippingLabelRequest'
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\SubmitShippingLabelsRequestV1 $body Request body containing one or more shipping labels data. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

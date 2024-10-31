@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderList20211228 Class Doc Comment
  *
  * @category Class
+ * @description A list of purchase orders.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -253,7 +254,7 @@ class OrderList20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets orders
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\Order20211228[]|null $orders orders
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\Order20211228[]|null $orders Represents a purchase order within the OrderList.
      *
      * @return self
      */

@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Finances
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TaxWithholdingPeriodV0 Class Doc Comment
  *
  * @category Class
- * @description Period which taxwithholding on seller&#39;s account is calculated.
+ * @description The period during which tax withholding on a seller&#39;s account is calculated.
  * @package  Webcom\Amazon\Rest\FinancesApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -230,7 +230,7 @@ class TaxWithholdingPeriodV0 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets startDate
      *
-     * @param \DateTime|null $startDate startDate
+     * @param \DateTime|null $startDate A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      *
      * @return self
      */
@@ -254,7 +254,7 @@ class TaxWithholdingPeriodV0 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets endDate
      *
-     * @param \DateTime|null $endDate endDate
+     * @param \DateTime|null $endDate A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      *
      * @return self
      */

@@ -249,14 +249,8 @@ class LowestPriceTypeV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         if ($this->container['fulfillmentChannel'] === null) {
             $invalidProperties[] = "'fulfillmentChannel' can't be null";
         }
-        if ($this->container['landedPrice'] === null) {
-            $invalidProperties[] = "'landedPrice' can't be null";
-        }
         if ($this->container['listingPrice'] === null) {
             $invalidProperties[] = "'listingPrice' can't be null";
-        }
-        if ($this->container['shipping'] === null) {
-            $invalidProperties[] = "'shipping' can't be null";
         }
         return $invalidProperties;
     }
@@ -396,7 +390,7 @@ class LowestPriceTypeV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets landedPrice
      *
-     * @return \Webcom\Amazon\Rest\ProductPricingApiV0\Model\MoneyTypeV0
+     * @return \Webcom\Amazon\Rest\ProductPricingApiV0\Model\MoneyTypeV0|null
      */
     public function getLandedPrice()
     {
@@ -406,7 +400,7 @@ class LowestPriceTypeV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets landedPrice
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\MoneyTypeV0 $landedPrice landedPrice
+     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\MoneyTypeV0|null $landedPrice landedPrice
      *
      * @return self
      */
@@ -444,7 +438,7 @@ class LowestPriceTypeV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets shipping
      *
-     * @return \Webcom\Amazon\Rest\ProductPricingApiV0\Model\MoneyTypeV0
+     * @return \Webcom\Amazon\Rest\ProductPricingApiV0\Model\MoneyTypeV0|null
      */
     public function getShipping()
     {
@@ -454,7 +448,7 @@ class LowestPriceTypeV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets shipping
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\MoneyTypeV0 $shipping shipping
+     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\MoneyTypeV0|null $shipping shipping
      *
      * @return self
      */

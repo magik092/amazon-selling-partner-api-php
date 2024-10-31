@@ -299,7 +299,7 @@ class LabelDataV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipMethod
      *
-     * @param string|null $shipMethod Ship method to be used for shipping the order. Amazon defines Ship Method Codes indicating shipping carrier and shipment service level. Ship Method Codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the Ship Method Codes are vendor specific and will be provided to each vendor during the implementation.
+     * @param string|null $shipMethod Ship method to be used for shipping the order. Amazon defines ship method codes indicating shipping carrier and shipment service level. Ship method codes are case and format sensitive. The same ship method code should returned on the shipment confirmation. Note that the ship method codes are vendor specific and will be provided to each vendor during the implementation.
      *
      * @return self
      */

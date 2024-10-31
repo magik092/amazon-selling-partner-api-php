@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SubmitShipmentConfirmationsRequestV1 Class Doc Comment
  *
  * @category Class
+ * @description The request schema for the &#x60;submitShipmentConfirmations&#x60; operation.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class SubmitShipmentConfirmationsRequestV1 implements ModelInterface, ArrayAcces
     /**
      * Sets shipmentConfirmations
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\ShipmentConfirmationV1[]|null $shipmentConfirmations shipmentConfirmations
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\ShipmentConfirmationV1[]|null $shipmentConfirmations Array of `ShipmentConfirmation` objects, each representing confirmation details for a specific shipment.
      *
      * @return self
      */

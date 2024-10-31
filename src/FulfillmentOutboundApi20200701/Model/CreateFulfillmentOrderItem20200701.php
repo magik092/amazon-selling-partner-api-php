@@ -325,7 +325,7 @@ class CreateFulfillmentOrderItem20200701 implements ModelInterface, ArrayAccess,
     /**
      * Sets sellerFulfillmentOrderItemId
      *
-     * @param string $sellerFulfillmentOrderItemId A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same SellerSKU. For example, the seller might assign different SellerFulfillmentOrderItemId values to two items in a fulfillment order that share the same SellerSKU but have different GiftMessage values.
+     * @param string $sellerFulfillmentOrderItemId A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `SellerSKU`. For example, the seller might assign different `SellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `SellerSKU` but have different `GiftMessage` values.
      *
      * @return self
      */

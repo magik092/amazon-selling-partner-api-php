@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * UpdateFulfillmentOrderRequest20200701 Class Doc Comment
  *
  * @category Class
+ * @description The request body schema for the &#x60;updateFulfillmentOrder&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -265,8 +266,8 @@ class UpdateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
             $invalidProperties[] = "invalid value for 'displayableOrderId', the character length must be smaller than or equal to 40.";
         }
 
-        if (!is_null($this->container['displayableOrderComment']) && (mb_strlen($this->container['displayableOrderComment']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'displayableOrderComment', the character length must be smaller than or equal to 1000.";
+        if (!is_null($this->container['displayableOrderComment']) && (mb_strlen($this->container['displayableOrderComment']) > 750)) {
+            $invalidProperties[] = "invalid value for 'displayableOrderComment', the character length must be smaller than or equal to 750.";
         }
 
         return $invalidProperties;
@@ -321,7 +322,7 @@ class UpdateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
     /**
      * Sets displayableOrderId
      *
-     * @param string|null $displayableOrderId A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
+     * @param string|null $displayableOrderId A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
      *
      * @return self
      */
@@ -349,7 +350,7 @@ class UpdateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
     /**
      * Sets displayableOrderDate
      *
-     * @param \DateTime|null $displayableOrderDate displayableOrderDate
+     * @param \DateTime|null $displayableOrderDate Date timestamp
      *
      * @return self
      */
@@ -379,8 +380,8 @@ class UpdateFulfillmentOrderRequest20200701 implements ModelInterface, ArrayAcce
      */
     public function setDisplayableOrderComment($displayableOrderComment)
     {
-        if (!is_null($displayableOrderComment) && (mb_strlen($displayableOrderComment) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $displayableOrderComment when calling UpdateFulfillmentOrderRequest20200701., must be smaller than or equal to 1000.');
+        if (!is_null($displayableOrderComment) && (mb_strlen($displayableOrderComment) > 750)) {
+            throw new \InvalidArgumentException('invalid length for $displayableOrderComment when calling UpdateFulfillmentOrderRequest20200701., must be smaller than or equal to 750.');
         }
 
         $this->container['displayableOrderComment'] = $displayableOrderComment;

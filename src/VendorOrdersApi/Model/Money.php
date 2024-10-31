@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Money Class Doc Comment
  *
  * @category Class
- * @description An amount of money, including units in the form of currency.
+ * @description An amount of money. Includes the currency code and an optional unit of measure for items priced by weight.
  * @package  Webcom\Amazon\Rest\VendorOrdersApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,7 +63,8 @@ class Money implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'currencyCode' => 'string',
-        'amount' => 'string'
+        'amount' => 'string',
+        'unitOfMeasure' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class Money implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'currencyCode' => null,
-        'amount' => null
+        'amount' => null,
+        'unitOfMeasure' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class Money implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'currencyCode' => 'currencyCode',
-        'amount' => 'amount'
+        'amount' => 'amount',
+        'unitOfMeasure' => 'unitOfMeasure'
     ];
 
     /**
@@ -116,7 +119,8 @@ class Money implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'currencyCode' => 'setCurrencyCode',
-        'amount' => 'setAmount'
+        'amount' => 'setAmount',
+        'unitOfMeasure' => 'setUnitOfMeasure'
     ];
 
     /**
@@ -126,7 +130,8 @@ class Money implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'currencyCode' => 'getCurrencyCode',
-        'amount' => 'getAmount'
+        'amount' => 'getAmount',
+        'unitOfMeasure' => 'getUnitOfMeasure'
     ];
 
     /**
@@ -170,8 +175,27 @@ class Money implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    const UNIT_OF_MEASURE_POUNDS = 'POUNDS';
+    const UNIT_OF_MEASURE_OUNCES = 'OUNCES';
+    const UNIT_OF_MEASURE_GRAMS = 'GRAMS';
+    const UNIT_OF_MEASURE_KILOGRAMS = 'KILOGRAMS';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getUnitOfMeasureAllowableValues()
+    {
+        return [
+            self::UNIT_OF_MEASURE_POUNDS,
+            self::UNIT_OF_MEASURE_OUNCES,
+            self::UNIT_OF_MEASURE_GRAMS,
+            self::UNIT_OF_MEASURE_KILOGRAMS,
+        ];
+    }
     
 
     /**
@@ -191,6 +215,7 @@ class Money implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['currencyCode'] = $data['currencyCode'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['unitOfMeasure'] = $data['unitOfMeasure'] ?? null;
     }
 
     /**
@@ -204,6 +229,15 @@ class Money implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if (!is_null($this->container['currencyCode']) && (mb_strlen($this->container['currencyCode']) > 3)) {
             $invalidProperties[] = "invalid value for 'currencyCode', the character length must be smaller than or equal to 3.";
+        }
+
+        $allowedValues = $this->getUnitOfMeasureAllowableValues();
+        if (!is_null($this->container['unitOfMeasure']) && !in_array($this->container['unitOfMeasure'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'unitOfMeasure', must be one of '%s'",
+                $this->container['unitOfMeasure'],
+                implode("', '", $allowedValues)
+            );
         }
 
         return $invalidProperties;
@@ -269,6 +303,40 @@ class Money implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAmount($amount)
     {
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets unitOfMeasure
+     *
+     * @return string|null
+     */
+    public function getUnitOfMeasure()
+    {
+        return $this->container['unitOfMeasure'];
+    }
+
+    /**
+     * Sets unitOfMeasure
+     *
+     * @param string|null $unitOfMeasure The unit of measure for prices of items sold by weight. If this field is absent, the item is sold by eaches.
+     *
+     * @return self
+     */
+    public function setUnitOfMeasure($unitOfMeasure)
+    {
+        $allowedValues = $this->getUnitOfMeasureAllowableValues();
+        if (!is_null($unitOfMeasure) && !in_array($unitOfMeasure, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'unitOfMeasure', must be one of '%s'",
+                    $unitOfMeasure,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['unitOfMeasure'] = $unitOfMeasure;
 
         return $this;
     }

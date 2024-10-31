@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CreateReportResponse20210630 Class Doc Comment
  *
  * @category Class
- * @description Response schema.
+ * @description The response schema.
  * @package  Webcom\Amazon\Rest\ReportsApi20210630
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

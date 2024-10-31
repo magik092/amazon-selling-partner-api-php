@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ShipmentConfirmationV1 Class Doc Comment
  *
  * @category Class
+ * @description Represents the confirmation details of a shipment, including the purchase order number and other shipment details.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

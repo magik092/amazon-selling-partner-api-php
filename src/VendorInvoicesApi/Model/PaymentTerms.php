@@ -332,7 +332,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets discountDueDays
      *
-     * @param float|null $discountDueDays The number of calendar days from the Base date (Invoice date) until the discount is no longer valid.
+     * @param float|null $discountDueDays The number of calendar days from the base date (Invoice date) until the discount is no longer valid.
      *
      * @return self
      */

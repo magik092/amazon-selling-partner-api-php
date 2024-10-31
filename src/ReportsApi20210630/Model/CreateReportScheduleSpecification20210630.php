@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CreateReportScheduleSpecification20210630 Class Doc Comment
  *
  * @category Class
+ * @description Information required to create the report schedule.
  * @package  Webcom\Amazon\Rest\ReportsApi20210630
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -312,7 +313,7 @@ class CreateReportScheduleSpecification20210630 implements ModelInterface, Array
     /**
      * Sets reportType
      *
-     * @param string $reportType The report type.
+     * @param string $reportType The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      *
      * @return self
      */
@@ -384,7 +385,7 @@ class CreateReportScheduleSpecification20210630 implements ModelInterface, Array
     /**
      * Sets period
      *
-     * @param string $period One of a set of predefined ISO 8601 periods that specifies how often a report should be created.
+     * @param string $period One of a set of predefined <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> periods that specifies how often a report should be created.
      *
      * @return self
      */
@@ -418,7 +419,7 @@ class CreateReportScheduleSpecification20210630 implements ModelInterface, Array
     /**
      * Sets nextReportCreationTime
      *
-     * @param \DateTime|null $nextReportCreationTime The date and time when the schedule will create its next report, in ISO 8601 date time format.
+     * @param \DateTime|null $nextReportCreationTime The date and time when the schedule will create its next report, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      *
      * @return self
      */

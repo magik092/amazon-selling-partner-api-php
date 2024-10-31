@@ -278,7 +278,7 @@ class CreateReportSpecification20210630 implements ModelInterface, ArrayAccess, 
     /**
      * Sets reportType
      *
-     * @param string $reportType The report type.
+     * @param string $reportType The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      *
      * @return self
      */
@@ -302,7 +302,7 @@ class CreateReportSpecification20210630 implements ModelInterface, ArrayAccess, 
     /**
      * Sets dataStartTime
      *
-     * @param \DateTime|null $dataStartTime The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     * @param \DateTime|null $dataStartTime The start of a date and time range, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class CreateReportSpecification20210630 implements ModelInterface, ArrayAccess, 
     /**
      * Sets dataEndTime
      *
-     * @param \DateTime|null $dataEndTime The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     * @param \DateTime|null $dataEndTime The end of a date and time range, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      *
      * @return self
      */

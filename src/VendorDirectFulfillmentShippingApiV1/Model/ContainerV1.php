@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ContainerV1 Class Doc Comment
  *
  * @category Class
+ * @description A container used for shipping and packing items.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -290,6 +291,9 @@ class ContainerV1 implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['containerIdentifier'] === null) {
             $invalidProperties[] = "'containerIdentifier' can't be null";
+        }
+        if ($this->container['weight'] === null) {
+            $invalidProperties[] = "'weight' can't be null";
         }
         if ($this->container['packedItems'] === null) {
             $invalidProperties[] = "'packedItems' can't be null";
@@ -562,7 +566,7 @@ class ContainerV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets weight
      *
-     * @return \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\WeightV1|null
+     * @return \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\WeightV1
      */
     public function getWeight()
     {
@@ -572,7 +576,7 @@ class ContainerV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets weight
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\WeightV1|null $weight weight
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\WeightV1 $weight weight
      *
      * @return self
      */

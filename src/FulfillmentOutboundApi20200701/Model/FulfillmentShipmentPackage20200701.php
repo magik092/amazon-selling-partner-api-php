@@ -65,7 +65,9 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'int',
         'carrierCode' => 'string',
         'trackingNumber' => 'string',
-        'estimatedArrivalDate' => '\DateTime'
+        'estimatedArrivalDate' => '\DateTime',
+        'lockerDetails' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\LockerDetails20200701',
+        'deliveryInformation' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DeliveryInformation20200701'
     ];
 
     /**
@@ -79,7 +81,9 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'int32',
         'carrierCode' => null,
         'trackingNumber' => null,
-        'estimatedArrivalDate' => 'date-time'
+        'estimatedArrivalDate' => 'date-time',
+        'lockerDetails' => null,
+        'deliveryInformation' => null
     ];
 
     /**
@@ -112,7 +116,9 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'packageNumber',
         'carrierCode' => 'carrierCode',
         'trackingNumber' => 'trackingNumber',
-        'estimatedArrivalDate' => 'estimatedArrivalDate'
+        'estimatedArrivalDate' => 'estimatedArrivalDate',
+        'lockerDetails' => 'lockerDetails',
+        'deliveryInformation' => 'deliveryInformation'
     ];
 
     /**
@@ -124,7 +130,9 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'setPackageNumber',
         'carrierCode' => 'setCarrierCode',
         'trackingNumber' => 'setTrackingNumber',
-        'estimatedArrivalDate' => 'setEstimatedArrivalDate'
+        'estimatedArrivalDate' => 'setEstimatedArrivalDate',
+        'lockerDetails' => 'setLockerDetails',
+        'deliveryInformation' => 'setDeliveryInformation'
     ];
 
     /**
@@ -136,7 +144,9 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'getPackageNumber',
         'carrierCode' => 'getCarrierCode',
         'trackingNumber' => 'getTrackingNumber',
-        'estimatedArrivalDate' => 'getEstimatedArrivalDate'
+        'estimatedArrivalDate' => 'getEstimatedArrivalDate',
+        'lockerDetails' => 'getLockerDetails',
+        'deliveryInformation' => 'getDeliveryInformation'
     ];
 
     /**
@@ -203,6 +213,8 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         $this->container['carrierCode'] = $data['carrierCode'] ?? null;
         $this->container['trackingNumber'] = $data['trackingNumber'] ?? null;
         $this->container['estimatedArrivalDate'] = $data['estimatedArrivalDate'] ?? null;
+        $this->container['lockerDetails'] = $data['lockerDetails'] ?? null;
+        $this->container['deliveryInformation'] = $data['deliveryInformation'] ?? null;
     }
 
     /**
@@ -320,13 +332,61 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
     /**
      * Sets estimatedArrivalDate
      *
-     * @param \DateTime|null $estimatedArrivalDate estimatedArrivalDate
+     * @param \DateTime|null $estimatedArrivalDate Date timestamp
      *
      * @return self
      */
     public function setEstimatedArrivalDate($estimatedArrivalDate)
     {
         $this->container['estimatedArrivalDate'] = $estimatedArrivalDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets lockerDetails
+     *
+     * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\LockerDetails20200701|null
+     */
+    public function getLockerDetails()
+    {
+        return $this->container['lockerDetails'];
+    }
+
+    /**
+     * Sets lockerDetails
+     *
+     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\LockerDetails20200701|null $lockerDetails lockerDetails
+     *
+     * @return self
+     */
+    public function setLockerDetails($lockerDetails)
+    {
+        $this->container['lockerDetails'] = $lockerDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets deliveryInformation
+     *
+     * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DeliveryInformation20200701|null
+     */
+    public function getDeliveryInformation()
+    {
+        return $this->container['deliveryInformation'];
+    }
+
+    /**
+     * Sets deliveryInformation
+     *
+     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DeliveryInformation20200701|null $deliveryInformation deliveryInformation
+     *
+     * @return self
+     */
+    public function setDeliveryInformation($deliveryInformation)
+    {
+        $this->container['deliveryInformation'] = $deliveryInformation;
 
         return $this;
     }

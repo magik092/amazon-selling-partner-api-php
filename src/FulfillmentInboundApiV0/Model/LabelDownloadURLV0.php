@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * LabelDownloadURLV0 Class Doc Comment
  *
  * @category Class
+ * @description Download URL for a label
  * @package  Webcom\Amazon\Rest\FulfillmentInboundApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

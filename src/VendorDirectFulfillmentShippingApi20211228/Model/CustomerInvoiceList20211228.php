@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CustomerInvoiceList20211228 Class Doc Comment
  *
  * @category Class
+ * @description Represents a list of customer invoices, potentially paginated.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -253,7 +254,7 @@ class CustomerInvoiceList20211228 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets customerInvoices
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\CustomerInvoice20211228[]|null $customerInvoices customerInvoices
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\CustomerInvoice20211228[]|null $customerInvoices Represents a customer invoice within the `CustomerInvoiceList`.
      *
      * @return self
      */

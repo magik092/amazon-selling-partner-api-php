@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ShippingLabelRequest20211228 Class Doc Comment
  *
  * @category Class
+ * @description Represents the request payload to create a shipping label. Contains the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

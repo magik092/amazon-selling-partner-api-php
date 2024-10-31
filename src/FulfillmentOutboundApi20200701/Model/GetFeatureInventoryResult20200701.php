@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetFeatureInventoryResult20200701 Class Doc Comment
  *
  * @category Class
- * @description The payload for the getEligibileInventory operation.
+ * @description The payload for the &#x60;getEligibileInventory&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

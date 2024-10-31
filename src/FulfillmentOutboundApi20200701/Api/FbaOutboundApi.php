@@ -525,7 +525,7 @@ class FbaOutboundApi
     /**
      * Operation createFulfillmentOrder
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body CreateFulfillmentOrderRequest parameter (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -540,7 +540,7 @@ class FbaOutboundApi
     /**
      * Operation createFulfillmentOrderWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body CreateFulfillmentOrderRequest parameter (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -768,7 +768,7 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body CreateFulfillmentOrderRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -788,7 +788,7 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body CreateFulfillmentOrderRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -835,7 +835,7 @@ class FbaOutboundApi
     /**
      * Create request for operation 'createFulfillmentOrder'
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentOrderRequest20200701 $body CreateFulfillmentOrderRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -926,8 +926,8 @@ class FbaOutboundApi
     /**
      * Operation createFulfillmentReturn
      *
-     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body body (required)
+     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body CreateFulfillmentReturnRequest parameter (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -942,8 +942,8 @@ class FbaOutboundApi
     /**
      * Operation createFulfillmentReturnWithHttpInfo
      *
-     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body (required)
+     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body CreateFulfillmentReturnRequest parameter (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1171,8 +1171,8 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body (required)
+     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body CreateFulfillmentReturnRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1192,8 +1192,8 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body (required)
+     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body CreateFulfillmentReturnRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1240,8 +1240,8 @@ class FbaOutboundApi
     /**
      * Create request for operation 'createFulfillmentReturn'
      *
-     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body (required)
+     * @param  string $sellerFulfillmentOrderId An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CreateFulfillmentReturnRequest20200701 $body CreateFulfillmentReturnRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1344,19 +1344,421 @@ class FbaOutboundApi
     }
 
     /**
+     * Operation deliveryOffers
+     *
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersRequest20200701 $body GetDeliveryOffersRequest parameter (required)
+     *
+     * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701
+     */
+    public function deliveryOffers($body)
+    {
+        list($response) = $this->deliveryOffersWithHttpInfo($body);
+        return $response;
+    }
+
+    /**
+     * Operation deliveryOffersWithHttpInfo
+     *
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersRequest20200701 $body GetDeliveryOffersRequest parameter (required)
+     *
+     * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deliveryOffersWithHttpInfo($body)
+    {
+        $request = $this->deliveryOffersRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deliveryOffersAsync
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersRequest20200701 $body GetDeliveryOffersRequest parameter (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deliveryOffersAsync($body)
+    {
+        return $this->deliveryOffersAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deliveryOffersAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersRequest20200701 $body GetDeliveryOffersRequest parameter (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deliveryOffersAsyncWithHttpInfo($body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersResponse20200701';
+        $request = $this->deliveryOffersRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deliveryOffers'
+     *
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetDeliveryOffersRequest20200701 $body GetDeliveryOffersRequest parameter (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function deliveryOffersRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling deliveryOffers'
+            );
+        }
+
+        $resourcePath = '/fba/outbound/2020-07-01/deliveryOffers';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'payload']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'payload'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getFeatureInventory
      *
      * @param  string $marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature. (required)
      * @param  string $featureName The name of the feature for which to return a list of eligible inventory. (required)
      * @param  string $nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)
+     * @param  \DateTime $queryStartDate A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701
      */
-    public function getFeatureInventory($marketplaceId, $featureName, $nextToken = null)
+    public function getFeatureInventory($marketplaceId, $featureName, $nextToken = null, $queryStartDate = null)
     {
-        list($response) = $this->getFeatureInventoryWithHttpInfo($marketplaceId, $featureName, $nextToken);
+        list($response) = $this->getFeatureInventoryWithHttpInfo($marketplaceId, $featureName, $nextToken, $queryStartDate);
         return $response;
     }
 
@@ -1366,14 +1768,15 @@ class FbaOutboundApi
      * @param  string $marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature. (required)
      * @param  string $featureName The name of the feature for which to return a list of eligible inventory. (required)
      * @param  string $nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)
+     * @param  \DateTime $queryStartDate A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFeatureInventoryWithHttpInfo($marketplaceId, $featureName, $nextToken = null)
+    public function getFeatureInventoryWithHttpInfo($marketplaceId, $featureName, $nextToken = null, $queryStartDate = null)
     {
-        $request = $this->getFeatureInventoryRequest($marketplaceId, $featureName, $nextToken);
+        $request = $this->getFeatureInventoryRequest($marketplaceId, $featureName, $nextToken, $queryStartDate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1596,13 +1999,14 @@ class FbaOutboundApi
      * @param  string $marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature. (required)
      * @param  string $featureName The name of the feature for which to return a list of eligible inventory. (required)
      * @param  string $nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)
+     * @param  \DateTime $queryStartDate A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFeatureInventoryAsync($marketplaceId, $featureName, $nextToken = null)
+    public function getFeatureInventoryAsync($marketplaceId, $featureName, $nextToken = null, $queryStartDate = null)
     {
-        return $this->getFeatureInventoryAsyncWithHttpInfo($marketplaceId, $featureName, $nextToken)
+        return $this->getFeatureInventoryAsyncWithHttpInfo($marketplaceId, $featureName, $nextToken, $queryStartDate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1618,14 +2022,15 @@ class FbaOutboundApi
      * @param  string $marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature. (required)
      * @param  string $featureName The name of the feature for which to return a list of eligible inventory. (required)
      * @param  string $nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)
+     * @param  \DateTime $queryStartDate A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFeatureInventoryAsyncWithHttpInfo($marketplaceId, $featureName, $nextToken = null)
+    public function getFeatureInventoryAsyncWithHttpInfo($marketplaceId, $featureName, $nextToken = null, $queryStartDate = null)
     {
         $returnType = '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFeatureInventoryResponse20200701';
-        $request = $this->getFeatureInventoryRequest($marketplaceId, $featureName, $nextToken);
+        $request = $this->getFeatureInventoryRequest($marketplaceId, $featureName, $nextToken, $queryStartDate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1667,11 +2072,12 @@ class FbaOutboundApi
      * @param  string $marketplaceId The marketplace for which to return a list of the inventory that is eligible for the specified feature. (required)
      * @param  string $featureName The name of the feature for which to return a list of eligible inventory. (required)
      * @param  string $nextToken A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)
+     * @param  \DateTime $queryStartDate A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getFeatureInventoryRequest($marketplaceId, $featureName, $nextToken = null)
+    public function getFeatureInventoryRequest($marketplaceId, $featureName, $nextToken = null, $queryStartDate = null)
     {
         // verify the required parameter 'marketplaceId' is set
         if ($marketplaceId === null || (is_array($marketplaceId) && count($marketplaceId) === 0)) {
@@ -1706,6 +2112,13 @@ class FbaOutboundApi
         }
         if ($nextToken !== null) {
             $queryParams['nextToken'] = $nextToken;
+        }
+        // query params
+        if (is_array($queryStartDate)) {
+            $queryStartDate = ObjectSerializer::serializeCollection($queryStartDate, '', true);
+        }
+        if ($queryStartDate !== null) {
+            $queryParams['queryStartDate'] = $queryStartDate;
         }
 
 
@@ -1781,7 +2194,7 @@ class FbaOutboundApi
      *
      * @param  string $marketplaceId The marketplace for which to return the count. (required)
      * @param  string $featureName The name of the feature. (required)
-     * @param  string $sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $sellerSku Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1798,7 +2211,7 @@ class FbaOutboundApi
      *
      * @param  string $marketplaceId The marketplace for which to return the count. (required)
      * @param  string $featureName The name of the feature. (required)
-     * @param  string $sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $sellerSku Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2028,7 +2441,7 @@ class FbaOutboundApi
      *
      * @param  string $marketplaceId The marketplace for which to return the count. (required)
      * @param  string $featureName The name of the feature. (required)
-     * @param  string $sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $sellerSku Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2050,7 +2463,7 @@ class FbaOutboundApi
      *
      * @param  string $marketplaceId The marketplace for which to return the count. (required)
      * @param  string $featureName The name of the feature. (required)
-     * @param  string $sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $sellerSku Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2099,7 +2512,7 @@ class FbaOutboundApi
      *
      * @param  string $marketplaceId The marketplace for which to return the count. (required)
      * @param  string $featureName The name of the feature. (required)
-     * @param  string $sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param  string $sellerSku Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3028,7 +3441,7 @@ class FbaOutboundApi
     /**
      * Operation getFulfillmentPreview
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body GetFulfillmentPreviewRequest parameter (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3043,7 +3456,7 @@ class FbaOutboundApi
     /**
      * Operation getFulfillmentPreviewWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body GetFulfillmentPreviewRequest parameter (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3271,7 +3684,7 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body GetFulfillmentPreviewRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3291,7 +3704,7 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body GetFulfillmentPreviewRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3338,7 +3751,7 @@ class FbaOutboundApi
     /**
      * Create request for operation 'getFulfillmentPreview'
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\GetFulfillmentPreviewRequest20200701 $body GetFulfillmentPreviewRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3429,7 +3842,7 @@ class FbaOutboundApi
     /**
      * Operation getPackageTrackingDetails
      *
-     * @param  int $packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation. (required)
+     * @param  int $packageNumber The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3444,7 +3857,7 @@ class FbaOutboundApi
     /**
      * Operation getPackageTrackingDetailsWithHttpInfo
      *
-     * @param  int $packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation. (required)
+     * @param  int $packageNumber The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3672,7 +4085,7 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  int $packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation. (required)
+     * @param  int $packageNumber The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3692,7 +4105,7 @@ class FbaOutboundApi
      *
      * 
      *
-     * @param  int $packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation. (required)
+     * @param  int $packageNumber The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3739,7 +4152,7 @@ class FbaOutboundApi
     /**
      * Create request for operation 'getPackageTrackingDetails'
      *
-     * @param  int $packageNumber The unencrypted package identifier returned by the getFulfillmentOrder operation. (required)
+     * @param  int $packageNumber The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4240,17 +4653,17 @@ class FbaOutboundApi
      * Operation listReturnReasonCodes
      *
      * @param  string $sellerSku The seller SKU for which return reason codes are required. (required)
-     * @param  string $language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into. (required)
      * @param  string $marketplaceId The marketplace for which the seller wants return reason codes. (optional)
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)
+     * @param  string $language The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701
      */
-    public function listReturnReasonCodes($sellerSku, $language, $marketplaceId = null, $sellerFulfillmentOrderId = null)
+    public function listReturnReasonCodes($sellerSku, $marketplaceId = null, $sellerFulfillmentOrderId = null, $language = null)
     {
-        list($response) = $this->listReturnReasonCodesWithHttpInfo($sellerSku, $language, $marketplaceId, $sellerFulfillmentOrderId);
+        list($response) = $this->listReturnReasonCodesWithHttpInfo($sellerSku, $marketplaceId, $sellerFulfillmentOrderId, $language);
         return $response;
     }
 
@@ -4258,17 +4671,17 @@ class FbaOutboundApi
      * Operation listReturnReasonCodesWithHttpInfo
      *
      * @param  string $sellerSku The seller SKU for which return reason codes are required. (required)
-     * @param  string $language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into. (required)
      * @param  string $marketplaceId The marketplace for which the seller wants return reason codes. (optional)
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)
+     * @param  string $language The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listReturnReasonCodesWithHttpInfo($sellerSku, $language, $marketplaceId = null, $sellerFulfillmentOrderId = null)
+    public function listReturnReasonCodesWithHttpInfo($sellerSku, $marketplaceId = null, $sellerFulfillmentOrderId = null, $language = null)
     {
-        $request = $this->listReturnReasonCodesRequest($sellerSku, $language, $marketplaceId, $sellerFulfillmentOrderId);
+        $request = $this->listReturnReasonCodesRequest($sellerSku, $marketplaceId, $sellerFulfillmentOrderId, $language);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4489,16 +4902,16 @@ class FbaOutboundApi
      * 
      *
      * @param  string $sellerSku The seller SKU for which return reason codes are required. (required)
-     * @param  string $language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into. (required)
      * @param  string $marketplaceId The marketplace for which the seller wants return reason codes. (optional)
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)
+     * @param  string $language The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listReturnReasonCodesAsync($sellerSku, $language, $marketplaceId = null, $sellerFulfillmentOrderId = null)
+    public function listReturnReasonCodesAsync($sellerSku, $marketplaceId = null, $sellerFulfillmentOrderId = null, $language = null)
     {
-        return $this->listReturnReasonCodesAsyncWithHttpInfo($sellerSku, $language, $marketplaceId, $sellerFulfillmentOrderId)
+        return $this->listReturnReasonCodesAsyncWithHttpInfo($sellerSku, $marketplaceId, $sellerFulfillmentOrderId, $language)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4512,17 +4925,17 @@ class FbaOutboundApi
      * 
      *
      * @param  string $sellerSku The seller SKU for which return reason codes are required. (required)
-     * @param  string $language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into. (required)
      * @param  string $marketplaceId The marketplace for which the seller wants return reason codes. (optional)
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)
+     * @param  string $language The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listReturnReasonCodesAsyncWithHttpInfo($sellerSku, $language, $marketplaceId = null, $sellerFulfillmentOrderId = null)
+    public function listReturnReasonCodesAsyncWithHttpInfo($sellerSku, $marketplaceId = null, $sellerFulfillmentOrderId = null, $language = null)
     {
         $returnType = '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ListReturnReasonCodesResponse20200701';
-        $request = $this->listReturnReasonCodesRequest($sellerSku, $language, $marketplaceId, $sellerFulfillmentOrderId);
+        $request = $this->listReturnReasonCodesRequest($sellerSku, $marketplaceId, $sellerFulfillmentOrderId, $language);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -4562,25 +4975,19 @@ class FbaOutboundApi
      * Create request for operation 'listReturnReasonCodes'
      *
      * @param  string $sellerSku The seller SKU for which return reason codes are required. (required)
-     * @param  string $language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into. (required)
      * @param  string $marketplaceId The marketplace for which the seller wants return reason codes. (optional)
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)
+     * @param  string $language The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function listReturnReasonCodesRequest($sellerSku, $language, $marketplaceId = null, $sellerFulfillmentOrderId = null)
+    public function listReturnReasonCodesRequest($sellerSku, $marketplaceId = null, $sellerFulfillmentOrderId = null, $language = null)
     {
         // verify the required parameter 'sellerSku' is set
         if ($sellerSku === null || (is_array($sellerSku) && count($sellerSku) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $sellerSku when calling listReturnReasonCodes'
-            );
-        }
-        // verify the required parameter 'language' is set
-        if ($language === null || (is_array($language) && count($language) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $language when calling listReturnReasonCodes'
             );
         }
 
@@ -4681,10 +5088,434 @@ class FbaOutboundApi
     }
 
     /**
+     * Operation submitFulfillmentOrderStatusUpdate
+     *
+     * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateRequest20200701 $body The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701
+     */
+    public function submitFulfillmentOrderStatusUpdate($sellerFulfillmentOrderId, $body)
+    {
+        list($response) = $this->submitFulfillmentOrderStatusUpdateWithHttpInfo($sellerFulfillmentOrderId, $body);
+        return $response;
+    }
+
+    /**
+     * Operation submitFulfillmentOrderStatusUpdateWithHttpInfo
+     *
+     * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateRequest20200701 $body The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701|\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function submitFulfillmentOrderStatusUpdateWithHttpInfo($sellerFulfillmentOrderId, $body)
+    {
+        $request = $this->submitFulfillmentOrderStatusUpdateRequest($sellerFulfillmentOrderId, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation submitFulfillmentOrderStatusUpdateAsync
+     *
+     * 
+     *
+     * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateRequest20200701 $body The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitFulfillmentOrderStatusUpdateAsync($sellerFulfillmentOrderId, $body)
+    {
+        return $this->submitFulfillmentOrderStatusUpdateAsyncWithHttpInfo($sellerFulfillmentOrderId, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation submitFulfillmentOrderStatusUpdateAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateRequest20200701 $body The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitFulfillmentOrderStatusUpdateAsyncWithHttpInfo($sellerFulfillmentOrderId, $body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateResponse20200701';
+        $request = $this->submitFulfillmentOrderStatusUpdateRequest($sellerFulfillmentOrderId, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'submitFulfillmentOrderStatusUpdate'
+     *
+     * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\SubmitFulfillmentOrderStatusUpdateRequest20200701 $body The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function submitFulfillmentOrderStatusUpdateRequest($sellerFulfillmentOrderId, $body)
+    {
+        // verify the required parameter 'sellerFulfillmentOrderId' is set
+        if ($sellerFulfillmentOrderId === null || (is_array($sellerFulfillmentOrderId) && count($sellerFulfillmentOrderId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sellerFulfillmentOrderId when calling submitFulfillmentOrderStatusUpdate'
+            );
+        }
+        if (strlen($sellerFulfillmentOrderId) > 40) {
+            throw new \InvalidArgumentException('invalid length for "$sellerFulfillmentOrderId" when calling FbaOutboundApi.submitFulfillmentOrderStatusUpdate, must be smaller than or equal to 40.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling submitFulfillmentOrderStatusUpdate'
+            );
+        }
+
+        $resourcePath = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/status';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($sellerFulfillmentOrderId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sellerFulfillmentOrderId' . '}',
+                ObjectSerializer::toPathValue($sellerFulfillmentOrderId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation updateFulfillmentOrder
      *
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body UpdateFulfillmentOrderRequest parameter (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4700,7 +5531,7 @@ class FbaOutboundApi
      * Operation updateFulfillmentOrderWithHttpInfo
      *
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body UpdateFulfillmentOrderRequest parameter (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4929,7 +5760,7 @@ class FbaOutboundApi
      * 
      *
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body UpdateFulfillmentOrderRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4950,7 +5781,7 @@ class FbaOutboundApi
      * 
      *
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body UpdateFulfillmentOrderRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4998,7 +5829,7 @@ class FbaOutboundApi
      * Create request for operation 'updateFulfillmentOrder'
      *
      * @param  string $sellerFulfillmentOrderId The identifier assigned to the item by the seller when the fulfillment order was created. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\UpdateFulfillmentOrderRequest20200701 $body UpdateFulfillmentOrderRequest parameter (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

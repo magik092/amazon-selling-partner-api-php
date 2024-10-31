@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetShippingLabelResponseV1 Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getShippingLabel operation.
+ * @description The response schema for the &#x60;getShippingLabel&#x60; operation.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

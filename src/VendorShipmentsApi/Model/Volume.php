@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Volume Class Doc Comment
  *
  * @category Class
- * @description The volume of the container.
+ * @description The volume of the shipment.
  * @package  Webcom\Amazon\Rest\VendorShipmentsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

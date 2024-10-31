@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Feeds
  *
- * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
+ * Effective **June 27, 2024**, the Selling Partner API for Feeds v2020-09-04 will no longer be available and all calls to it will fail. Integrations that rely on the Feeds API must migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
  *
  * The version of the OpenAPI document: 2020-09-04
  * 
@@ -298,7 +298,7 @@ class FeedDocument20200904 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets url
      *
-     * @param string $url A presigned URL for the feed document. This URL expires after 5 minutes.
+     * @param string $url A presigned URL for the feed document. If `compressionAlgorithm` is not returned, you can download the feed directly from this URL. This URL expires after 5 minutes.
      *
      * @return self
      */
@@ -346,7 +346,7 @@ class FeedDocument20200904 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets compressionAlgorithm
      *
-     * @param string|null $compressionAlgorithm If present, the feed document contents are compressed using the indicated algorithm.
+     * @param string|null $compressionAlgorithm If the feed document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the feed when you download. Otherwise, you can download the feed directly. Refer to [Step 6. Download and decrypt the feed processing report](doc:feeds-api-v2020-09-04-use-case-guide#step-6-download-and-decrypt-the-feed-processing-report) in the use case guide, where sample code is provided.
      *
      * @return self
      */

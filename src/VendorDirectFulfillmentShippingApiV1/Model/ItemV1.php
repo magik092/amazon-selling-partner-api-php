@@ -272,7 +272,7 @@ class ItemV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerProductIdentifier
      *
-     * @param string|null $buyerProductIdentifier Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+     * @param string|null $buyerProductIdentifier Buyer's Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
      *
      * @return self
      */

@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TransactionId Class Doc Comment
  *
  * @category Class
+ * @description Response containing the transaction ID.
  * @package  Webcom\Amazon\Rest\VendorInvoicesApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

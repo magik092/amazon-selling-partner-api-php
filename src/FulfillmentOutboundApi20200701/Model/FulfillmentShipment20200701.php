@@ -388,7 +388,7 @@ class FulfillmentShipment20200701 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets shippingDate
      *
-     * @param \DateTime|null $shippingDate shippingDate
+     * @param \DateTime|null $shippingDate Date timestamp
      *
      * @return self
      */
@@ -412,7 +412,7 @@ class FulfillmentShipment20200701 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets estimatedArrivalDate
      *
-     * @param \DateTime|null $estimatedArrivalDate estimatedArrivalDate
+     * @param \DateTime|null $estimatedArrivalDate Date timestamp
      *
      * @return self
      */

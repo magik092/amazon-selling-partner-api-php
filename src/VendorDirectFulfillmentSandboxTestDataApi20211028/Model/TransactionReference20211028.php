@@ -224,7 +224,7 @@ class TransactionReference20211028 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets transactionId
      *
-     * @param string|null $transactionId transactionId
+     * @param string|null $transactionId A GUID (Globally Unique Identifier) assigned by Amazon to uniquely identify the transaction.
      *
      * @return self
      */

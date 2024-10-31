@@ -248,7 +248,7 @@ class FeatureSku20200701 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets sellerSku
      *
-     * @param string|null $sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param string|null $sellerSku Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's SellerId, which is included with every operation that you submit.
      *
      * @return self
      */

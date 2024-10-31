@@ -116,9 +116,473 @@ class VendorShippingLabelsApi
     }
 
     /**
+     * Operation createShippingLabels
+     *
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\CreateShippingLabelsRequest20211228 $body The request payload that contains parameters for creating shipping labels. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228
+     */
+    public function createShippingLabels($purchaseOrderNumber, $body)
+    {
+        list($response) = $this->createShippingLabelsWithHttpInfo($purchaseOrderNumber, $body);
+        return $response;
+    }
+
+    /**
+     * Operation createShippingLabelsWithHttpInfo
+     *
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\CreateShippingLabelsRequest20211228 $body The request payload that contains parameters for creating shipping labels. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228|\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createShippingLabelsWithHttpInfo($purchaseOrderNumber, $body)
+    {
+        $request = $this->createShippingLabelsRequest($purchaseOrderNumber, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ErrorList20211228',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createShippingLabelsAsync
+     *
+     * 
+     *
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\CreateShippingLabelsRequest20211228 $body The request payload that contains parameters for creating shipping labels. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createShippingLabelsAsync($purchaseOrderNumber, $body)
+    {
+        return $this->createShippingLabelsAsyncWithHttpInfo($purchaseOrderNumber, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createShippingLabelsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\CreateShippingLabelsRequest20211228 $body The request payload that contains parameters for creating shipping labels. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createShippingLabelsAsyncWithHttpInfo($purchaseOrderNumber, $body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228';
+        $request = $this->createShippingLabelsRequest($purchaseOrderNumber, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createShippingLabels'
+     *
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\CreateShippingLabelsRequest20211228 $body The request payload that contains parameters for creating shipping labels. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createShippingLabelsRequest($purchaseOrderNumber, $body)
+    {
+        // verify the required parameter 'purchaseOrderNumber' is set
+        if ($purchaseOrderNumber === null || (is_array($purchaseOrderNumber) && count($purchaseOrderNumber) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $purchaseOrderNumber when calling createShippingLabels'
+            );
+        }
+        if (!preg_match("/^[a-zA-Z0-9]+$/", $purchaseOrderNumber)) {
+            throw new \InvalidArgumentException("invalid value for \"purchaseOrderNumber\" when calling VendorShippingLabelsApi.createShippingLabels, must conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createShippingLabels'
+            );
+        }
+
+        $resourcePath = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($purchaseOrderNumber !== null) {
+            $resourcePath = str_replace(
+                '{' . 'purchaseOrderNumber' . '}',
+                ObjectSerializer::toPathValue($purchaseOrderNumber),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getShippingLabel
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +597,7 @@ class VendorShippingLabelsApi
     /**
      * Operation getShippingLabelWithHttpInfo
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -381,7 +845,7 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -401,7 +865,7 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -448,7 +912,7 @@ class VendorShippingLabelsApi
     /**
      * Create request for operation 'getShippingLabel'
      *
-     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param  string $purchaseOrderNumber The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1020,7 +1484,7 @@ class VendorShippingLabelsApi
     /**
      * Operation submitShippingLabelRequest
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body Request body that contains the shipping labels data. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1035,7 +1499,7 @@ class VendorShippingLabelsApi
     /**
      * Operation submitShippingLabelRequestWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body Request body that contains the shipping labels data. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1283,7 +1747,7 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body Request body that contains the shipping labels data. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1303,7 +1767,7 @@ class VendorShippingLabelsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body Request body that contains the shipping labels data. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1350,7 +1814,7 @@ class VendorShippingLabelsApi
     /**
      * Create request for operation 'submitShippingLabelRequest'
      *
-     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\SubmitShippingLabelsRequest20211228 $body Request body that contains the shipping labels data. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

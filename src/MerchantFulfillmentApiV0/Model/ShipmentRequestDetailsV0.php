@@ -448,7 +448,7 @@ class ShipmentRequestDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets mustArriveByDate
      *
-     * @param \DateTime|null $mustArriveByDate mustArriveByDate
+     * @param \DateTime|null $mustArriveByDate Date-time formatted timestamp.
      *
      * @return self
      */
@@ -472,7 +472,7 @@ class ShipmentRequestDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets shipDate
      *
-     * @param \DateTime|null $shipDate shipDate
+     * @param \DateTime|null $shipDate Date-time formatted timestamp.
      *
      * @return self
      */

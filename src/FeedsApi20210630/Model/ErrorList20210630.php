@@ -227,7 +227,7 @@ class ErrorList20210630 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets errors
      *
-     * @param \Webcom\Amazon\Rest\FeedsApi20210630\Model\Error20210630[] $errors errors
+     * @param \Webcom\Amazon\Rest\FeedsApi20210630\Model\Error20210630[] $errors An error response returned when the request is unsuccessful.
      *
      * @return self
      */

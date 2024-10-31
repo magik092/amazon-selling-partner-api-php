@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PartyIdentificationV1 Class Doc Comment
  *
  * @category Class
+ * @description Name, address and tax details for a group.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

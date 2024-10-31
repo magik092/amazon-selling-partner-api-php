@@ -236,7 +236,7 @@ class WeightV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets value
      *
-     * @param double $value value
+     * @param double $value Number format that supports decimal.
      *
      * @return self
      */

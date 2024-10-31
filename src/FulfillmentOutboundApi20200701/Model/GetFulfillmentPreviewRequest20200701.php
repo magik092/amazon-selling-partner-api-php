@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetFulfillmentPreviewRequest20200701 Class Doc Comment
  *
  * @category Class
- * @description The request body schema for the getFulfillmentPreview operation.
+ * @description The request body schema for the &#x60;getFulfillmentPreview&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -338,7 +338,7 @@ class GetFulfillmentPreviewRequest20200701 implements ModelInterface, ArrayAcces
     /**
      * Sets shippingSpeedCategories
      *
-     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ShippingSpeedCategory20200701[]|null $shippingSpeedCategories shippingSpeedCategories
+     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ShippingSpeedCategory20200701[]|null $shippingSpeedCategories ShippingSpeedCategory List
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class GetFulfillmentPreviewRequest20200701 implements ModelInterface, ArrayAcces
     /**
      * Sets includeCODFulfillmentPreview
      *
-     * @param bool|null $includeCODFulfillmentPreview Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery).  Possible values:  * true - Returns all fulfillment order previews (both for COD and not for COD). * false - Returns only fulfillment order previews that are not for COD.
+     * @param bool|null $includeCODFulfillmentPreview When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
      *
      * @return self
      */
@@ -386,7 +386,7 @@ class GetFulfillmentPreviewRequest20200701 implements ModelInterface, ArrayAcces
     /**
      * Sets includeDeliveryWindows
      *
-     * @param bool|null $includeDeliveryWindows Specifies whether to return the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
+     * @param bool|null $includeDeliveryWindows When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`.
      *
      * @return self
      */

@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Duration Class Doc Comment
  *
  * @category Class
+ * @description Duration after manufacturing date during which the product is valid for consumption.
  * @package  Webcom\Amazon\Rest\VendorShipmentsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

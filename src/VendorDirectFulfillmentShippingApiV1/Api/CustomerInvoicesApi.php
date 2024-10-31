@@ -545,9 +545,9 @@ class CustomerInvoicesApi
     /**
      * Operation getCustomerInvoices
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)
      * @param  string $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -565,9 +565,9 @@ class CustomerInvoicesApi
     /**
      * Operation getCustomerInvoicesWithHttpInfo
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)
      * @param  string $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -798,9 +798,9 @@ class CustomerInvoicesApi
      *
      * 
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)
      * @param  string $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -823,9 +823,9 @@ class CustomerInvoicesApi
      *
      * 
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)
      * @param  string $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -875,9 +875,9 @@ class CustomerInvoicesApi
     /**
      * Create request for operation 'getCustomerInvoices'
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
+     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)
      * @param  string $nextToken Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)

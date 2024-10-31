@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TransactionStatus20211028 Class Doc Comment
  *
  * @category Class
- * @description The payload for the getOrderScenarios operation.
+ * @description The payload for &#x60;getOrderScenarios&#x60;.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

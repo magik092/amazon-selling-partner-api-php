@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SubmitShippingLabelsRequestV1 Class Doc Comment
  *
  * @category Class
+ * @description The request schema for the &#x60;submitShippingLabelRequest&#x60; operation.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class SubmitShippingLabelsRequestV1 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets shippingLabelRequests
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\ShippingLabelRequestV1[]|null $shippingLabelRequests shippingLabelRequests
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\ShippingLabelRequestV1[]|null $shippingLabelRequests An array of shipping label requests to be processed.
      *
      * @return self
      */

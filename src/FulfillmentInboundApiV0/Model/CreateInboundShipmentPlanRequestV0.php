@@ -353,7 +353,7 @@ class CreateInboundShipmentPlanRequestV0 implements ModelInterface, ArrayAccess,
     /**
      * Sets inboundShipmentPlanRequestItems
      *
-     * @param \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentPlanRequestItemV0[] $inboundShipmentPlanRequestItems inboundShipmentPlanRequestItems
+     * @param \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentPlanRequestItemV0[] $inboundShipmentPlanRequestItems List of inbound shipment plan requests
      *
      * @return self
      */

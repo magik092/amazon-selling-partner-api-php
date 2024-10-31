@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PackedItem20211228 Class Doc Comment
  *
  * @category Class
+ * @description Represents an item packed into a container for shipping.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,6 +64,7 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPITypes = [
         'itemSequenceNumber' => 'int',
         'buyerProductIdentifier' => 'string',
+        'pieceNumber' => 'int',
         'vendorProductIdentifier' => 'string',
         'packedQuantity' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ItemQuantity20211228'
     ];
@@ -77,6 +79,7 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $openAPIFormats = [
         'itemSequenceNumber' => null,
         'buyerProductIdentifier' => null,
+        'pieceNumber' => null,
         'vendorProductIdentifier' => null,
         'packedQuantity' => null
     ];
@@ -110,6 +113,7 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $attributeMap = [
         'itemSequenceNumber' => 'itemSequenceNumber',
         'buyerProductIdentifier' => 'buyerProductIdentifier',
+        'pieceNumber' => 'pieceNumber',
         'vendorProductIdentifier' => 'vendorProductIdentifier',
         'packedQuantity' => 'packedQuantity'
     ];
@@ -122,6 +126,7 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $setters = [
         'itemSequenceNumber' => 'setItemSequenceNumber',
         'buyerProductIdentifier' => 'setBuyerProductIdentifier',
+        'pieceNumber' => 'setPieceNumber',
         'vendorProductIdentifier' => 'setVendorProductIdentifier',
         'packedQuantity' => 'setPackedQuantity'
     ];
@@ -134,6 +139,7 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     protected static $getters = [
         'itemSequenceNumber' => 'getItemSequenceNumber',
         'buyerProductIdentifier' => 'getBuyerProductIdentifier',
+        'pieceNumber' => 'getPieceNumber',
         'vendorProductIdentifier' => 'getVendorProductIdentifier',
         'packedQuantity' => 'getPackedQuantity'
     ];
@@ -200,6 +206,7 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $this->container['itemSequenceNumber'] = $data['itemSequenceNumber'] ?? null;
         $this->container['buyerProductIdentifier'] = $data['buyerProductIdentifier'] ?? null;
+        $this->container['pieceNumber'] = $data['pieceNumber'] ?? null;
         $this->container['vendorProductIdentifier'] = $data['vendorProductIdentifier'] ?? null;
         $this->container['packedQuantity'] = $data['packedQuantity'] ?? null;
     }
@@ -278,6 +285,30 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     public function setBuyerProductIdentifier($buyerProductIdentifier)
     {
         $this->container['buyerProductIdentifier'] = $buyerProductIdentifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets pieceNumber
+     *
+     * @return int|null
+     */
+    public function getPieceNumber()
+    {
+        return $this->container['pieceNumber'];
+    }
+
+    /**
+     * Sets pieceNumber
+     *
+     * @param int|null $pieceNumber The piece number of the item in this container. This is required when the item is split across different containers.
+     *
+     * @return self
+     */
+    public function setPieceNumber($pieceNumber)
+    {
+        $this->container['pieceNumber'] = $pieceNumber;
 
         return $this;
     }

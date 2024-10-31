@@ -12,7 +12,7 @@
 /**
  * Selling Partner API for Listings Items
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  * 
@@ -121,7 +121,7 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -139,7 +139,7 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -370,7 +370,7 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -393,7 +393,7 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -443,7 +443,7 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -468,6 +468,10 @@ class ListingsApi
                 'Missing the required parameter $marketplaceIds when calling deleteListingsItem'
             );
         }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ListingsApi.deleteListingsItem, number of items must be less than or equal to 1.');
+        }
+
 
         $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
         $formParams = [];
@@ -573,8 +577,8 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -592,8 +596,8 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -844,8 +848,8 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -868,8 +872,8 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -919,8 +923,8 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -945,6 +949,10 @@ class ListingsApi
                 'Missing the required parameter $marketplaceIds when calling getListingsItem'
             );
         }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ListingsApi.getListingsItem, number of items must be less than or equal to 1.');
+        }
+
 
         $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
         $formParams = [];
@@ -1057,16 +1065,18 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the patchListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the &#x60;patchListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemSubmissionResponse20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801
      */
-    public function patchListingsItem($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function patchListingsItem($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
-        list($response) = $this->patchListingsItemWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $issueLocale);
+        list($response) = $this->patchListingsItemWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $includedData, $mode, $issueLocale);
         return $response;
     }
 
@@ -1076,16 +1086,18 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the patchListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the &#x60;patchListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemSubmissionResponse20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801, HTTP status code, HTTP response headers (array of strings)
      */
-    public function patchListingsItemWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function patchListingsItemWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
-        $request = $this->patchListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $issueLocale);
+        $request = $this->patchListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $includedData, $mode, $issueLocale);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1308,15 +1320,17 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the patchListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the &#x60;patchListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function patchListingsItemAsync($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function patchListingsItemAsync($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
-        return $this->patchListingsItemAsyncWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $issueLocale)
+        return $this->patchListingsItemAsyncWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $includedData, $mode, $issueLocale)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1332,16 +1346,18 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the patchListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the &#x60;patchListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function patchListingsItemAsyncWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function patchListingsItemAsyncWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
         $returnType = '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemSubmissionResponse20210801';
-        $request = $this->patchListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $issueLocale);
+        $request = $this->patchListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $includedData, $mode, $issueLocale);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1383,13 +1399,15 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the patchListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPatchRequest20210801 $body The request body schema for the &#x60;patchListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function patchListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function patchListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
         // verify the required parameter 'sellerId' is set
         if ($sellerId === null || (is_array($sellerId) && count($sellerId) === 0)) {
@@ -1409,6 +1427,10 @@ class ListingsApi
                 'Missing the required parameter $marketplaceIds when calling patchListingsItem'
             );
         }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ListingsApi.patchListingsItem, number of items must be less than or equal to 1.');
+        }
+
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
@@ -1429,6 +1451,20 @@ class ListingsApi
         }
         if ($marketplaceIds !== null) {
             $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+        // query params
+        if (is_array($includedData)) {
+            $includedData = ObjectSerializer::serializeCollection($includedData, 'form', true);
+        }
+        if ($includedData !== null) {
+            $queryParams['includedData'] = $includedData;
+        }
+        // query params
+        if (is_array($mode)) {
+            $mode = ObjectSerializer::serializeCollection($mode, '', true);
+        }
+        if ($mode !== null) {
+            $queryParams['mode'] = $mode;
         }
         // query params
         if (is_array($issueLocale)) {
@@ -1526,16 +1562,18 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the putListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the &#x60;putListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemSubmissionResponse20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801
      */
-    public function putListingsItem($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function putListingsItem($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
-        list($response) = $this->putListingsItemWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $issueLocale);
+        list($response) = $this->putListingsItemWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $includedData, $mode, $issueLocale);
         return $response;
     }
 
@@ -1545,16 +1583,18 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the putListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the &#x60;putListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemSubmissionResponse20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801, HTTP status code, HTTP response headers (array of strings)
      */
-    public function putListingsItemWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function putListingsItemWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
-        $request = $this->putListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $issueLocale);
+        $request = $this->putListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $includedData, $mode, $issueLocale);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1777,15 +1817,17 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the putListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the &#x60;putListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putListingsItemAsync($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function putListingsItemAsync($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
-        return $this->putListingsItemAsyncWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $issueLocale)
+        return $this->putListingsItemAsyncWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $includedData, $mode, $issueLocale)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1801,16 +1843,18 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the putListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the &#x60;putListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function putListingsItemAsyncWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function putListingsItemAsyncWithHttpInfo($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
         $returnType = '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemSubmissionResponse20210801';
-        $request = $this->putListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $issueLocale);
+        $request = $this->putListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $includedData, $mode, $issueLocale);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1852,13 +1896,15 @@ class ListingsApi
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the putListingsItem operation. (required)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ListingsItemPutRequest20210801 $body The request body schema for the &#x60;putListingsItem&#x60; operation. (required)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param  string $mode The mode of operation for the request. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function putListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $issueLocale = null)
+    public function putListingsItemRequest($sellerId, $sku, $marketplaceIds, $body, $includedData = null, $mode = null, $issueLocale = null)
     {
         // verify the required parameter 'sellerId' is set
         if ($sellerId === null || (is_array($sellerId) && count($sellerId) === 0)) {
@@ -1878,6 +1924,10 @@ class ListingsApi
                 'Missing the required parameter $marketplaceIds when calling putListingsItem'
             );
         }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ListingsApi.putListingsItem, number of items must be less than or equal to 1.');
+        }
+
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
@@ -1898,6 +1948,20 @@ class ListingsApi
         }
         if ($marketplaceIds !== null) {
             $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+        // query params
+        if (is_array($includedData)) {
+            $includedData = ObjectSerializer::serializeCollection($includedData, 'form', true);
+        }
+        if ($includedData !== null) {
+            $queryParams['includedData'] = $includedData;
+        }
+        // query params
+        if (is_array($mode)) {
+            $mode = ObjectSerializer::serializeCollection($mode, '', true);
+        }
+        if ($mode !== null) {
+            $queryParams['mode'] = $mode;
         }
         // query params
         if (is_array($issueLocale)) {
@@ -1983,6 +2047,531 @@ class ListingsApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation searchListingsItems
+     *
+     * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
+     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
+     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801
+     */
+    public function searchListingsItems($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    {
+        list($response) = $this->searchListingsItemsWithHttpInfo($sellerId, $marketplaceIds, $identifiers, $identifiersType, $pageSize, $pageToken, $includedData, $issueLocale);
+        return $response;
+    }
+
+    /**
+     * Operation searchListingsItemsWithHttpInfo
+     *
+     * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
+     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
+     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function searchListingsItemsWithHttpInfo($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    {
+        $request = $this->searchListingsItemsRequest($sellerId, $marketplaceIds, $identifiers, $identifiersType, $pageSize, $pageToken, $includedData, $issueLocale);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation searchListingsItemsAsync
+     *
+     * 
+     *
+     * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
+     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
+     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function searchListingsItemsAsync($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    {
+        return $this->searchListingsItemsAsyncWithHttpInfo($sellerId, $marketplaceIds, $identifiers, $identifiersType, $pageSize, $pageToken, $includedData, $issueLocale)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation searchListingsItemsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
+     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
+     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function searchListingsItemsAsyncWithHttpInfo($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801';
+        $request = $this->searchListingsItemsRequest($sellerId, $marketplaceIds, $identifiers, $identifiersType, $pageSize, $pageToken, $includedData, $issueLocale);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'searchListingsItems'
+     *
+     * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
+     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
+     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
+     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function searchListingsItemsRequest($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    {
+        // verify the required parameter 'sellerId' is set
+        if ($sellerId === null || (is_array($sellerId) && count($sellerId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sellerId when calling searchListingsItems'
+            );
+        }
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling searchListingsItems'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ListingsApi.searchListingsItems, number of items must be less than or equal to 1.');
+        }
+
+        if ($identifiers !== null && count($identifiers) > 20) {
+            throw new \InvalidArgumentException('invalid value for "$identifiers" when calling ListingsApi.searchListingsItems, number of items must be less than or equal to 20.');
+        }
+
+        if ($pageSize !== null && $pageSize > 20) {
+            throw new \InvalidArgumentException('invalid value for "$pageSize" when calling ListingsApi.searchListingsItems, must be smaller than or equal to 20.');
+        }
+
+
+        $resourcePath = '/listings/2021-08-01/items/{sellerId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+        // query params
+        if (is_array($identifiers)) {
+            $identifiers = ObjectSerializer::serializeCollection($identifiers, 'form', true);
+        }
+        if ($identifiers !== null) {
+            $queryParams['identifiers'] = $identifiers;
+        }
+        // query params
+        if (is_array($identifiersType)) {
+            $identifiersType = ObjectSerializer::serializeCollection($identifiersType, '', true);
+        }
+        if ($identifiersType !== null) {
+            $queryParams['identifiersType'] = $identifiersType;
+        }
+        // query params
+        if (is_array($pageSize)) {
+            $pageSize = ObjectSerializer::serializeCollection($pageSize, '', true);
+        }
+        if ($pageSize !== null) {
+            $queryParams['pageSize'] = $pageSize;
+        }
+        // query params
+        if (is_array($pageToken)) {
+            $pageToken = ObjectSerializer::serializeCollection($pageToken, '', true);
+        }
+        if ($pageToken !== null) {
+            $queryParams['pageToken'] = $pageToken;
+        }
+        // query params
+        if (is_array($includedData)) {
+            $includedData = ObjectSerializer::serializeCollection($includedData, 'form', true);
+        }
+        if ($includedData !== null) {
+            $queryParams['includedData'] = $includedData;
+        }
+        // query params
+        if (is_array($issueLocale)) {
+            $issueLocale = ObjectSerializer::serializeCollection($issueLocale, '', true);
+        }
+        if ($issueLocale !== null) {
+            $queryParams['issueLocale'] = $issueLocale;
+        }
+
+
+        // path params
+        if ($sellerId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'sellerId' . '}',
+                ObjectSerializer::toPathValue($sellerId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

@@ -62,7 +62,8 @@ class ProductTypeList20200901 implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'productTypes' => '\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ProductType20200901[]'
+        'productTypes' => '\Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ProductType20200901[]',
+        'productTypeVersion' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class ProductTypeList20200901 implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'productTypes' => null
+        'productTypes' => null,
+        'productTypeVersion' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class ProductTypeList20200901 implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'productTypes' => 'productTypes'
+        'productTypes' => 'productTypes',
+        'productTypeVersion' => 'productTypeVersion'
     ];
 
     /**
@@ -112,7 +115,8 @@ class ProductTypeList20200901 implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'productTypes' => 'setProductTypes'
+        'productTypes' => 'setProductTypes',
+        'productTypeVersion' => 'setProductTypeVersion'
     ];
 
     /**
@@ -121,7 +125,8 @@ class ProductTypeList20200901 implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'productTypes' => 'getProductTypes'
+        'productTypes' => 'getProductTypes',
+        'productTypeVersion' => 'getProductTypeVersion'
     ];
 
     /**
@@ -185,6 +190,7 @@ class ProductTypeList20200901 implements ModelInterface, ArrayAccess, \JsonSeria
     public function __construct(array $data = null)
     {
         $this->container['productTypes'] = $data['productTypes'] ?? null;
+        $this->container['productTypeVersion'] = $data['productTypeVersion'] ?? null;
     }
 
     /**
@@ -198,6 +204,9 @@ class ProductTypeList20200901 implements ModelInterface, ArrayAccess, \JsonSeria
 
         if ($this->container['productTypes'] === null) {
             $invalidProperties[] = "'productTypes' can't be null";
+        }
+        if ($this->container['productTypeVersion'] === null) {
+            $invalidProperties[] = "'productTypeVersion' can't be null";
         }
         return $invalidProperties;
     }
@@ -234,6 +243,30 @@ class ProductTypeList20200901 implements ModelInterface, ArrayAccess, \JsonSeria
     public function setProductTypes($productTypes)
     {
         $this->container['productTypes'] = $productTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets productTypeVersion
+     *
+     * @return string
+     */
+    public function getProductTypeVersion()
+    {
+        return $this->container['productTypeVersion'];
+    }
+
+    /**
+     * Sets productTypeVersion
+     *
+     * @param string $productTypeVersion Amazon product type version identifier.
+     *
+     * @return self
+     */
+    public function setProductTypeVersion($productTypeVersion)
+    {
+        $this->container['productTypeVersion'] = $productTypeVersion;
 
         return $this;
     }

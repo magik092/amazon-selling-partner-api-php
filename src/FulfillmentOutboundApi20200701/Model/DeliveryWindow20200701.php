@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * DeliveryWindow20200701 Class Doc Comment
  *
  * @category Class
- * @description The time range within which a Scheduled Delivery fulfillment order should be delivered.
+ * @description The time range within which a Scheduled Delivery fulfillment order should be delivered. This is only available in the JP marketplace.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -236,7 +236,7 @@ class DeliveryWindow20200701 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets startDate
      *
-     * @param \DateTime $startDate startDate
+     * @param \DateTime $startDate Date timestamp
      *
      * @return self
      */
@@ -260,7 +260,7 @@ class DeliveryWindow20200701 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets endDate
      *
-     * @param \DateTime $endDate endDate
+     * @param \DateTime $endDate Date timestamp
      *
      * @return self
      */

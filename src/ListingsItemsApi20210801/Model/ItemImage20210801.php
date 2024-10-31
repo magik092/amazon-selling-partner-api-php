@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Listings Items
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ItemImage20210801 Class Doc Comment
  *
  * @category Class
- * @description Image for the listings item.
+ * @description The image for the listings item.
  * @package  Webcom\Amazon\Rest\ListingsItemsApi20210801
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -245,7 +245,7 @@ class ItemImage20210801 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets link
      *
-     * @param string $link Link, or URL, for the image.
+     * @param string $link The link, or URL, to the image.
      *
      * @return self
      */
@@ -269,7 +269,7 @@ class ItemImage20210801 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets height
      *
-     * @param int $height Height of the image in pixels.
+     * @param int $height The height of the image in pixels.
      *
      * @return self
      */
@@ -293,7 +293,7 @@ class ItemImage20210801 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets width
      *
-     * @param int $width Width of the image in pixels.
+     * @param int $width The width of the image in pixels.
      *
      * @return self
      */

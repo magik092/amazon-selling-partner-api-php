@@ -224,7 +224,7 @@ class SubmitInvoiceRequestV1 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets invoices
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\InvoiceDetailV1[]|null $invoices invoices
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\InvoiceDetailV1[]|null $invoices An array of invoice details you want to submit.
      *
      * @return self
      */

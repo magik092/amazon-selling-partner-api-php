@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Listings Items
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ListingsItemPutRequest20210801 Class Doc Comment
  *
  * @category Class
- * @description The request body schema for the putListingsItem operation.
+ * @description The request body schema for the &#x60;putListingsItem&#x60; operation.
  * @package  Webcom\Amazon\Rest\ListingsItemsApi20210801
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -326,7 +326,7 @@ class ListingsItemPutRequest20210801 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets attributes
      *
-     * @param object $attributes JSON object containing structured listings item attribute data keyed by attribute name.
+     * @param object $attributes A JSON object containing structured listings item attribute data keyed by attribute name.
      *
      * @return self
      */

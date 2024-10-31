@@ -227,7 +227,7 @@ class ErrorList20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets errors
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentTransactionsApi20211228\Model\Error20211228[] $errors errors
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentTransactionsApi20211228\Model\Error20211228[] $errors An array of individual error objects containing error details.
      *
      * @return self
      */

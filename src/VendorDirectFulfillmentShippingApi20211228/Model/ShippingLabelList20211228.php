@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ShippingLabelList20211228 Class Doc Comment
  *
  * @category Class
+ * @description Response payload with the shipping labels list.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -253,7 +254,7 @@ class ShippingLabelList20211228 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets shippingLabels
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228[]|null $shippingLabels shippingLabels
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228[]|null $shippingLabels An array that contains the details of the generated shipping labels.
      *
      * @return self
      */

@@ -676,7 +676,7 @@ class ReportsApi
     /**
      * Operation createReport
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body Information required to create the report. (required)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -691,7 +691,7 @@ class ReportsApi
     /**
      * Operation createReportWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body Information required to create the report. (required)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -939,7 +939,7 @@ class ReportsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body Information required to create the report. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -959,7 +959,7 @@ class ReportsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body Information required to create the report. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1006,7 +1006,7 @@ class ReportsApi
     /**
      * Create request for operation 'createReport'
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportSpecification20210630 $body Information required to create the report. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1097,7 +1097,7 @@ class ReportsApi
     /**
      * Operation createReportSchedule
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body Information required to create the report schedule. (required)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1112,7 +1112,7 @@ class ReportsApi
     /**
      * Operation createReportScheduleWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body Information required to create the report schedule. (required)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1360,7 +1360,7 @@ class ReportsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body Information required to create the report schedule. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1380,7 +1380,7 @@ class ReportsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body Information required to create the report schedule. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1427,7 +1427,7 @@ class ReportsApi
     /**
      * Create request for operation 'createReportSchedule'
      *
-     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body (required)
+     * @param  \Webcom\Amazon\Rest\ReportsApi20210630\Model\CreateReportScheduleSpecification20210630 $body Information required to create the report schedule. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2787,7 +2787,7 @@ class ReportsApi
     /**
      * Operation getReportSchedules
      *
-     * @param  string[] $reportTypes A list of report types used to filter report schedules. (required)
+     * @param  string[] $reportTypes A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2802,7 +2802,7 @@ class ReportsApi
     /**
      * Operation getReportSchedulesWithHttpInfo
      *
-     * @param  string[] $reportTypes A list of report types used to filter report schedules. (required)
+     * @param  string[] $reportTypes A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3050,7 +3050,7 @@ class ReportsApi
      *
      * 
      *
-     * @param  string[] $reportTypes A list of report types used to filter report schedules. (required)
+     * @param  string[] $reportTypes A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3070,7 +3070,7 @@ class ReportsApi
      *
      * 
      *
-     * @param  string[] $reportTypes A list of report types used to filter report schedules. (required)
+     * @param  string[] $reportTypes A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3117,7 +3117,7 @@ class ReportsApi
     /**
      * Create request for operation 'getReportSchedules'
      *
-     * @param  string[] $reportTypes A list of report types used to filter report schedules. (required)
+     * @param  string[] $reportTypes A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3216,13 +3216,13 @@ class ReportsApi
     /**
      * Operation getReports
      *
-     * @param  string[] $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $reportTypes A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processingStatuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param  string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is now. (optional)
+     * @param  string $nextToken A string token returned in the response to your previous request. &#x60;nextToken&#x60; is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getReports&#x60; operation and include this token as the only parameter. Specifying &#x60;nextToken&#x60; with any other parameters will cause the request to fail. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3237,13 +3237,13 @@ class ReportsApi
     /**
      * Operation getReportsWithHttpInfo
      *
-     * @param  string[] $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $reportTypes A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processingStatuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param  string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is now. (optional)
+     * @param  string $nextToken A string token returned in the response to your previous request. &#x60;nextToken&#x60; is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getReports&#x60; operation and include this token as the only parameter. Specifying &#x60;nextToken&#x60; with any other parameters will cause the request to fail. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3491,13 +3491,13 @@ class ReportsApi
      *
      * 
      *
-     * @param  string[] $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $reportTypes A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processingStatuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param  string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is now. (optional)
+     * @param  string $nextToken A string token returned in the response to your previous request. &#x60;nextToken&#x60; is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getReports&#x60; operation and include this token as the only parameter. Specifying &#x60;nextToken&#x60; with any other parameters will cause the request to fail. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3517,13 +3517,13 @@ class ReportsApi
      *
      * 
      *
-     * @param  string[] $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $reportTypes A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processingStatuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param  string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is now. (optional)
+     * @param  string $nextToken A string token returned in the response to your previous request. &#x60;nextToken&#x60; is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getReports&#x60; operation and include this token as the only parameter. Specifying &#x60;nextToken&#x60; with any other parameters will cause the request to fail. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3570,13 +3570,13 @@ class ReportsApi
     /**
      * Create request for operation 'getReports'
      *
-     * @param  string[] $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param  string[] $reportTypes A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param  string[] $processingStatuses A list of processing statuses used to filter reports. (optional)
      * @param  string[] $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param  int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param  string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param  \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param  \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is now. (optional)
+     * @param  string $nextToken A string token returned in the response to your previous request. &#x60;nextToken&#x60; is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getReports&#x60; operation and include this token as the only parameter. Specifying &#x60;nextToken&#x60; with any other parameters will cause the request to fail. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

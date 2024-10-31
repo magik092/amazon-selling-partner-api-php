@@ -365,7 +365,7 @@ class PartneredLtlDataOutputV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets boxCount
      *
-     * @param int $boxCount boxCount
+     * @param int $boxCount Contains an unsigned integer
      *
      * @return self
      */
@@ -413,7 +413,7 @@ class PartneredLtlDataOutputV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets freightReadyDate
      *
-     * @param \DateTime $freightReadyDate freightReadyDate
+     * @param \DateTime $freightReadyDate Type containing date in string format
      *
      * @return self
      */
@@ -533,7 +533,7 @@ class PartneredLtlDataOutputV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets previewPickupDate
      *
-     * @param \DateTime $previewPickupDate previewPickupDate
+     * @param \DateTime $previewPickupDate Type containing date in string format
      *
      * @return self
      */
@@ -557,7 +557,7 @@ class PartneredLtlDataOutputV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets previewDeliveryDate
      *
-     * @param \DateTime $previewDeliveryDate previewDeliveryDate
+     * @param \DateTime $previewDeliveryDate Type containing date in string format
      *
      * @return self
      */

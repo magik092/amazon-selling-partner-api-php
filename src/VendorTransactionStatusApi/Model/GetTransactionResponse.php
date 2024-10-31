@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetTransactionResponse Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getTransaction operation.
+ * @description The response schema for the &#x60;getTransaction&#x60; operation.
  * @package  Webcom\Amazon\Rest\VendorTransactionStatusApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -290,7 +290,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets cartonCount
      *
-     * @param int|null $cartonCount Number of cartons present in the shipment. Provide the cartonCount only for unpalletized shipments.
+     * @param int|null $cartonCount Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.
      *
      * @return self
      */

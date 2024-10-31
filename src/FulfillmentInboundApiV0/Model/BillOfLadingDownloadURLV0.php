@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * BillOfLadingDownloadURLV0 Class Doc Comment
  *
  * @category Class
+ * @description Download URL for the bill of lading.
  * @package  Webcom\Amazon\Rest\FulfillmentInboundApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

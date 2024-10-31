@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * InvoiceItemV1 Class Doc Comment
  *
  * @category Class
+ * @description Details of the invoice items.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -457,7 +458,7 @@ class InvoiceItemV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hsnCode
      *
-     * @param string|null $hsnCode HSN tax code. The HSN number cannot contain alphabets.
+     * @param string|null $hsnCode Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
      *
      * @return self
      */

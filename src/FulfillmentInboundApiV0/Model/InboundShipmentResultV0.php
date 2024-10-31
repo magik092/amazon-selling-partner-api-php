@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * InboundShipmentResultV0 Class Doc Comment
  *
  * @category Class
+ * @description Result of an inbound shipment operation
  * @package  Webcom\Amazon\Rest\FulfillmentInboundApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

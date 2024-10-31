@@ -242,7 +242,7 @@ class Error20211028 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets code
      *
-     * @param string $code An error code that identifies the type of error that occured.
+     * @param string $code An error code that identifies the type of error that occurred.
      *
      * @return self
      */

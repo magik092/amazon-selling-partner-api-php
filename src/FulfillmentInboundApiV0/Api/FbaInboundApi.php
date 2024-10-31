@@ -961,7 +961,7 @@ class FbaInboundApi
      * Operation createInboundShipment
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -977,7 +977,7 @@ class FbaInboundApi
      * Operation createInboundShipmentWithHttpInfo
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1206,7 +1206,7 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1227,7 +1227,7 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1275,7 +1275,7 @@ class FbaInboundApi
      * Create request for operation 'createInboundShipment'
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1380,7 +1380,7 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentPlan
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body The request schema for the CreateInboundShipmentPlanRequest operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1395,7 +1395,7 @@ class FbaInboundApi
     /**
      * Operation createInboundShipmentPlanWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body The request schema for the CreateInboundShipmentPlanRequest operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1623,7 +1623,7 @@ class FbaInboundApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body The request schema for the CreateInboundShipmentPlanRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1643,7 +1643,7 @@ class FbaInboundApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body The request schema for the CreateInboundShipmentPlanRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1690,7 +1690,7 @@ class FbaInboundApi
     /**
      * Create request for operation 'createInboundShipmentPlan'
      *
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\CreateInboundShipmentPlanRequestV0 $body The request schema for the CreateInboundShipmentPlanRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2585,447 +2585,13 @@ class FbaInboundApi
     }
 
     /**
-     * Operation getInboundGuidance
-     *
-     * @param  string $marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param  string[] $sellerSKUList A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param  string[] $aSINList A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     *
-     * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0
-     */
-    public function getInboundGuidance($marketplaceId, $sellerSKUList = null, $aSINList = null)
-    {
-        list($response) = $this->getInboundGuidanceWithHttpInfo($marketplaceId, $sellerSKUList, $aSINList);
-        return $response;
-    }
-
-    /**
-     * Operation getInboundGuidanceWithHttpInfo
-     *
-     * @param  string $marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param  string[] $sellerSKUList A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param  string[] $aSINList A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     *
-     * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0|\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getInboundGuidanceWithHttpInfo($marketplaceId, $sellerSKUList = null, $aSINList = null)
-    {
-        $request = $this->getInboundGuidanceRequest($marketplaceId, $sellerSKUList, $aSINList);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 200:
-                    if ('\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 503:
-                    if ('\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getInboundGuidanceAsync
-     *
-     * 
-     *
-     * @param  string $marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param  string[] $sellerSKUList A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param  string[] $aSINList A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getInboundGuidanceAsync($marketplaceId, $sellerSKUList = null, $aSINList = null)
-    {
-        return $this->getInboundGuidanceAsyncWithHttpInfo($marketplaceId, $sellerSKUList, $aSINList)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getInboundGuidanceAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param  string[] $sellerSKUList A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param  string[] $aSINList A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getInboundGuidanceAsyncWithHttpInfo($marketplaceId, $sellerSKUList = null, $aSINList = null)
-    {
-        $returnType = '\Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\GetInboundGuidanceResponseV0';
-        $request = $this->getInboundGuidanceRequest($marketplaceId, $sellerSKUList, $aSINList);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getInboundGuidance'
-     *
-     * @param  string $marketplaceId A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param  string[] $sellerSKUList A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param  string[] $aSINList A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getInboundGuidanceRequest($marketplaceId, $sellerSKUList = null, $aSINList = null)
-    {
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (is_array($marketplaceId) && count($marketplaceId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling getInboundGuidance'
-            );
-        }
-        if ($sellerSKUList !== null && count($sellerSKUList) > 50) {
-            throw new \InvalidArgumentException('invalid value for "$sellerSKUList" when calling FbaInboundApi.getInboundGuidance, number of items must be less than or equal to 50.');
-        }
-
-        if ($aSINList !== null && count($aSINList) > 50) {
-            throw new \InvalidArgumentException('invalid value for "$aSINList" when calling FbaInboundApi.getInboundGuidance, number of items must be less than or equal to 50.');
-        }
-
-
-        $resourcePath = '/fba/inbound/v0/itemsGuidance';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if (is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
-        }
-        if ($marketplaceId !== null) {
-            $queryParams['MarketplaceId'] = $marketplaceId;
-        }
-        // query params
-        if (is_array($sellerSKUList)) {
-            $sellerSKUList = ObjectSerializer::serializeCollection($sellerSKUList, 'form', true);
-        }
-        if ($sellerSKUList !== null) {
-            $queryParams['SellerSKUList'] = $sellerSKUList;
-        }
-        // query params
-        if (is_array($aSINList)) {
-            $aSINList = ObjectSerializer::serializeCollection($aSINList, 'form', true);
-        }
-        if ($aSINList !== null) {
-            $queryParams['ASINList'] = $aSINList;
-        }
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation getLabels
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param  string $pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
      * @param  string $labelType The type of labels requested. (required)
      * @param  int $numberOfPackages The number of packages in the shipment. (optional)
-     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
+     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  If you provide box content information with the [FBA Inbound Shipment Carton Information Feed](https://developer-docs.amazon.com/sp-api/docs/fulfillment-by-amazon-feed-type-values#fba-inbound-shipment-carton-information-feed), then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;CartonId&#x60; values you provide through that feed. If you provide box content information with the Fulfillment Inbound API v2024-03-20, then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;boxID&#x60; values from the [&#x60;listShipmentBoxes&#x60;](https://developer-docs.amazon.com/sp-api/docs/fulfillment-inbound-api-v2024-03-20-reference#listshipmentboxes) response. If these values do not match as required, the operation returns the &#x60;IncorrectPackageIdentifier&#x60; error code. (optional)
      * @param  int $numberOfPallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      * @param  int $pageSize The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
      * @param  int $pageStartIndex The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
@@ -3047,7 +2613,7 @@ class FbaInboundApi
      * @param  string $pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
      * @param  string $labelType The type of labels requested. (required)
      * @param  int $numberOfPackages The number of packages in the shipment. (optional)
-     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
+     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  If you provide box content information with the [FBA Inbound Shipment Carton Information Feed](https://developer-docs.amazon.com/sp-api/docs/fulfillment-by-amazon-feed-type-values#fba-inbound-shipment-carton-information-feed), then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;CartonId&#x60; values you provide through that feed. If you provide box content information with the Fulfillment Inbound API v2024-03-20, then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;boxID&#x60; values from the [&#x60;listShipmentBoxes&#x60;](https://developer-docs.amazon.com/sp-api/docs/fulfillment-inbound-api-v2024-03-20-reference#listshipmentboxes) response. If these values do not match as required, the operation returns the &#x60;IncorrectPackageIdentifier&#x60; error code. (optional)
      * @param  int $numberOfPallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      * @param  int $pageSize The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
      * @param  int $pageStartIndex The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
@@ -3282,7 +2848,7 @@ class FbaInboundApi
      * @param  string $pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
      * @param  string $labelType The type of labels requested. (required)
      * @param  int $numberOfPackages The number of packages in the shipment. (optional)
-     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
+     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  If you provide box content information with the [FBA Inbound Shipment Carton Information Feed](https://developer-docs.amazon.com/sp-api/docs/fulfillment-by-amazon-feed-type-values#fba-inbound-shipment-carton-information-feed), then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;CartonId&#x60; values you provide through that feed. If you provide box content information with the Fulfillment Inbound API v2024-03-20, then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;boxID&#x60; values from the [&#x60;listShipmentBoxes&#x60;](https://developer-docs.amazon.com/sp-api/docs/fulfillment-inbound-api-v2024-03-20-reference#listshipmentboxes) response. If these values do not match as required, the operation returns the &#x60;IncorrectPackageIdentifier&#x60; error code. (optional)
      * @param  int $numberOfPallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      * @param  int $pageSize The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
      * @param  int $pageStartIndex The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
@@ -3309,7 +2875,7 @@ class FbaInboundApi
      * @param  string $pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
      * @param  string $labelType The type of labels requested. (required)
      * @param  int $numberOfPackages The number of packages in the shipment. (optional)
-     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
+     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  If you provide box content information with the [FBA Inbound Shipment Carton Information Feed](https://developer-docs.amazon.com/sp-api/docs/fulfillment-by-amazon-feed-type-values#fba-inbound-shipment-carton-information-feed), then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;CartonId&#x60; values you provide through that feed. If you provide box content information with the Fulfillment Inbound API v2024-03-20, then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;boxID&#x60; values from the [&#x60;listShipmentBoxes&#x60;](https://developer-docs.amazon.com/sp-api/docs/fulfillment-inbound-api-v2024-03-20-reference#listshipmentboxes) response. If these values do not match as required, the operation returns the &#x60;IncorrectPackageIdentifier&#x60; error code. (optional)
      * @param  int $numberOfPallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      * @param  int $pageSize The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
      * @param  int $pageStartIndex The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
@@ -3363,7 +2929,7 @@ class FbaInboundApi
      * @param  string $pageType The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
      * @param  string $labelType The type of labels requested. (required)
      * @param  int $numberOfPackages The number of packages in the shipment. (optional)
-     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
+     * @param  string[] $packageLabelsToPrint A list of identifiers that specify packages for which you want package labels printed.  If you provide box content information with the [FBA Inbound Shipment Carton Information Feed](https://developer-docs.amazon.com/sp-api/docs/fulfillment-by-amazon-feed-type-values#fba-inbound-shipment-carton-information-feed), then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;CartonId&#x60; values you provide through that feed. If you provide box content information with the Fulfillment Inbound API v2024-03-20, then &#x60;PackageLabelsToPrint&#x60; must match the &#x60;boxID&#x60; values from the [&#x60;listShipmentBoxes&#x60;](https://developer-docs.amazon.com/sp-api/docs/fulfillment-inbound-api-v2024-03-20-reference#listshipmentboxes) response. If these values do not match as required, the operation returns the &#x60;IncorrectPackageIdentifier&#x60; error code. (optional)
      * @param  int $numberOfPallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
      * @param  int $pageSize The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
      * @param  int $pageStartIndex The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
@@ -3391,10 +2957,6 @@ class FbaInboundApi
                 'Missing the required parameter $labelType when calling getLabels'
             );
         }
-        if ($packageLabelsToPrint !== null && count($packageLabelsToPrint) > 999) {
-            throw new \InvalidArgumentException('invalid value for "$packageLabelsToPrint" when calling FbaInboundApi.getLabels, number of items must be less than or equal to 999.');
-        }
-
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/labels';
         $formParams = [];
@@ -5615,6 +5177,10 @@ class FbaInboundApi
                 'Missing the required parameter $marketplaceId when calling getShipments'
             );
         }
+        if ($shipmentIdList !== null && count($shipmentIdList) > 999) {
+            throw new \InvalidArgumentException('invalid value for "$shipmentIdList" when calling FbaInboundApi.getShipments, number of items must be less than or equal to 999.');
+        }
+
 
         $resourcePath = '/fba/inbound/v0/shipments';
         $formParams = [];
@@ -6140,7 +5706,7 @@ class FbaInboundApi
      * Operation putTransportDetails
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body The request schema for the PutTransportDetailsRequest operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6156,7 +5722,7 @@ class FbaInboundApi
      * Operation putTransportDetailsWithHttpInfo
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body The request schema for the PutTransportDetailsRequest operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6385,7 +5951,7 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body The request schema for the PutTransportDetailsRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6406,7 +5972,7 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body The request schema for the PutTransportDetailsRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6454,7 +6020,7 @@ class FbaInboundApi
      * Create request for operation 'putTransportDetails'
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\PutTransportDetailsRequestV0 $body The request schema for the PutTransportDetailsRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -6560,7 +6126,7 @@ class FbaInboundApi
      * Operation updateInboundShipment
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6576,7 +6142,7 @@ class FbaInboundApi
      * Operation updateInboundShipmentWithHttpInfo
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\FulfillmentInboundApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -6805,7 +6371,7 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6826,7 +6392,7 @@ class FbaInboundApi
      * 
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -6874,7 +6440,7 @@ class FbaInboundApi
      * Create request for operation 'updateInboundShipment'
      *
      * @param  string $shipmentId A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\FulfillmentInboundApiV0\Model\InboundShipmentRequestV0 $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

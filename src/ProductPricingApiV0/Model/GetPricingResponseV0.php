@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetPricingResponseV0 Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getPricing and getCompetitivePricing operations.
+ * @description The response schema for the &#x60;getPricing&#x60; and &#x60;getCompetitivePricing&#x60; operations.
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

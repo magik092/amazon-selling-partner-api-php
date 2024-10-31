@@ -259,6 +259,9 @@ class Address20200701 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['stateOrRegion'] === null) {
             $invalidProperties[] = "'stateOrRegion' can't be null";
         }
+        if ($this->container['postalCode'] === null) {
+            $invalidProperties[] = "'postalCode' can't be null";
+        }
         if ($this->container['countryCode'] === null) {
             $invalidProperties[] = "'countryCode' can't be null";
         }
@@ -386,7 +389,7 @@ class Address20200701 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string|null $city The city where the person, business, or institution is located.
+     * @param string|null $city The city where the person, business, or institution is located. This property is required in all countries except Japan. It should not be used in Japan.
      *
      * @return self
      */
@@ -448,7 +451,7 @@ class Address20200701 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets postalCode
      *
-     * @return string|null
+     * @return string
      */
     public function getPostalCode()
     {
@@ -458,7 +461,7 @@ class Address20200701 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets postalCode
      *
-     * @param string|null $postalCode The postal code of the address.
+     * @param string $postalCode The postal code of the address.
      *
      * @return self
      */

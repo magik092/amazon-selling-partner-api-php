@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PaginationV1 Class Doc Comment
  *
  * @category Class
+ * @description The pagination elements required to retrieve the remaining data.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class PaginationV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets nextToken
      *
-     * @param string|null $nextToken A generated string used to pass information to your next request. If NextToken is returned, pass the value of NextToken to the next request. If NextToken is not returned, there are no more order items to return.
+     * @param string|null $nextToken A generated string used to pass information to your next request. If `NextToken` is returned, pass the value of `NextToken` to the next request. If `NextToken` is not returned, there are no more order items to return.
      *
      * @return self
      */

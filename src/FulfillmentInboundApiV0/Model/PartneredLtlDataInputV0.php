@@ -284,7 +284,7 @@ class PartneredLtlDataInputV0 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets boxCount
      *
-     * @param int|null $boxCount boxCount
+     * @param int|null $boxCount Contains an unsigned integer
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class PartneredLtlDataInputV0 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets freightReadyDate
      *
-     * @param \DateTime|null $freightReadyDate freightReadyDate
+     * @param \DateTime|null $freightReadyDate Type containing date in string format
      *
      * @return self
      */

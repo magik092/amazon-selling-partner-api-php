@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Finances
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -254,7 +254,7 @@ class ProductAdsPaymentEventV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets postedDate
      *
-     * @param \DateTime|null $postedDate postedDate
+     * @param \DateTime|null $postedDate A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      *
      * @return self
      */
@@ -278,7 +278,7 @@ class ProductAdsPaymentEventV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets transactionType
      *
-     * @param string|null $transactionType Indicates if the transaction is for a charge or a refund.  Possible values:  * charge - Charge  * refund - Refund
+     * @param string|null $transactionType Indicates if the transaction is for a charge or a refund.  Possible values:  * `charge`  * `refund`
      *
      * @return self
      */
@@ -302,7 +302,7 @@ class ProductAdsPaymentEventV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets invoiceId
      *
-     * @param string|null $invoiceId Identifier for the invoice that the transaction appears in.
+     * @param string|null $invoiceId The identifier for the invoice that includes the transaction.
      *
      * @return self
      */

@@ -5609,6 +5609,468 @@ class MessagingApi
     }
 
     /**
+     * Operation sendInvoice
+     *
+     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body body (required)
+     *
+     * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse
+     */
+    public function sendInvoice($amazonOrderId, $marketplaceIds, $body)
+    {
+        list($response) = $this->sendInvoiceWithHttpInfo($amazonOrderId, $marketplaceIds, $body);
+        return $response;
+    }
+
+    /**
+     * Operation sendInvoiceWithHttpInfo
+     *
+     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body (required)
+     *
+     * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse|\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sendInvoiceWithHttpInfo($amazonOrderId, $marketplaceIds, $body)
+    {
+        $request = $this->sendInvoiceRequest($amazonOrderId, $marketplaceIds, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 201:
+                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sendInvoiceAsync
+     *
+     * 
+     *
+     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sendInvoiceAsync($amazonOrderId, $marketplaceIds, $body)
+    {
+        return $this->sendInvoiceAsyncWithHttpInfo($amazonOrderId, $marketplaceIds, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sendInvoiceAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sendInvoiceAsyncWithHttpInfo($amazonOrderId, $marketplaceIds, $body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\MessagingApi\Model\InvoiceResponse';
+        $request = $this->sendInvoiceRequest($amazonOrderId, $marketplaceIds, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sendInvoice'
+     *
+     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function sendInvoiceRequest($amazonOrderId, $marketplaceIds, $body)
+    {
+        // verify the required parameter 'amazonOrderId' is set
+        if ($amazonOrderId === null || (is_array($amazonOrderId) && count($amazonOrderId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $amazonOrderId when calling sendInvoice'
+            );
+        }
+        // verify the required parameter 'marketplaceIds' is set
+        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceIds when calling sendInvoice'
+            );
+        }
+        if (count($marketplaceIds) > 1) {
+            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling MessagingApi.sendInvoice, number of items must be less than or equal to 1.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling sendInvoice'
+            );
+        }
+
+        $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/invoice';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceIds)) {
+            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        }
+        if ($marketplaceIds !== null) {
+            $queryParams['marketplaceIds'] = $marketplaceIds;
+        }
+
+
+        // path params
+        if ($amazonOrderId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'amazonOrderId' . '}',
+                ObjectSerializer::toPathValue($amazonOrderId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/hal+json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/hal+json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Create http client option
      *
      * @throws \RuntimeException on file opening failure

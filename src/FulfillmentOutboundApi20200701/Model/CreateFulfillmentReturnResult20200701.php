@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CreateFulfillmentReturnResult20200701 Class Doc Comment
  *
  * @category Class
+ * @description The result for the createFulfillmentReturn operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

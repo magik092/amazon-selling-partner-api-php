@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Finances
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -302,7 +302,7 @@ class PayWithAmazonEventV0 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets transactionPostedDate
      *
-     * @param \DateTime|null $transactionPostedDate transactionPostedDate
+     * @param \DateTime|null $transactionPostedDate A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class PayWithAmazonEventV0 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets paymentAmountType
      *
-     * @param string|null $paymentAmountType The type of payment.  Possible values:  * Sales
+     * @param string|null $paymentAmountType The type of payment.  Possible values:  * `Sales`
      *
      * @return self
      */
@@ -470,7 +470,7 @@ class PayWithAmazonEventV0 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets fulfillmentChannel
      *
-     * @param string|null $fulfillmentChannel The fulfillment channel.  Possible values:  * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)  * MFN - Merchant Fulfillment Network (self-fulfilled)
+     * @param string|null $fulfillmentChannel The fulfillment channel.  Possible values:  * `AFN`: Amazon Fulfillment Network (Fulfillment by Amazon)  * `MFN`: Merchant Fulfillment Network (self-fulfilled)
      *
      * @return self
      */
@@ -494,7 +494,7 @@ class PayWithAmazonEventV0 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets storeName
      *
-     * @param string|null $storeName The store name where the event occurred.
+     * @param string|null $storeName The name of the store where the event occurred.
      *
      * @return self
      */

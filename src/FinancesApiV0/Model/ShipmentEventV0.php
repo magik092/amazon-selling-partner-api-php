@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Finances
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -65,6 +65,7 @@ class ShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazonOrderId' => 'string',
         'sellerOrderId' => 'string',
         'marketplaceName' => 'string',
+        'storeName' => 'string',
         'orderChargeList' => '\Webcom\Amazon\Rest\FinancesApiV0\Model\ChargeComponentV0[]',
         'orderChargeAdjustmentList' => '\Webcom\Amazon\Rest\FinancesApiV0\Model\ChargeComponentV0[]',
         'shipmentFeeList' => '\Webcom\Amazon\Rest\FinancesApiV0\Model\FeeComponentV0[]',
@@ -88,6 +89,7 @@ class ShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazonOrderId' => null,
         'sellerOrderId' => null,
         'marketplaceName' => null,
+        'storeName' => null,
         'orderChargeList' => null,
         'orderChargeAdjustmentList' => null,
         'shipmentFeeList' => null,
@@ -130,6 +132,7 @@ class ShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazonOrderId' => 'AmazonOrderId',
         'sellerOrderId' => 'SellerOrderId',
         'marketplaceName' => 'MarketplaceName',
+        'storeName' => 'StoreName',
         'orderChargeList' => 'OrderChargeList',
         'orderChargeAdjustmentList' => 'OrderChargeAdjustmentList',
         'shipmentFeeList' => 'ShipmentFeeList',
@@ -151,6 +154,7 @@ class ShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazonOrderId' => 'setAmazonOrderId',
         'sellerOrderId' => 'setSellerOrderId',
         'marketplaceName' => 'setMarketplaceName',
+        'storeName' => 'setStoreName',
         'orderChargeList' => 'setOrderChargeList',
         'orderChargeAdjustmentList' => 'setOrderChargeAdjustmentList',
         'shipmentFeeList' => 'setShipmentFeeList',
@@ -172,6 +176,7 @@ class ShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'amazonOrderId' => 'getAmazonOrderId',
         'sellerOrderId' => 'getSellerOrderId',
         'marketplaceName' => 'getMarketplaceName',
+        'storeName' => 'getStoreName',
         'orderChargeList' => 'getOrderChargeList',
         'orderChargeAdjustmentList' => 'getOrderChargeAdjustmentList',
         'shipmentFeeList' => 'getShipmentFeeList',
@@ -247,6 +252,7 @@ class ShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['amazonOrderId'] = $data['amazonOrderId'] ?? null;
         $this->container['sellerOrderId'] = $data['sellerOrderId'] ?? null;
         $this->container['marketplaceName'] = $data['marketplaceName'] ?? null;
+        $this->container['storeName'] = $data['storeName'] ?? null;
         $this->container['orderChargeList'] = $data['orderChargeList'] ?? null;
         $this->container['orderChargeAdjustmentList'] = $data['orderChargeAdjustmentList'] ?? null;
         $this->container['shipmentFeeList'] = $data['shipmentFeeList'] ?? null;
@@ -351,6 +357,30 @@ class ShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMarketplaceName($marketplaceName)
     {
         $this->container['marketplaceName'] = $marketplaceName;
+
+        return $this;
+    }
+
+    /**
+     * Gets storeName
+     *
+     * @return string|null
+     */
+    public function getStoreName()
+    {
+        return $this->container['storeName'];
+    }
+
+    /**
+     * Sets storeName
+     *
+     * @param string|null $storeName The name of the store where the event occurred.
+     *
+     * @return self
+     */
+    public function setStoreName($storeName)
+    {
+        $this->container['storeName'] = $storeName;
 
         return $this;
     }
@@ -536,7 +566,7 @@ class ShipmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets postedDate
      *
-     * @param \DateTime|null $postedDate postedDate
+     * @param \DateTime|null $postedDate A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      *
      * @return self
      */

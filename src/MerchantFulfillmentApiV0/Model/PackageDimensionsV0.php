@@ -248,7 +248,7 @@ class PackageDimensionsV0 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets length
      *
-     * @param double|null $length length
+     * @param double|null $length Number representing the given package dimension.
      *
      * @return self
      */
@@ -272,7 +272,7 @@ class PackageDimensionsV0 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets width
      *
-     * @param double|null $width width
+     * @param double|null $width Number representing the given package dimension.
      *
      * @return self
      */
@@ -296,7 +296,7 @@ class PackageDimensionsV0 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets height
      *
-     * @param double|null $height height
+     * @param double|null $height Number representing the given package dimension.
      *
      * @return self
      */

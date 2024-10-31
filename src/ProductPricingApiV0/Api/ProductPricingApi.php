@@ -1031,6 +1031,407 @@ class ProductPricingApi
     }
 
     /**
+     * Operation getItemOffersBatch
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody getItemOffersBatchRequestBody (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ProductPricingApiV0\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchResponseV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0
+     */
+    public function getItemOffersBatch($getItemOffersBatchRequestBody)
+    {
+        list($response) = $this->getItemOffersBatchWithHttpInfo($getItemOffersBatchRequestBody);
+        return $response;
+    }
+
+    /**
+     * Operation getItemOffersBatchWithHttpInfo
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ProductPricingApiV0\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchResponseV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getItemOffersBatchWithHttpInfo($getItemOffersBatchRequestBody)
+    {
+        $request = $this->getItemOffersBatchRequest($getItemOffersBatchRequestBody);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchResponseV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchResponseV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchResponseV0';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchResponseV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getItemOffersBatchAsync
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getItemOffersBatchAsync($getItemOffersBatchRequestBody)
+    {
+        return $this->getItemOffersBatchAsyncWithHttpInfo($getItemOffersBatchRequestBody)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getItemOffersBatchAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getItemOffersBatchAsyncWithHttpInfo($getItemOffersBatchRequestBody)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchResponseV0';
+        $request = $this->getItemOffersBatchRequest($getItemOffersBatchRequestBody);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getItemOffersBatch'
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getItemOffersBatchRequest($getItemOffersBatchRequestBody)
+    {
+        // verify the required parameter 'getItemOffersBatchRequestBody' is set
+        if ($getItemOffersBatchRequestBody === null || (is_array($getItemOffersBatchRequestBody) && count($getItemOffersBatchRequestBody) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $getItemOffersBatchRequestBody when calling getItemOffersBatch'
+            );
+        }
+
+        $resourcePath = '/batches/products/pricing/v0/itemOffers';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($getItemOffersBatchRequestBody)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($getItemOffersBatchRequestBody));
+            } else {
+                $httpBody = $getItemOffersBatchRequestBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getListingOffers
      *
      * @param  string $marketplaceId A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
@@ -1475,6 +1876,407 @@ class ProductPricingApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getListingOffersBatch
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody getListingOffersBatchRequestBody (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ProductPricingApiV0\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchResponseV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0
+     */
+    public function getListingOffersBatch($getListingOffersBatchRequestBody)
+    {
+        list($response) = $this->getListingOffersBatchWithHttpInfo($getListingOffersBatchRequestBody);
+        return $response;
+    }
+
+    /**
+     * Operation getListingOffersBatchWithHttpInfo
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody (required)
+     *
+     * @throws \Webcom\Amazon\Rest\ProductPricingApiV0\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchResponseV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0|\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getListingOffersBatchWithHttpInfo($getListingOffersBatchRequestBody)
+    {
+        $request = $this->getListingOffersBatchRequest($getListingOffersBatchRequestBody);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchResponseV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchResponseV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchResponseV0';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchResponseV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ErrorsV0',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getListingOffersBatchAsync
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getListingOffersBatchAsync($getListingOffersBatchRequestBody)
+    {
+        return $this->getListingOffersBatchAsyncWithHttpInfo($getListingOffersBatchRequestBody)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getListingOffersBatchAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getListingOffersBatchAsyncWithHttpInfo($getListingOffersBatchRequestBody)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchResponseV0';
+        $request = $this->getListingOffersBatchRequest($getListingOffersBatchRequestBody);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getListingOffersBatch'
+     *
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getListingOffersBatchRequest($getListingOffersBatchRequestBody)
+    {
+        // verify the required parameter 'getListingOffersBatchRequestBody' is set
+        if ($getListingOffersBatchRequestBody === null || (is_array($getListingOffersBatchRequestBody) && count($getListingOffersBatchRequestBody) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $getListingOffersBatchRequestBody when calling getListingOffersBatch'
+            );
+        }
+
+        $resourcePath = '/batches/products/pricing/v0/listingOffers';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($getListingOffersBatchRequestBody)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($getListingOffersBatchRequestBody));
+            } else {
+                $httpBody = $getListingOffersBatchRequestBody;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

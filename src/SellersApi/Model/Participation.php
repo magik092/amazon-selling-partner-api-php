@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Sellers
  *
- * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
+ * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Participation Class Doc Comment
  *
  * @category Class
- * @description Detailed information that is specific to a seller in a Marketplace.
+ * @description Information that is specific to a seller in a marketplace.
  * @package  Webcom\Amazon\Rest\SellersApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -236,7 +236,7 @@ class Participation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets isParticipating
      *
-     * @param bool $isParticipating isParticipating
+     * @param bool $isParticipating If `true`, the seller participates in the marketplace. Otherwise `false`.
      *
      * @return self
      */
@@ -260,7 +260,7 @@ class Participation implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hasSuspendedListings
      *
-     * @param bool $hasSuspendedListings Specifies if the seller has suspended listings. True if the seller Listing Status is set to Inactive, otherwise False.
+     * @param bool $hasSuspendedListings Specifies if the seller has suspended listings. `true` if the seller Listing Status is set to Inactive, otherwise `false`.
      *
      * @return self
      */

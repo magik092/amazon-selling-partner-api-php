@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetInboundGuidanceResultV0 Class Doc Comment
  *
  * @category Class
+ * @description Result for the get inbound guidance operation
  * @package  Webcom\Amazon\Rest\FulfillmentInboundApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

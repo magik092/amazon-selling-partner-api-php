@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetFeatureSkuResult20200701 Class Doc Comment
  *
  * @category Class
- * @description The payload for the getFeatureSKU operation.
+ * @description The payload for the &#x60;getFeatureSKU&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -329,7 +329,7 @@ class GetFeatureSkuResult20200701 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets ineligibleReasons
      *
-     * @param string[]|null $ineligibleReasons A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * MERCHANT_NOT_ENROLLED - The merchant isn't enrolled for the feature. * SKU_NOT_ELIGIBLE - The SKU doesn't reside in a warehouse that supports the feature. * INVALID_SKU - There is an issue with the SKU provided.
+     * @param string[]|null $ineligibleReasons A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * `MERCHANT_NOT_ENROLLED` - The merchant isn't enrolled for the feature. * `SKU_NOT_ELIGIBLE` - The SKU doesn't reside in a warehouse that supports the feature. * `INVALID_SKU` - There is an issue with the SKU provided.
      *
      * @return self
      */

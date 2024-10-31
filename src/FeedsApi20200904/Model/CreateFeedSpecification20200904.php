@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Feeds
  *
- * The Selling Partner API for Feeds lets you upload data to Amazon on behalf of a selling partner.
+ * Effective **June 27, 2024**, the Selling Partner API for Feeds v2020-09-04 will no longer be available and all calls to it will fail. Integrations that rely on the Feeds API must migrate to [Feeds v2021-06-30](https://developer-docs.amazon.com/sp-api/docs/feeds-api-v2021-06-30-reference) to avoid service disruption.
  *
  * The version of the OpenAPI document: 2020-09-04
  * 
@@ -322,7 +322,7 @@ class CreateFeedSpecification20200904 implements ModelInterface, ArrayAccess, \J
     /**
      * Sets feedOptions
      *
-     * @param map[string,string]|null $feedOptions Additional options to control the feed. For feeds that use the feedOptions parameter, you can find the parameter values in the feed description in [feedType values](doc:feed-type-values).
+     * @param map[string,string]|null $feedOptions Additional options to control the feed. For feeds that use the feedOptions parameter, you can find the parameter values in the feed description in [feedType values](https://github.com/amzn/selling-partner-api-docs/blob/main/references/feeds-api/feedtype-values.md).
      *
      * @return self
      */

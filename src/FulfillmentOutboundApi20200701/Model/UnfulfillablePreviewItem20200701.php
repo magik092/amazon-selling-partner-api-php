@@ -311,7 +311,7 @@ class UnfulfillablePreviewItem20200701 implements ModelInterface, ArrayAccess, \
     /**
      * Sets sellerFulfillmentOrderItemId
      *
-     * @param string $sellerFulfillmentOrderItemId A fulfillment order item identifier created with a call to the getFulfillmentPreview operation.
+     * @param string $sellerFulfillmentOrderItemId A fulfillment order item identifier created with a call to the `getFulfillmentPreview` operation.
      *
      * @return self
      */
@@ -339,7 +339,7 @@ class UnfulfillablePreviewItem20200701 implements ModelInterface, ArrayAccess, \
     /**
      * Sets itemUnfulfillableReasons
      *
-     * @param string[]|null $itemUnfulfillableReasons itemUnfulfillableReasons
+     * @param string[]|null $itemUnfulfillableReasons String list
      *
      * @return self
      */

@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GenerateOrderScenarioRequest20211028 Class Doc Comment
  *
  * @category Class
- * @description The request body for the generateOrderScenarios operation.
+ * @description The &#x60;generateOrderScenarios&#x60; request body.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentSandboxTestDataApi20211028
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

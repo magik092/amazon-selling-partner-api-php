@@ -254,7 +254,7 @@ class DimensionsV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets length
      *
-     * @param double $length length
+     * @param double $length Number format that supports decimal.
      *
      * @return self
      */
@@ -278,7 +278,7 @@ class DimensionsV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets width
      *
-     * @param double $width width
+     * @param double $width Number format that supports decimal.
      *
      * @return self
      */
@@ -302,7 +302,7 @@ class DimensionsV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets height
      *
-     * @param double $height height
+     * @param double $height Number format that supports decimal.
      *
      * @return self
      */

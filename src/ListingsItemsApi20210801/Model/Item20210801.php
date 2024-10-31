@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Listings Items
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  * 
@@ -68,7 +68,7 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
         'issues' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Issue20210801[]',
         'offers' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemOfferByMarketplace20210801[]',
         'fulfillmentAvailability' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\FulfillmentAvailability20210801[]',
-        'procurement' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProcurement20210801'
+        'procurement' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProcurement20210801[]'
     ];
 
     /**
@@ -311,7 +311,7 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets attributes
      *
-     * @param object|null $attributes JSON object containing structured listings item attribute data keyed by attribute name.
+     * @param object|null $attributes A JSON object containing structured listings item attribute data keyed by attribute name.
      *
      * @return self
      */
@@ -335,7 +335,7 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets issues
      *
-     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Issue20210801[]|null $issues Issues associated with the listings item.
+     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Issue20210801[]|null $issues The issues associated with the listings item.
      *
      * @return self
      */
@@ -383,7 +383,7 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillmentAvailability
      *
-     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\FulfillmentAvailability20210801[]|null $fulfillmentAvailability Fulfillment availability for the listings item.
+     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\FulfillmentAvailability20210801[]|null $fulfillmentAvailability The fulfillment availability for the listings item.
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets procurement
      *
-     * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProcurement20210801|null
+     * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProcurement20210801[]|null
      */
     public function getProcurement()
     {
@@ -407,7 +407,7 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets procurement
      *
-     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProcurement20210801|null $procurement procurement
+     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProcurement20210801[]|null $procurement The vendor procurement information for the listings item.
      *
      * @return self
      */

@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SubmitInvoicesRequest Class Doc Comment
  *
  * @category Class
- * @description The request schema for the submitInvoices operation.
+ * @description The request schema for the &#x60;submitInvoices&#x60; operation.
  * @package  Webcom\Amazon\Rest\VendorInvoicesApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -224,7 +224,7 @@ class SubmitInvoicesRequest implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets invoices
      *
-     * @param \Webcom\Amazon\Rest\VendorInvoicesApi\Model\Invoice[]|null $invoices invoices
+     * @param \Webcom\Amazon\Rest\VendorInvoicesApi\Model\Invoice[]|null $invoices An array of Invoice objects representing the invoices or credit notes to be submitted.
      *
      * @return self
      */

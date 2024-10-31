@@ -74,7 +74,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'availableShippingServiceOptions' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\AvailableShippingServiceOptionsV0',
         'availableLabelFormats' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\LabelFormatV0[]',
         'availableFormatOptionsForLabel' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\LabelFormatOptionV0[]',
-        'requiresAdditionalSellerInputs' => 'bool'
+        'requiresAdditionalSellerInputs' => 'bool',
+        'benefits' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\BenefitsV0'
     ];
 
     /**
@@ -97,7 +98,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'availableShippingServiceOptions' => null,
         'availableLabelFormats' => null,
         'availableFormatOptionsForLabel' => null,
-        'requiresAdditionalSellerInputs' => null
+        'requiresAdditionalSellerInputs' => null,
+        'benefits' => null
     ];
 
     /**
@@ -139,7 +141,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'availableShippingServiceOptions' => 'AvailableShippingServiceOptions',
         'availableLabelFormats' => 'AvailableLabelFormats',
         'availableFormatOptionsForLabel' => 'AvailableFormatOptionsForLabel',
-        'requiresAdditionalSellerInputs' => 'RequiresAdditionalSellerInputs'
+        'requiresAdditionalSellerInputs' => 'RequiresAdditionalSellerInputs',
+        'benefits' => 'Benefits'
     ];
 
     /**
@@ -160,7 +163,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'availableShippingServiceOptions' => 'setAvailableShippingServiceOptions',
         'availableLabelFormats' => 'setAvailableLabelFormats',
         'availableFormatOptionsForLabel' => 'setAvailableFormatOptionsForLabel',
-        'requiresAdditionalSellerInputs' => 'setRequiresAdditionalSellerInputs'
+        'requiresAdditionalSellerInputs' => 'setRequiresAdditionalSellerInputs',
+        'benefits' => 'setBenefits'
     ];
 
     /**
@@ -181,7 +185,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'availableShippingServiceOptions' => 'getAvailableShippingServiceOptions',
         'availableLabelFormats' => 'getAvailableLabelFormats',
         'availableFormatOptionsForLabel' => 'getAvailableFormatOptionsForLabel',
-        'requiresAdditionalSellerInputs' => 'getRequiresAdditionalSellerInputs'
+        'requiresAdditionalSellerInputs' => 'getRequiresAdditionalSellerInputs',
+        'benefits' => 'getBenefits'
     ];
 
     /**
@@ -257,6 +262,7 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['availableLabelFormats'] = $data['availableLabelFormats'] ?? null;
         $this->container['availableFormatOptionsForLabel'] = $data['availableFormatOptionsForLabel'] ?? null;
         $this->container['requiresAdditionalSellerInputs'] = $data['requiresAdditionalSellerInputs'] ?? null;
+        $this->container['benefits'] = $data['benefits'] ?? null;
     }
 
     /**
@@ -416,7 +422,7 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets shipDate
      *
-     * @param \DateTime $shipDate shipDate
+     * @param \DateTime $shipDate Date-time formatted timestamp.
      *
      * @return self
      */
@@ -440,7 +446,7 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets earliestEstimatedDeliveryDate
      *
-     * @param \DateTime|null $earliestEstimatedDeliveryDate earliestEstimatedDeliveryDate
+     * @param \DateTime|null $earliestEstimatedDeliveryDate Date-time formatted timestamp.
      *
      * @return self
      */
@@ -464,7 +470,7 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets latestEstimatedDeliveryDate
      *
-     * @param \DateTime|null $latestEstimatedDeliveryDate latestEstimatedDeliveryDate
+     * @param \DateTime|null $latestEstimatedDeliveryDate Date-time formatted timestamp.
      *
      * @return self
      */
@@ -615,6 +621,30 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setRequiresAdditionalSellerInputs($requiresAdditionalSellerInputs)
     {
         $this->container['requiresAdditionalSellerInputs'] = $requiresAdditionalSellerInputs;
+
+        return $this;
+    }
+
+    /**
+     * Gets benefits
+     *
+     * @return \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\BenefitsV0|null
+     */
+    public function getBenefits()
+    {
+        return $this->container['benefits'];
+    }
+
+    /**
+     * Sets benefits
+     *
+     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\BenefitsV0|null $benefits benefits
+     *
+     * @return self
+     */
+    public function setBenefits($benefits)
+    {
+        $this->container['benefits'] = $benefits;
 
         return $this;
     }

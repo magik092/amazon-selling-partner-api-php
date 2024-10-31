@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * InvoiceDetailV1 Class Doc Comment
  *
  * @category Class
+ * @description Represents the invoice details, including the invoice number, date, parties involved, payment terms, totals, taxes, charges, and line items.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -553,7 +554,7 @@ class InvoiceDetailV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets additionalDetails
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\AdditionalDetailsV1[]|null $additionalDetails Additional details provided by the selling party, for tax related or other purposes.
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1\Model\AdditionalDetailsV1[]|null $additionalDetails Additional details provided by the selling party, for tax-related or other purposes.
      *
      * @return self
      */

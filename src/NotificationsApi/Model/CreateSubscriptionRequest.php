@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Notifications
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide)
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * The version of the OpenAPI document: v1
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CreateSubscriptionRequest Class Doc Comment
  *
  * @category Class
- * @description The request schema for the createSubscription operation.
+ * @description The request schema for the &#x60;createSubscription&#x60; operation.
  * @package  Webcom\Amazon\Rest\NotificationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,7 +63,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPITypes = [
         'payloadVersion' => 'string',
-        'destinationId' => 'string'
+        'destinationId' => 'string',
+        'processingDirective' => '\Webcom\Amazon\Rest\NotificationsApi\Model\ProcessingDirective'
     ];
 
     /**
@@ -75,7 +76,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
       */
     protected static $openAPIFormats = [
         'payloadVersion' => null,
-        'destinationId' => null
+        'destinationId' => null,
+        'processingDirective' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $attributeMap = [
         'payloadVersion' => 'payloadVersion',
-        'destinationId' => 'destinationId'
+        'destinationId' => 'destinationId',
+        'processingDirective' => 'processingDirective'
     ];
 
     /**
@@ -116,7 +119,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $setters = [
         'payloadVersion' => 'setPayloadVersion',
-        'destinationId' => 'setDestinationId'
+        'destinationId' => 'setDestinationId',
+        'processingDirective' => 'setProcessingDirective'
     ];
 
     /**
@@ -126,7 +130,8 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
      */
     protected static $getters = [
         'payloadVersion' => 'getPayloadVersion',
-        'destinationId' => 'getDestinationId'
+        'destinationId' => 'getDestinationId',
+        'processingDirective' => 'getProcessingDirective'
     ];
 
     /**
@@ -191,6 +196,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $this->container['payloadVersion'] = $data['payloadVersion'] ?? null;
         $this->container['destinationId'] = $data['destinationId'] ?? null;
+        $this->container['processingDirective'] = $data['processingDirective'] ?? null;
     }
 
     /**
@@ -202,6 +208,12 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
+        if ($this->container['payloadVersion'] === null) {
+            $invalidProperties[] = "'payloadVersion' can't be null";
+        }
+        if ($this->container['destinationId'] === null) {
+            $invalidProperties[] = "'destinationId' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -220,7 +232,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets payloadVersion
      *
-     * @return string|null
+     * @return string
      */
     public function getPayloadVersion()
     {
@@ -230,7 +242,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets payloadVersion
      *
-     * @param string|null $payloadVersion The version of the payload object to be used in the notification.
+     * @param string $payloadVersion The version of the payload object to be used in the notification.
      *
      * @return self
      */
@@ -244,7 +256,7 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Gets destinationId
      *
-     * @return string|null
+     * @return string
      */
     public function getDestinationId()
     {
@@ -254,13 +266,37 @@ class CreateSubscriptionRequest implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets destinationId
      *
-     * @param string|null $destinationId The identifier for the destination where notifications will be delivered.
+     * @param string $destinationId The identifier for the destination where notifications will be delivered.
      *
      * @return self
      */
     public function setDestinationId($destinationId)
     {
         $this->container['destinationId'] = $destinationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets processingDirective
+     *
+     * @return \Webcom\Amazon\Rest\NotificationsApi\Model\ProcessingDirective|null
+     */
+    public function getProcessingDirective()
+    {
+        return $this->container['processingDirective'];
+    }
+
+    /**
+     * Sets processingDirective
+     *
+     * @param \Webcom\Amazon\Rest\NotificationsApi\Model\ProcessingDirective|null $processingDirective processingDirective
+     *
+     * @return self
+     */
+    public function setProcessingDirective($processingDirective)
+    {
+        $this->container['processingDirective'] = $processingDirective;
 
         return $this;
     }

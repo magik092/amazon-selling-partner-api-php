@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetFulfillmentOrderResult20200701 Class Doc Comment
  *
  * @category Class
+ * @description The request for the getFulfillmentOrder operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -65,7 +66,8 @@ class GetFulfillmentOrderResult20200701 implements ModelInterface, ArrayAccess, 
         'fulfillmentOrderItems' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\FulfillmentOrderItem20200701[]',
         'fulfillmentShipments' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\FulfillmentShipment20200701[]',
         'returnItems' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ReturnItem20200701[]',
-        'returnAuthorizations' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ReturnAuthorization20200701[]'
+        'returnAuthorizations' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ReturnAuthorization20200701[]',
+        'paymentInformation' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\PaymentInformation20200701[]'
     ];
 
     /**
@@ -80,7 +82,8 @@ class GetFulfillmentOrderResult20200701 implements ModelInterface, ArrayAccess, 
         'fulfillmentOrderItems' => null,
         'fulfillmentShipments' => null,
         'returnItems' => null,
-        'returnAuthorizations' => null
+        'returnAuthorizations' => null,
+        'paymentInformation' => null
     ];
 
     /**
@@ -114,7 +117,8 @@ class GetFulfillmentOrderResult20200701 implements ModelInterface, ArrayAccess, 
         'fulfillmentOrderItems' => 'fulfillmentOrderItems',
         'fulfillmentShipments' => 'fulfillmentShipments',
         'returnItems' => 'returnItems',
-        'returnAuthorizations' => 'returnAuthorizations'
+        'returnAuthorizations' => 'returnAuthorizations',
+        'paymentInformation' => 'paymentInformation'
     ];
 
     /**
@@ -127,7 +131,8 @@ class GetFulfillmentOrderResult20200701 implements ModelInterface, ArrayAccess, 
         'fulfillmentOrderItems' => 'setFulfillmentOrderItems',
         'fulfillmentShipments' => 'setFulfillmentShipments',
         'returnItems' => 'setReturnItems',
-        'returnAuthorizations' => 'setReturnAuthorizations'
+        'returnAuthorizations' => 'setReturnAuthorizations',
+        'paymentInformation' => 'setPaymentInformation'
     ];
 
     /**
@@ -140,7 +145,8 @@ class GetFulfillmentOrderResult20200701 implements ModelInterface, ArrayAccess, 
         'fulfillmentOrderItems' => 'getFulfillmentOrderItems',
         'fulfillmentShipments' => 'getFulfillmentShipments',
         'returnItems' => 'getReturnItems',
-        'returnAuthorizations' => 'getReturnAuthorizations'
+        'returnAuthorizations' => 'getReturnAuthorizations',
+        'paymentInformation' => 'getPaymentInformation'
     ];
 
     /**
@@ -208,6 +214,7 @@ class GetFulfillmentOrderResult20200701 implements ModelInterface, ArrayAccess, 
         $this->container['fulfillmentShipments'] = $data['fulfillmentShipments'] ?? null;
         $this->container['returnItems'] = $data['returnItems'] ?? null;
         $this->container['returnAuthorizations'] = $data['returnAuthorizations'] ?? null;
+        $this->container['paymentInformation'] = $data['paymentInformation'] ?? null;
     }
 
     /**
@@ -362,6 +369,30 @@ class GetFulfillmentOrderResult20200701 implements ModelInterface, ArrayAccess, 
     public function setReturnAuthorizations($returnAuthorizations)
     {
         $this->container['returnAuthorizations'] = $returnAuthorizations;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentInformation
+     *
+     * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\PaymentInformation20200701[]|null
+     */
+    public function getPaymentInformation()
+    {
+        return $this->container['paymentInformation'];
+    }
+
+    /**
+     * Sets paymentInformation
+     *
+     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\PaymentInformation20200701[]|null $paymentInformation An array of various payment attributes related to this fulfillment order.
+     *
+     * @return self
+     */
+    public function setPaymentInformation($paymentInformation)
+    {
+        $this->container['paymentInformation'] = $paymentInformation;
 
         return $this;
     }

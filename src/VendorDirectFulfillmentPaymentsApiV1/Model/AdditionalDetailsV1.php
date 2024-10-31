@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * AdditionalDetailsV1 Class Doc Comment
  *
  * @category Class
- * @description A field where selling party can provide additional information for tax related or any other purposes.
+ * @description A field where the selling party provides additional information.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

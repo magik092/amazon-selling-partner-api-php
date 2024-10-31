@@ -289,7 +289,7 @@ class ErrorV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets details
      *
-     * @param string|null $details Additional information that can help the caller understand or fix the issue.
+     * @param string|null $details Additional details that can help the caller understand or fix the issue.
      *
      * @return self
      */

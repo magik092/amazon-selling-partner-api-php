@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Services
  *
- * With the Services API, you can build applications that help service providers get and modify their service orders.
+ * With the Services API, you can build applications that help service providers get and modify their service orders and manage their resources.
  *
  * The version of the OpenAPI document: v1
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetServiceJobByServiceJobIdResponse Class Doc Comment
  *
  * @category Class
- * @description The response schema for the GetServiceJobByServiceJobId operation.
+ * @description The response schema for the &#x60;getServiceJobByServiceJobId&#x60; operation.
  * @package  Webcom\Amazon\Rest\ServicesApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

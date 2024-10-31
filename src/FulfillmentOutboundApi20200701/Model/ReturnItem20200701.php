@@ -470,7 +470,7 @@ class ReturnItem20200701 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets statusChangedDate
      *
-     * @param \DateTime $statusChangedDate statusChangedDate
+     * @param \DateTime $statusChangedDate Date timestamp
      *
      * @return self
      */
@@ -494,7 +494,7 @@ class ReturnItem20200701 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets returnAuthorizationId
      *
-     * @param string|null $returnAuthorizationId Identifies the return authorization used to return this item. See ReturnAuthorization.
+     * @param string|null $returnAuthorizationId Identifies the return authorization used to return this item. Refer to `ReturnAuthorization`.
      *
      * @return self
      */

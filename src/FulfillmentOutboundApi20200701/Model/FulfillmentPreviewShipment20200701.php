@@ -257,7 +257,7 @@ class FulfillmentPreviewShipment20200701 implements ModelInterface, ArrayAccess,
     /**
      * Sets earliestShipDate
      *
-     * @param \DateTime|null $earliestShipDate earliestShipDate
+     * @param \DateTime|null $earliestShipDate Date timestamp
      *
      * @return self
      */
@@ -281,7 +281,7 @@ class FulfillmentPreviewShipment20200701 implements ModelInterface, ArrayAccess,
     /**
      * Sets latestShipDate
      *
-     * @param \DateTime|null $latestShipDate latestShipDate
+     * @param \DateTime|null $latestShipDate Date timestamp
      *
      * @return self
      */
@@ -305,7 +305,7 @@ class FulfillmentPreviewShipment20200701 implements ModelInterface, ArrayAccess,
     /**
      * Sets earliestArrivalDate
      *
-     * @param \DateTime|null $earliestArrivalDate earliestArrivalDate
+     * @param \DateTime|null $earliestArrivalDate Date timestamp
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class FulfillmentPreviewShipment20200701 implements ModelInterface, ArrayAccess,
     /**
      * Sets latestArrivalDate
      *
-     * @param \DateTime|null $latestArrivalDate latestArrivalDate
+     * @param \DateTime|null $latestArrivalDate Date timestamp
      *
      * @return self
      */

@@ -488,7 +488,7 @@ class FulfillmentPreview20200701 implements ModelInterface, ArrayAccess, \JsonSe
     /**
      * Sets orderUnfulfillableReasons
      *
-     * @param string[]|null $orderUnfulfillableReasons orderUnfulfillableReasons
+     * @param string[]|null $orderUnfulfillableReasons String list
      *
      * @return self
      */

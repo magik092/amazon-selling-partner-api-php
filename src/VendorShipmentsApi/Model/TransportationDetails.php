@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TransportationDetails Class Doc Comment
  *
  * @category Class
+ * @description Transportation details for this shipment.
  * @package  Webcom\Amazon\Rest\VendorShipmentsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,9 +62,12 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'carrierScac' => 'string',
-        'carrierShipmentReferenceNumber' => 'string',
+        'shipMode' => 'string',
         'transportationMode' => 'string',
+        'shippedDate' => '\DateTime',
+        'estimatedDeliveryDate' => '\DateTime',
+        'shipmentDeliveryDate' => '\DateTime',
+        'carrierDetails' => '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\CarrierDetails',
         'billOfLadingNumber' => 'string'
     ];
 
@@ -75,9 +79,12 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'carrierScac' => null,
-        'carrierShipmentReferenceNumber' => null,
+        'shipMode' => null,
         'transportationMode' => null,
+        'shippedDate' => 'date-time',
+        'estimatedDeliveryDate' => 'date-time',
+        'shipmentDeliveryDate' => 'date-time',
+        'carrierDetails' => null,
         'billOfLadingNumber' => null
     ];
 
@@ -108,9 +115,12 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'carrierScac' => 'carrierScac',
-        'carrierShipmentReferenceNumber' => 'carrierShipmentReferenceNumber',
+        'shipMode' => 'shipMode',
         'transportationMode' => 'transportationMode',
+        'shippedDate' => 'shippedDate',
+        'estimatedDeliveryDate' => 'estimatedDeliveryDate',
+        'shipmentDeliveryDate' => 'shipmentDeliveryDate',
+        'carrierDetails' => 'carrierDetails',
         'billOfLadingNumber' => 'billOfLadingNumber'
     ];
 
@@ -120,9 +130,12 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'carrierScac' => 'setCarrierScac',
-        'carrierShipmentReferenceNumber' => 'setCarrierShipmentReferenceNumber',
+        'shipMode' => 'setShipMode',
         'transportationMode' => 'setTransportationMode',
+        'shippedDate' => 'setShippedDate',
+        'estimatedDeliveryDate' => 'setEstimatedDeliveryDate',
+        'shipmentDeliveryDate' => 'setShipmentDeliveryDate',
+        'carrierDetails' => 'setCarrierDetails',
         'billOfLadingNumber' => 'setBillOfLadingNumber'
     ];
 
@@ -132,9 +145,12 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'carrierScac' => 'getCarrierScac',
-        'carrierShipmentReferenceNumber' => 'getCarrierShipmentReferenceNumber',
+        'shipMode' => 'getShipMode',
         'transportationMode' => 'getTransportationMode',
+        'shippedDate' => 'getShippedDate',
+        'estimatedDeliveryDate' => 'getEstimatedDeliveryDate',
+        'shipmentDeliveryDate' => 'getShipmentDeliveryDate',
+        'carrierDetails' => 'getCarrierDetails',
         'billOfLadingNumber' => 'getBillOfLadingNumber'
     ];
 
@@ -179,11 +195,28 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
         return self::$openAPIModelName;
     }
 
+    const SHIP_MODE_TRUCK_LOAD = 'TruckLoad';
+    const SHIP_MODE_LESS_THAN_TRUCK_LOAD = 'LessThanTruckLoad';
+    const SHIP_MODE_SMALL_PARCEL = 'SmallParcel';
     const TRANSPORTATION_MODE_ROAD = 'Road';
     const TRANSPORTATION_MODE_AIR = 'Air';
     const TRANSPORTATION_MODE_OCEAN = 'Ocean';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getShipModeAllowableValues()
+    {
+        return [
+            self::SHIP_MODE_TRUCK_LOAD,
+            self::SHIP_MODE_LESS_THAN_TRUCK_LOAD,
+            self::SHIP_MODE_SMALL_PARCEL,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -215,9 +248,12 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      */
     public function __construct(array $data = null)
     {
-        $this->container['carrierScac'] = $data['carrierScac'] ?? null;
-        $this->container['carrierShipmentReferenceNumber'] = $data['carrierShipmentReferenceNumber'] ?? null;
+        $this->container['shipMode'] = $data['shipMode'] ?? null;
         $this->container['transportationMode'] = $data['transportationMode'] ?? null;
+        $this->container['shippedDate'] = $data['shippedDate'] ?? null;
+        $this->container['estimatedDeliveryDate'] = $data['estimatedDeliveryDate'] ?? null;
+        $this->container['shipmentDeliveryDate'] = $data['shipmentDeliveryDate'] ?? null;
+        $this->container['carrierDetails'] = $data['carrierDetails'] ?? null;
         $this->container['billOfLadingNumber'] = $data['billOfLadingNumber'] ?? null;
     }
 
@@ -229,6 +265,15 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getShipModeAllowableValues();
+        if (!is_null($this->container['shipMode']) && !in_array($this->container['shipMode'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'shipMode', must be one of '%s'",
+                $this->container['shipMode'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         $allowedValues = $this->getTransportationModeAllowableValues();
         if (!is_null($this->container['transportationMode']) && !in_array($this->container['transportationMode'], $allowedValues, true)) {
@@ -255,49 +300,35 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
 
 
     /**
-     * Gets carrierScac
+     * Gets shipMode
      *
      * @return string|null
      */
-    public function getCarrierScac()
+    public function getShipMode()
     {
-        return $this->container['carrierScac'];
+        return $this->container['shipMode'];
     }
 
     /**
-     * Sets carrierScac
+     * Sets shipMode
      *
-     * @param string|null $carrierScac Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations.
+     * @param string|null $shipMode The type of shipment.
      *
      * @return self
      */
-    public function setCarrierScac($carrierScac)
+    public function setShipMode($shipMode)
     {
-        $this->container['carrierScac'] = $carrierScac;
-
-        return $this;
-    }
-
-    /**
-     * Gets carrierShipmentReferenceNumber
-     *
-     * @return string|null
-     */
-    public function getCarrierShipmentReferenceNumber()
-    {
-        return $this->container['carrierShipmentReferenceNumber'];
-    }
-
-    /**
-     * Sets carrierShipmentReferenceNumber
-     *
-     * @param string|null $carrierShipmentReferenceNumber The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.
-     *
-     * @return self
-     */
-    public function setCarrierShipmentReferenceNumber($carrierShipmentReferenceNumber)
-    {
-        $this->container['carrierShipmentReferenceNumber'] = $carrierShipmentReferenceNumber;
+        $allowedValues = $this->getShipModeAllowableValues();
+        if (!is_null($shipMode) && !in_array($shipMode, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'shipMode', must be one of '%s'",
+                    $shipMode,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['shipMode'] = $shipMode;
 
         return $this;
     }
@@ -337,6 +368,102 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets shippedDate
+     *
+     * @return \DateTime|null
+     */
+    public function getShippedDate()
+    {
+        return $this->container['shippedDate'];
+    }
+
+    /**
+     * Sets shippedDate
+     *
+     * @param \DateTime|null $shippedDate Date when shipment is performed by the Vendor to Buyer
+     *
+     * @return self
+     */
+    public function setShippedDate($shippedDate)
+    {
+        $this->container['shippedDate'] = $shippedDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets estimatedDeliveryDate
+     *
+     * @return \DateTime|null
+     */
+    public function getEstimatedDeliveryDate()
+    {
+        return $this->container['estimatedDeliveryDate'];
+    }
+
+    /**
+     * Sets estimatedDeliveryDate
+     *
+     * @param \DateTime|null $estimatedDeliveryDate Estimated Date on which shipment will be delivered from Vendor to Buyer
+     *
+     * @return self
+     */
+    public function setEstimatedDeliveryDate($estimatedDeliveryDate)
+    {
+        $this->container['estimatedDeliveryDate'] = $estimatedDeliveryDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipmentDeliveryDate
+     *
+     * @return \DateTime|null
+     */
+    public function getShipmentDeliveryDate()
+    {
+        return $this->container['shipmentDeliveryDate'];
+    }
+
+    /**
+     * Sets shipmentDeliveryDate
+     *
+     * @param \DateTime|null $shipmentDeliveryDate Date on which shipment will be delivered from Vendor to Buyer
+     *
+     * @return self
+     */
+    public function setShipmentDeliveryDate($shipmentDeliveryDate)
+    {
+        $this->container['shipmentDeliveryDate'] = $shipmentDeliveryDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets carrierDetails
+     *
+     * @return \Webcom\Amazon\Rest\VendorShipmentsApi\Model\CarrierDetails|null
+     */
+    public function getCarrierDetails()
+    {
+        return $this->container['carrierDetails'];
+    }
+
+    /**
+     * Sets carrierDetails
+     *
+     * @param \Webcom\Amazon\Rest\VendorShipmentsApi\Model\CarrierDetails|null $carrierDetails carrierDetails
+     *
+     * @return self
+     */
+    public function setCarrierDetails($carrierDetails)
+    {
+        $this->container['carrierDetails'] = $carrierDetails;
+
+        return $this;
+    }
+
+    /**
      * Gets billOfLadingNumber
      *
      * @return string|null
@@ -349,7 +476,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets billOfLadingNumber
      *
-     * @param string|null $billOfLadingNumber Bill Of Lading (BOL) number is the unique number assigned by the vendor. The BOL present in the Shipment Confirmation message ideally matches the paper BOL provided with the shipment, but that is no must. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
+     * @param string|null $billOfLadingNumber The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
      *
      * @return self
      */

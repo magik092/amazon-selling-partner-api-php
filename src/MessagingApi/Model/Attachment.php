@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Attachment Class Doc Comment
  *
  * @category Class
- * @description Represents a file uploaded to a destination that was created by the createUploadDestination operation of the Uploads API.
+ * @description Represents a file uploaded to a destination that was created by the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Selling Partner API for Uploads.
  * @package  Webcom\Amazon\Rest\MessagingApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -236,7 +236,7 @@ class Attachment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets uploadDestinationId
      *
-     * @param string $uploadDestinationId The identifier of the upload destination. Get this value by calling the createUploadDestination operation of the Uploads API.
+     * @param string $uploadDestinationId The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API.
      *
      * @return self
      */

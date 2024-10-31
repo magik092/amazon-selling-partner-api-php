@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TransactionReference Class Doc Comment
  *
  * @category Class
+ * @description The response payload for the SubmitShipmentConfirmations operation.
  * @package  Webcom\Amazon\Rest\VendorShipmentsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -223,7 +224,7 @@ class TransactionReference implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets transactionId
      *
-     * @param string|null $transactionId GUID assigned by Amazon to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
+     * @param string|null $transactionId GUID assigned by Buyer to identify this transaction. This value can be used with the Transaction Status API to return the status of this transaction.
      *
      * @return self
      */

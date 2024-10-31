@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Finances
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -305,7 +305,7 @@ class AffordabilityExpenseEventV0 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets postedDate
      *
-     * @param \DateTime|null $postedDate postedDate
+     * @param \DateTime|null $postedDate A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class AffordabilityExpenseEventV0 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets marketplaceId
      *
-     * @param string|null $marketplaceId An encrypted, Amazon-defined marketplace identifier.
+     * @param string|null $marketplaceId The Amazon-defined marketplace identifier.
      *
      * @return self
      */
@@ -353,7 +353,7 @@ class AffordabilityExpenseEventV0 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets transactionType
      *
-     * @param string|null $transactionType Indicates the type of transaction.   Possible values:  * Charge - For an affordability promotion expense.  * Refund - For an affordability promotion expense reversal.
+     * @param string|null $transactionType The type of transaction.   Possible values:  * `Charge`: an affordability promotion expense. * `Refund`: an affordability promotion expense reversal.
      *
      * @return self
      */

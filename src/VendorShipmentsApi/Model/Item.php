@@ -278,7 +278,7 @@ class Item implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets amazonProductIdentifier
      *
-     * @param string|null $amazonProductIdentifier Amazon Standard Identification Number (ASIN) of an item.
+     * @param string|null $amazonProductIdentifier Buyer Standard Identification Number (ASIN) of an item.
      *
      * @return self
      */

@@ -664,7 +664,7 @@ class ShipmentV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets createdDate
      *
-     * @param \DateTime $createdDate createdDate
+     * @param \DateTime $createdDate Date-time formatted timestamp.
      *
      * @return self
      */
@@ -688,7 +688,7 @@ class ShipmentV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets lastUpdatedDate
      *
-     * @param \DateTime|null $lastUpdatedDate lastUpdatedDate
+     * @param \DateTime|null $lastUpdatedDate Date-time formatted timestamp.
      *
      * @return self
      */

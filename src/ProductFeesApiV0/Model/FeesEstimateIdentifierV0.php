@@ -64,7 +64,7 @@ class FeesEstimateIdentifierV0 implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'marketplaceId' => 'string',
         'sellerId' => 'string',
-        'idType' => 'string',
+        'idType' => '\Webcom\Amazon\Rest\ProductFeesApiV0\Model\IdTypeV0',
         'idValue' => 'string',
         'isAmazonFulfilled' => 'bool',
         'priceToEstimateFees' => '\Webcom\Amazon\Rest\ProductFeesApiV0\Model\PriceToEstimateFeesV0',
@@ -304,7 +304,7 @@ class FeesEstimateIdentifierV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets idType
      *
-     * @return string|null
+     * @return \Webcom\Amazon\Rest\ProductFeesApiV0\Model\IdTypeV0|null
      */
     public function getIdType()
     {
@@ -314,7 +314,7 @@ class FeesEstimateIdentifierV0 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets idType
      *
-     * @param string|null $idType The type of item identifier specified.
+     * @param \Webcom\Amazon\Rest\ProductFeesApiV0\Model\IdTypeV0|null $idType idType
      *
      * @return self
      */

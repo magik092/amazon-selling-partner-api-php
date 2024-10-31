@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetFulfillmentPreviewResponse20200701 Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getFulfillmentPreview operation.
+ * @description The response schema for the &#x60;getFulfillmentPreview&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

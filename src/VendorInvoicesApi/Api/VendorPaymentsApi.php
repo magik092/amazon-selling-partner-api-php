@@ -118,7 +118,7 @@ class VendorPaymentsApi
     /**
      * Operation submitInvoices
      *
-     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body body (required)
+     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body The request body containing the invoice data to submit. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorInvoicesApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +133,7 @@ class VendorPaymentsApi
     /**
      * Operation submitInvoicesWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body The request body containing the invoice data to submit. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorInvoicesApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -381,7 +381,7 @@ class VendorPaymentsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body The request body containing the invoice data to submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -401,7 +401,7 @@ class VendorPaymentsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body The request body containing the invoice data to submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -448,7 +448,7 @@ class VendorPaymentsApi
     /**
      * Create request for operation 'submitInvoices'
      *
-     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorInvoicesApi\Model\SubmitInvoicesRequest $body The request body containing the invoice data to submit. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

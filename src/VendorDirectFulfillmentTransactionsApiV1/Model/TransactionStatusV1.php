@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TransactionStatusV1 Class Doc Comment
  *
  * @category Class
- * @description The payload for the getTransactionStatus operation.
+ * @description The payload for the &#x60;getTransactionStatus&#x60; operation.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentTransactionsApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
