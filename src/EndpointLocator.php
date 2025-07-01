@@ -233,6 +233,18 @@ class EndpointLocator
             "sellingPartnerApiEndpoint"        => "https://sellingpartnerapi-eu.amazon.com",
             "sellingPartnerApiSandboxEndpoint" => "https://sandbox.sellingpartnerapi-eu.amazon.com",
         ],
+        'IE' => [
+            'id'                               => 'A28R8C7NBKEWEA',
+            'name'                             => 'Ireland',
+            'countryCode'                      => 'IE',
+            'region'                           => 'eu-west-1',
+            'endpoint'                         => 'amazon.ie',
+            'mwsEndpoint'                      => 'mws-eu.amazonservices.com',
+            'imagesEndpoint'                   => 'images-eu.ssl-images-amazon.com',
+            'sellerCentralEndpoint'            => 'https://sellercentral.amazon.ie',
+            'sellingPartnerApiEndpoint'        => 'https://sellingpartnerapi-eu.amazon.com',
+            'sellingPartnerApiSandboxEndpoint' => 'https://sandbox.sellingpartnerapi-eu.amazon.com',
+        ],
         "AU" => [
             "id"                               => "A39IBJ37TRP1C6",
             "name"                             => "Australia",
