@@ -9,7 +9,7 @@
     },
     "require": {
         "php": ">=7.4",
-        "aws/aws-sdk-php": "~3.337.0",
+        "aws/aws-sdk-php": "*",
         "guzzlehttp/guzzle": "~6.5.0"
     },
     "require-dev": {
