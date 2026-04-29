@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetSchemaResponse Class Doc Comment
  *
  * @category Class
+ * @description The &#x60;GET&#x60; request schema response.
  * @package  Webcom\Amazon\Rest\MessagingApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

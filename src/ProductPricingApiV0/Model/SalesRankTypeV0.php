@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SalesRankTypeV0 Class Doc Comment
  *
  * @category Class
+ * @description Sales rank information for the item, by category
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

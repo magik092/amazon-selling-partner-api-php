@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * InvoiceItemV1 Class Doc Comment
  *
  * @category Class
- * @description Details of the invoice items.
+ * @description Provides the details of the items in this invoice.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

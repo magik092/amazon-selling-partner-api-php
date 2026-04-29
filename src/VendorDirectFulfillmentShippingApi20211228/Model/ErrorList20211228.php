@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -227,7 +227,7 @@ class ErrorList20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets errors
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\Error20211228[] $errors An array of error objects that represents individual errors encountered during the request.
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\Error20211228[] $errors An array of Error objects representing individual errors encountered during the request.
      *
      * @return self
      */

@@ -381,7 +381,7 @@ class SegmentedFeaturedOffer20220501 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets subCondition
      *
-     * @param string|null $subCondition The item subcondition for the offer.
+     * @param string|null $subCondition The item subcondition of the offer.
      *
      * @return self
      */

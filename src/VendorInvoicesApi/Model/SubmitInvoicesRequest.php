@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SubmitInvoicesRequest Class Doc Comment
  *
  * @category Class
- * @description The request schema for the &#x60;submitInvoices&#x60; operation.
+ * @description The request schema for the submitInvoices operation.
  * @package  Webcom\Amazon\Rest\VendorInvoicesApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

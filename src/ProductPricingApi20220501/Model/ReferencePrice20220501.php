@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ReferencePrice20220501 Class Doc Comment
  *
  * @category Class
- * @description The reference price for the given ASIN &#x60;marketplaceId&#x60; combination.
+ * @description The reference price for the specified ASIN &#x60;marketplaceId&#x60; combination.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -236,7 +236,7 @@ class ReferencePrice20220501 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets name
      *
-     * @param string $name The name of the reference price like `CompetitivePriceThreshold`.
+     * @param string $name Reference price type (e.g., `CompetitivePriceThreshold`, `WasPrice`, `CompetitivePrice`). For definitions, see the [Product Pricing API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/product-pricing-api-v2022-05-01-use-case-guide).
      *
      * @return self
      */

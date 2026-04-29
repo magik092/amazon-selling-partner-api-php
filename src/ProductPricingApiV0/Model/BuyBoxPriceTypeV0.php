@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * BuyBoxPriceTypeV0 Class Doc Comment
  *
  * @category Class
+ * @description Schema for an individual buybox price.
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

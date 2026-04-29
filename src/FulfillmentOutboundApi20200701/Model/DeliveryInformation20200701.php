@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * DeliveryInformation20200701 Class Doc Comment
  *
  * @category Class
- * @description The delivery information for the package. This information is available after the package is delivered.
+ * @description The delivery information of the package, this information is only available post package delivery to its intended destination.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

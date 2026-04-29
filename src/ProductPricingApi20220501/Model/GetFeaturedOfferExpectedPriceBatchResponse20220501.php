@@ -224,7 +224,7 @@ class GetFeaturedOfferExpectedPriceBatchResponse20220501 implements ModelInterfa
     /**
      * Sets responses
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\FeaturedOfferExpectedPriceResponse20220501[]|null $responses A batched list of featured offer expected price responses.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\FeaturedOfferExpectedPriceResponse20220501[]|null $responses A batched list of FOEP responses.
      *
      * @return self
      */

@@ -63,6 +63,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
       */
     protected static $openAPITypes = [
         'asin' => 'string',
+        'sku' => 'string',
+        'fulfillmentChannelType' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\FulfillmentChannelType20221107',
         'notDeliveredDueToOOS' => 'double',
         'totalSubscriptionsRevenue' => 'double',
         'shippedSubscriptionUnits' => 'float',
@@ -70,6 +72,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'revenuePenetration' => 'double',
         'lostRevenueDueToOOS' => 'double',
         'couponsRevenuePenetration' => 'double',
+        'shareOfCouponSubscriptions' => 'double',
         'next30DayTotalSubscriptionsRevenue' => 'double',
         'next60DayTotalSubscriptionsRevenue' => 'double',
         'next90DayTotalSubscriptionsRevenue' => 'double',
@@ -89,6 +92,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
       */
     protected static $openAPIFormats = [
         'asin' => null,
+        'sku' => null,
+        'fulfillmentChannelType' => null,
         'notDeliveredDueToOOS' => 'double',
         'totalSubscriptionsRevenue' => 'double',
         'shippedSubscriptionUnits' => 'int64',
@@ -96,6 +101,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'revenuePenetration' => 'double',
         'lostRevenueDueToOOS' => 'double',
         'couponsRevenuePenetration' => 'double',
+        'shareOfCouponSubscriptions' => 'double',
         'next30DayTotalSubscriptionsRevenue' => 'double',
         'next60DayTotalSubscriptionsRevenue' => 'double',
         'next90DayTotalSubscriptionsRevenue' => 'double',
@@ -134,6 +140,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
      */
     protected static $attributeMap = [
         'asin' => 'asin',
+        'sku' => 'sku',
+        'fulfillmentChannelType' => 'fulfillmentChannelType',
         'notDeliveredDueToOOS' => 'notDeliveredDueToOOS',
         'totalSubscriptionsRevenue' => 'totalSubscriptionsRevenue',
         'shippedSubscriptionUnits' => 'shippedSubscriptionUnits',
@@ -141,6 +149,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'revenuePenetration' => 'revenuePenetration',
         'lostRevenueDueToOOS' => 'lostRevenueDueToOOS',
         'couponsRevenuePenetration' => 'couponsRevenuePenetration',
+        'shareOfCouponSubscriptions' => 'shareOfCouponSubscriptions',
         'next30DayTotalSubscriptionsRevenue' => 'next30DayTotalSubscriptionsRevenue',
         'next60DayTotalSubscriptionsRevenue' => 'next60DayTotalSubscriptionsRevenue',
         'next90DayTotalSubscriptionsRevenue' => 'next90DayTotalSubscriptionsRevenue',
@@ -158,6 +167,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
      */
     protected static $setters = [
         'asin' => 'setAsin',
+        'sku' => 'setSku',
+        'fulfillmentChannelType' => 'setFulfillmentChannelType',
         'notDeliveredDueToOOS' => 'setNotDeliveredDueToOOS',
         'totalSubscriptionsRevenue' => 'setTotalSubscriptionsRevenue',
         'shippedSubscriptionUnits' => 'setShippedSubscriptionUnits',
@@ -165,6 +176,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'revenuePenetration' => 'setRevenuePenetration',
         'lostRevenueDueToOOS' => 'setLostRevenueDueToOOS',
         'couponsRevenuePenetration' => 'setCouponsRevenuePenetration',
+        'shareOfCouponSubscriptions' => 'setShareOfCouponSubscriptions',
         'next30DayTotalSubscriptionsRevenue' => 'setNext30DayTotalSubscriptionsRevenue',
         'next60DayTotalSubscriptionsRevenue' => 'setNext60DayTotalSubscriptionsRevenue',
         'next90DayTotalSubscriptionsRevenue' => 'setNext90DayTotalSubscriptionsRevenue',
@@ -182,6 +194,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
      */
     protected static $getters = [
         'asin' => 'getAsin',
+        'sku' => 'getSku',
+        'fulfillmentChannelType' => 'getFulfillmentChannelType',
         'notDeliveredDueToOOS' => 'getNotDeliveredDueToOOS',
         'totalSubscriptionsRevenue' => 'getTotalSubscriptionsRevenue',
         'shippedSubscriptionUnits' => 'getShippedSubscriptionUnits',
@@ -189,6 +203,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'revenuePenetration' => 'getRevenuePenetration',
         'lostRevenueDueToOOS' => 'getLostRevenueDueToOOS',
         'couponsRevenuePenetration' => 'getCouponsRevenuePenetration',
+        'shareOfCouponSubscriptions' => 'getShareOfCouponSubscriptions',
         'next30DayTotalSubscriptionsRevenue' => 'getNext30DayTotalSubscriptionsRevenue',
         'next60DayTotalSubscriptionsRevenue' => 'getNext60DayTotalSubscriptionsRevenue',
         'next90DayTotalSubscriptionsRevenue' => 'getNext90DayTotalSubscriptionsRevenue',
@@ -260,6 +275,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     public function __construct(array $data = null)
     {
         $this->container['asin'] = $data['asin'] ?? null;
+        $this->container['sku'] = $data['sku'] ?? null;
+        $this->container['fulfillmentChannelType'] = $data['fulfillmentChannelType'] ?? null;
         $this->container['notDeliveredDueToOOS'] = $data['notDeliveredDueToOOS'] ?? null;
         $this->container['totalSubscriptionsRevenue'] = $data['totalSubscriptionsRevenue'] ?? null;
         $this->container['shippedSubscriptionUnits'] = $data['shippedSubscriptionUnits'] ?? null;
@@ -267,6 +284,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         $this->container['revenuePenetration'] = $data['revenuePenetration'] ?? null;
         $this->container['lostRevenueDueToOOS'] = $data['lostRevenueDueToOOS'] ?? null;
         $this->container['couponsRevenuePenetration'] = $data['couponsRevenuePenetration'] ?? null;
+        $this->container['shareOfCouponSubscriptions'] = $data['shareOfCouponSubscriptions'] ?? null;
         $this->container['next30DayTotalSubscriptionsRevenue'] = $data['next30DayTotalSubscriptionsRevenue'] ?? null;
         $this->container['next60DayTotalSubscriptionsRevenue'] = $data['next60DayTotalSubscriptionsRevenue'] ?? null;
         $this->container['next90DayTotalSubscriptionsRevenue'] = $data['next90DayTotalSubscriptionsRevenue'] ?? null;
@@ -324,6 +342,14 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
 
         if (!is_null($this->container['couponsRevenuePenetration']) && ($this->container['couponsRevenuePenetration'] < 0)) {
             $invalidProperties[] = "invalid value for 'couponsRevenuePenetration', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['shareOfCouponSubscriptions']) && ($this->container['shareOfCouponSubscriptions'] > 1E+2)) {
+            $invalidProperties[] = "invalid value for 'shareOfCouponSubscriptions', must be smaller than or equal to 1E+2.";
+        }
+
+        if (!is_null($this->container['shareOfCouponSubscriptions']) && ($this->container['shareOfCouponSubscriptions'] < 0)) {
+            $invalidProperties[] = "invalid value for 'shareOfCouponSubscriptions', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['next30DayTotalSubscriptionsRevenue']) && ($this->container['next30DayTotalSubscriptionsRevenue'] < 0)) {
@@ -390,6 +416,54 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     }
 
     /**
+     * Gets sku
+     *
+     * @return string|null
+     */
+    public function getSku()
+    {
+        return $this->container['sku'];
+    }
+
+    /**
+     * Sets sku
+     *
+     * @param string|null $sku The SKU. This property is only supported for sellers and not for vendors.
+     *
+     * @return self
+     */
+    public function setSku($sku)
+    {
+        $this->container['sku'] = $sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets fulfillmentChannelType
+     *
+     * @return \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\FulfillmentChannelType20221107|null
+     */
+    public function getFulfillmentChannelType()
+    {
+        return $this->container['fulfillmentChannelType'];
+    }
+
+    /**
+     * Sets fulfillmentChannelType
+     *
+     * @param \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\FulfillmentChannelType20221107|null $fulfillmentChannelType fulfillmentChannelType
+     *
+     * @return self
+     */
+    public function setFulfillmentChannelType($fulfillmentChannelType)
+    {
+        $this->container['fulfillmentChannelType'] = $fulfillmentChannelType;
+
+        return $this;
+    }
+
+    /**
      * Gets notDeliveredDueToOOS
      *
      * @return double|null
@@ -402,7 +476,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets notDeliveredDueToOOS
      *
-     * @param double|null $notDeliveredDueToOOS The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable only for the `PERFORMANCE` `timePeriodType`.
+     * @param double|null $notDeliveredDueToOOS The percentage of items that were not shipped out of the total shipped units over a period of time due to being out of stock. Applicable to `PERFORMANCE` `timePeriodType`.
      *
      * @return self
      */
@@ -434,7 +508,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets totalSubscriptionsRevenue
      *
-     * @param double|null $totalSubscriptionsRevenue The revenue generated from subscriptions over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.
+     * @param double|null $totalSubscriptionsRevenue The revenue generated from subscriptions over a period of time. Applicable to `PERFORMANCE` `timePeriodType`.
      *
      * @return self
      */
@@ -463,7 +537,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets shippedSubscriptionUnits
      *
-     * @param float|null $shippedSubscriptionUnits The number of units shipped to the subscribers over a period of time. Applicable only for the `PERFORMANCE` `timePeriodType`.
+     * @param float|null $shippedSubscriptionUnits The number of units shipped to the subscribers over a period of time. Applicable to `PERFORMANCE` `timePeriodType`.
      *
      * @return self
      */
@@ -492,7 +566,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets activeSubscriptions
      *
-     * @param float|null $activeSubscriptions The number of active subscriptions present at the end of the period. Applicable only for the `PERFORMANCE` `timePeriodType`.
+     * @param float|null $activeSubscriptions The number of active subscriptions present at the end of the period. Applicable to `PERFORMANCE` `timePeriodType`.
      *
      * @return self
      */
@@ -521,7 +595,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets revenuePenetration
      *
-     * @param double|null $revenuePenetration The percentage of total program revenue out of total product revenue. Applicable only for the `PERFORMANCE` `timePeriodType`.
+     * @param double|null $revenuePenetration The percentage of total program revenue out of total product revenue. Applicable to `PERFORMANCE` `timePeriodType`.
      *
      * @return self
      */
@@ -553,7 +627,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets lostRevenueDueToOOS
      *
-     * @param double|null $lostRevenueDueToOOS The revenue that would have been generated had there not been out of stock. Applicable only for the PERFORMANCE timePeriodType.
+     * @param double|null $lostRevenueDueToOOS The revenue that would have been generated had there not been out of stock. Applicable to `PERFORMANCE` `timePeriodType`.
      *
      * @return self
      */
@@ -582,7 +656,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets couponsRevenuePenetration
      *
-     * @param double|null $couponsRevenuePenetration The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable only for the PERFORMANCE timePeriodType.
+     * @param double|null $couponsRevenuePenetration The percentage of revenue from ASINs with coupons out of total revenue from all ASINs. Applicable to `PERFORMANCE` `timePeriodType`.
      *
      * @return self
      */
@@ -602,6 +676,38 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     }
 
     /**
+     * Gets shareOfCouponSubscriptions
+     *
+     * @return double|null
+     */
+    public function getShareOfCouponSubscriptions()
+    {
+        return $this->container['shareOfCouponSubscriptions'];
+    }
+
+    /**
+     * Sets shareOfCouponSubscriptions
+     *
+     * @param double|null $shareOfCouponSubscriptions The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.
+     *
+     * @return self
+     */
+    public function setShareOfCouponSubscriptions($shareOfCouponSubscriptions)
+    {
+
+        if (!is_null($shareOfCouponSubscriptions) && ($shareOfCouponSubscriptions > 1E+2)) {
+            throw new \InvalidArgumentException('invalid value for $shareOfCouponSubscriptions when calling ListOfferMetricsResponseOffer20221107., must be smaller than or equal to 1E+2.');
+        }
+        if (!is_null($shareOfCouponSubscriptions) && ($shareOfCouponSubscriptions < 0)) {
+            throw new \InvalidArgumentException('invalid value for $shareOfCouponSubscriptions when calling ListOfferMetricsResponseOffer20221107., must be bigger than or equal to 0.');
+        }
+
+        $this->container['shareOfCouponSubscriptions'] = $shareOfCouponSubscriptions;
+
+        return $this;
+    }
+
+    /**
      * Gets next30DayTotalSubscriptionsRevenue
      *
      * @return double|null
@@ -614,7 +720,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets next30DayTotalSubscriptionsRevenue
      *
-     * @param double|null $next30DayTotalSubscriptionsRevenue The forecasted total subscription revenue for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.
+     * @param double|null $next30DayTotalSubscriptionsRevenue The forecasted total subscription revenue for the next 30 days. Applicable to `FORECAST` `timePeriodType`.
      *
      * @return self
      */
@@ -643,7 +749,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets next60DayTotalSubscriptionsRevenue
      *
-     * @param double|null $next60DayTotalSubscriptionsRevenue The forecasted total subscription revenue for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.
+     * @param double|null $next60DayTotalSubscriptionsRevenue The forecasted total subscription revenue for the next 60 days. Applicable to `FORECAST` `timePeriodType`.
      *
      * @return self
      */
@@ -672,7 +778,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets next90DayTotalSubscriptionsRevenue
      *
-     * @param double|null $next90DayTotalSubscriptionsRevenue The forecasted total subscription revenue for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.
+     * @param double|null $next90DayTotalSubscriptionsRevenue The forecasted total subscription revenue for the next 90 days. Applicable to `FORECAST` `timePeriodType`.
      *
      * @return self
      */
@@ -701,7 +807,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets next30DayShippedSubscriptionUnits
      *
-     * @param float|null $next30DayShippedSubscriptionUnits The forecasted shipped subscription units for the next 30 days. Applicable only for the `FORECAST` `timePeriodType`.
+     * @param float|null $next30DayShippedSubscriptionUnits The forecasted shipped subscription units for the next 30 days. Applicable to `FORECAST` `timePeriodType`.
      *
      * @return self
      */
@@ -730,7 +836,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets next60DayShippedSubscriptionUnits
      *
-     * @param float|null $next60DayShippedSubscriptionUnits The forecasted shipped subscription units for the next 60 days. Applicable only for the `FORECAST` `timePeriodType`.
+     * @param float|null $next60DayShippedSubscriptionUnits The forecasted shipped subscription units for the next 60 days. Applicable to `FORECAST` `timePeriodType`.
      *
      * @return self
      */
@@ -759,7 +865,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets next90DayShippedSubscriptionUnits
      *
-     * @param float|null $next90DayShippedSubscriptionUnits The forecasted shipped subscription units for the next 90 days. Applicable only for the `FORECAST` `timePeriodType`.
+     * @param float|null $next90DayShippedSubscriptionUnits The forecasted shipped subscription units for the next 90 days. Applicable to `FORECAST` `timePeriodType`.
      *
      * @return self
      */

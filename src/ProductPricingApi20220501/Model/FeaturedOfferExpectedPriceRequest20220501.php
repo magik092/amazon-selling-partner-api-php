@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * FeaturedOfferExpectedPriceRequest20220501 Class Doc Comment
  *
  * @category Class
- * @description An individual featured offer expected price request for a particular SKU.
+ * @description An individual FOEP request for a particular SKU.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -67,7 +67,8 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
         'body' => 'map[string,object]',
         'headers' => 'map[string,string]',
         'marketplaceId' => 'string',
-        'sku' => 'string'
+        'sku' => 'string',
+        'segment' => '\Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Segment20220501'
     ];
 
     /**
@@ -83,7 +84,8 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
         'body' => null,
         'headers' => null,
         'marketplaceId' => null,
-        'sku' => null
+        'sku' => null,
+        'segment' => null
     ];
 
     /**
@@ -118,7 +120,8 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
         'body' => 'body',
         'headers' => 'headers',
         'marketplaceId' => 'marketplaceId',
-        'sku' => 'sku'
+        'sku' => 'sku',
+        'segment' => 'segment'
     ];
 
     /**
@@ -132,7 +135,8 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
         'body' => 'setBody',
         'headers' => 'setHeaders',
         'marketplaceId' => 'setMarketplaceId',
-        'sku' => 'setSku'
+        'sku' => 'setSku',
+        'segment' => 'setSegment'
     ];
 
     /**
@@ -146,7 +150,8 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
         'body' => 'getBody',
         'headers' => 'getHeaders',
         'marketplaceId' => 'getMarketplaceId',
-        'sku' => 'getSku'
+        'sku' => 'getSku',
+        'segment' => 'getSegment'
     ];
 
     /**
@@ -215,6 +220,7 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
         $this->container['headers'] = $data['headers'] ?? null;
         $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
         $this->container['sku'] = $data['sku'] ?? null;
+        $this->container['segment'] = $data['segment'] ?? null;
     }
 
     /**
@@ -266,7 +272,7 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
     /**
      * Sets uri
      *
-     * @param string $uri The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this should be `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
+     * @param string $uri The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this is `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
      *
      * @return self
      */
@@ -314,7 +320,7 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
     /**
      * Sets body
      *
-     * @param map[string,object]|null $body Additional HTTP body information associated with an individual request within a batch.
+     * @param map[string,object]|null $body Additional HTTP body information that is associated with an individual request within a batch.
      *
      * @return self
      */
@@ -338,7 +344,7 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
     /**
      * Sets headers
      *
-     * @param map[string,string]|null $headers A mapping of additional HTTP headers to send/receive for an individual request within a batch.
+     * @param map[string,string]|null $headers A mapping of additional HTTP headers to send or receive for an individual request within a batch.
      *
      * @return self
      */
@@ -362,7 +368,7 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
     /**
      * Sets marketplaceId
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which data is returned.
+     * @param string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      *
      * @return self
      */
@@ -393,6 +399,30 @@ class FeaturedOfferExpectedPriceRequest20220501 implements ModelInterface, Array
     public function setSku($sku)
     {
         $this->container['sku'] = $sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets segment
+     *
+     * @return \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Segment20220501|null
+     */
+    public function getSegment()
+    {
+        return $this->container['segment'];
+    }
+
+    /**
+     * Sets segment
+     *
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Segment20220501|null $segment segment
+     *
+     * @return self
+     */
+    public function setSegment($segment)
+    {
+        $this->container['segment'] = $segment;
 
         return $this;
     }

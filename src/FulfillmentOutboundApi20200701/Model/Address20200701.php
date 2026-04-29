@@ -256,9 +256,6 @@ class Address20200701 implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['addressLine1'] === null) {
             $invalidProperties[] = "'addressLine1' can't be null";
         }
-        if ($this->container['stateOrRegion'] === null) {
-            $invalidProperties[] = "'stateOrRegion' can't be null";
-        }
         if ($this->container['postalCode'] === null) {
             $invalidProperties[] = "'postalCode' can't be null";
         }
@@ -427,7 +424,7 @@ class Address20200701 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets stateOrRegion
      *
-     * @return string
+     * @return string|null
      */
     public function getStateOrRegion()
     {
@@ -437,7 +434,7 @@ class Address20200701 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stateOrRegion
      *
-     * @param string $stateOrRegion The state or region where the person, business or institution is located.
+     * @param string|null $stateOrRegion The state or region where the person, business or institution is located.
      *
      * @return self
      */

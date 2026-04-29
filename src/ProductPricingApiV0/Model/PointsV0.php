@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PointsV0 Class Doc Comment
  *
  * @category Class
+ * @description The number of Amazon Points offered with the purchase of an item, and their monetary value.
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

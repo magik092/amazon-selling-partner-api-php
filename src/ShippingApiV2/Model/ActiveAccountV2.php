@@ -230,7 +230,7 @@ class ActiveAccountV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets accountId
      *
-     * @param string|null $accountId Account Id associated with this account.
+     * @param string|null $accountId Identifier for the seller's carrier account.
      *
      * @return self
      */

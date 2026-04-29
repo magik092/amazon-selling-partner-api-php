@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetFulfillmentOrderResult20200701 Class Doc Comment
  *
  * @category Class
- * @description The request for the getFulfillmentOrder operation.
+ * @description The request for the &#x60;getFulfillmentOrder&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

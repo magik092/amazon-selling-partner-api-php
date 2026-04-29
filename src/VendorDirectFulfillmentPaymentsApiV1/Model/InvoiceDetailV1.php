@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * InvoiceDetailV1 Class Doc Comment
  *
  * @category Class
- * @description Represents the invoice details, including the invoice number, date, parties involved, payment terms, totals, taxes, charges, and line items.
+ * @description Represents the details of an invoice, including invoice number, date, parties involved, payment terms, totals, taxes, charges, and line items.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentPaymentsApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

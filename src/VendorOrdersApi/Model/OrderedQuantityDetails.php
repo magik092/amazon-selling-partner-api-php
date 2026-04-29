@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderedQuantityDetails Class Doc Comment
  *
  * @category Class
- * @description Details of item quantity ordered
+ * @description Details of item quantity ordered.
  * @package  Webcom\Amazon\Rest\VendorOrdersApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -72,6 +72,11 @@ class RateItemIDV2
     const ADDITIONAL_SURCHARGE = 'ADDITIONAL_SURCHARGE';
     const SURCHARGE = 'SURCHARGE';
     const REBATE = 'REBATE';
+    const HIGH_CUBE_SURCHARGE = 'HIGH_CUBE_SURCHARGE';
+    const HIGH_LENGTH_SURCHARGE = 'HIGH_LENGTH_SURCHARGE';
+    const HIGH_WIDTH_SURCHARGE = 'HIGH_WIDTH_SURCHARGE';
+    const DEMAND_SURCHARGE = 'DEMAND_SURCHARGE';
+    const NONSTANDARD_FEE = 'NONSTANDARD_FEE';
     
     /**
      * Gets allowable values of the enum
@@ -108,6 +113,11 @@ class RateItemIDV2
             self::ADDITIONAL_SURCHARGE,
             self::SURCHARGE,
             self::REBATE,
+            self::HIGH_CUBE_SURCHARGE,
+            self::HIGH_LENGTH_SURCHARGE,
+            self::HIGH_WIDTH_SURCHARGE,
+            self::DEMAND_SURCHARGE,
+            self::NONSTANDARD_FEE,
         ];
     }
 }

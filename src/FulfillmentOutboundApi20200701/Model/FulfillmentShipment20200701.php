@@ -330,7 +330,7 @@ class FulfillmentShipment20200701 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets fulfillmentCenterId
      *
-     * @param string $fulfillmentCenterId An identifier for the fulfillment center that the shipment will be sent from.
+     * @param string $fulfillmentCenterId An identifier for the fulfillment center from which the shipment is sent.
      *
      * @return self
      */
@@ -436,7 +436,7 @@ class FulfillmentShipment20200701 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets shippingNotes
      *
-     * @param string[]|null $shippingNotes Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren't available.
+     * @param string[]|null $shippingNotes Provides additional insight into shipment timeline. Primarily used to communicate that actual delivery dates aren't available.
      *
      * @return self
      */

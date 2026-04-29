@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ShippingLabelList20211228 Class Doc Comment
  *
  * @category Class
- * @description Response payload with the shipping labels list.
+ * @description Response payload with the list of shipping labels.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -254,7 +254,7 @@ class ShippingLabelList20211228 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets shippingLabels
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228[]|null $shippingLabels An array that contains the details of the generated shipping labels.
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabel20211228[]|null $shippingLabels An array containing the details of the generated shipping labels.
      *
      * @return self
      */

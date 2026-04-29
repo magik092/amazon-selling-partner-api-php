@@ -248,7 +248,7 @@ class BatchRequest20220501 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets uri
      *
-     * @param string $uri The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this should be `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
+     * @param string $uri The URI associated with an individual request within a batch. For `FeaturedOfferExpectedPrice`, this is `/products/pricing/2022-05-01/offer/featuredOfferExpectedPrice`.
      *
      * @return self
      */
@@ -296,7 +296,7 @@ class BatchRequest20220501 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets body
      *
-     * @param map[string,object]|null $body Additional HTTP body information associated with an individual request within a batch.
+     * @param map[string,object]|null $body Additional HTTP body information that is associated with an individual request within a batch.
      *
      * @return self
      */
@@ -320,7 +320,7 @@ class BatchRequest20220501 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets headers
      *
-     * @param map[string,string]|null $headers A mapping of additional HTTP headers to send/receive for an individual request within a batch.
+     * @param map[string,string]|null $headers A mapping of additional HTTP headers to send or receive for an individual request within a batch.
      *
      * @return self
      */

@@ -338,7 +338,7 @@ class GetFulfillmentPreviewRequest20200701 implements ModelInterface, ArrayAcces
     /**
      * Sets shippingSpeedCategories
      *
-     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ShippingSpeedCategory20200701[]|null $shippingSpeedCategories ShippingSpeedCategory List
+     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\ShippingSpeedCategory20200701[]|null $shippingSpeedCategories List of shipping speed categories.
      *
      * @return self
      */
@@ -386,7 +386,7 @@ class GetFulfillmentPreviewRequest20200701 implements ModelInterface, ArrayAcces
     /**
      * Sets includeDeliveryWindows
      *
-     * @param bool|null $includeDeliveryWindows When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`.
+     * @param bool|null $includeDeliveryWindows When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` equal to `ScheduledDelivery`.
      *
      * @return self
      */

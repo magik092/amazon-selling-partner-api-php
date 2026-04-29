@@ -230,7 +230,7 @@ class GetPricingResponseV0 implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets payload
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\PriceV0[]|null $payload payload
+     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\PriceV0[]|null $payload The payload for the `getPricing` and `getCompetitivePricing` operations.
      *
      * @return self
      */

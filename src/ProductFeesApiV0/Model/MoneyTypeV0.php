@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * MoneyTypeV0 Class Doc Comment
  *
  * @category Class
+ * @description An object representing a monetary value with its currency information.
  * @package  Webcom\Amazon\Rest\ProductFeesApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -67,6 +67,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
         'featuredBuyingOptions' => '\Webcom\Amazon\Rest\ProductPricingApi20220501\Model\FeaturedBuyingOption20220501[]',
         'lowestPricedOffers' => '\Webcom\Amazon\Rest\ProductPricingApi20220501\Model\LowestPricedOffer20220501[]',
         'referencePrices' => '\Webcom\Amazon\Rest\ProductPricingApi20220501\Model\ReferencePrice20220501[]',
+        'similarItems' => '\Webcom\Amazon\Rest\ProductPricingApi20220501\Model\SimilarItems20220501[]',
         'errors' => '\Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Error20220501[]'
     ];
 
@@ -83,6 +84,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
         'featuredBuyingOptions' => null,
         'lowestPricedOffers' => null,
         'referencePrices' => null,
+        'similarItems' => null,
         'errors' => null
     ];
 
@@ -118,6 +120,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
         'featuredBuyingOptions' => 'featuredBuyingOptions',
         'lowestPricedOffers' => 'lowestPricedOffers',
         'referencePrices' => 'referencePrices',
+        'similarItems' => 'similarItems',
         'errors' => 'errors'
     ];
 
@@ -132,6 +135,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
         'featuredBuyingOptions' => 'setFeaturedBuyingOptions',
         'lowestPricedOffers' => 'setLowestPricedOffers',
         'referencePrices' => 'setReferencePrices',
+        'similarItems' => 'setSimilarItems',
         'errors' => 'setErrors'
     ];
 
@@ -146,6 +150,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
         'featuredBuyingOptions' => 'getFeaturedBuyingOptions',
         'lowestPricedOffers' => 'getLowestPricedOffers',
         'referencePrices' => 'getReferencePrices',
+        'similarItems' => 'getSimilarItems',
         'errors' => 'getErrors'
     ];
 
@@ -214,6 +219,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
         $this->container['featuredBuyingOptions'] = $data['featuredBuyingOptions'] ?? null;
         $this->container['lowestPricedOffers'] = $data['lowestPricedOffers'] ?? null;
         $this->container['referencePrices'] = $data['referencePrices'] ?? null;
+        $this->container['similarItems'] = $data['similarItems'] ?? null;
         $this->container['errors'] = $data['errors'] ?? null;
     }
 
@@ -260,7 +266,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
     /**
      * Sets asin
      *
-     * @param string $asin The Amazon Standard Identification Number (ASIN) of the item.
+     * @param string $asin The ASIN of the item.
      *
      * @return self
      */
@@ -284,7 +290,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
     /**
      * Sets marketplaceId
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which data is returned.
+     * @param string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      *
      * @return self
      */
@@ -308,7 +314,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
     /**
      * Sets featuredBuyingOptions
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\FeaturedBuyingOption20220501[]|null $featuredBuyingOptions A list of featured buying options for the given ASIN `marketplaceId` combination.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\FeaturedBuyingOption20220501[]|null $featuredBuyingOptions A list of featured buying options for the specified ASIN `marketplaceId` combination.
      *
      * @return self
      */
@@ -332,7 +338,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
     /**
      * Sets lowestPricedOffers
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\LowestPricedOffer20220501[]|null $lowestPricedOffers A list of the lowest priced offers for the given ASIN `marketplaceId` combination.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\LowestPricedOffer20220501[]|null $lowestPricedOffers A list of lowest priced offers for the specified ASIN `marketplaceId` combination.
      *
      * @return self
      */
@@ -356,13 +362,37 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
     /**
      * Sets referencePrices
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\ReferencePrice20220501[]|null $referencePrices A list of reference prices for the given ASIN `marketplaceId` combination.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\ReferencePrice20220501[]|null $referencePrices A list of reference prices for the specified ASIN `marketplaceId` combination.
      *
      * @return self
      */
     public function setReferencePrices($referencePrices)
     {
         $this->container['referencePrices'] = $referencePrices;
+
+        return $this;
+    }
+
+    /**
+     * Gets similarItems
+     *
+     * @return \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\SimilarItems20220501[]|null
+     */
+    public function getSimilarItems()
+    {
+        return $this->container['similarItems'];
+    }
+
+    /**
+     * Sets similarItems
+     *
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\SimilarItems20220501[]|null $similarItems A list of similar items for the specified ASIN `marketplaceId` combination.
+     *
+     * @return self
+     */
+    public function setSimilarItems($similarItems)
+    {
+        $this->container['similarItems'] = $similarItems;
 
         return $this;
     }
@@ -380,7 +410,7 @@ class CompetitiveSummaryResponseBody20220501 implements ModelInterface, ArrayAcc
     /**
      * Sets errors
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Error20220501[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Error20220501[]|null $errors A list of error responses that are returned when a request is unsuccessful.
      *
      * @return self
      */

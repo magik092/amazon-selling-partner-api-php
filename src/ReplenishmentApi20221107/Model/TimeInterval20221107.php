@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TimeInterval20221107 Class Doc Comment
  *
  * @category Class
- * @description A date-time interval in ISO 8601 format which is used to compute metrics. Only the date is required, but you must pass the complete date and time value. For example, November 11, 2022 should be passed as \&quot;2022-11-07T00:00:00Z\&quot;. Note that only data for the trailing 2 years is supported.   **Note**: The &#x60;listOfferMetrics&#x60; operation only supports a time interval which covers a single unit of the aggregation frequency. For example, for a MONTH aggregation frequency, the duration of the interval between the startDate and endDate can not be more than 1 month.
+ * @description A date-time interval in ISO 8601 format which is used to compute metrics. Only the date is required, but you must pass the complete date and time value. For example, November 11, 2022 should be passed as \&quot;2022-11-11T00:00:00Z\&quot;. Note that only data for the trailing 2 years is supported.   **Note**: The &#x60;listOfferMetrics&#x60; operation only supports a time interval which covers a single unit of the aggregation frequency. For example, for a MONTH aggregation frequency, the duration of the interval between the startDate and endDate can not be more than 1 month.
  * @package  Webcom\Amazon\Rest\ReplenishmentApi20221107
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

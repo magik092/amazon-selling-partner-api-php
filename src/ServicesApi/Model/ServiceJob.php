@@ -75,7 +75,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeId' => 'string',
         'buyer' => '\Webcom\Amazon\Rest\ServicesApi\Model\Buyer',
         'associatedItems' => '\Webcom\Amazon\Rest\ServicesApi\Model\AssociatedItem[]',
-        'serviceLocation' => '\Webcom\Amazon\Rest\ServicesApi\Model\ServiceLocation'
+        'serviceLocation' => '\Webcom\Amazon\Rest\ServicesApi\Model\ServiceLocation',
+        'payments' => '\Webcom\Amazon\Rest\ServicesApi\Model\Payment[]'
     ];
 
     /**
@@ -99,7 +100,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeId' => null,
         'buyer' => null,
         'associatedItems' => null,
-        'serviceLocation' => null
+        'serviceLocation' => null,
+        'payments' => null
     ];
 
     /**
@@ -142,7 +144,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeId' => 'storeId',
         'buyer' => 'buyer',
         'associatedItems' => 'associatedItems',
-        'serviceLocation' => 'serviceLocation'
+        'serviceLocation' => 'serviceLocation',
+        'payments' => 'payments'
     ];
 
     /**
@@ -164,7 +167,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeId' => 'setStoreId',
         'buyer' => 'setBuyer',
         'associatedItems' => 'setAssociatedItems',
-        'serviceLocation' => 'setServiceLocation'
+        'serviceLocation' => 'setServiceLocation',
+        'payments' => 'setPayments'
     ];
 
     /**
@@ -186,7 +190,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'storeId' => 'getStoreId',
         'buyer' => 'getBuyer',
         'associatedItems' => 'getAssociatedItems',
-        'serviceLocation' => 'getServiceLocation'
+        'serviceLocation' => 'getServiceLocation',
+        'payments' => 'getPayments'
     ];
 
     /**
@@ -288,6 +293,7 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['buyer'] = $data['buyer'] ?? null;
         $this->container['associatedItems'] = $data['associatedItems'] ?? null;
         $this->container['serviceLocation'] = $data['serviceLocation'] ?? null;
+        $this->container['payments'] = $data['payments'] ?? null;
     }
 
     /**
@@ -719,6 +725,30 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setServiceLocation($serviceLocation)
     {
         $this->container['serviceLocation'] = $serviceLocation;
+
+        return $this;
+    }
+
+    /**
+     * Gets payments
+     *
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\Payment[]|null
+     */
+    public function getPayments()
+    {
+        return $this->container['payments'];
+    }
+
+    /**
+     * Sets payments
+     *
+     * @param \Webcom\Amazon\Rest\ServicesApi\Model\Payment[]|null $payments A list that contains payment information for the service job.
+     *
+     * @return self
+     */
+    public function setPayments($payments)
+    {
+        $this->container['payments'] = $payments;
 
         return $this;
     }

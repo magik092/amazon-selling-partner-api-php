@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * FeaturedOfferExpectedPriceResponse20220501 Class Doc Comment
  *
  * @category Class
- * @description Schema for an individual featured offer expected price response.
+ * @description Schema for an individual FOEP response.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -251,7 +251,7 @@ class FeaturedOfferExpectedPriceResponse20220501 implements ModelInterface, Arra
     /**
      * Sets headers
      *
-     * @param map[string,string] $headers A mapping of additional HTTP headers to send/receive for an individual request within a batch.
+     * @param map[string,string] $headers A mapping of additional HTTP headers to send or receive for an individual request within a batch.
      *
      * @return self
      */

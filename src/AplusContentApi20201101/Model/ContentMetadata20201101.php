@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ContentMetadata20201101 Class Doc Comment
  *
  * @category Class
- * @description The metadata of an A+ Content document.
+ * @description The A+ Content document&#39;s metadata.
  * @package  Webcom\Amazon\Rest\AplusContentApi20201101
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -275,7 +275,7 @@ class ContentMetadata20201101 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets name
      *
-     * @param string $name The A+ Content document name.
+     * @param string $name The A+ Content document's name.
      *
      * @return self
      */
@@ -306,7 +306,7 @@ class ContentMetadata20201101 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets marketplaceId
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published.
+     * @param string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      *
      * @return self
      */

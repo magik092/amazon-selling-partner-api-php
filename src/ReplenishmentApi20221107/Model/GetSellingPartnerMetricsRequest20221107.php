@@ -314,7 +314,7 @@ class GetSellingPartnerMetricsRequest20221107 implements ModelInterface, ArrayAc
     /**
      * Sets metrics
      *
-     * @param \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\Metric20221107[]|null $metrics The list of metrics requested. If no metric value is provided, data for all of the metrics will be returned.
+     * @param \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\Metric20221107[]|null $metrics The list of metrics requested. If no metric value is provided, data for all metrics will be returned.
      *
      * @return self
      */
@@ -362,7 +362,7 @@ class GetSellingPartnerMetricsRequest20221107 implements ModelInterface, ArrayAc
     /**
      * Sets marketplaceId
      *
-     * @param string $marketplaceId The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+     * @param string $marketplaceId The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
      *
      * @return self
      */

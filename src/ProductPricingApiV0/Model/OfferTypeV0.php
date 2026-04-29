@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OfferTypeV0 Class Doc Comment
  *
  * @category Class
+ * @description Schema for an individual offer.
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -385,7 +386,7 @@ class OfferTypeV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets quantityDiscountPrices
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\QuantityDiscountPriceTypeV0[]|null $quantityDiscountPrices quantityDiscountPrices
+     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\QuantityDiscountPriceTypeV0[]|null $quantityDiscountPrices List of `QuantityDiscountPrice` that contains item's pricing information when buy in bulk.
      *
      * @return self
      */

@@ -68,7 +68,8 @@ class AdjustmentItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'sellerSKU' => 'string',
         'fnSKU' => 'string',
         'productDescription' => 'string',
-        'aSIN' => 'string'
+        'aSIN' => 'string',
+        'transactionNumber' => 'string'
     ];
 
     /**
@@ -85,7 +86,8 @@ class AdjustmentItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'sellerSKU' => null,
         'fnSKU' => null,
         'productDescription' => null,
-        'aSIN' => null
+        'aSIN' => null,
+        'transactionNumber' => null
     ];
 
     /**
@@ -121,7 +123,8 @@ class AdjustmentItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'sellerSKU' => 'SellerSKU',
         'fnSKU' => 'FnSKU',
         'productDescription' => 'ProductDescription',
-        'aSIN' => 'ASIN'
+        'aSIN' => 'ASIN',
+        'transactionNumber' => 'TransactionNumber'
     ];
 
     /**
@@ -136,7 +139,8 @@ class AdjustmentItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'sellerSKU' => 'setSellerSKU',
         'fnSKU' => 'setFnSKU',
         'productDescription' => 'setProductDescription',
-        'aSIN' => 'setASIN'
+        'aSIN' => 'setASIN',
+        'transactionNumber' => 'setTransactionNumber'
     ];
 
     /**
@@ -151,7 +155,8 @@ class AdjustmentItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'sellerSKU' => 'getSellerSKU',
         'fnSKU' => 'getFnSKU',
         'productDescription' => 'getProductDescription',
-        'aSIN' => 'getASIN'
+        'aSIN' => 'getASIN',
+        'transactionNumber' => 'getTransactionNumber'
     ];
 
     /**
@@ -221,6 +226,7 @@ class AdjustmentItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['fnSKU'] = $data['fnSKU'] ?? null;
         $this->container['productDescription'] = $data['productDescription'] ?? null;
         $this->container['aSIN'] = $data['aSIN'] ?? null;
+        $this->container['transactionNumber'] = $data['transactionNumber'] ?? null;
     }
 
     /**
@@ -411,6 +417,30 @@ class AdjustmentItemV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setASIN($aSIN)
     {
         $this->container['aSIN'] = $aSIN;
+
+        return $this;
+    }
+
+    /**
+     * Gets transactionNumber
+     *
+     * @return string|null
+     */
+    public function getTransactionNumber()
+    {
+        return $this->container['transactionNumber'];
+    }
+
+    /**
+     * Sets transactionNumber
+     *
+     * @param string|null $transactionNumber The transaction number that is related to the adjustment.
+     *
+     * @return self
+     */
+    public function setTransactionNumber($transactionNumber)
+    {
+        $this->container['transactionNumber'] = $transactionNumber;
 
         return $this;
     }

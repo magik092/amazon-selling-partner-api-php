@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderItemAcknowledgement Class Doc Comment
  *
  * @category Class
+ * @description Represents the acknowledgement details for an individual order item, including the acknowledgement code, acknowledged quantity, scheduled ship and delivery dates, and rejection reason (if applicable).
  * @package  Webcom\Amazon\Rest\VendorOrdersApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

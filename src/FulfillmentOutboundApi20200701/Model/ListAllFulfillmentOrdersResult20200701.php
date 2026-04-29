@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ListAllFulfillmentOrdersResult20200701 Class Doc Comment
  *
  * @category Class
- * @description The request for the listAllFulfillmentOrders operation.
+ * @description The request for the &#x60;listAllFulfillmentOrders&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

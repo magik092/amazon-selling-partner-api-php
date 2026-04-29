@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Merchant Fulfillment
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetEligibleShipmentServicesResultV0 Class Doc Comment
  *
  * @category Class
- * @description The payload for the getEligibleShipmentServices operation.
+ * @description The payload for the &#x60;getEligibleShipmentServices&#x60; operation.
  * @package  Webcom\Amazon\Rest\MerchantFulfillmentApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -269,7 +269,7 @@ class GetEligibleShipmentServicesResultV0 implements ModelInterface, ArrayAccess
     /**
      * Sets rejectedShippingServiceList
      *
-     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\RejectedShippingServiceV0[]|null $rejectedShippingServiceList List of services that were for some reason unavailable for this request
+     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\RejectedShippingServiceV0[]|null $rejectedShippingServiceList List of services that are for some reason unavailable for this request
      *
      * @return self
      */

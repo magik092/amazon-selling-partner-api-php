@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ListOffersRequestFilters20221107 Class Doc Comment
  *
  * @category Class
- * @description Use these parameters to filter results. Any result must match all of the provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
+ * @description Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
  * @package  Webcom\Amazon\Rest\ReplenishmentApi20221107
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -68,7 +68,8 @@ class ListOffersRequestFilters20221107 implements ModelInterface, ArrayAccess, \
         'eligibilities' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\EligibilityStatus20221107[]',
         'preferences' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\Preference20221107',
         'promotions' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\Promotion20221107',
-        'programTypes' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\ProgramType20221107[]'
+        'programTypes' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\ProgramType20221107[]',
+        'deliveriesConditions' => 'string[]'
     ];
 
     /**
@@ -85,7 +86,8 @@ class ListOffersRequestFilters20221107 implements ModelInterface, ArrayAccess, \
         'eligibilities' => null,
         'preferences' => null,
         'promotions' => null,
-        'programTypes' => null
+        'programTypes' => null,
+        'deliveriesConditions' => null
     ];
 
     /**
@@ -121,7 +123,8 @@ class ListOffersRequestFilters20221107 implements ModelInterface, ArrayAccess, \
         'eligibilities' => 'eligibilities',
         'preferences' => 'preferences',
         'promotions' => 'promotions',
-        'programTypes' => 'programTypes'
+        'programTypes' => 'programTypes',
+        'deliveriesConditions' => 'deliveriesConditions'
     ];
 
     /**
@@ -136,7 +139,8 @@ class ListOffersRequestFilters20221107 implements ModelInterface, ArrayAccess, \
         'eligibilities' => 'setEligibilities',
         'preferences' => 'setPreferences',
         'promotions' => 'setPromotions',
-        'programTypes' => 'setProgramTypes'
+        'programTypes' => 'setProgramTypes',
+        'deliveriesConditions' => 'setDeliveriesConditions'
     ];
 
     /**
@@ -151,7 +155,8 @@ class ListOffersRequestFilters20221107 implements ModelInterface, ArrayAccess, \
         'eligibilities' => 'getEligibilities',
         'preferences' => 'getPreferences',
         'promotions' => 'getPromotions',
-        'programTypes' => 'getProgramTypes'
+        'programTypes' => 'getProgramTypes',
+        'deliveriesConditions' => 'getDeliveriesConditions'
     ];
 
     /**
@@ -195,8 +200,29 @@ class ListOffersRequestFilters20221107 implements ModelInterface, ArrayAccess, \
         return self::$openAPIModelName;
     }
 
+    const DELIVERIES_CONDITIONS_NEXT_30_DAYS_DELIVERIES_PAUSED_PRICING = 'NEXT_30_DAYS_DELIVERIES_PAUSED_PRICING';
+    const DELIVERIES_CONDITIONS_NEXT_30_DAYS_DELIVERIES_PAUSED_NON_BUYABLE = 'NEXT_30_DAYS_DELIVERIES_PAUSED_NON_BUYABLE';
+    const DELIVERIES_CONDITIONS_NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK_ONLY = 'NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK_ONLY';
+    const DELIVERIES_CONDITIONS_NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK = 'NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK';
+    const DELIVERIES_CONDITIONS_NO_ISSUES_FOR_NEXT_30_DAYS_DELIVERIES = 'NO_ISSUES_FOR_NEXT_30_DAYS_DELIVERIES';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDeliveriesConditionsAllowableValues()
+    {
+        return [
+            self::DELIVERIES_CONDITIONS_NEXT_30_DAYS_DELIVERIES_PAUSED_PRICING,
+            self::DELIVERIES_CONDITIONS_NEXT_30_DAYS_DELIVERIES_PAUSED_NON_BUYABLE,
+            self::DELIVERIES_CONDITIONS_NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK_ONLY,
+            self::DELIVERIES_CONDITIONS_NEXT_30_DAYS_DELIVERIES_AT_LOW_INVENTORY_RISK,
+            self::DELIVERIES_CONDITIONS_NO_ISSUES_FOR_NEXT_30_DAYS_DELIVERIES,
+        ];
+    }
     
 
     /**
@@ -221,6 +247,7 @@ class ListOffersRequestFilters20221107 implements ModelInterface, ArrayAccess, \
         $this->container['preferences'] = $data['preferences'] ?? null;
         $this->container['promotions'] = $data['promotions'] ?? null;
         $this->container['programTypes'] = $data['programTypes'] ?? null;
+        $this->container['deliveriesConditions'] = $data['deliveriesConditions'] ?? null;
     }
 
     /**
@@ -266,7 +293,7 @@ class ListOffersRequestFilters20221107 implements ModelInterface, ArrayAccess, \
     /**
      * Sets marketplaceId
      *
-     * @param string $marketplaceId The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+     * @param string $marketplaceId The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
      *
      * @return self
      */
@@ -417,6 +444,39 @@ class ListOffersRequestFilters20221107 implements ModelInterface, ArrayAccess, \
     public function setProgramTypes($programTypes)
     {
         $this->container['programTypes'] = $programTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets deliveriesConditions
+     *
+     * @return string[]|null
+     */
+    public function getDeliveriesConditions()
+    {
+        return $this->container['deliveriesConditions'];
+    }
+
+    /**
+     * Sets deliveriesConditions
+     *
+     * @param string[]|null $deliveriesConditions A list of delivery condition types to filter the results by. Results are filtered to only include offers with the specified delivery conditions.
+     *
+     * @return self
+     */
+    public function setDeliveriesConditions($deliveriesConditions)
+    {
+        $allowedValues = $this->getDeliveriesConditionsAllowableValues();
+        if (!is_null($deliveriesConditions) && array_diff($deliveriesConditions, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'deliveriesConditions', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['deliveriesConditions'] = $deliveriesConditions;
 
         return $this;
     }

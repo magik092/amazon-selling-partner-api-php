@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetOffersResultV0 Class Doc Comment
  *
  * @category Class
+ * @description The payload for the getListingOffers and getItemOffers operations.
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,7 +62,7 @@ class GetOffersResultV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'marketplaceID' => 'string',
+        'marketplaceId' => 'string',
         'aSIN' => 'string',
         'sKU' => 'string',
         'itemCondition' => '\Webcom\Amazon\Rest\ProductPricingApiV0\Model\ConditionTypeV0',
@@ -79,7 +80,7 @@ class GetOffersResultV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'marketplaceID' => null,
+        'marketplaceId' => null,
         'aSIN' => null,
         'sKU' => null,
         'itemCondition' => null,
@@ -116,7 +117,7 @@ class GetOffersResultV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'marketplaceID' => 'MarketplaceID',
+        'marketplaceId' => 'marketplaceId',
         'aSIN' => 'ASIN',
         'sKU' => 'SKU',
         'itemCondition' => 'ItemCondition',
@@ -132,7 +133,7 @@ class GetOffersResultV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'marketplaceID' => 'setMarketplaceID',
+        'marketplaceId' => 'setMarketplaceId',
         'aSIN' => 'setASIN',
         'sKU' => 'setSKU',
         'itemCondition' => 'setItemCondition',
@@ -148,7 +149,7 @@ class GetOffersResultV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'marketplaceID' => 'getMarketplaceID',
+        'marketplaceId' => 'getMarketplaceId',
         'aSIN' => 'getASIN',
         'sKU' => 'getSKU',
         'itemCondition' => 'getItemCondition',
@@ -218,7 +219,7 @@ class GetOffersResultV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['marketplaceID'] = $data['marketplaceID'] ?? null;
+        $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
         $this->container['aSIN'] = $data['aSIN'] ?? null;
         $this->container['sKU'] = $data['sKU'] ?? null;
         $this->container['itemCondition'] = $data['itemCondition'] ?? null;
@@ -237,8 +238,8 @@ class GetOffersResultV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['marketplaceID'] === null) {
-            $invalidProperties[] = "'marketplaceID' can't be null";
+        if ($this->container['marketplaceId'] === null) {
+            $invalidProperties[] = "'marketplaceId' can't be null";
         }
         if ($this->container['itemCondition'] === null) {
             $invalidProperties[] = "'itemCondition' can't be null";
@@ -271,25 +272,25 @@ class GetOffersResultV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
 
 
     /**
-     * Gets marketplaceID
+     * Gets marketplaceId
      *
      * @return string
      */
-    public function getMarketplaceID()
+    public function getMarketplaceId()
     {
-        return $this->container['marketplaceID'];
+        return $this->container['marketplaceId'];
     }
 
     /**
-     * Sets marketplaceID
+     * Sets marketplaceId
      *
-     * @param string $marketplaceID A marketplace identifier.
+     * @param string $marketplaceId A marketplace identifier.
      *
      * @return self
      */
-    public function setMarketplaceID($marketplaceID)
+    public function setMarketplaceId($marketplaceId)
     {
-        $this->container['marketplaceID'] = $marketplaceID;
+        $this->container['marketplaceId'] = $marketplaceId;
 
         return $this;
     }
@@ -451,7 +452,7 @@ class GetOffersResultV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets offers
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\OfferDetailV0[] $offers offers
+     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\OfferDetailV0[] $offers A list of offer details. The list is the same length as the TotalOfferCount in the Summary or 20, whichever is less.
      *
      * @return self
      */

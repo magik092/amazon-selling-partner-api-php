@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SubmitShipmentStatusUpdatesRequest20211228 Class Doc Comment
  *
  * @category Class
- * @description The &#x60;submitShipmentStatusUpdates&#x60; request schema.
+ * @description The request schema for the &#x60;submitShipmentStatusUpdates&#x60; operation.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -224,7 +224,7 @@ class SubmitShipmentStatusUpdatesRequest20211228 implements ModelInterface, Arra
     /**
      * Sets shipmentStatusUpdates
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShipmentStatusUpdate20211228[]|null $shipmentStatusUpdates Contains a list of one or more `ShipmentStatusUpdate` objects, each represents a status update of a specific shipment.
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShipmentStatusUpdate20211228[]|null $shipmentStatusUpdates Contains a list of one or more `ShipmentStatusUpdate` objects. Each `ShipmentStatusUpdate` object represents an update to the status of a specific shipment.
      *
      * @return self
      */

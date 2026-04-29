@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Merchant Fulfillment
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -70,6 +70,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'earliestEstimatedDeliveryDate' => '\DateTime',
         'latestEstimatedDeliveryDate' => '\DateTime',
         'rate' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CurrencyAmountV0',
+        'rateWithAdjustments' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CurrencyAmountV0',
+        'adjustmentItemList' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\RateItemV0[]',
         'shippingServiceOptions' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\ShippingServiceOptionsV0',
         'availableShippingServiceOptions' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\AvailableShippingServiceOptionsV0',
         'availableLabelFormats' => '\Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\LabelFormatV0[]',
@@ -94,6 +96,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'earliestEstimatedDeliveryDate' => 'date-time',
         'latestEstimatedDeliveryDate' => 'date-time',
         'rate' => null,
+        'rateWithAdjustments' => null,
+        'adjustmentItemList' => null,
         'shippingServiceOptions' => null,
         'availableShippingServiceOptions' => null,
         'availableLabelFormats' => null,
@@ -137,6 +141,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'earliestEstimatedDeliveryDate' => 'EarliestEstimatedDeliveryDate',
         'latestEstimatedDeliveryDate' => 'LatestEstimatedDeliveryDate',
         'rate' => 'Rate',
+        'rateWithAdjustments' => 'RateWithAdjustments',
+        'adjustmentItemList' => 'AdjustmentItemList',
         'shippingServiceOptions' => 'ShippingServiceOptions',
         'availableShippingServiceOptions' => 'AvailableShippingServiceOptions',
         'availableLabelFormats' => 'AvailableLabelFormats',
@@ -159,6 +165,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'earliestEstimatedDeliveryDate' => 'setEarliestEstimatedDeliveryDate',
         'latestEstimatedDeliveryDate' => 'setLatestEstimatedDeliveryDate',
         'rate' => 'setRate',
+        'rateWithAdjustments' => 'setRateWithAdjustments',
+        'adjustmentItemList' => 'setAdjustmentItemList',
         'shippingServiceOptions' => 'setShippingServiceOptions',
         'availableShippingServiceOptions' => 'setAvailableShippingServiceOptions',
         'availableLabelFormats' => 'setAvailableLabelFormats',
@@ -181,6 +189,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'earliestEstimatedDeliveryDate' => 'getEarliestEstimatedDeliveryDate',
         'latestEstimatedDeliveryDate' => 'getLatestEstimatedDeliveryDate',
         'rate' => 'getRate',
+        'rateWithAdjustments' => 'getRateWithAdjustments',
+        'adjustmentItemList' => 'getAdjustmentItemList',
         'shippingServiceOptions' => 'getShippingServiceOptions',
         'availableShippingServiceOptions' => 'getAvailableShippingServiceOptions',
         'availableLabelFormats' => 'getAvailableLabelFormats',
@@ -257,6 +267,8 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['earliestEstimatedDeliveryDate'] = $data['earliestEstimatedDeliveryDate'] ?? null;
         $this->container['latestEstimatedDeliveryDate'] = $data['latestEstimatedDeliveryDate'] ?? null;
         $this->container['rate'] = $data['rate'] ?? null;
+        $this->container['rateWithAdjustments'] = $data['rateWithAdjustments'] ?? null;
+        $this->container['adjustmentItemList'] = $data['adjustmentItemList'] ?? null;
         $this->container['shippingServiceOptions'] = $data['shippingServiceOptions'] ?? null;
         $this->container['availableShippingServiceOptions'] = $data['availableShippingServiceOptions'] ?? null;
         $this->container['availableLabelFormats'] = $data['availableLabelFormats'] ?? null;
@@ -291,6 +303,9 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
         }
         if ($this->container['rate'] === null) {
             $invalidProperties[] = "'rate' can't be null";
+        }
+        if ($this->container['rateWithAdjustments'] === null) {
+            $invalidProperties[] = "'rateWithAdjustments' can't be null";
         }
         if ($this->container['shippingServiceOptions'] === null) {
             $invalidProperties[] = "'shippingServiceOptions' can't be null";
@@ -501,6 +516,54 @@ class ShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setRate($rate)
     {
         $this->container['rate'] = $rate;
+
+        return $this;
+    }
+
+    /**
+     * Gets rateWithAdjustments
+     *
+     * @return \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CurrencyAmountV0
+     */
+    public function getRateWithAdjustments()
+    {
+        return $this->container['rateWithAdjustments'];
+    }
+
+    /**
+     * Sets rateWithAdjustments
+     *
+     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CurrencyAmountV0 $rateWithAdjustments rateWithAdjustments
+     *
+     * @return self
+     */
+    public function setRateWithAdjustments($rateWithAdjustments)
+    {
+        $this->container['rateWithAdjustments'] = $rateWithAdjustments;
+
+        return $this;
+    }
+
+    /**
+     * Gets adjustmentItemList
+     *
+     * @return \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\RateItemV0[]|null
+     */
+    public function getAdjustmentItemList()
+    {
+        return $this->container['adjustmentItemList'];
+    }
+
+    /**
+     * Sets adjustmentItemList
+     *
+     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\RateItemV0[]|null $adjustmentItemList List of adjustments.
+     *
+     * @return self
+     */
+    public function setAdjustmentItemList($adjustmentItemList)
+    {
+        $this->container['adjustmentItemList'] = $adjustmentItemList;
 
         return $this;
     }

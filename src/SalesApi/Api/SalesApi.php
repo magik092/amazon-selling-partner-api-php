@@ -127,14 +127,15 @@ class SalesApi
      * @param  string $firstDayOfWeek Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to 'Monday')
      * @param  string $asin Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)
      * @param  string $sku Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)
+     * @param  string $amazonProgram Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)
      *
      * @throws \Webcom\Amazon\Rest\SalesApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse
      */
-    public function getOrderMetrics($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null)
+    public function getOrderMetrics($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null, $amazonProgram = null)
     {
-        list($response) = $this->getOrderMetricsWithHttpInfo($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku);
+        list($response) = $this->getOrderMetricsWithHttpInfo($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku, $amazonProgram);
         return $response;
     }
 
@@ -150,14 +151,15 @@ class SalesApi
      * @param  string $firstDayOfWeek Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to 'Monday')
      * @param  string $asin Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)
      * @param  string $sku Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)
+     * @param  string $amazonProgram Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)
      *
      * @throws \Webcom\Amazon\Rest\SalesApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse|\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getOrderMetricsWithHttpInfo($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null)
+    public function getOrderMetricsWithHttpInfo($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null, $amazonProgram = null)
     {
-        $request = $this->getOrderMetricsRequest($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku);
+        $request = $this->getOrderMetricsRequest($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku, $amazonProgram);
 
         try {
             $options = $this->createHttpClientOption();
@@ -406,13 +408,14 @@ class SalesApi
      * @param  string $firstDayOfWeek Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to 'Monday')
      * @param  string $asin Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)
      * @param  string $sku Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)
+     * @param  string $amazonProgram Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderMetricsAsync($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null)
+    public function getOrderMetricsAsync($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null, $amazonProgram = null)
     {
-        return $this->getOrderMetricsAsyncWithHttpInfo($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku)
+        return $this->getOrderMetricsAsyncWithHttpInfo($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku, $amazonProgram)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -434,14 +437,15 @@ class SalesApi
      * @param  string $firstDayOfWeek Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to 'Monday')
      * @param  string $asin Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)
      * @param  string $sku Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)
+     * @param  string $amazonProgram Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getOrderMetricsAsyncWithHttpInfo($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null)
+    public function getOrderMetricsAsyncWithHttpInfo($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null, $amazonProgram = null)
     {
         $returnType = '\Webcom\Amazon\Rest\SalesApi\Model\GetOrderMetricsResponse';
-        $request = $this->getOrderMetricsRequest($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku);
+        $request = $this->getOrderMetricsRequest($marketplaceIds, $interval, $granularity, $granularityTimeZone, $buyerType, $fulfillmentNetwork, $firstDayOfWeek, $asin, $sku, $amazonProgram);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -489,11 +493,12 @@ class SalesApi
      * @param  string $firstDayOfWeek Specifies the day that the week starts on when granularity&#x3D;Week, either Monday or Sunday. Default: Monday. Example: Sunday, if you want the week to start on a Sunday. (optional, default to 'Monday')
      * @param  string $asin Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)
      * @param  string $sku Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)
+     * @param  string $amazonProgram Filters the results by the Amazon program that you specify. Do not include this filter if you want the response to include order metrics for all programs. **Example:** &#x60;AmazonHaul&#x60; returns order metrics for the Amazon Haul program only. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getOrderMetricsRequest($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null)
+    public function getOrderMetricsRequest($marketplaceIds, $interval, $granularity, $granularityTimeZone = null, $buyerType = 'All', $fulfillmentNetwork = null, $firstDayOfWeek = 'Monday', $asin = null, $sku = null, $amazonProgram = null)
     {
         // verify the required parameter 'marketplaceIds' is set
         if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
@@ -583,6 +588,13 @@ class SalesApi
         }
         if ($sku !== null) {
             $queryParams['sku'] = $sku;
+        }
+        // query params
+        if (is_array($amazonProgram)) {
+            $amazonProgram = ObjectSerializer::serializeCollection($amazonProgram, '', true);
+        }
+        if ($amazonProgram !== null) {
+            $queryParams['amazonProgram'] = $amazonProgram;
         }
 
 

@@ -227,7 +227,7 @@ class Errors20220501 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Error20220501[] $errors A list of error responses returned when a request is unsuccessful.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Error20220501[] $errors A list of error responses that are returned when a request is unsuccessful.
      *
      * @return self
      */

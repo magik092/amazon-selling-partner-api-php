@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -248,7 +248,7 @@ class Item20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets itemSequenceNumber
      *
-     * @param int $itemSequenceNumber Item Sequence Number for the item. This must be the same value as sent in order for a given item.
+     * @param int $itemSequenceNumber The sequence number of the item. The number must be the same as the order number of the item.
      *
      * @return self
      */
@@ -272,7 +272,7 @@ class Item20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyerProductIdentifier
      *
-     * @param string|null $buyerProductIdentifier Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+     * @param string|null $buyerProductIdentifier The buyer's Amazon Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
      *
      * @return self
      */
@@ -296,7 +296,7 @@ class Item20211228 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets vendorProductIdentifier
      *
-     * @param string|null $vendorProductIdentifier The vendor selected product identification of the item. Should be the same as was sent in the purchase order, like SKU Number.
+     * @param string|null $vendorProductIdentifier An item's product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
      *
      * @return self
      */

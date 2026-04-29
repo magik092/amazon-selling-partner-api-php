@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Price20220501 Class Doc Comment
  *
  * @category Class
- * @description Schema for item&#39;s price information, including listing price, shipping price, and Amazon points.
+ * @description The schema for item&#39;s price information, including listing price, shipping price, and Amazon Points.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

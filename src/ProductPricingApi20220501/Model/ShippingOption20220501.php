@@ -258,7 +258,7 @@ class ShippingOption20220501 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets shippingOptionType
      *
-     * @param string $shippingOptionType The type of the shipping option.
+     * @param string $shippingOptionType The type of shipping option.
      *
      * @return self
      */

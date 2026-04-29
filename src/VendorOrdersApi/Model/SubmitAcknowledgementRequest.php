@@ -224,7 +224,7 @@ class SubmitAcknowledgementRequest implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets acknowledgements
      *
-     * @param \Webcom\Amazon\Rest\VendorOrdersApi\Model\OrderAcknowledgement[]|null $acknowledgements acknowledgements
+     * @param \Webcom\Amazon\Rest\VendorOrdersApi\Model\OrderAcknowledgement[]|null $acknowledgements An array of order acknowledgements to be submitted.
      *
      * @return self
      */

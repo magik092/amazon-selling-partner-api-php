@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -347,7 +347,7 @@ class LabelData20211228 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets content
      *
-     * @param string $content This field will contain the Base64encoded string of the shipment label content.
+     * @param string $content This field will contain the Base64 string of the shipment label content.
      *
      * @return self
      */

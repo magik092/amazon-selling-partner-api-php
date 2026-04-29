@@ -205,8 +205,8 @@ class UpdateItemComplianceDetailsRequest20240320 implements ModelInterface, Arra
         if ($this->container['msku'] === null) {
             $invalidProperties[] = "'msku' can't be null";
         }
-        if ((mb_strlen($this->container['msku']) > 40)) {
-            $invalidProperties[] = "invalid value for 'msku', the character length must be smaller than or equal to 40.";
+        if ((mb_strlen($this->container['msku']) > 255)) {
+            $invalidProperties[] = "invalid value for 'msku', the character length must be smaller than or equal to 255.";
         }
 
         if ((mb_strlen($this->container['msku']) < 1)) {
@@ -250,8 +250,8 @@ class UpdateItemComplianceDetailsRequest20240320 implements ModelInterface, Arra
      */
     public function setMsku($msku)
     {
-        if ((mb_strlen($msku) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $msku when calling UpdateItemComplianceDetailsRequest20240320., must be smaller than or equal to 40.');
+        if ((mb_strlen($msku) > 255)) {
+            throw new \InvalidArgumentException('invalid length for $msku when calling UpdateItemComplianceDetailsRequest20240320., must be smaller than or equal to 255.');
         }
         if ((mb_strlen($msku) < 1)) {
             throw new \InvalidArgumentException('invalid length for $msku when calling UpdateItemComplianceDetailsRequest20240320., must be bigger than or equal to 1.');

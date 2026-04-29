@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetMyFeesEstimateResponseV0 Class Doc Comment
  *
  * @category Class
+ * @description The response object for the GetMyFeesEstimate operation.
  * @package  Webcom\Amazon\Rest\ProductFeesApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

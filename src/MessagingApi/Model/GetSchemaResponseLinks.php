@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetSchemaResponseLinks Class Doc Comment
  *
  * @category Class
+ * @description The links response that is associated with the object.
  * @package  Webcom\Amazon\Rest\MessagingApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

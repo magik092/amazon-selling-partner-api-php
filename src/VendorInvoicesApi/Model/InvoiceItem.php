@@ -67,6 +67,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'vendorProductIdentifier' => 'string',
         'invoicedQuantity' => '\Webcom\Amazon\Rest\VendorInvoicesApi\Model\ItemQuantity',
         'netCost' => '\Webcom\Amazon\Rest\VendorInvoicesApi\Model\Money',
+        'netCostUnitOfMeasure' => '\Webcom\Amazon\Rest\VendorInvoicesApi\Model\NetCostUnitOfMeasure',
         'purchaseOrderNumber' => 'string',
         'hsnCode' => 'string',
         'creditNoteDetails' => '\Webcom\Amazon\Rest\VendorInvoicesApi\Model\CreditNoteDetails',
@@ -88,6 +89,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'vendorProductIdentifier' => null,
         'invoicedQuantity' => null,
         'netCost' => null,
+        'netCostUnitOfMeasure' => null,
         'purchaseOrderNumber' => null,
         'hsnCode' => null,
         'creditNoteDetails' => null,
@@ -128,6 +130,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'vendorProductIdentifier' => 'vendorProductIdentifier',
         'invoicedQuantity' => 'invoicedQuantity',
         'netCost' => 'netCost',
+        'netCostUnitOfMeasure' => 'netCostUnitOfMeasure',
         'purchaseOrderNumber' => 'purchaseOrderNumber',
         'hsnCode' => 'hsnCode',
         'creditNoteDetails' => 'creditNoteDetails',
@@ -147,6 +150,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'vendorProductIdentifier' => 'setVendorProductIdentifier',
         'invoicedQuantity' => 'setInvoicedQuantity',
         'netCost' => 'setNetCost',
+        'netCostUnitOfMeasure' => 'setNetCostUnitOfMeasure',
         'purchaseOrderNumber' => 'setPurchaseOrderNumber',
         'hsnCode' => 'setHsnCode',
         'creditNoteDetails' => 'setCreditNoteDetails',
@@ -166,6 +170,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'vendorProductIdentifier' => 'getVendorProductIdentifier',
         'invoicedQuantity' => 'getInvoicedQuantity',
         'netCost' => 'getNetCost',
+        'netCostUnitOfMeasure' => 'getNetCostUnitOfMeasure',
         'purchaseOrderNumber' => 'getPurchaseOrderNumber',
         'hsnCode' => 'getHsnCode',
         'creditNoteDetails' => 'getCreditNoteDetails',
@@ -239,6 +244,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['vendorProductIdentifier'] = $data['vendorProductIdentifier'] ?? null;
         $this->container['invoicedQuantity'] = $data['invoicedQuantity'] ?? null;
         $this->container['netCost'] = $data['netCost'] ?? null;
+        $this->container['netCostUnitOfMeasure'] = $data['netCostUnitOfMeasure'] ?? null;
         $this->container['purchaseOrderNumber'] = $data['purchaseOrderNumber'] ?? null;
         $this->container['hsnCode'] = $data['hsnCode'] ?? null;
         $this->container['creditNoteDetails'] = $data['creditNoteDetails'] ?? null;
@@ -401,6 +407,30 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets netCostUnitOfMeasure
+     *
+     * @return \Webcom\Amazon\Rest\VendorInvoicesApi\Model\NetCostUnitOfMeasure|null
+     */
+    public function getNetCostUnitOfMeasure()
+    {
+        return $this->container['netCostUnitOfMeasure'];
+    }
+
+    /**
+     * Sets netCostUnitOfMeasure
+     *
+     * @param \Webcom\Amazon\Rest\VendorInvoicesApi\Model\NetCostUnitOfMeasure|null $netCostUnitOfMeasure netCostUnitOfMeasure
+     *
+     * @return self
+     */
+    public function setNetCostUnitOfMeasure($netCostUnitOfMeasure)
+    {
+        $this->container['netCostUnitOfMeasure'] = $netCostUnitOfMeasure;
+
+        return $this;
+    }
+
+    /**
      * Gets purchaseOrderNumber
      *
      * @return string|null
@@ -413,7 +443,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchaseOrderNumber
      *
-     * @param string|null $purchaseOrderNumber The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`.
+     * @param string|null $purchaseOrderNumber The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
      *
      * @return self
      */
@@ -437,7 +467,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets hsnCode
      *
-     * @param string|null $hsnCode The HSN Tax code. The HSN number cannot contain alphabets.
+     * @param string|null $hsnCode HSN Tax code. The HSN number cannot contain alphabets.
      *
      * @return self
      */

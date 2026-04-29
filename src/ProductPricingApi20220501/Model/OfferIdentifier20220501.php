@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OfferIdentifier20220501 Class Doc Comment
  *
  * @category Class
- * @description Identifies an offer from a particular seller on an ASIN.
+ * @description Identifies an offer from a particular seller for a specified ASIN.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -254,7 +254,7 @@ class OfferIdentifier20220501 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets marketplaceId
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which data is returned.
+     * @param string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      *
      * @return self
      */
@@ -302,7 +302,7 @@ class OfferIdentifier20220501 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets sku
      *
-     * @param string|null $sku The seller stock keeping unit (SKU) of the item. This will only be present for the target offer, which belongs to the requesting seller.
+     * @param string|null $sku The seller SKU of the item. This will only be present for the target offer, which belongs to the requesting seller.
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class OfferIdentifier20220501 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets asin
      *
-     * @param string $asin The Amazon Standard Identification Number (ASIN) of the item.
+     * @param string $asin The ASIN of the item.
      *
      * @return self
      */

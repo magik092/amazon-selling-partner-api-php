@@ -73,6 +73,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
         'shipToAddress' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\TrackingAddress20200701',
         'currentStatus' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\CurrentStatus20200701',
         'currentStatusDescription' => 'string',
+        'deliveryWindow' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DateRange20200701',
         'signedForBy' => 'string',
         'additionalLocationInfo' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\AdditionalLocationInfo20200701',
         'trackingEvents' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\TrackingEvent20200701[]'
@@ -97,6 +98,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
         'shipToAddress' => null,
         'currentStatus' => null,
         'currentStatusDescription' => null,
+        'deliveryWindow' => null,
         'signedForBy' => null,
         'additionalLocationInfo' => null,
         'trackingEvents' => null
@@ -140,6 +142,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
         'shipToAddress' => 'shipToAddress',
         'currentStatus' => 'currentStatus',
         'currentStatusDescription' => 'currentStatusDescription',
+        'deliveryWindow' => 'deliveryWindow',
         'signedForBy' => 'signedForBy',
         'additionalLocationInfo' => 'additionalLocationInfo',
         'trackingEvents' => 'trackingEvents'
@@ -162,6 +165,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
         'shipToAddress' => 'setShipToAddress',
         'currentStatus' => 'setCurrentStatus',
         'currentStatusDescription' => 'setCurrentStatusDescription',
+        'deliveryWindow' => 'setDeliveryWindow',
         'signedForBy' => 'setSignedForBy',
         'additionalLocationInfo' => 'setAdditionalLocationInfo',
         'trackingEvents' => 'setTrackingEvents'
@@ -184,6 +188,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
         'shipToAddress' => 'getShipToAddress',
         'currentStatus' => 'getCurrentStatus',
         'currentStatusDescription' => 'getCurrentStatusDescription',
+        'deliveryWindow' => 'getDeliveryWindow',
         'signedForBy' => 'getSignedForBy',
         'additionalLocationInfo' => 'getAdditionalLocationInfo',
         'trackingEvents' => 'getTrackingEvents'
@@ -260,6 +265,7 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
         $this->container['shipToAddress'] = $data['shipToAddress'] ?? null;
         $this->container['currentStatus'] = $data['currentStatus'] ?? null;
         $this->container['currentStatusDescription'] = $data['currentStatusDescription'] ?? null;
+        $this->container['deliveryWindow'] = $data['deliveryWindow'] ?? null;
         $this->container['signedForBy'] = $data['signedForBy'] ?? null;
         $this->container['additionalLocationInfo'] = $data['additionalLocationInfo'] ?? null;
         $this->container['trackingEvents'] = $data['trackingEvents'] ?? null;
@@ -552,6 +558,30 @@ class PackageTrackingDetails20200701 implements ModelInterface, ArrayAccess, \Js
     public function setCurrentStatusDescription($currentStatusDescription)
     {
         $this->container['currentStatusDescription'] = $currentStatusDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets deliveryWindow
+     *
+     * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DateRange20200701|null
+     */
+    public function getDeliveryWindow()
+    {
+        return $this->container['deliveryWindow'];
+    }
+
+    /**
+     * Sets deliveryWindow
+     *
+     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DateRange20200701|null $deliveryWindow deliveryWindow
+     *
+     * @return self
+     */
+    public function setDeliveryWindow($deliveryWindow)
+    {
+        $this->container['deliveryWindow'] = $deliveryWindow;
 
         return $this;
     }

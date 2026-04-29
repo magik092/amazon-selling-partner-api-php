@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -297,7 +297,7 @@ class PackingSlip20211228 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets content
      *
-     * @param string $content A Base64encoded string of the packing slip PDF.
+     * @param string $content A Base64 string of the packing slip PDF.
      *
      * @return self
      */

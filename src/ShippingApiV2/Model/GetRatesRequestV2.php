@@ -73,7 +73,8 @@ class GetRatesRequestV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'channelDetails' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\ChannelDetailsV2',
         'clientReferenceDetails' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\ClientReferenceDetailV2[]',
         'shipmentType' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\ShipmentTypeV2',
-        'destinationAccessPointDetails' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\AccessPointDetailsV2'
+        'destinationAccessPointDetails' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\AccessPointDetailsV2',
+        'carrierAccounts' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\CarrierAccountV2[]'
     ];
 
     /**
@@ -95,7 +96,8 @@ class GetRatesRequestV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'channelDetails' => null,
         'clientReferenceDetails' => null,
         'shipmentType' => null,
-        'destinationAccessPointDetails' => null
+        'destinationAccessPointDetails' => null,
+        'carrierAccounts' => null
     ];
 
     /**
@@ -136,7 +138,8 @@ class GetRatesRequestV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'channelDetails' => 'channelDetails',
         'clientReferenceDetails' => 'clientReferenceDetails',
         'shipmentType' => 'shipmentType',
-        'destinationAccessPointDetails' => 'destinationAccessPointDetails'
+        'destinationAccessPointDetails' => 'destinationAccessPointDetails',
+        'carrierAccounts' => 'carrierAccounts'
     ];
 
     /**
@@ -156,7 +159,8 @@ class GetRatesRequestV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'channelDetails' => 'setChannelDetails',
         'clientReferenceDetails' => 'setClientReferenceDetails',
         'shipmentType' => 'setShipmentType',
-        'destinationAccessPointDetails' => 'setDestinationAccessPointDetails'
+        'destinationAccessPointDetails' => 'setDestinationAccessPointDetails',
+        'carrierAccounts' => 'setCarrierAccounts'
     ];
 
     /**
@@ -176,7 +180,8 @@ class GetRatesRequestV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'channelDetails' => 'getChannelDetails',
         'clientReferenceDetails' => 'getClientReferenceDetails',
         'shipmentType' => 'getShipmentType',
-        'destinationAccessPointDetails' => 'getDestinationAccessPointDetails'
+        'destinationAccessPointDetails' => 'getDestinationAccessPointDetails',
+        'carrierAccounts' => 'getCarrierAccounts'
     ];
 
     /**
@@ -251,6 +256,7 @@ class GetRatesRequestV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['clientReferenceDetails'] = $data['clientReferenceDetails'] ?? null;
         $this->container['shipmentType'] = $data['shipmentType'] ?? null;
         $this->container['destinationAccessPointDetails'] = $data['destinationAccessPointDetails'] ?? null;
+        $this->container['carrierAccounts'] = $data['carrierAccounts'] ?? null;
     }
 
     /**
@@ -570,6 +576,30 @@ class GetRatesRequestV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setDestinationAccessPointDetails($destinationAccessPointDetails)
     {
         $this->container['destinationAccessPointDetails'] = $destinationAccessPointDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets carrierAccounts
+     *
+     * @return \Webcom\Amazon\Rest\ShippingApiV2\Model\CarrierAccountV2[]|null
+     */
+    public function getCarrierAccounts()
+    {
+        return $this->container['carrierAccounts'];
+    }
+
+    /**
+     * Sets carrierAccounts
+     *
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\CarrierAccountV2[]|null $carrierAccounts A list of CarrierAccounts
+     *
+     * @return self
+     */
+    public function setCarrierAccounts($carrierAccounts)
+    {
+        $this->container['carrierAccounts'] = $carrierAccounts;
 
         return $this;
     }

@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetDeliveryOffersRequest20200701 Class Doc Comment
  *
  * @category Class
- * @description The request body schema for the getDeliveryOffers operation.
+ * @description The request body schema for the &#x60;getDeliveryOffers&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

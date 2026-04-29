@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * FeaturedOfferExpectedPriceResult20220501 Class Doc Comment
  *
  * @category Class
- * @description The featured offer expected price result data for the requested offer.
+ * @description The FOEP result data for the requested offer.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -269,7 +269,7 @@ class FeaturedOfferExpectedPriceResult20220501 implements ModelInterface, ArrayA
     /**
      * Sets resultStatus
      *
-     * @param string $resultStatus The status of the featured offer expected price computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, `ASIN_NOT_ELIGIBLE`. Additional values may be added in the future.
+     * @param string $resultStatus The status of the FOEP computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, and `ASIN_NOT_ELIGIBLE`. Additional values might be added in the future.
      *
      * @return self
      */

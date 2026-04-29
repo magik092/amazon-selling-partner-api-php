@@ -302,7 +302,7 @@ class AddressV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name The name of the person, business, or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * @param string $name The name of the person, business or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -422,7 +422,7 @@ class AddressV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets city
      *
-     * @param string|null $city The city where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * @param string|null $city The city where the person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -446,7 +446,7 @@ class AddressV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets county
      *
-     * @param string|null $county The county where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * @param string|null $county The county where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -470,7 +470,7 @@ class AddressV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets district
      *
-     * @param string|null $district The district where the person, business, or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * @param string|null $district The district where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */
@@ -566,7 +566,7 @@ class AddressV1 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets phone
      *
-     * @param string|null $phone The phone number of the person, business, or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
+     * @param string|null $phone The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      *
      * @return self
      */

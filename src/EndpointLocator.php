@@ -7,14 +7,25 @@
 namespace Webcom\Amazon\Rest;
 
 /**
- * Class EndpointLocator
+ * Resolves Amazon marketplace metadata into an {@see Endpoint} value object.
+ *
+ * Use the static resolver methods to access endpoint metadata:
+ * - {@see self::resolveByMarketplaceId()}
+ * - {@see self::resolveByCountryCode()}
+ *
+ * Direct access to {@see self::$endpoints} is deprecated.
+ *
  * @author magik092
  */
 class EndpointLocator
 {
     /**
-     * Endpoint details
-     * @var string[][]
+     * Marketplace endpoint definitions keyed by country code.
+     *
+     * @var array<string, array<string, string>>
+     *
+     * @deprecated Direct access to this static property is deprecated and will be removed in v1.4.
+     *             Use {@see self::resolveByMarketplaceId()} or {@see self::resolveByCountryCode()}.
      */
     public static array $endpoints = [
         "DE" => [
@@ -272,9 +283,13 @@ class EndpointLocator
     ];
 
     /**
-     * @param string $marketplaceId
-     * @return Endpoint
-     * @throws ApiException
+     * Resolves an endpoint by Amazon marketplace ID.
+     *
+     * @param string $marketplaceId Amazon marketplace identifier (for example: ATVPDKIKX0DER).
+     *
+     * @return Endpoint Resolved endpoint metadata.
+     *
+     * @throws ApiException When no endpoint is configured for the given marketplace ID.
      */
     public static function resolveByMarketplaceId(string $marketplaceId): Endpoint
     {
@@ -288,9 +303,13 @@ class EndpointLocator
     }
 
     /**
-     * @param string $countryCode
-     * @return Endpoint
-     * @throws ApiException
+     * Resolves an endpoint by marketplace country code.
+     *
+     * @param string $countryCode Marketplace country code (for example: US, DE, PL).
+     *
+     * @return Endpoint Resolved endpoint metadata.
+     *
+     * @throws ApiException When no endpoint is configured for the given country code.
      */
     public static function resolveByCountryCode(string $countryCode): Endpoint
     {

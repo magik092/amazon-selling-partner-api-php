@@ -236,7 +236,7 @@ class BatchResponse20220501 implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets headers
      *
-     * @param map[string,string] $headers A mapping of additional HTTP headers to send/receive for an individual request within a batch.
+     * @param map[string,string] $headers A mapping of additional HTTP headers to send or receive for an individual request within a batch.
      *
      * @return self
      */

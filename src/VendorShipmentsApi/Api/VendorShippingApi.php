@@ -118,6 +118,8 @@ class VendorShippingApi
     /**
      * Operation getShipmentDetails
      *
+     * GetShipmentDetails
+     *
      * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
      * @param  string $sortOrder Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $nextToken Used for pagination when there are more shipments than the specified result size limit. (optional)
@@ -130,7 +132,7 @@ class VendorShippingApi
      * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
-     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
@@ -156,6 +158,8 @@ class VendorShippingApi
     /**
      * Operation getShipmentDetailsWithHttpInfo
      *
+     * GetShipmentDetails
+     *
      * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
      * @param  string $sortOrder Sort in ascending or descending order by purchase order creation date. (optional)
      * @param  string $nextToken Used for pagination when there are more shipments than the specified result size limit. (optional)
@@ -168,7 +172,7 @@ class VendorShippingApi
      * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
-     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
@@ -425,7 +429,7 @@ class VendorShippingApi
     /**
      * Operation getShipmentDetailsAsync
      *
-     * 
+     * GetShipmentDetails
      *
      * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
      * @param  string $sortOrder Sort in ascending or descending order by purchase order creation date. (optional)
@@ -439,7 +443,7 @@ class VendorShippingApi
      * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
-     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
@@ -468,7 +472,7 @@ class VendorShippingApi
     /**
      * Operation getShipmentDetailsAsyncWithHttpInfo
      *
-     * 
+     * GetShipmentDetails
      *
      * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
      * @param  string $sortOrder Sort in ascending or descending order by purchase order creation date. (optional)
@@ -482,7 +486,7 @@ class VendorShippingApi
      * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
-     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
@@ -552,7 +556,7 @@ class VendorShippingApi
      * @param  \DateTime $shippedBefore Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shippedAfter Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $estimatedDeliveryBefore Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
-     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $estimatedDeliveryAfter Get Shipment Details by passing Estimated Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryBefore Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $shipmentDeliveryAfter Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param  \DateTime $requestedPickUpBefore Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
@@ -815,7 +819,516 @@ class VendorShippingApi
     }
 
     /**
+     * Operation getShipmentLabels
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort the list by shipment label creation date in ascending or descending order. (optional)
+     * @param  string $nextToken A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     * @param  \DateTime $labelCreatedAfter Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  \DateTime $labelCreatedBefore Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  string $buyerReferenceNumber Get Shipment labels by passing buyer reference number. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment labels by passing vendor shipment identifier. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\VendorShipmentsApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels
+     */
+    public function getShipmentLabels($limit = null, $sortOrder = null, $nextToken = null, $labelCreatedAfter = null, $labelCreatedBefore = null, $buyerReferenceNumber = null, $vendorShipmentIdentifier = null, $sellerWarehouseCode = null)
+    {
+        list($response) = $this->getShipmentLabelsWithHttpInfo($limit, $sortOrder, $nextToken, $labelCreatedAfter, $labelCreatedBefore, $buyerReferenceNumber, $vendorShipmentIdentifier, $sellerWarehouseCode);
+        return $response;
+    }
+
+    /**
+     * Operation getShipmentLabelsWithHttpInfo
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort the list by shipment label creation date in ascending or descending order. (optional)
+     * @param  string $nextToken A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     * @param  \DateTime $labelCreatedAfter Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  \DateTime $labelCreatedBefore Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  string $buyerReferenceNumber Get Shipment labels by passing buyer reference number. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment labels by passing vendor shipment identifier. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\VendorShipmentsApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels|\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getShipmentLabelsWithHttpInfo($limit = null, $sortOrder = null, $nextToken = null, $labelCreatedAfter = null, $labelCreatedBefore = null, $buyerReferenceNumber = null, $vendorShipmentIdentifier = null, $sellerWarehouseCode = null)
+    {
+        $request = $this->getShipmentLabelsRequest($limit, $sortOrder, $nextToken, $labelCreatedAfter, $labelCreatedBefore, $buyerReferenceNumber, $vendorShipmentIdentifier, $sellerWarehouseCode);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getShipmentLabelsAsync
+     *
+     * 
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort the list by shipment label creation date in ascending or descending order. (optional)
+     * @param  string $nextToken A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     * @param  \DateTime $labelCreatedAfter Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  \DateTime $labelCreatedBefore Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  string $buyerReferenceNumber Get Shipment labels by passing buyer reference number. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment labels by passing vendor shipment identifier. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getShipmentLabelsAsync($limit = null, $sortOrder = null, $nextToken = null, $labelCreatedAfter = null, $labelCreatedBefore = null, $buyerReferenceNumber = null, $vendorShipmentIdentifier = null, $sellerWarehouseCode = null)
+    {
+        return $this->getShipmentLabelsAsyncWithHttpInfo($limit, $sortOrder, $nextToken, $labelCreatedAfter, $labelCreatedBefore, $buyerReferenceNumber, $vendorShipmentIdentifier, $sellerWarehouseCode)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getShipmentLabelsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort the list by shipment label creation date in ascending or descending order. (optional)
+     * @param  string $nextToken A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     * @param  \DateTime $labelCreatedAfter Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  \DateTime $labelCreatedBefore Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  string $buyerReferenceNumber Get Shipment labels by passing buyer reference number. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment labels by passing vendor shipment identifier. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getShipmentLabelsAsyncWithHttpInfo($limit = null, $sortOrder = null, $nextToken = null, $labelCreatedAfter = null, $labelCreatedBefore = null, $buyerReferenceNumber = null, $vendorShipmentIdentifier = null, $sellerWarehouseCode = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\GetShipmentLabels';
+        $request = $this->getShipmentLabelsRequest($limit, $sortOrder, $nextToken, $labelCreatedAfter, $labelCreatedBefore, $buyerReferenceNumber, $vendorShipmentIdentifier, $sellerWarehouseCode);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getShipmentLabels'
+     *
+     * @param  int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param  string $sortOrder Sort the list by shipment label creation date in ascending or descending order. (optional)
+     * @param  string $nextToken A token that you use to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     * @param  \DateTime $labelCreatedAfter Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  \DateTime $labelCreatedBefore Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param  string $buyerReferenceNumber Get Shipment labels by passing buyer reference number. (optional)
+     * @param  string $vendorShipmentIdentifier Get Shipment labels by passing vendor shipment identifier. (optional)
+     * @param  string $sellerWarehouseCode Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getShipmentLabelsRequest($limit = null, $sortOrder = null, $nextToken = null, $labelCreatedAfter = null, $labelCreatedBefore = null, $buyerReferenceNumber = null, $vendorShipmentIdentifier = null, $sellerWarehouseCode = null)
+    {
+        if ($limit !== null && $limit > 50) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentLabels, must be smaller than or equal to 50.');
+        }
+        if ($limit !== null && $limit < 1) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentLabels, must be bigger than or equal to 1.');
+        }
+
+
+        $resourcePath = '/vendor/shipping/v1/transportLabels';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($limit)) {
+            $limit = ObjectSerializer::serializeCollection($limit, '', true);
+        }
+        if ($limit !== null) {
+            $queryParams['limit'] = $limit;
+        }
+        // query params
+        if (is_array($sortOrder)) {
+            $sortOrder = ObjectSerializer::serializeCollection($sortOrder, '', true);
+        }
+        if ($sortOrder !== null) {
+            $queryParams['sortOrder'] = $sortOrder;
+        }
+        // query params
+        if (is_array($nextToken)) {
+            $nextToken = ObjectSerializer::serializeCollection($nextToken, '', true);
+        }
+        if ($nextToken !== null) {
+            $queryParams['nextToken'] = $nextToken;
+        }
+        // query params
+        if (is_array($labelCreatedAfter)) {
+            $labelCreatedAfter = ObjectSerializer::serializeCollection($labelCreatedAfter, '', true);
+        }
+        if ($labelCreatedAfter !== null) {
+            $queryParams['labelCreatedAfter'] = $labelCreatedAfter;
+        }
+        // query params
+        if (is_array($labelCreatedBefore)) {
+            $labelCreatedBefore = ObjectSerializer::serializeCollection($labelCreatedBefore, '', true);
+        }
+        if ($labelCreatedBefore !== null) {
+            $queryParams['labelCreatedBefore'] = $labelCreatedBefore;
+        }
+        // query params
+        if (is_array($buyerReferenceNumber)) {
+            $buyerReferenceNumber = ObjectSerializer::serializeCollection($buyerReferenceNumber, '', true);
+        }
+        if ($buyerReferenceNumber !== null) {
+            $queryParams['buyerReferenceNumber'] = $buyerReferenceNumber;
+        }
+        // query params
+        if (is_array($vendorShipmentIdentifier)) {
+            $vendorShipmentIdentifier = ObjectSerializer::serializeCollection($vendorShipmentIdentifier, '', true);
+        }
+        if ($vendorShipmentIdentifier !== null) {
+            $queryParams['vendorShipmentIdentifier'] = $vendorShipmentIdentifier;
+        }
+        // query params
+        if (is_array($sellerWarehouseCode)) {
+            $sellerWarehouseCode = ObjectSerializer::serializeCollection($sellerWarehouseCode, '', true);
+        }
+        if ($sellerWarehouseCode !== null) {
+            $queryParams['sellerWarehouseCode'] = $sellerWarehouseCode;
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation submitShipmentConfirmations
+     *
+     * SubmitShipmentConfirmations
      *
      * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
@@ -831,6 +1344,8 @@ class VendorShippingApi
 
     /**
      * Operation submitShipmentConfirmationsWithHttpInfo
+     *
+     * SubmitShipmentConfirmations
      *
      * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
@@ -1078,7 +1593,7 @@ class VendorShippingApi
     /**
      * Operation submitShipmentConfirmationsAsync
      *
-     * 
+     * SubmitShipmentConfirmations
      *
      * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
@@ -1098,7 +1613,7 @@ class VendorShippingApi
     /**
      * Operation submitShipmentConfirmationsAsyncWithHttpInfo
      *
-     * 
+     * SubmitShipmentConfirmations
      *
      * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
@@ -1238,6 +1753,8 @@ class VendorShippingApi
     /**
      * Operation submitShipments
      *
+     * SubmitShipments
+     *
      * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipments $body A request to submit shipment request. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorShipmentsApi\ApiException on non-2xx response
@@ -1252,6 +1769,8 @@ class VendorShippingApi
 
     /**
      * Operation submitShipmentsWithHttpInfo
+     *
+     * SubmitShipments
      *
      * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipments $body A request to submit shipment request. (required)
      *
@@ -1499,7 +2018,7 @@ class VendorShippingApi
     /**
      * Operation submitShipmentsAsync
      *
-     * 
+     * SubmitShipments
      *
      * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipments $body A request to submit shipment request. (required)
      *
@@ -1519,7 +2038,7 @@ class VendorShippingApi
     /**
      * Operation submitShipmentsAsyncWithHttpInfo
      *
-     * 
+     * SubmitShipments
      *
      * @param  \Webcom\Amazon\Rest\VendorShipmentsApi\Model\SubmitShipments $body A request to submit shipment request. (required)
      *

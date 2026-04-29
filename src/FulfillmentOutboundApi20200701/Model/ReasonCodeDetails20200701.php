@@ -290,7 +290,7 @@ class ReasonCodeDetails20200701 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets translatedDescription
      *
-     * @param string|null $translatedDescription A translation of the description. The translation is in the language specified in the Language request parameter.
+     * @param string|null $translatedDescription A translation of the description. The translation is in the language specified in the `language` request parameter.
      *
      * @return self
      */

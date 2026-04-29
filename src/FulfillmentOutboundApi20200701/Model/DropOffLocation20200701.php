@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * DropOffLocation20200701 Class Doc Comment
  *
  * @category Class
- * @description The preferred location to leave packages at the destination address.
+ * @description The drop-off location at the destination address.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -269,7 +269,7 @@ class DropOffLocation20200701 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets type
      *
-     * @param string $type Specifies the preferred location to leave the package at the destination address.
+     * @param string $type The drop-off location type at the destination address.
      *
      * @return self
      */
@@ -303,7 +303,7 @@ class DropOffLocation20200701 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets attributes
      *
-     * @param map[string,string]|null $attributes Additional information about the drop-off location that can vary depending on the type of drop-off location specified in the `type` field. If the `type` is set to `FALLBACK_NEIGHBOR_DELIVERY`, the `attributes` object should include the exact keys `neighborName` and `houseNumber` to provide the name and house number of the designated neighbor.
+     * @param map[string,string]|null $attributes Additional information about the drop-off location. This information can vary depending on the type of drop-off location specified in the `type` field.  If the `type` is set to `FALLBACK_NEIGHBOR_DELIVERY`, the `attributes` object must include the keys `neighborName` and `houseNumber` to provide the name and house number of the designated neighbor.  For `RECEPTIONIST` type, the `attributes` object may include a `recipientName` field that contains the name of the person who received or will receive the package.
      *
      * @return self
      */

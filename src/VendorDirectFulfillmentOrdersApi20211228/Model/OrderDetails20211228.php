@@ -71,6 +71,7 @@ class OrderDetails20211228 implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipFromParty' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\PartyIdentification20211228',
         'shipToParty' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\Address20211228',
         'billToParty' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\PartyIdentification20211228',
+        'hasCustomizableItems' => 'bool',
         'items' => '\Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228\Model\OrderItem20211228[]'
     ];
 
@@ -91,6 +92,7 @@ class OrderDetails20211228 implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipFromParty' => null,
         'shipToParty' => null,
         'billToParty' => null,
+        'hasCustomizableItems' => null,
         'items' => null
     ];
 
@@ -130,6 +132,7 @@ class OrderDetails20211228 implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipFromParty' => 'shipFromParty',
         'shipToParty' => 'shipToParty',
         'billToParty' => 'billToParty',
+        'hasCustomizableItems' => 'hasCustomizableItems',
         'items' => 'items'
     ];
 
@@ -148,6 +151,7 @@ class OrderDetails20211228 implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipFromParty' => 'setShipFromParty',
         'shipToParty' => 'setShipToParty',
         'billToParty' => 'setBillToParty',
+        'hasCustomizableItems' => 'setHasCustomizableItems',
         'items' => 'setItems'
     ];
 
@@ -166,6 +170,7 @@ class OrderDetails20211228 implements ModelInterface, ArrayAccess, \JsonSerializ
         'shipFromParty' => 'getShipFromParty',
         'shipToParty' => 'getShipToParty',
         'billToParty' => 'getBillToParty',
+        'hasCustomizableItems' => 'getHasCustomizableItems',
         'items' => 'getItems'
     ];
 
@@ -257,6 +262,7 @@ class OrderDetails20211228 implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['shipFromParty'] = $data['shipFromParty'] ?? null;
         $this->container['shipToParty'] = $data['shipToParty'] ?? null;
         $this->container['billToParty'] = $data['billToParty'] ?? null;
+        $this->container['hasCustomizableItems'] = $data['hasCustomizableItems'] ?? null;
         $this->container['items'] = $data['items'] ?? null;
     }
 
@@ -539,6 +545,30 @@ class OrderDetails20211228 implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setBillToParty($billToParty)
     {
         $this->container['billToParty'] = $billToParty;
+
+        return $this;
+    }
+
+    /**
+     * Gets hasCustomizableItems
+     *
+     * @return bool|null
+     */
+    public function getHasCustomizableItems()
+    {
+        return $this->container['hasCustomizableItems'];
+    }
+
+    /**
+     * Sets hasCustomizableItems
+     *
+     * @param bool|null $hasCustomizableItems When `true`, the order contains customizable items.
+     *
+     * @return self
+     */
+    public function setHasCustomizableItems($hasCustomizableItems)
+    {
+        $this->container['hasCustomizableItems'] = $hasCustomizableItems;
 
         return $this;
     }

@@ -62,7 +62,6 @@ class BuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'buyerEmail' => 'string',
         'buyerName' => 'string',
         'buyerCounty' => 'string',
         'buyerTaxInfo' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\BuyerTaxInfoV0',
@@ -77,7 +76,6 @@ class BuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'buyerEmail' => null,
         'buyerName' => null,
         'buyerCounty' => null,
         'buyerTaxInfo' => null,
@@ -111,7 +109,6 @@ class BuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'buyerEmail' => 'BuyerEmail',
         'buyerName' => 'BuyerName',
         'buyerCounty' => 'BuyerCounty',
         'buyerTaxInfo' => 'BuyerTaxInfo',
@@ -124,7 +121,6 @@ class BuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'buyerEmail' => 'setBuyerEmail',
         'buyerName' => 'setBuyerName',
         'buyerCounty' => 'setBuyerCounty',
         'buyerTaxInfo' => 'setBuyerTaxInfo',
@@ -137,7 +133,6 @@ class BuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'buyerEmail' => 'getBuyerEmail',
         'buyerName' => 'getBuyerName',
         'buyerCounty' => 'getBuyerCounty',
         'buyerTaxInfo' => 'getBuyerTaxInfo',
@@ -204,7 +199,6 @@ class BuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['buyerEmail'] = $data['buyerEmail'] ?? null;
         $this->container['buyerName'] = $data['buyerName'] ?? null;
         $this->container['buyerCounty'] = $data['buyerCounty'] ?? null;
         $this->container['buyerTaxInfo'] = $data['buyerTaxInfo'] ?? null;
@@ -234,30 +228,6 @@ class BuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets buyerEmail
-     *
-     * @return string|null
-     */
-    public function getBuyerEmail()
-    {
-        return $this->container['buyerEmail'];
-    }
-
-    /**
-     * Sets buyerEmail
-     *
-     * @param string|null $buyerEmail The anonymized email address of the buyer.
-     *
-     * @return self
-     */
-    public function setBuyerEmail($buyerEmail)
-    {
-        $this->container['buyerEmail'] = $buyerEmail;
-
-        return $this;
-    }
 
     /**
      * Gets buyerName

@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * FeaturedBuyingOption20220501 Class Doc Comment
  *
  * @category Class
- * @description Describes a featured buying option which includes a list of segmented featured offers for a particular item condition.
+ * @description Describes a featured buying option, which includes a list of segmented featured offers for a particular item condition.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -258,7 +258,7 @@ class FeaturedBuyingOption20220501 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets buyingOptionType
      *
-     * @param string $buyingOptionType The buying option type of the featured offer. This field represents the buying options that a customer sees on the detail page. For example, B2B, Fresh, and Subscribe n Save. Currently supports `NEW`
+     * @param string $buyingOptionType The buying option type for the featured offer. `buyingOptionType` represents the buying options that a customer receives on the detail page, such as `B2B`, `Fresh`, and `Subscribe n Save`. `buyingOptionType` currently supports `NEW` as a value.
      *
      * @return self
      */
@@ -292,7 +292,7 @@ class FeaturedBuyingOption20220501 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets segmentedFeaturedOffers
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\SegmentedFeaturedOffer20220501[] $segmentedFeaturedOffers A list of segmented featured offers for the current buying option type. A segment can be considered as a group of regional contexts that all have the same featured offer. A regional context is a combination of factors such as customer type, region or postal code and buying option.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\SegmentedFeaturedOffer20220501[] $segmentedFeaturedOffers A list of segmented featured offers for the current buying option type. A segment can be considered as a group of regional contexts that all have the same featured offer. A regional context is a combination of factors such as customer type, region, or postal code and buying option.
      *
      * @return self
      */

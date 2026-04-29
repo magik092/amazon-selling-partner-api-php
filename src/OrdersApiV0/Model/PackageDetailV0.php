@@ -329,7 +329,7 @@ class PackageDetailV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets carrierName
      *
-     * @param string|null $carrierName Carrier Name that will deliver the package. Required when `carrierCode` is \"Others\"
+     * @param string|null $carrierName Carrier name that will deliver the package. Required when `carrierCode` is \"Other\"
      *
      * @return self
      */

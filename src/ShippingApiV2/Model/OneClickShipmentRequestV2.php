@@ -66,6 +66,7 @@ class OneClickShipmentRequestV2 implements ModelInterface, ArrayAccess, \JsonSer
         'shipFrom' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\AddressV2',
         'returnTo' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\AddressV2',
         'shipDate' => '\DateTime',
+        'goodsOwner' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\GoodsOwnerV2',
         'packages' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\PackageV2[]',
         'valueAddedServicesDetails' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentValueAddedServiceV2[]',
         'taxDetails' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\TaxDetailV2[]',
@@ -88,6 +89,7 @@ class OneClickShipmentRequestV2 implements ModelInterface, ArrayAccess, \JsonSer
         'shipFrom' => null,
         'returnTo' => null,
         'shipDate' => 'date-time',
+        'goodsOwner' => null,
         'packages' => null,
         'valueAddedServicesDetails' => null,
         'taxDetails' => null,
@@ -129,6 +131,7 @@ class OneClickShipmentRequestV2 implements ModelInterface, ArrayAccess, \JsonSer
         'shipFrom' => 'shipFrom',
         'returnTo' => 'returnTo',
         'shipDate' => 'shipDate',
+        'goodsOwner' => 'goodsOwner',
         'packages' => 'packages',
         'valueAddedServicesDetails' => 'valueAddedServicesDetails',
         'taxDetails' => 'taxDetails',
@@ -149,6 +152,7 @@ class OneClickShipmentRequestV2 implements ModelInterface, ArrayAccess, \JsonSer
         'shipFrom' => 'setShipFrom',
         'returnTo' => 'setReturnTo',
         'shipDate' => 'setShipDate',
+        'goodsOwner' => 'setGoodsOwner',
         'packages' => 'setPackages',
         'valueAddedServicesDetails' => 'setValueAddedServicesDetails',
         'taxDetails' => 'setTaxDetails',
@@ -169,6 +173,7 @@ class OneClickShipmentRequestV2 implements ModelInterface, ArrayAccess, \JsonSer
         'shipFrom' => 'getShipFrom',
         'returnTo' => 'getReturnTo',
         'shipDate' => 'getShipDate',
+        'goodsOwner' => 'getGoodsOwner',
         'packages' => 'getPackages',
         'valueAddedServicesDetails' => 'getValueAddedServicesDetails',
         'taxDetails' => 'getTaxDetails',
@@ -243,6 +248,7 @@ class OneClickShipmentRequestV2 implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['shipFrom'] = $data['shipFrom'] ?? null;
         $this->container['returnTo'] = $data['returnTo'] ?? null;
         $this->container['shipDate'] = $data['shipDate'] ?? null;
+        $this->container['goodsOwner'] = $data['goodsOwner'] ?? null;
         $this->container['packages'] = $data['packages'] ?? null;
         $this->container['valueAddedServicesDetails'] = $data['valueAddedServicesDetails'] ?? null;
         $this->container['taxDetails'] = $data['taxDetails'] ?? null;
@@ -384,6 +390,30 @@ class OneClickShipmentRequestV2 implements ModelInterface, ArrayAccess, \JsonSer
     public function setShipDate($shipDate)
     {
         $this->container['shipDate'] = $shipDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets goodsOwner
+     *
+     * @return \Webcom\Amazon\Rest\ShippingApiV2\Model\GoodsOwnerV2|null
+     */
+    public function getGoodsOwner()
+    {
+        return $this->container['goodsOwner'];
+    }
+
+    /**
+     * Sets goodsOwner
+     *
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\GoodsOwnerV2|null $goodsOwner goodsOwner
+     *
+     * @return self
+     */
+    public function setGoodsOwner($goodsOwner)
+    {
+        $this->container['goodsOwner'] = $goodsOwner;
 
         return $this;
     }

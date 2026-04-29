@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * TaxDetails20211228 Class Doc Comment
  *
  * @category Class
- * @description The tax details related to the order.
+ * @description The tax details for the order. _Note:_ Amazon calculates tax on the list price (Amazon retail price).
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentOrdersApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -12,7 +12,7 @@
 /**
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -118,7 +118,7 @@ class AplusContentApi
     /**
      * Operation createContentDocument
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
@@ -134,7 +134,7 @@ class AplusContentApi
     /**
      * Operation createContentDocumentWithHttpInfo
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
@@ -363,7 +363,7 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \InvalidArgumentException
@@ -384,7 +384,7 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \InvalidArgumentException
@@ -432,7 +432,7 @@ class AplusContentApi
     /**
      * Create request for operation 'createContentDocument'
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \InvalidArgumentException
@@ -541,8 +541,8 @@ class AplusContentApi
     /**
      * Operation getContentDocument
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
@@ -558,8 +558,8 @@ class AplusContentApi
     /**
      * Operation getContentDocumentWithHttpInfo
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
@@ -808,8 +808,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. (required)
      *
      * @throws \InvalidArgumentException
@@ -830,8 +830,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. (required)
      *
      * @throws \InvalidArgumentException
@@ -879,8 +879,8 @@ class AplusContentApi
     /**
      * Create request for operation 'getContentDocument'
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. (required)
      *
      * @throws \InvalidArgumentException
@@ -1012,11 +1012,11 @@ class AplusContentApi
     /**
      * Operation listContentDocumentAsinRelations
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you don&#39;t include this parameter, the operation returns the related ASINs without metadata. (optional)
      * @param  string[] $asinSet The set of ASINs. (optional)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1031,11 +1031,11 @@ class AplusContentApi
     /**
      * Operation listContentDocumentAsinRelationsWithHttpInfo
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you don&#39;t include this parameter, the operation returns the related ASINs without metadata. (optional)
      * @param  string[] $asinSet The set of ASINs. (optional)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1283,11 +1283,11 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you don&#39;t include this parameter, the operation returns the related ASINs without metadata. (optional)
      * @param  string[] $asinSet The set of ASINs. (optional)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1307,11 +1307,11 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you don&#39;t include this parameter, the operation returns the related ASINs without metadata. (optional)
      * @param  string[] $asinSet The set of ASINs. (optional)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1358,11 +1358,11 @@ class AplusContentApi
     /**
      * Create request for operation 'listContentDocumentAsinRelations'
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string[] $includedDataSet The set of A+ Content data types to include in the response. If you don&#39;t include this parameter, the operation returns the related ASINs without metadata. (optional)
      * @param  string[] $asinSet The set of ASINs. (optional)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1505,8 +1505,8 @@ class AplusContentApi
     /**
      * Operation postContentDocumentApprovalSubmission
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1521,8 +1521,8 @@ class AplusContentApi
     /**
      * Operation postContentDocumentApprovalSubmissionWithHttpInfo
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1770,8 +1770,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1791,8 +1791,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1839,8 +1839,8 @@ class AplusContentApi
     /**
      * Create request for operation 'postContentDocumentApprovalSubmission'
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1954,9 +1954,9 @@ class AplusContentApi
     /**
      * Operation postContentDocumentAsinRelations
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The content document ASIN relations request details. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The request details for the content document ASIN relations. (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1971,9 +1971,9 @@ class AplusContentApi
     /**
      * Operation postContentDocumentAsinRelationsWithHttpInfo
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The content document ASIN relations request details. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The request details for the content document ASIN relations. (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2221,9 +2221,9 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The content document ASIN relations request details. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The request details for the content document ASIN relations. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2243,9 +2243,9 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The content document ASIN relations request details. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The request details for the content document ASIN relations. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2292,9 +2292,9 @@ class AplusContentApi
     /**
      * Create request for operation 'postContentDocumentAsinRelations'
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The content document ASIN relations request details. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentAsinRelationsRequest20201101 $postContentDocumentAsinRelationsRequest The request details for the content document ASIN relations. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2420,8 +2420,8 @@ class AplusContentApi
     /**
      * Operation postContentDocumentSuspendSubmission
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2436,8 +2436,8 @@ class AplusContentApi
     /**
      * Operation postContentDocumentSuspendSubmissionWithHttpInfo
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2685,8 +2685,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2706,8 +2706,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2754,8 +2754,8 @@ class AplusContentApi
     /**
      * Create request for operation 'postContentDocumentSuspendSubmission'
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2869,8 +2869,8 @@ class AplusContentApi
     /**
      * Operation searchContentDocuments
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2885,8 +2885,8 @@ class AplusContentApi
     /**
      * Operation searchContentDocumentsWithHttpInfo
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3134,8 +3134,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3155,8 +3155,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3203,8 +3203,8 @@ class AplusContentApi
     /**
      * Create request for operation 'searchContentDocuments'
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3311,9 +3311,9 @@ class AplusContentApi
     /**
      * Operation searchContentPublishRecords
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $asin The Amazon Standard Identification Number (ASIN). (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $asin The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3328,9 +3328,9 @@ class AplusContentApi
     /**
      * Operation searchContentPublishRecordsWithHttpInfo
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $asin The Amazon Standard Identification Number (ASIN). (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $asin The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3558,9 +3558,9 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $asin The Amazon Standard Identification Number (ASIN). (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $asin The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3580,9 +3580,9 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $asin The Amazon Standard Identification Number (ASIN). (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $asin The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3629,9 +3629,9 @@ class AplusContentApi
     /**
      * Create request for operation 'searchContentPublishRecords'
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param  string $asin The Amazon Standard Identification Number (ASIN). (required)
-     * @param  string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param  string $asin The Amazon Standard Identification Number (ASIN) is the unique identifier of a product within a marketplace. (required)
+     * @param  string $pageToken A token that you use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3755,8 +3755,8 @@ class AplusContentApi
     /**
      * Operation updateContentDocument
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
@@ -3772,8 +3772,8 @@ class AplusContentApi
     /**
      * Operation updateContentDocumentWithHttpInfo
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \Webcom\Amazon\Rest\AplusContentApi20201101\ApiException on non-2xx response
@@ -4022,8 +4022,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \InvalidArgumentException
@@ -4044,8 +4044,8 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \InvalidArgumentException
@@ -4093,8 +4093,8 @@ class AplusContentApi
     /**
      * Create request for operation 'updateContentDocument'
      *
-     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      *
      * @throws \InvalidArgumentException
@@ -4221,7 +4221,7 @@ class AplusContentApi
     /**
      * Operation validateContentDocumentAsinRelations
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      * @param  string[] $asinSet The set of ASINs. (optional)
      *
@@ -4238,7 +4238,7 @@ class AplusContentApi
     /**
      * Operation validateContentDocumentAsinRelationsWithHttpInfo
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      * @param  string[] $asinSet The set of ASINs. (optional)
      *
@@ -4468,7 +4468,7 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      * @param  string[] $asinSet The set of ASINs. (optional)
      *
@@ -4490,7 +4490,7 @@ class AplusContentApi
      *
      * 
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      * @param  string[] $asinSet The set of ASINs. (optional)
      *
@@ -4539,7 +4539,7 @@ class AplusContentApi
     /**
      * Create request for operation 'validateContentDocumentAsinRelations'
      *
-     * @param  string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param  string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param  \Webcom\Amazon\Rest\AplusContentApi20201101\Model\PostContentDocumentRequest20201101 $postContentDocumentRequest The content document request details. (required)
      * @param  string[] $asinSet The set of ASINs. (optional)
      *

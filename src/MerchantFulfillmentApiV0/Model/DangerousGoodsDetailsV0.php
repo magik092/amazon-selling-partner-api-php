@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Merchant Fulfillment
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * DangerousGoodsDetailsV0 Class Doc Comment
  *
  * @category Class
- * @description Details related to any dangerous goods/items that are being shipped.
+ * @description Details related to any dangerous goods or items that are shipped.
  * @package  Webcom\Amazon\Rest\MerchantFulfillmentApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -351,7 +351,7 @@ class DangerousGoodsDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets transportationRegulatoryClass
      *
-     * @param string|null $transportationRegulatoryClass The specific regulatory class  of the item being shipped.
+     * @param string|null $transportationRegulatoryClass The specific regulatory class of the shipped item.
      *
      * @return self
      */

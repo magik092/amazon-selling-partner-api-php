@@ -227,7 +227,7 @@ class ErrorListV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets errors
      *
-     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorV2[] $errors errors
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorV2[] $errors Array of Errors
      *
      * @return self
      */

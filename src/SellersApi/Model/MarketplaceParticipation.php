@@ -11,7 +11,7 @@
  */
 
 /**
- * Selling Partner API for Sellers
+ * The Selling Partner API for Sellers
  *
  * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
  *
@@ -62,7 +62,8 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPITypes = [
         'marketplace' => '\Webcom\Amazon\Rest\SellersApi\Model\Marketplace',
-        'participation' => '\Webcom\Amazon\Rest\SellersApi\Model\Participation'
+        'participation' => '\Webcom\Amazon\Rest\SellersApi\Model\Participation',
+        'storeName' => 'string'
     ];
 
     /**
@@ -74,7 +75,8 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
       */
     protected static $openAPIFormats = [
         'marketplace' => null,
-        'participation' => null
+        'participation' => null,
+        'storeName' => null
     ];
 
     /**
@@ -105,7 +107,8 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $attributeMap = [
         'marketplace' => 'marketplace',
-        'participation' => 'participation'
+        'participation' => 'participation',
+        'storeName' => 'storeName'
     ];
 
     /**
@@ -115,7 +118,8 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $setters = [
         'marketplace' => 'setMarketplace',
-        'participation' => 'setParticipation'
+        'participation' => 'setParticipation',
+        'storeName' => 'setStoreName'
     ];
 
     /**
@@ -125,7 +129,8 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
      */
     protected static $getters = [
         'marketplace' => 'getMarketplace',
-        'participation' => 'getParticipation'
+        'participation' => 'getParticipation',
+        'storeName' => 'getStoreName'
     ];
 
     /**
@@ -190,6 +195,7 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
     {
         $this->container['marketplace'] = $data['marketplace'] ?? null;
         $this->container['participation'] = $data['participation'] ?? null;
+        $this->container['storeName'] = $data['storeName'] ?? null;
     }
 
     /**
@@ -206,6 +212,9 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
         }
         if ($this->container['participation'] === null) {
             $invalidProperties[] = "'participation' can't be null";
+        }
+        if ($this->container['storeName'] === null) {
+            $invalidProperties[] = "'storeName' can't be null";
         }
         return $invalidProperties;
     }
@@ -266,6 +275,30 @@ class MarketplaceParticipation implements ModelInterface, ArrayAccess, \JsonSeri
     public function setParticipation($participation)
     {
         $this->container['participation'] = $participation;
+
+        return $this;
+    }
+
+    /**
+     * Gets storeName
+     *
+     * @return string
+     */
+    public function getStoreName()
+    {
+        return $this->container['storeName'];
+    }
+
+    /**
+     * Sets storeName
+     *
+     * @param string $storeName The name of the seller's store as displayed in the marketplace.
+     *
+     * @return self
+     */
+    public function setStoreName($storeName)
+    {
+        $this->container['storeName'] = $storeName;
 
         return $this;
     }

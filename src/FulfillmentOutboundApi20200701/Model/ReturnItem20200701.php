@@ -302,7 +302,7 @@ class ReturnItem20200701 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets sellerReturnItemId
      *
-     * @param string $sellerReturnItemId An identifier assigned by the seller to the return item.
+     * @param string $sellerReturnItemId An identifier the seller assigns to the return item.
      *
      * @return self
      */

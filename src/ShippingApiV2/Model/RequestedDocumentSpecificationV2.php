@@ -67,7 +67,8 @@ class RequestedDocumentSpecificationV2 implements ModelInterface, ArrayAccess, \
         'dpi' => 'int',
         'pageLayout' => 'string',
         'needFileJoining' => 'bool',
-        'requestedDocumentTypes' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\DocumentTypeV2[]'
+        'requestedDocumentTypes' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\DocumentTypeV2[]',
+        'requestedLabelCustomization' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\RequestedLabelCustomizationV2'
     ];
 
     /**
@@ -83,7 +84,8 @@ class RequestedDocumentSpecificationV2 implements ModelInterface, ArrayAccess, \
         'dpi' => null,
         'pageLayout' => null,
         'needFileJoining' => null,
-        'requestedDocumentTypes' => null
+        'requestedDocumentTypes' => null,
+        'requestedLabelCustomization' => null
     ];
 
     /**
@@ -118,7 +120,8 @@ class RequestedDocumentSpecificationV2 implements ModelInterface, ArrayAccess, \
         'dpi' => 'dpi',
         'pageLayout' => 'pageLayout',
         'needFileJoining' => 'needFileJoining',
-        'requestedDocumentTypes' => 'requestedDocumentTypes'
+        'requestedDocumentTypes' => 'requestedDocumentTypes',
+        'requestedLabelCustomization' => 'requestedLabelCustomization'
     ];
 
     /**
@@ -132,7 +135,8 @@ class RequestedDocumentSpecificationV2 implements ModelInterface, ArrayAccess, \
         'dpi' => 'setDpi',
         'pageLayout' => 'setPageLayout',
         'needFileJoining' => 'setNeedFileJoining',
-        'requestedDocumentTypes' => 'setRequestedDocumentTypes'
+        'requestedDocumentTypes' => 'setRequestedDocumentTypes',
+        'requestedLabelCustomization' => 'setRequestedLabelCustomization'
     ];
 
     /**
@@ -146,7 +150,8 @@ class RequestedDocumentSpecificationV2 implements ModelInterface, ArrayAccess, \
         'dpi' => 'getDpi',
         'pageLayout' => 'getPageLayout',
         'needFileJoining' => 'getNeedFileJoining',
-        'requestedDocumentTypes' => 'getRequestedDocumentTypes'
+        'requestedDocumentTypes' => 'getRequestedDocumentTypes',
+        'requestedLabelCustomization' => 'getRequestedLabelCustomization'
     ];
 
     /**
@@ -215,6 +220,7 @@ class RequestedDocumentSpecificationV2 implements ModelInterface, ArrayAccess, \
         $this->container['pageLayout'] = $data['pageLayout'] ?? null;
         $this->container['needFileJoining'] = $data['needFileJoining'] ?? null;
         $this->container['requestedDocumentTypes'] = $data['requestedDocumentTypes'] ?? null;
+        $this->container['requestedLabelCustomization'] = $data['requestedLabelCustomization'] ?? null;
     }
 
     /**
@@ -393,6 +399,30 @@ class RequestedDocumentSpecificationV2 implements ModelInterface, ArrayAccess, \
     public function setRequestedDocumentTypes($requestedDocumentTypes)
     {
         $this->container['requestedDocumentTypes'] = $requestedDocumentTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets requestedLabelCustomization
+     *
+     * @return \Webcom\Amazon\Rest\ShippingApiV2\Model\RequestedLabelCustomizationV2|null
+     */
+    public function getRequestedLabelCustomization()
+    {
+        return $this->container['requestedLabelCustomization'];
+    }
+
+    /**
+     * Sets requestedLabelCustomization
+     *
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\RequestedLabelCustomizationV2|null $requestedLabelCustomization requestedLabelCustomization
+     *
+     * @return self
+     */
+    public function setRequestedLabelCustomization($requestedLabelCustomization)
+    {
+        $this->container['requestedLabelCustomization'] = $requestedLabelCustomization;
 
         return $this;
     }

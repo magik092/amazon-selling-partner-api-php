@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * LowestPricedOffer20220501 Class Doc Comment
  *
  * @category Class
- * @description The lowest priced offer for the requested item condition and offer type.
+ * @description Describes the lowest priced offers for the specified item condition and offer type.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -260,7 +260,7 @@ class LowestPricedOffer20220501 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets offers
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Offer20220501[] $offers A list of up to 20 lowest priced offers that match the criteria specified in the `lowestPricedOffersInput` parameter.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Offer20220501[] $offers A list of up to 20 lowest priced offers that match the criteria specified in `lowestPricedOffersInput`.
      *
      * @return self
      */

@@ -62,7 +62,8 @@ class UnlinkCarrierAccountRequestV2 implements ModelInterface, ArrayAccess, \Jso
       * @var string[]
       */
     protected static $openAPITypes = [
-        'clientReferenceDetails' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\ClientReferenceDetailV2[]'
+        'clientReferenceDetails' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\ClientReferenceDetailV2[]',
+        'accountId' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class UnlinkCarrierAccountRequestV2 implements ModelInterface, ArrayAccess, \Jso
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'clientReferenceDetails' => null
+        'clientReferenceDetails' => null,
+        'accountId' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class UnlinkCarrierAccountRequestV2 implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $attributeMap = [
-        'clientReferenceDetails' => 'clientReferenceDetails'
+        'clientReferenceDetails' => 'clientReferenceDetails',
+        'accountId' => 'accountId'
     ];
 
     /**
@@ -112,7 +115,8 @@ class UnlinkCarrierAccountRequestV2 implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $setters = [
-        'clientReferenceDetails' => 'setClientReferenceDetails'
+        'clientReferenceDetails' => 'setClientReferenceDetails',
+        'accountId' => 'setAccountId'
     ];
 
     /**
@@ -121,7 +125,8 @@ class UnlinkCarrierAccountRequestV2 implements ModelInterface, ArrayAccess, \Jso
      * @var string[]
      */
     protected static $getters = [
-        'clientReferenceDetails' => 'getClientReferenceDetails'
+        'clientReferenceDetails' => 'getClientReferenceDetails',
+        'accountId' => 'getAccountId'
     ];
 
     /**
@@ -185,6 +190,7 @@ class UnlinkCarrierAccountRequestV2 implements ModelInterface, ArrayAccess, \Jso
     public function __construct(array $data = null)
     {
         $this->container['clientReferenceDetails'] = $data['clientReferenceDetails'] ?? null;
+        $this->container['accountId'] = $data['accountId'] ?? null;
     }
 
     /**
@@ -231,6 +237,30 @@ class UnlinkCarrierAccountRequestV2 implements ModelInterface, ArrayAccess, \Jso
     public function setClientReferenceDetails($clientReferenceDetails)
     {
         $this->container['clientReferenceDetails'] = $clientReferenceDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountId
+     *
+     * @return string|null
+     */
+    public function getAccountId()
+    {
+        return $this->container['accountId'];
+    }
+
+    /**
+     * Sets accountId
+     *
+     * @param string|null $accountId Identifier for the seller's carrier account.
+     *
+     * @return self
+     */
+    public function setAccountId($accountId)
+    {
+        $this->container['accountId'] = $accountId;
 
         return $this;
     }

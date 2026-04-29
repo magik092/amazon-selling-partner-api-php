@@ -587,7 +587,7 @@ class ServiceApi
      *
      * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
      * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
-     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body body (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body Input containing the resource details to be assigned to the appointment. (required)
      *
      * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -604,7 +604,7 @@ class ServiceApi
      *
      * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
      * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
-     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body Input containing the resource details to be assigned to the appointment. (required)
      *
      * @throws \Webcom\Amazon\Rest\ServicesApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -874,7 +874,7 @@ class ServiceApi
      *
      * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
      * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
-     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body Input containing the resource details to be assigned to the appointment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -896,7 +896,7 @@ class ServiceApi
      *
      * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
      * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
-     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body Input containing the resource details to be assigned to the appointment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -945,7 +945,7 @@ class ServiceApi
      *
      * @param  string $serviceJobId An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
      * @param  string $appointmentId An Amazon-defined identifier of active service job appointment. (required)
-     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ServicesApi\Model\AssignAppointmentResourcesRequest $body Input containing the resource details to be assigned to the appointment. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

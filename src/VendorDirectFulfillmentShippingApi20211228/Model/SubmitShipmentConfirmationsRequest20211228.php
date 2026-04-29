@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SubmitShipmentConfirmationsRequest20211228 Class Doc Comment
  *
  * @category Class
- * @description The &#x60;submitShipmentConfirmations&#x60; request schema.
+ * @description The request schema for the submitShipmentConfirmations operation.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -224,7 +224,7 @@ class SubmitShipmentConfirmationsRequest20211228 implements ModelInterface, Arra
     /**
      * Sets shipmentConfirmations
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShipmentConfirmation20211228[]|null $shipmentConfirmations An array of `ShipmentConfirmation` objects, each represents confirmation details for a specific shipment.
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShipmentConfirmation20211228[]|null $shipmentConfirmations Array of `ShipmentConfirmation` objects. Each `ShipmentConfirmation` object represents the confirmation details for a specific shipment.
      *
      * @return self
      */

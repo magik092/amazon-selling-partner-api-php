@@ -68,6 +68,7 @@ class PackingOption20240320 implements ModelInterface, ArrayAccess, \JsonSeriali
         'packingGroups' => 'string[]',
         'packingOptionId' => 'string',
         'status' => 'string',
+        'supportedConfigurations' => '\Webcom\Amazon\Rest\FulfillmentInboundApi20240320\Model\PackingConfiguration20240320[]',
         'supportedShippingConfigurations' => '\Webcom\Amazon\Rest\FulfillmentInboundApi20240320\Model\ShippingConfiguration20240320[]'
     ];
 
@@ -85,6 +86,7 @@ class PackingOption20240320 implements ModelInterface, ArrayAccess, \JsonSeriali
         'packingGroups' => null,
         'packingOptionId' => null,
         'status' => null,
+        'supportedConfigurations' => null,
         'supportedShippingConfigurations' => null
     ];
 
@@ -121,6 +123,7 @@ class PackingOption20240320 implements ModelInterface, ArrayAccess, \JsonSeriali
         'packingGroups' => 'packingGroups',
         'packingOptionId' => 'packingOptionId',
         'status' => 'status',
+        'supportedConfigurations' => 'supportedConfigurations',
         'supportedShippingConfigurations' => 'supportedShippingConfigurations'
     ];
 
@@ -136,6 +139,7 @@ class PackingOption20240320 implements ModelInterface, ArrayAccess, \JsonSeriali
         'packingGroups' => 'setPackingGroups',
         'packingOptionId' => 'setPackingOptionId',
         'status' => 'setStatus',
+        'supportedConfigurations' => 'setSupportedConfigurations',
         'supportedShippingConfigurations' => 'setSupportedShippingConfigurations'
     ];
 
@@ -151,6 +155,7 @@ class PackingOption20240320 implements ModelInterface, ArrayAccess, \JsonSeriali
         'packingGroups' => 'getPackingGroups',
         'packingOptionId' => 'getPackingOptionId',
         'status' => 'getStatus',
+        'supportedConfigurations' => 'getSupportedConfigurations',
         'supportedShippingConfigurations' => 'getSupportedShippingConfigurations'
     ];
 
@@ -220,6 +225,7 @@ class PackingOption20240320 implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->container['packingGroups'] = $data['packingGroups'] ?? null;
         $this->container['packingOptionId'] = $data['packingOptionId'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
+        $this->container['supportedConfigurations'] = $data['supportedConfigurations'] ?? null;
         $this->container['supportedShippingConfigurations'] = $data['supportedShippingConfigurations'] ?? null;
     }
 
@@ -267,6 +273,9 @@ class PackingOption20240320 implements ModelInterface, ArrayAccess, \JsonSeriali
             $invalidProperties[] = "invalid value for 'status', the character length must be bigger than or equal to 1.";
         }
 
+        if ($this->container['supportedConfigurations'] === null) {
+            $invalidProperties[] = "'supportedConfigurations' can't be null";
+        }
         if ($this->container['supportedShippingConfigurations'] === null) {
             $invalidProperties[] = "'supportedShippingConfigurations' can't be null";
         }
@@ -447,6 +456,30 @@ class PackingOption20240320 implements ModelInterface, ArrayAccess, \JsonSeriali
     }
 
     /**
+     * Gets supportedConfigurations
+     *
+     * @return \Webcom\Amazon\Rest\FulfillmentInboundApi20240320\Model\PackingConfiguration20240320[]
+     */
+    public function getSupportedConfigurations()
+    {
+        return $this->container['supportedConfigurations'];
+    }
+
+    /**
+     * Sets supportedConfigurations
+     *
+     * @param \Webcom\Amazon\Rest\FulfillmentInboundApi20240320\Model\PackingConfiguration20240320[] $supportedConfigurations A list of possible configurations for this option.
+     *
+     * @return self
+     */
+    public function setSupportedConfigurations($supportedConfigurations)
+    {
+        $this->container['supportedConfigurations'] = $supportedConfigurations;
+
+        return $this;
+    }
+
+    /**
      * Gets supportedShippingConfigurations
      *
      * @return \Webcom\Amazon\Rest\FulfillmentInboundApi20240320\Model\ShippingConfiguration20240320[]
@@ -459,7 +492,7 @@ class PackingOption20240320 implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets supportedShippingConfigurations
      *
-     * @param \Webcom\Amazon\Rest\FulfillmentInboundApi20240320\Model\ShippingConfiguration20240320[] $supportedShippingConfigurations List of supported shipping modes.
+     * @param \Webcom\Amazon\Rest\FulfillmentInboundApi20240320\Model\ShippingConfiguration20240320[] $supportedShippingConfigurations **This field is deprecated**. Use the `shippingRequirements` property under `supportedConfigurations` instead. List of supported shipping modes.
      *
      * @return self
      */

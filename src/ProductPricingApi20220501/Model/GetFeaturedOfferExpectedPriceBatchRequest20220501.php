@@ -224,7 +224,7 @@ class GetFeaturedOfferExpectedPriceBatchRequest20220501 implements ModelInterfac
     /**
      * Sets requests
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\FeaturedOfferExpectedPriceRequest20220501[]|null $requests A batched list of featured offer expected price requests.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\FeaturedOfferExpectedPriceRequest20220501[]|null $requests A batched list of FOEP requests.
      *
      * @return self
      */

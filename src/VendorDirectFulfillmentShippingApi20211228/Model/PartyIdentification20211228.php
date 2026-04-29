@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PartyIdentification20211228 Class Doc Comment
  *
  * @category Class
- * @description Name, address, and tax details for a party.
+ * @description The name, address, and tax details of a party.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -239,7 +239,7 @@ class PartyIdentification20211228 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets partyId
      *
-     * @param string $partyId Assigned Identification for the party.
+     * @param string $partyId The identifier of the party.
      *
      * @return self
      */
@@ -287,7 +287,7 @@ class PartyIdentification20211228 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets taxRegistrationDetails
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\TaxRegistrationDetails20211228[]|null $taxRegistrationDetails Tax registration details of the entity.
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\TaxRegistrationDetails20211228[]|null $taxRegistrationDetails The tax registration details of the party.
      *
      * @return self
      */

@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderItemStatus Class Doc Comment
  *
  * @category Class
+ * @description Represents the current status of an order item, including acknowledgement and receiving details.
  * @package  Webcom\Amazon\Rest\VendorOrdersApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

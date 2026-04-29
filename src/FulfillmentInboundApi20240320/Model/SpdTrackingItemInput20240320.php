@@ -216,8 +216,8 @@ class SpdTrackingItemInput20240320 implements ModelInterface, ArrayAccess, \Json
         if ($this->container['trackingId'] === null) {
             $invalidProperties[] = "'trackingId' can't be null";
         }
-        if ((mb_strlen($this->container['trackingId']) > 1024)) {
-            $invalidProperties[] = "invalid value for 'trackingId', the character length must be smaller than or equal to 1024.";
+        if ((mb_strlen($this->container['trackingId']) > 64)) {
+            $invalidProperties[] = "invalid value for 'trackingId', the character length must be smaller than or equal to 64.";
         }
 
         if ((mb_strlen($this->container['trackingId']) < 1)) {
@@ -289,8 +289,8 @@ class SpdTrackingItemInput20240320 implements ModelInterface, ArrayAccess, \Json
      */
     public function setTrackingId($trackingId)
     {
-        if ((mb_strlen($trackingId) > 1024)) {
-            throw new \InvalidArgumentException('invalid length for $trackingId when calling SpdTrackingItemInput20240320., must be smaller than or equal to 1024.');
+        if ((mb_strlen($trackingId) > 64)) {
+            throw new \InvalidArgumentException('invalid length for $trackingId when calling SpdTrackingItemInput20240320., must be smaller than or equal to 64.');
         }
         if ((mb_strlen($trackingId) < 1)) {
             throw new \InvalidArgumentException('invalid length for $trackingId when calling SpdTrackingItemInput20240320., must be bigger than or equal to 1.');

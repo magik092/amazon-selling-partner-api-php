@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Merchant Fulfillment
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -260,7 +260,7 @@ class RejectedShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets carrierName
      *
-     * @param string $carrierName The rejected shipping carrier name. e.g. USPS
+     * @param string $carrierName The rejected shipping carrier name. For example, USPS.
      *
      * @return self
      */
@@ -284,7 +284,7 @@ class RejectedShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets shippingServiceName
      *
-     * @param string $shippingServiceName The rejected shipping service localized name. e.g. FedEx Standard Overnight
+     * @param string $shippingServiceName The rejected shipping service localized name. For example, FedEx Standard Overnight.
      *
      * @return self
      */
@@ -332,7 +332,7 @@ class RejectedShippingServiceV0 implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets rejectionReasonCode
      *
-     * @param string $rejectionReasonCode A reason code meant to be consumed programatically. e.g. CARRIER_CANNOT_SHIP_TO_POBOX
+     * @param string $rejectionReasonCode A reason code meant to be consumed programatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
      *
      * @return self
      */

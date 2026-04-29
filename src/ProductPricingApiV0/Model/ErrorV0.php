@@ -266,7 +266,7 @@ class ErrorV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets message
      *
-     * @param string $message A message that describes the error condition in a human-readable form.
+     * @param string $message A message that describes the error condition.
      *
      * @return self
      */
@@ -290,7 +290,7 @@ class ErrorV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets details
      *
-     * @param string|null $details Additional information that can help the caller understand or fix the issue.
+     * @param string|null $details Additional details that can help the caller understand or fix the issue.
      *
      * @return self
      */

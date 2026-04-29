@@ -177,6 +177,7 @@ class PatchOperation20210801 implements ModelInterface, ArrayAccess, \JsonSerial
 
     const OP_ADD = 'add';
     const OP_REPLACE = 'replace';
+    const OP_MERGE = 'merge';
     const OP_DELETE = 'delete';
     
 
@@ -191,6 +192,7 @@ class PatchOperation20210801 implements ModelInterface, ArrayAccess, \JsonSerial
         return [
             self::OP_ADD,
             self::OP_REPLACE,
+            self::OP_MERGE,
             self::OP_DELETE,
         ];
     }
@@ -268,7 +270,7 @@ class PatchOperation20210801 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets op
      *
-     * @param string $op Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
+     * @param string $op Type of JSON Patch operation. Supported JSON Patch operations include `add`, `replace`, `merge` and `delete`. Refer to <https://tools.ietf.org/html/rfc6902>.
      *
      * @return self
      */
@@ -326,7 +328,7 @@ class PatchOperation20210801 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets value
      *
-     * @param object[]|null $value JSON value to add, replace, or delete.
+     * @param object[]|null $value JSON value to `add`, `replace`, `merge` or `delete`.
      *
      * @return self
      */
