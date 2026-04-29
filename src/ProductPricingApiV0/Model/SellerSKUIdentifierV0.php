@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SellerSKUIdentifierV0 Class Doc Comment
  *
  * @category Class
+ * @description Schema to identify an item by MarketPlaceId, SellerId, and SellerSKU.
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

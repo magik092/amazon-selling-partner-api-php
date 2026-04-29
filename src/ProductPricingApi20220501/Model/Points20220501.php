@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Points20220501 Class Doc Comment
  *
  * @category Class
- * @description The number of Amazon Points offered with the purchase of an item, and their monetary value.
+ * @description The number of Amazon Points that are offered with the purchase of an item and the monetary value of these points.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -230,7 +230,7 @@ class Points20220501 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pointsNumber
      *
-     * @param int|null $pointsNumber The number of points.
+     * @param int|null $pointsNumber The number of Amazon Points.
      *
      * @return self
      */

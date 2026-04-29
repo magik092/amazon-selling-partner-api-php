@@ -62,7 +62,8 @@ class LinkCarrierAccountResponseV2 implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'registrationStatus' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\AccountStatusV2'
+        'registrationStatus' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\AccountStatusV2',
+        'accountId' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class LinkCarrierAccountResponseV2 implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'registrationStatus' => null
+        'registrationStatus' => null,
+        'accountId' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class LinkCarrierAccountResponseV2 implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'registrationStatus' => 'registrationStatus'
+        'registrationStatus' => 'registrationStatus',
+        'accountId' => 'accountId'
     ];
 
     /**
@@ -112,7 +115,8 @@ class LinkCarrierAccountResponseV2 implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'registrationStatus' => 'setRegistrationStatus'
+        'registrationStatus' => 'setRegistrationStatus',
+        'accountId' => 'setAccountId'
     ];
 
     /**
@@ -121,7 +125,8 @@ class LinkCarrierAccountResponseV2 implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'registrationStatus' => 'getRegistrationStatus'
+        'registrationStatus' => 'getRegistrationStatus',
+        'accountId' => 'getAccountId'
     ];
 
     /**
@@ -185,6 +190,7 @@ class LinkCarrierAccountResponseV2 implements ModelInterface, ArrayAccess, \Json
     public function __construct(array $data = null)
     {
         $this->container['registrationStatus'] = $data['registrationStatus'] ?? null;
+        $this->container['accountId'] = $data['accountId'] ?? null;
     }
 
     /**
@@ -231,6 +237,30 @@ class LinkCarrierAccountResponseV2 implements ModelInterface, ArrayAccess, \Json
     public function setRegistrationStatus($registrationStatus)
     {
         $this->container['registrationStatus'] = $registrationStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountId
+     *
+     * @return string|null
+     */
+    public function getAccountId()
+    {
+        return $this->container['accountId'];
+    }
+
+    /**
+     * Sets accountId
+     *
+     * @param string|null $accountId Identifier for the seller's carrier account.
+     *
+     * @return self
+     */
+    public function setAccountId($accountId)
+    {
+        $this->container['accountId'] = $accountId;
 
         return $this;
     }

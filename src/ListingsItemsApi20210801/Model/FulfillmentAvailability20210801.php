@@ -237,7 +237,7 @@ class FulfillmentAvailability20210801 implements ModelInterface, ArrayAccess, \J
     /**
      * Sets fulfillmentChannelCode
      *
-     * @param string $fulfillmentChannelCode The code of the fulfillment network that will be used.
+     * @param string $fulfillmentChannelCode Designates which fulfillment network is used.
      *
      * @return self
      */

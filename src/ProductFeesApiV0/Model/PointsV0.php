@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PointsV0 Class Doc Comment
  *
  * @category Class
+ * @description The number of Amazon Points offered with the purchase of an item.The Amazon Points program is only available in Japan.
  * @package  Webcom\Amazon\Rest\ProductFeesApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -229,7 +230,7 @@ class PointsV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pointsNumber
      *
-     * @param int|null $pointsNumber pointsNumber
+     * @param int|null $pointsNumber The number of Amazon Points
      *
      * @return self
      */

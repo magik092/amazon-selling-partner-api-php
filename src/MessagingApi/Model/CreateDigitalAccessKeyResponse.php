@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CreateDigitalAccessKeyResponse Class Doc Comment
  *
  * @category Class
- * @description The response schema for the createDigitalAccessKey operation.
+ * @description The response schema for the &#x60;createDigitalAccessKey&#x60; operation.
  * @package  Webcom\Amazon\Rest\MessagingApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

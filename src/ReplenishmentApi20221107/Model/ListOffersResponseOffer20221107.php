@@ -68,7 +68,15 @@ class ListOffersResponseOffer20221107 implements ModelInterface, ArrayAccess, \J
         'eligibility' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\EligibilityStatus20221107',
         'offerProgramConfiguration' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\OfferProgramConfiguration20221107',
         'programType' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\ProgramType20221107',
-        'vendorCodes' => 'string[]'
+        'vendorCodes' => 'string[]',
+        'price' => 'double',
+        'priceCurrencyCode' => 'string',
+        'inventory' => 'int',
+        'stockRisk' => 'string',
+        'deliveriesConditions' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\DeliveriesCondition20221107[]',
+        'subscriptions' => 'int',
+        'fulfillmentNetworkIDType' => 'string',
+        'forecastDeliveries' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\ForecastDeliveries20221107'
     ];
 
     /**
@@ -85,7 +93,15 @@ class ListOffersResponseOffer20221107 implements ModelInterface, ArrayAccess, \J
         'eligibility' => null,
         'offerProgramConfiguration' => null,
         'programType' => null,
-        'vendorCodes' => null
+        'vendorCodes' => null,
+        'price' => 'double',
+        'priceCurrencyCode' => null,
+        'inventory' => 'int64',
+        'stockRisk' => null,
+        'deliveriesConditions' => null,
+        'subscriptions' => 'int64',
+        'fulfillmentNetworkIDType' => null,
+        'forecastDeliveries' => null
     ];
 
     /**
@@ -121,7 +137,15 @@ class ListOffersResponseOffer20221107 implements ModelInterface, ArrayAccess, \J
         'eligibility' => 'eligibility',
         'offerProgramConfiguration' => 'offerProgramConfiguration',
         'programType' => 'programType',
-        'vendorCodes' => 'vendorCodes'
+        'vendorCodes' => 'vendorCodes',
+        'price' => 'price',
+        'priceCurrencyCode' => 'priceCurrencyCode',
+        'inventory' => 'inventory',
+        'stockRisk' => 'stockRisk',
+        'deliveriesConditions' => 'deliveriesConditions',
+        'subscriptions' => 'subscriptions',
+        'fulfillmentNetworkIDType' => 'fulfillmentNetworkIDType',
+        'forecastDeliveries' => 'forecastDeliveries'
     ];
 
     /**
@@ -136,7 +160,15 @@ class ListOffersResponseOffer20221107 implements ModelInterface, ArrayAccess, \J
         'eligibility' => 'setEligibility',
         'offerProgramConfiguration' => 'setOfferProgramConfiguration',
         'programType' => 'setProgramType',
-        'vendorCodes' => 'setVendorCodes'
+        'vendorCodes' => 'setVendorCodes',
+        'price' => 'setPrice',
+        'priceCurrencyCode' => 'setPriceCurrencyCode',
+        'inventory' => 'setInventory',
+        'stockRisk' => 'setStockRisk',
+        'deliveriesConditions' => 'setDeliveriesConditions',
+        'subscriptions' => 'setSubscriptions',
+        'fulfillmentNetworkIDType' => 'setFulfillmentNetworkIDType',
+        'forecastDeliveries' => 'setForecastDeliveries'
     ];
 
     /**
@@ -151,7 +183,15 @@ class ListOffersResponseOffer20221107 implements ModelInterface, ArrayAccess, \J
         'eligibility' => 'getEligibility',
         'offerProgramConfiguration' => 'getOfferProgramConfiguration',
         'programType' => 'getProgramType',
-        'vendorCodes' => 'getVendorCodes'
+        'vendorCodes' => 'getVendorCodes',
+        'price' => 'getPrice',
+        'priceCurrencyCode' => 'getPriceCurrencyCode',
+        'inventory' => 'getInventory',
+        'stockRisk' => 'getStockRisk',
+        'deliveriesConditions' => 'getDeliveriesConditions',
+        'subscriptions' => 'getSubscriptions',
+        'fulfillmentNetworkIDType' => 'getFulfillmentNetworkIDType',
+        'forecastDeliveries' => 'getForecastDeliveries'
     ];
 
     /**
@@ -221,6 +261,14 @@ class ListOffersResponseOffer20221107 implements ModelInterface, ArrayAccess, \J
         $this->container['offerProgramConfiguration'] = $data['offerProgramConfiguration'] ?? null;
         $this->container['programType'] = $data['programType'] ?? null;
         $this->container['vendorCodes'] = $data['vendorCodes'] ?? null;
+        $this->container['price'] = $data['price'] ?? null;
+        $this->container['priceCurrencyCode'] = $data['priceCurrencyCode'] ?? null;
+        $this->container['inventory'] = $data['inventory'] ?? null;
+        $this->container['stockRisk'] = $data['stockRisk'] ?? null;
+        $this->container['deliveriesConditions'] = $data['deliveriesConditions'] ?? null;
+        $this->container['subscriptions'] = $data['subscriptions'] ?? null;
+        $this->container['fulfillmentNetworkIDType'] = $data['fulfillmentNetworkIDType'] ?? null;
+        $this->container['forecastDeliveries'] = $data['forecastDeliveries'] ?? null;
     }
 
     /**
@@ -231,6 +279,18 @@ class ListOffersResponseOffer20221107 implements ModelInterface, ArrayAccess, \J
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['price']) && ($this->container['price'] < 0)) {
+            $invalidProperties[] = "invalid value for 'price', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['inventory']) && ($this->container['inventory'] < 0)) {
+            $invalidProperties[] = "invalid value for 'inventory', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['subscriptions']) && ($this->container['subscriptions'] < 0)) {
+            $invalidProperties[] = "invalid value for 'subscriptions', must be bigger than or equal to 0.";
+        }
 
         return $invalidProperties;
     }
@@ -308,7 +368,7 @@ class ListOffersResponseOffer20221107 implements ModelInterface, ArrayAccess, \J
     /**
      * Sets marketplaceId
      *
-     * @param string|null $marketplaceId The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+     * @param string|null $marketplaceId The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE, and JP. The supported marketplaces for vendors only are BR, AU, MX, AE, and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
      *
      * @return self
      */
@@ -411,6 +471,213 @@ class ListOffersResponseOffer20221107 implements ModelInterface, ArrayAccess, \J
     public function setVendorCodes($vendorCodes)
     {
         $this->container['vendorCodes'] = $vendorCodes;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     *
+     * @return double|null
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     *
+     * @param double|null $price The current price of the offer. This is the listed price amount for the item.
+     *
+     * @return self
+     */
+    public function setPrice($price)
+    {
+
+        if (!is_null($price) && ($price < 0)) {
+            throw new \InvalidArgumentException('invalid value for $price when calling ListOffersResponseOffer20221107., must be bigger than or equal to 0.');
+        }
+
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets priceCurrencyCode
+     *
+     * @return string|null
+     */
+    public function getPriceCurrencyCode()
+    {
+        return $this->container['priceCurrencyCode'];
+    }
+
+    /**
+     * Sets priceCurrencyCode
+     *
+     * @param string|null $priceCurrencyCode The currency code in ISO 4217 format for the price. For example, `USD` for US dollars.
+     *
+     * @return self
+     */
+    public function setPriceCurrencyCode($priceCurrencyCode)
+    {
+        $this->container['priceCurrencyCode'] = $priceCurrencyCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets inventory
+     *
+     * @return int|null
+     */
+    public function getInventory()
+    {
+        return $this->container['inventory'];
+    }
+
+    /**
+     * Sets inventory
+     *
+     * @param int|null $inventory The available inventory count for the offer.
+     *
+     * @return self
+     */
+    public function setInventory($inventory)
+    {
+
+        if (!is_null($inventory) && ($inventory < 0)) {
+            throw new \InvalidArgumentException('invalid value for $inventory when calling ListOffersResponseOffer20221107., must be bigger than or equal to 0.');
+        }
+
+        $this->container['inventory'] = $inventory;
+
+        return $this;
+    }
+
+    /**
+     * Gets stockRisk
+     *
+     * @return string|null
+     */
+    public function getStockRisk()
+    {
+        return $this->container['stockRisk'];
+    }
+
+    /**
+     * Sets stockRisk
+     *
+     * @param string|null $stockRisk The stock risk level of the offer, indicating the risk of the offer going out of stock.
+     *
+     * @return self
+     */
+    public function setStockRisk($stockRisk)
+    {
+        $this->container['stockRisk'] = $stockRisk;
+
+        return $this;
+    }
+
+    /**
+     * Gets deliveriesConditions
+     *
+     * @return \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\DeliveriesCondition20221107[]|null
+     */
+    public function getDeliveriesConditions()
+    {
+        return $this->container['deliveriesConditions'];
+    }
+
+    /**
+     * Sets deliveriesConditions
+     *
+     * @param \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\DeliveriesCondition20221107[]|null $deliveriesConditions A list of delivery conditions for the offer, indicating the health of upcoming deliveries. Each condition describes the quantity of upcoming deliveries associated with a particular delivery condition type.
+     *
+     * @return self
+     */
+    public function setDeliveriesConditions($deliveriesConditions)
+    {
+        $this->container['deliveriesConditions'] = $deliveriesConditions;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptions
+     *
+     * @return int|null
+     */
+    public function getSubscriptions()
+    {
+        return $this->container['subscriptions'];
+    }
+
+    /**
+     * Sets subscriptions
+     *
+     * @param int|null $subscriptions The number of active subscriptions for the offer.
+     *
+     * @return self
+     */
+    public function setSubscriptions($subscriptions)
+    {
+
+        if (!is_null($subscriptions) && ($subscriptions < 0)) {
+            throw new \InvalidArgumentException('invalid value for $subscriptions when calling ListOffersResponseOffer20221107., must be bigger than or equal to 0.');
+        }
+
+        $this->container['subscriptions'] = $subscriptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets fulfillmentNetworkIDType
+     *
+     * @return string|null
+     */
+    public function getFulfillmentNetworkIDType()
+    {
+        return $this->container['fulfillmentNetworkIDType'];
+    }
+
+    /**
+     * Sets fulfillmentNetworkIDType
+     *
+     * @param string|null $fulfillmentNetworkIDType The fulfillment network identifier type for the offer, indicating how the offer is fulfilled.
+     *
+     * @return self
+     */
+    public function setFulfillmentNetworkIDType($fulfillmentNetworkIDType)
+    {
+        $this->container['fulfillmentNetworkIDType'] = $fulfillmentNetworkIDType;
+
+        return $this;
+    }
+
+    /**
+     * Gets forecastDeliveries
+     *
+     * @return \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\ForecastDeliveries20221107|null
+     */
+    public function getForecastDeliveries()
+    {
+        return $this->container['forecastDeliveries'];
+    }
+
+    /**
+     * Sets forecastDeliveries
+     *
+     * @param \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\ForecastDeliveries20221107|null $forecastDeliveries forecastDeliveries
+     *
+     * @return self
+     */
+    public function setForecastDeliveries($forecastDeliveries)
+    {
+        $this->container['forecastDeliveries'] = $forecastDeliveries;
 
         return $this;
     }

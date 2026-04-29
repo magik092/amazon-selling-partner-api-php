@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderList Class Doc Comment
  *
  * @category Class
+ * @description A list of orders returned as response.
  * @package  Webcom\Amazon\Rest\VendorOrdersApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -253,7 +254,7 @@ class OrderList implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orders
      *
-     * @param \Webcom\Amazon\Rest\VendorOrdersApi\Model\Order[]|null $orders orders
+     * @param \Webcom\Amazon\Rest\VendorOrdersApi\Model\Order[]|null $orders Represents an individual order within the OrderList.
      *
      * @return self
      */

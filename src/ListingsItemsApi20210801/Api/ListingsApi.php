@@ -2058,20 +2058,31 @@ class ListingsApi
      *
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
-     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
-     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
-     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)
+     * @param  string[] $includedData A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)
+     * @param  string $identifiersType A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  string $variationParentSku Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)
+     * @param  string $packageHierarchySku Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)
+     * @param  \DateTime $createdAfter A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $createdBefore A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedAfter A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedBefore A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  string[] $withIssueSeverity Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)
+     * @param  string[] $withStatus Filter results to include only listing items that have the specified status. (optional)
+     * @param  string[] $withoutStatus Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)
+     * @param  string $sortBy An attribute by which to sort the returned listing items. (optional, default to 'lastUpdatedDate')
+     * @param  string $sortOrder The order in which to sort the result items. (optional, default to 'DESC')
+     * @param  int $pageSize The number of results that you want to include on each page. (optional, default to 10)
+     * @param  string $pageToken A token that you can use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801
      */
-    public function searchListingsItems($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    public function searchListingsItems($sellerId, $marketplaceIds, $issueLocale = null, $includedData = null, $identifiers = null, $identifiersType = null, $variationParentSku = null, $packageHierarchySku = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $withIssueSeverity = null, $withStatus = null, $withoutStatus = null, $sortBy = 'lastUpdatedDate', $sortOrder = 'DESC', $pageSize = 10, $pageToken = null)
     {
-        list($response) = $this->searchListingsItemsWithHttpInfo($sellerId, $marketplaceIds, $identifiers, $identifiersType, $pageSize, $pageToken, $includedData, $issueLocale);
+        list($response) = $this->searchListingsItemsWithHttpInfo($sellerId, $marketplaceIds, $issueLocale, $includedData, $identifiers, $identifiersType, $variationParentSku, $packageHierarchySku, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $withIssueSeverity, $withStatus, $withoutStatus, $sortBy, $sortOrder, $pageSize, $pageToken);
         return $response;
     }
 
@@ -2080,20 +2091,31 @@ class ListingsApi
      *
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
-     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
-     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
-     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)
+     * @param  string[] $includedData A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)
+     * @param  string $identifiersType A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  string $variationParentSku Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)
+     * @param  string $packageHierarchySku Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)
+     * @param  \DateTime $createdAfter A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $createdBefore A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedAfter A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedBefore A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  string[] $withIssueSeverity Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)
+     * @param  string[] $withStatus Filter results to include only listing items that have the specified status. (optional)
+     * @param  string[] $withoutStatus Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)
+     * @param  string $sortBy An attribute by which to sort the returned listing items. (optional, default to 'lastUpdatedDate')
+     * @param  string $sortOrder The order in which to sort the result items. (optional, default to 'DESC')
+     * @param  int $pageSize The number of results that you want to include on each page. (optional, default to 10)
+     * @param  string $pageToken A token that you can use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsItemsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801|\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ErrorList20210801, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchListingsItemsWithHttpInfo($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    public function searchListingsItemsWithHttpInfo($sellerId, $marketplaceIds, $issueLocale = null, $includedData = null, $identifiers = null, $identifiersType = null, $variationParentSku = null, $packageHierarchySku = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $withIssueSeverity = null, $withStatus = null, $withoutStatus = null, $sortBy = 'lastUpdatedDate', $sortOrder = 'DESC', $pageSize = 10, $pageToken = null)
     {
-        $request = $this->searchListingsItemsRequest($sellerId, $marketplaceIds, $identifiers, $identifiersType, $pageSize, $pageToken, $includedData, $issueLocale);
+        $request = $this->searchListingsItemsRequest($sellerId, $marketplaceIds, $issueLocale, $includedData, $identifiers, $identifiersType, $variationParentSku, $packageHierarchySku, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $withIssueSeverity, $withStatus, $withoutStatus, $sortBy, $sortOrder, $pageSize, $pageToken);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2335,19 +2357,30 @@ class ListingsApi
      *
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
-     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
-     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
-     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)
+     * @param  string[] $includedData A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)
+     * @param  string $identifiersType A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  string $variationParentSku Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)
+     * @param  string $packageHierarchySku Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)
+     * @param  \DateTime $createdAfter A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $createdBefore A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedAfter A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedBefore A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  string[] $withIssueSeverity Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)
+     * @param  string[] $withStatus Filter results to include only listing items that have the specified status. (optional)
+     * @param  string[] $withoutStatus Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)
+     * @param  string $sortBy An attribute by which to sort the returned listing items. (optional, default to 'lastUpdatedDate')
+     * @param  string $sortOrder The order in which to sort the result items. (optional, default to 'DESC')
+     * @param  int $pageSize The number of results that you want to include on each page. (optional, default to 10)
+     * @param  string $pageToken A token that you can use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchListingsItemsAsync($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    public function searchListingsItemsAsync($sellerId, $marketplaceIds, $issueLocale = null, $includedData = null, $identifiers = null, $identifiersType = null, $variationParentSku = null, $packageHierarchySku = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $withIssueSeverity = null, $withStatus = null, $withoutStatus = null, $sortBy = 'lastUpdatedDate', $sortOrder = 'DESC', $pageSize = 10, $pageToken = null)
     {
-        return $this->searchListingsItemsAsyncWithHttpInfo($sellerId, $marketplaceIds, $identifiers, $identifiersType, $pageSize, $pageToken, $includedData, $issueLocale)
+        return $this->searchListingsItemsAsyncWithHttpInfo($sellerId, $marketplaceIds, $issueLocale, $includedData, $identifiers, $identifiersType, $variationParentSku, $packageHierarchySku, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $withIssueSeverity, $withStatus, $withoutStatus, $sortBy, $sortOrder, $pageSize, $pageToken)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2362,20 +2395,31 @@ class ListingsApi
      *
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
-     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
-     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
-     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)
+     * @param  string[] $includedData A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)
+     * @param  string $identifiersType A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  string $variationParentSku Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)
+     * @param  string $packageHierarchySku Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)
+     * @param  \DateTime $createdAfter A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $createdBefore A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedAfter A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedBefore A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  string[] $withIssueSeverity Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)
+     * @param  string[] $withStatus Filter results to include only listing items that have the specified status. (optional)
+     * @param  string[] $withoutStatus Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)
+     * @param  string $sortBy An attribute by which to sort the returned listing items. (optional, default to 'lastUpdatedDate')
+     * @param  string $sortOrder The order in which to sort the result items. (optional, default to 'DESC')
+     * @param  int $pageSize The number of results that you want to include on each page. (optional, default to 10)
+     * @param  string $pageToken A token that you can use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchListingsItemsAsyncWithHttpInfo($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    public function searchListingsItemsAsyncWithHttpInfo($sellerId, $marketplaceIds, $issueLocale = null, $includedData = null, $identifiers = null, $identifiersType = null, $variationParentSku = null, $packageHierarchySku = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $withIssueSeverity = null, $withStatus = null, $withoutStatus = null, $sortBy = 'lastUpdatedDate', $sortOrder = 'DESC', $pageSize = 10, $pageToken = null)
     {
         $returnType = '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemSearchResults20210801';
-        $request = $this->searchListingsItemsRequest($sellerId, $marketplaceIds, $identifiers, $identifiersType, $pageSize, $pageToken, $includedData, $issueLocale);
+        $request = $this->searchListingsItemsRequest($sellerId, $marketplaceIds, $issueLocale, $includedData, $identifiers, $identifiersType, $variationParentSku, $packageHierarchySku, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $withIssueSeverity, $withStatus, $withoutStatus, $sortBy, $sortOrder, $pageSize, $pageToken);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2416,17 +2460,28 @@ class ListingsApi
      *
      * @param  string $sellerId A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param  string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
-     * @param  string $identifiersType Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
-     * @param  int $pageSize Number of results to be returned per page. (optional, default to 10)
-     * @param  string $pageToken A token to fetch a certain page when there are multiple pages worth of results. (optional)
-     * @param  string[] $includedData A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
-     * @param  string $issueLocale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $issueLocale A locale that is used to localize issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. When a localization is not available in the specified locale, localized messages default to \&quot;en_US\&quot;. (optional)
+     * @param  string[] $includedData A comma-delimited list of datasets that you want to include in the response. Default: &#x60;summaries&#x60;. (optional)
+     * @param  string[] $identifiers A comma-delimited list of product identifiers that you can use to search for listings items.   **Note**:  1. This is required when you specify &#x60;identifiersType&#x60;. 2. You cannot use &#39;identifiers&#39; if you specify &#x60;variationParentSku&#x60; or &#x60;packageHierarchySku&#x60;. (optional)
+     * @param  string $identifiersType A type of product identifiers that you can use to search for listings items.   **Note**:  This is required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param  string $variationParentSku Filters results to include listing items that are variation children of the specified SKU.   **Note**: You cannot use &#x60;variationParentSku&#x60; if you include &#x60;identifiers&#x60; or &#x60;packageHierarchySku&#x60; in your request. (optional)
+     * @param  string $packageHierarchySku Filter results to include listing items that contain or are contained by the specified SKU.   **Note**: You cannot use &#x60;packageHierarchySku&#x60; if you include &#x60;identifiers&#x60; or &#x60;variationParentSku&#x60; in your request. (optional)
+     * @param  \DateTime $createdAfter A date-time that is used to filter listing items. The response includes listings items that were created at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $createdBefore A date-time that is used to filter listing items. The response includes listings items that were created at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedAfter A date-time that is used to filter listing items. The response includes listings items that were last updated at or after this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  \DateTime $lastUpdatedBefore A date-time that is used to filter listing items. The response includes listings items that were last updated at or before this time. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (optional)
+     * @param  string[] $withIssueSeverity Filter results to include only listing items that have issues that match one or more of the specified severity levels. (optional)
+     * @param  string[] $withStatus Filter results to include only listing items that have the specified status. (optional)
+     * @param  string[] $withoutStatus Filter results to include only listing items that don&#39;t contain the specified statuses. (optional)
+     * @param  string $sortBy An attribute by which to sort the returned listing items. (optional, default to 'lastUpdatedDate')
+     * @param  string $sortOrder The order in which to sort the result items. (optional, default to 'DESC')
+     * @param  int $pageSize The number of results that you want to include on each page. (optional, default to 10)
+     * @param  string $pageToken A token that you can use to fetch a specific page when there are multiple pages of results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function searchListingsItemsRequest($sellerId, $marketplaceIds, $identifiers = null, $identifiersType = null, $pageSize = 10, $pageToken = null, $includedData = null, $issueLocale = null)
+    public function searchListingsItemsRequest($sellerId, $marketplaceIds, $issueLocale = null, $includedData = null, $identifiers = null, $identifiersType = null, $variationParentSku = null, $packageHierarchySku = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $withIssueSeverity = null, $withStatus = null, $withoutStatus = null, $sortBy = 'lastUpdatedDate', $sortOrder = 'DESC', $pageSize = 10, $pageToken = null)
     {
         // verify the required parameter 'sellerId' is set
         if ($sellerId === null || (is_array($sellerId) && count($sellerId) === 0)) {
@@ -2468,6 +2523,20 @@ class ListingsApi
             $queryParams['marketplaceIds'] = $marketplaceIds;
         }
         // query params
+        if (is_array($issueLocale)) {
+            $issueLocale = ObjectSerializer::serializeCollection($issueLocale, '', true);
+        }
+        if ($issueLocale !== null) {
+            $queryParams['issueLocale'] = $issueLocale;
+        }
+        // query params
+        if (is_array($includedData)) {
+            $includedData = ObjectSerializer::serializeCollection($includedData, 'form', true);
+        }
+        if ($includedData !== null) {
+            $queryParams['includedData'] = $includedData;
+        }
+        // query params
         if (is_array($identifiers)) {
             $identifiers = ObjectSerializer::serializeCollection($identifiers, 'form', true);
         }
@@ -2482,6 +2551,83 @@ class ListingsApi
             $queryParams['identifiersType'] = $identifiersType;
         }
         // query params
+        if (is_array($variationParentSku)) {
+            $variationParentSku = ObjectSerializer::serializeCollection($variationParentSku, '', true);
+        }
+        if ($variationParentSku !== null) {
+            $queryParams['variationParentSku'] = $variationParentSku;
+        }
+        // query params
+        if (is_array($packageHierarchySku)) {
+            $packageHierarchySku = ObjectSerializer::serializeCollection($packageHierarchySku, '', true);
+        }
+        if ($packageHierarchySku !== null) {
+            $queryParams['packageHierarchySku'] = $packageHierarchySku;
+        }
+        // query params
+        if (is_array($createdAfter)) {
+            $createdAfter = ObjectSerializer::serializeCollection($createdAfter, '', true);
+        }
+        if ($createdAfter !== null) {
+            $queryParams['createdAfter'] = $createdAfter;
+        }
+        // query params
+        if (is_array($createdBefore)) {
+            $createdBefore = ObjectSerializer::serializeCollection($createdBefore, '', true);
+        }
+        if ($createdBefore !== null) {
+            $queryParams['createdBefore'] = $createdBefore;
+        }
+        // query params
+        if (is_array($lastUpdatedAfter)) {
+            $lastUpdatedAfter = ObjectSerializer::serializeCollection($lastUpdatedAfter, '', true);
+        }
+        if ($lastUpdatedAfter !== null) {
+            $queryParams['lastUpdatedAfter'] = $lastUpdatedAfter;
+        }
+        // query params
+        if (is_array($lastUpdatedBefore)) {
+            $lastUpdatedBefore = ObjectSerializer::serializeCollection($lastUpdatedBefore, '', true);
+        }
+        if ($lastUpdatedBefore !== null) {
+            $queryParams['lastUpdatedBefore'] = $lastUpdatedBefore;
+        }
+        // query params
+        if (is_array($withIssueSeverity)) {
+            $withIssueSeverity = ObjectSerializer::serializeCollection($withIssueSeverity, 'form', true);
+        }
+        if ($withIssueSeverity !== null) {
+            $queryParams['withIssueSeverity'] = $withIssueSeverity;
+        }
+        // query params
+        if (is_array($withStatus)) {
+            $withStatus = ObjectSerializer::serializeCollection($withStatus, 'form', true);
+        }
+        if ($withStatus !== null) {
+            $queryParams['withStatus'] = $withStatus;
+        }
+        // query params
+        if (is_array($withoutStatus)) {
+            $withoutStatus = ObjectSerializer::serializeCollection($withoutStatus, 'form', true);
+        }
+        if ($withoutStatus !== null) {
+            $queryParams['withoutStatus'] = $withoutStatus;
+        }
+        // query params
+        if (is_array($sortBy)) {
+            $sortBy = ObjectSerializer::serializeCollection($sortBy, '', true);
+        }
+        if ($sortBy !== null) {
+            $queryParams['sortBy'] = $sortBy;
+        }
+        // query params
+        if (is_array($sortOrder)) {
+            $sortOrder = ObjectSerializer::serializeCollection($sortOrder, '', true);
+        }
+        if ($sortOrder !== null) {
+            $queryParams['sortOrder'] = $sortOrder;
+        }
+        // query params
         if (is_array($pageSize)) {
             $pageSize = ObjectSerializer::serializeCollection($pageSize, '', true);
         }
@@ -2494,20 +2640,6 @@ class ListingsApi
         }
         if ($pageToken !== null) {
             $queryParams['pageToken'] = $pageToken;
-        }
-        // query params
-        if (is_array($includedData)) {
-            $includedData = ObjectSerializer::serializeCollection($includedData, 'form', true);
-        }
-        if ($includedData !== null) {
-            $queryParams['includedData'] = $includedData;
-        }
-        // query params
-        if (is_array($issueLocale)) {
-            $issueLocale = ObjectSerializer::serializeCollection($issueLocale, '', true);
-        }
-        if ($issueLocale !== null) {
-            $queryParams['issueLocale'] = $issueLocale;
         }
 
 

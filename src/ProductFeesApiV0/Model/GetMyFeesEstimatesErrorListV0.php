@@ -227,7 +227,7 @@ class GetMyFeesEstimatesErrorListV0 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets errors
      *
-     * @param \Webcom\Amazon\Rest\ProductFeesApiV0\Model\ErrorV0[] $errors errors
+     * @param \Webcom\Amazon\Rest\ProductFeesApiV0\Model\ErrorV0[] $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */

@@ -1033,7 +1033,7 @@ class ProductPricingApi
     /**
      * Operation getItemOffersBatch
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody getItemOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody The request associated with the &#x60;getItemOffersBatch&#x60; API call. (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductPricingApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1048,7 +1048,7 @@ class ProductPricingApi
     /**
      * Operation getItemOffersBatchWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody The request associated with the &#x60;getItemOffersBatch&#x60; API call. (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductPricingApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1276,7 +1276,7 @@ class ProductPricingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody The request associated with the &#x60;getItemOffersBatch&#x60; API call. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1296,7 +1296,7 @@ class ProductPricingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody The request associated with the &#x60;getItemOffersBatch&#x60; API call. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1343,7 +1343,7 @@ class ProductPricingApi
     /**
      * Create request for operation 'getItemOffersBatch'
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetItemOffersBatchRequestV0 $getItemOffersBatchRequestBody The request associated with the &#x60;getItemOffersBatch&#x60; API call. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1885,7 +1885,7 @@ class ProductPricingApi
     /**
      * Operation getListingOffersBatch
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody getListingOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody The request associated with the &#x60;getListingOffersBatch&#x60; API call. (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductPricingApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1900,7 +1900,7 @@ class ProductPricingApi
     /**
      * Operation getListingOffersBatchWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody The request associated with the &#x60;getListingOffersBatch&#x60; API call. (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductPricingApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2128,7 +2128,7 @@ class ProductPricingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody The request associated with the &#x60;getListingOffersBatch&#x60; API call. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2148,7 +2148,7 @@ class ProductPricingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody The request associated with the &#x60;getListingOffersBatch&#x60; API call. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2195,7 +2195,7 @@ class ProductPricingApi
     /**
      * Create request for operation 'getListingOffersBatch'
      *
-     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody (required)
+     * @param  \Webcom\Amazon\Rest\ProductPricingApiV0\Model\GetListingOffersBatchRequestV0 $getListingOffersBatchRequestBody The request associated with the &#x60;getListingOffersBatch&#x60; API call. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

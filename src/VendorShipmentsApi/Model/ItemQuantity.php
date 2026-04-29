@@ -64,7 +64,8 @@ class ItemQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'amount' => 'int',
         'unitOfMeasure' => 'string',
-        'unitSize' => 'int'
+        'unitSize' => 'int',
+        'totalWeight' => '\Webcom\Amazon\Rest\VendorShipmentsApi\Model\TotalWeight'
     ];
 
     /**
@@ -77,7 +78,8 @@ class ItemQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'amount' => null,
         'unitOfMeasure' => null,
-        'unitSize' => null
+        'unitSize' => null,
+        'totalWeight' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class ItemQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'amount' => 'amount',
         'unitOfMeasure' => 'unitOfMeasure',
-        'unitSize' => 'unitSize'
+        'unitSize' => 'unitSize',
+        'totalWeight' => 'totalWeight'
     ];
 
     /**
@@ -120,7 +123,8 @@ class ItemQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'amount' => 'setAmount',
         'unitOfMeasure' => 'setUnitOfMeasure',
-        'unitSize' => 'setUnitSize'
+        'unitSize' => 'setUnitSize',
+        'totalWeight' => 'setTotalWeight'
     ];
 
     /**
@@ -131,7 +135,8 @@ class ItemQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'amount' => 'getAmount',
         'unitOfMeasure' => 'getUnitOfMeasure',
-        'unitSize' => 'getUnitSize'
+        'unitSize' => 'getUnitSize',
+        'totalWeight' => 'getTotalWeight'
     ];
 
     /**
@@ -212,6 +217,7 @@ class ItemQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['amount'] = $data['amount'] ?? null;
         $this->container['unitOfMeasure'] = $data['unitOfMeasure'] ?? null;
         $this->container['unitSize'] = $data['unitSize'] ?? null;
+        $this->container['totalWeight'] = $data['totalWeight'] ?? null;
     }
 
     /**
@@ -331,6 +337,30 @@ class ItemQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUnitSize($unitSize)
     {
         $this->container['unitSize'] = $unitSize;
+
+        return $this;
+    }
+
+    /**
+     * Gets totalWeight
+     *
+     * @return \Webcom\Amazon\Rest\VendorShipmentsApi\Model\TotalWeight|null
+     */
+    public function getTotalWeight()
+    {
+        return $this->container['totalWeight'];
+    }
+
+    /**
+     * Sets totalWeight
+     *
+     * @param \Webcom\Amazon\Rest\VendorShipmentsApi\Model\TotalWeight|null $totalWeight totalWeight
+     *
+     * @return self
+     */
+    public function setTotalWeight($totalWeight)
+    {
+        $this->container['totalWeight'] = $totalWeight;
 
         return $this;
     }

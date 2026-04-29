@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * HttpStatusLine20220501 Class Doc Comment
  *
  * @category Class
- * @description The HTTP status line associated with the response to an individual request within a batch. For more information, consult [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
+ * @description The HTTP status line associated with the response for an individual request within a batch. For more information, refer to [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html).
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -238,7 +238,7 @@ class HttpStatusLine20220501 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets statusCode
      *
-     * @param int|null $statusCode The HTTP response Status-Code.
+     * @param int|null $statusCode The HTTP response status code.
      *
      * @return self
      */
@@ -270,7 +270,7 @@ class HttpStatusLine20220501 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets reasonPhrase
      *
-     * @param string|null $reasonPhrase The HTTP response Reason-Phase.
+     * @param string|null $reasonPhrase The HTTP response reason phrase.
      *
      * @return self
      */

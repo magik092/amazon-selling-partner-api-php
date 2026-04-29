@@ -429,7 +429,7 @@ class Invoice implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets date
      *
-     * @param \DateTime $date Defines a date and time according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>.
+     * @param \DateTime $date Defines a date and time according to ISO8601.
      *
      * @return self
      */

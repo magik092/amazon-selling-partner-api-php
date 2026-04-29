@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Decorator20201101 Class Doc Comment
  *
  * @category Class
- * @description A decorator applied to a content string value in order to create rich text.
+ * @description A decorator that is applied to a content string value in order to create rich text.
  * @package  Webcom\Amazon\Rest\AplusContentApi20201101
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -290,7 +290,7 @@ class Decorator20201101 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets offset
      *
-     * @param int|null $offset The starting character of this decorator within the content string. Use zero for the first character.
+     * @param int|null $offset The starting value of this decorator within the content string. Use zero (`0`) for the first value.
      *
      * @return self
      */
@@ -322,7 +322,7 @@ class Decorator20201101 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets length
      *
-     * @param int|null $length The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters.
+     * @param int|null $length The number of content characters to alter with this decorator. Decorators, such as line breaks, can have zero length and fit between characters.
      *
      * @return self
      */
@@ -354,7 +354,7 @@ class Decorator20201101 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets depth
      *
-     * @param int|null $depth The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.
+     * @param int|null $depth The relative intensity or variation of this decorator. Decorators, such as bullet-points, can have multiple indentation depths.
      *
      * @return self
      */

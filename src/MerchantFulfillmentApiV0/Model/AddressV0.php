@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Merchant Fulfillment
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -525,7 +525,7 @@ class AddressV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets stateOrProvinceCode
      *
-     * @param string|null $stateOrProvinceCode The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
+     * @param string|null $stateOrProvinceCode The state or province code. This is a required field in Canada, US, and UK marketplaces, and for shipments that originate in China.
      *
      * @return self
      */
@@ -581,7 +581,7 @@ class AddressV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets countryCode
      *
-     * @param string $countryCode The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
+     * @param string $countryCode The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format.
      *
      * @return self
      */

@@ -568,9 +568,459 @@ class ShippingApi
     }
 
     /**
+     * Operation createClaim
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimRequestV2 $body Request body for the createClaim operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimResponseV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2
+     */
+    public function createClaim($body, $xAmznShippingBusinessId = null)
+    {
+        list($response) = $this->createClaimWithHttpInfo($body, $xAmznShippingBusinessId);
+        return $response;
+    }
+
+    /**
+     * Operation createClaimWithHttpInfo
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimRequestV2 $body Request body for the createClaim operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimResponseV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createClaimWithHttpInfo($body, $xAmznShippingBusinessId = null)
+    {
+        $request = $this->createClaimRequest($body, $xAmznShippingBusinessId);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 201:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimResponseV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimResponseV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimResponseV2';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimResponseV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createClaimAsync
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimRequestV2 $body Request body for the createClaim operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createClaimAsync($body, $xAmznShippingBusinessId = null)
+    {
+        return $this->createClaimAsyncWithHttpInfo($body, $xAmznShippingBusinessId)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createClaimAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimRequestV2 $body Request body for the createClaim operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createClaimAsyncWithHttpInfo($body, $xAmznShippingBusinessId = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimResponseV2';
+        $request = $this->createClaimRequest($body, $xAmznShippingBusinessId);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createClaim'
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\CreateClaimRequestV2 $body Request body for the createClaim operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createClaimRequest($body, $xAmznShippingBusinessId = null)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createClaim'
+            );
+        }
+
+        $resourcePath = '/shipping/v2/claims';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($xAmznShippingBusinessId !== null) {
+            $headerParams['x-amzn-shipping-business-id'] = ObjectSerializer::toHeaderValue($xAmznShippingBusinessId);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation directPurchaseShipment
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body DirectPurchaseRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
@@ -588,7 +1038,7 @@ class ShippingApi
     /**
      * Operation directPurchaseShipmentWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body DirectPurchaseRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
@@ -859,7 +1309,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body DirectPurchaseRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
@@ -882,7 +1332,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body DirectPurchaseRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
@@ -932,7 +1382,7 @@ class ShippingApi
     /**
      * Create request for operation 'directPurchaseShipment'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\DirectPurchaseRequestV2 $body DirectPurchaseRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $locale The IETF Language Tag. Note that this only supports the primary language subtag with one secondary language subtag (i.e. en-US, fr-CA). The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary language subtags. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
@@ -1038,7 +1488,7 @@ class ShippingApi
     /**
      * Operation generateCollectionForm
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body GenerateCollectionFormRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -1055,7 +1505,7 @@ class ShippingApi
     /**
      * Operation generateCollectionFormWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body GenerateCollectionFormRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -1325,7 +1775,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body GenerateCollectionFormRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -1347,7 +1797,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body GenerateCollectionFormRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -1396,7 +1846,7 @@ class ShippingApi
     /**
      * Create request for operation 'generateCollectionForm'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GenerateCollectionFormRequestV2 $body GenerateCollectionFormRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -1497,9 +1947,9 @@ class ShippingApi
     /**
      * Operation getAccessPoints
      *
-     * @param  string[] $accessPointTypes accessPointTypes (required)
-     * @param  string $countryCode countryCode (required)
-     * @param  string $postalCode postalCode (required)
+     * @param  string[] $accessPointTypes Access point types (required)
+     * @param  string $countryCode Country code for access point (required)
+     * @param  string $postalCode postal code for access point (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -1515,9 +1965,9 @@ class ShippingApi
     /**
      * Operation getAccessPointsWithHttpInfo
      *
-     * @param  string[] $accessPointTypes (required)
-     * @param  string $countryCode (required)
-     * @param  string $postalCode (required)
+     * @param  string[] $accessPointTypes Access point types (required)
+     * @param  string $countryCode Country code for access point (required)
+     * @param  string $postalCode postal code for access point (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -1786,9 +2236,9 @@ class ShippingApi
      *
      * 
      *
-     * @param  string[] $accessPointTypes (required)
-     * @param  string $countryCode (required)
-     * @param  string $postalCode (required)
+     * @param  string[] $accessPointTypes Access point types (required)
+     * @param  string $countryCode Country code for access point (required)
+     * @param  string $postalCode postal code for access point (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1809,9 +2259,9 @@ class ShippingApi
      *
      * 
      *
-     * @param  string[] $accessPointTypes (required)
-     * @param  string $countryCode (required)
-     * @param  string $postalCode (required)
+     * @param  string[] $accessPointTypes Access point types (required)
+     * @param  string $countryCode Country code for access point (required)
+     * @param  string $postalCode postal code for access point (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1859,9 +2309,9 @@ class ShippingApi
     /**
      * Create request for operation 'getAccessPoints'
      *
-     * @param  string[] $accessPointTypes (required)
-     * @param  string $countryCode (required)
-     * @param  string $postalCode (required)
+     * @param  string[] $accessPointTypes Access point types (required)
+     * @param  string $countryCode Country code for access point (required)
+     * @param  string $postalCode postal code for access point (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -2886,7 +3336,7 @@ class ShippingApi
     /**
      * Operation getCarrierAccounts
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body GetCarrierAccountsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -2902,7 +3352,7 @@ class ShippingApi
     /**
      * Operation getCarrierAccountsWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body GetCarrierAccountsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -3171,7 +3621,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body GetCarrierAccountsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3192,7 +3642,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body GetCarrierAccountsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3240,7 +3690,7 @@ class ShippingApi
     /**
      * Create request for operation 'getCarrierAccounts'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCarrierAccountsRequestV2 $body GetCarrierAccountsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3788,7 +4238,7 @@ class ShippingApi
     /**
      * Operation getCollectionFormHistory
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body GetCollectionFormHistoryRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -3804,7 +4254,7 @@ class ShippingApi
     /**
      * Operation getCollectionFormHistoryWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body GetCollectionFormHistoryRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -4073,7 +4523,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body GetCollectionFormHistoryRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -4094,7 +4544,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body GetCollectionFormHistoryRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -4142,7 +4592,7 @@ class ShippingApi
     /**
      * Create request for operation 'getCollectionFormHistory'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetCollectionFormHistoryRequestV2 $body GetCollectionFormHistoryRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -4238,7 +4688,7 @@ class ShippingApi
     /**
      * Operation getRates
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body GetRatesRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -4254,7 +4704,7 @@ class ShippingApi
     /**
      * Operation getRatesWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body GetRatesRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -4523,7 +4973,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body GetRatesRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -4544,7 +4994,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body GetRatesRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -4592,7 +5042,7 @@ class ShippingApi
     /**
      * Create request for operation 'getRates'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetRatesRequestV2 $body GetRatesRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5651,7 +6101,7 @@ class ShippingApi
     /**
      * Operation getUnmanifestedShipments
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body GetUmanifestedShipmentsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -5667,7 +6117,7 @@ class ShippingApi
     /**
      * Operation getUnmanifestedShipmentsWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body GetUmanifestedShipmentsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -5936,7 +6386,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body GetUmanifestedShipmentsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -5957,7 +6407,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body GetUmanifestedShipmentsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6005,7 +6455,7 @@ class ShippingApi
     /**
      * Create request for operation 'getUnmanifestedShipments'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\GetUnmanifestedShipmentsRequestV2 $body GetUmanifestedShipmentsRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6101,8 +6551,8 @@ class ShippingApi
     /**
      * Operation linkCarrierAccount
      *
-     * @param  string $carrierId The unique identifier associated with the carrier account. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body body (required)
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -6118,8 +6568,8 @@ class ShippingApi
     /**
      * Operation linkCarrierAccountWithHttpInfo
      *
-     * @param  string $carrierId The unique identifier associated with the carrier account. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body (required)
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -6388,8 +6838,8 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $carrierId The unique identifier associated with the carrier account. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body (required)
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6410,8 +6860,8 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $carrierId The unique identifier associated with the carrier account. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body (required)
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6459,8 +6909,8 @@ class ShippingApi
     /**
      * Create request for operation 'linkCarrierAccount'
      *
-     * @param  string $carrierId The unique identifier associated with the carrier account. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body (required)
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6568,9 +7018,478 @@ class ShippingApi
     }
 
     /**
+     * Operation linkCarrierAccount_0
+     *
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountResponseV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2
+     */
+    public function linkCarrierAccount_0($carrierId, $body, $xAmznShippingBusinessId = null)
+    {
+        list($response) = $this->linkCarrierAccount_0WithHttpInfo($carrierId, $body, $xAmznShippingBusinessId);
+        return $response;
+    }
+
+    /**
+     * Operation linkCarrierAccount_0WithHttpInfo
+     *
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountResponseV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2|\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function linkCarrierAccount_0WithHttpInfo($carrierId, $body, $xAmznShippingBusinessId = null)
+    {
+        $request = $this->linkCarrierAccount_0Request($carrierId, $body, $xAmznShippingBusinessId);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountResponseV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountResponseV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountResponseV2';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountResponseV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation linkCarrierAccount_0Async
+     *
+     * 
+     *
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function linkCarrierAccount_0Async($carrierId, $body, $xAmznShippingBusinessId = null)
+    {
+        return $this->linkCarrierAccount_0AsyncWithHttpInfo($carrierId, $body, $xAmznShippingBusinessId)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation linkCarrierAccount_0AsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function linkCarrierAccount_0AsyncWithHttpInfo($carrierId, $body, $xAmznShippingBusinessId = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountResponseV2';
+        $request = $this->linkCarrierAccount_0Request($carrierId, $body, $xAmznShippingBusinessId);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'linkCarrierAccount_0'
+     *
+     * @param  string $carrierId An identifier for the carrier with which the seller&#39;s account is being linked. (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\LinkCarrierAccountRequestV2 $body LinkCarrierAccountRequest body (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function linkCarrierAccount_0Request($carrierId, $body, $xAmznShippingBusinessId = null)
+    {
+        // verify the required parameter 'carrierId' is set
+        if ($carrierId === null || (is_array($carrierId) && count($carrierId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $carrierId when calling linkCarrierAccount_0'
+            );
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling linkCarrierAccount_0'
+            );
+        }
+
+        $resourcePath = '/shipping/v2/carrierAccounts/{carrierId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($xAmznShippingBusinessId !== null) {
+            $headerParams['x-amzn-shipping-business-id'] = ObjectSerializer::toHeaderValue($xAmznShippingBusinessId);
+        }
+
+        // path params
+        if ($carrierId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'carrierId' . '}',
+                ObjectSerializer::toPathValue($carrierId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation oneClickShipment
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body OneClickShipmentRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -6586,7 +7505,7 @@ class ShippingApi
     /**
      * Operation oneClickShipmentWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body OneClickShipmentRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -6855,7 +7774,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body OneClickShipmentRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6876,7 +7795,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body OneClickShipmentRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -6924,7 +7843,7 @@ class ShippingApi
     /**
      * Create request for operation 'oneClickShipment'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\OneClickShipmentRequestV2 $body OneClickShipmentRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7020,7 +7939,7 @@ class ShippingApi
     /**
      * Operation purchaseShipment
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body PurchaseShipmentRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -7037,7 +7956,7 @@ class ShippingApi
     /**
      * Operation purchaseShipmentWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body PurchaseShipmentRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -7307,7 +8226,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body PurchaseShipmentRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -7329,7 +8248,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body PurchaseShipmentRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -7378,7 +8297,7 @@ class ShippingApi
     /**
      * Create request for operation 'purchaseShipment'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\PurchaseShipmentRequestV2 $body PurchaseShipmentRequest body (required)
      * @param  string $xAmznIdempotencyKey A unique value which the server uses to recognize subsequent retries of the same request. (optional)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
@@ -7477,10 +8396,304 @@ class ShippingApi
     }
 
     /**
+     * Operation submitNdrFeedback
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\SubmitNdrFeedbackRequestV2 $body Request body for ndrFeedback operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function submitNdrFeedback($body, $xAmznShippingBusinessId = null)
+    {
+        $this->submitNdrFeedbackWithHttpInfo($body, $xAmznShippingBusinessId);
+    }
+
+    /**
+     * Operation submitNdrFeedbackWithHttpInfo
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\SubmitNdrFeedbackRequestV2 $body Request body for ndrFeedback operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function submitNdrFeedbackWithHttpInfo($body, $xAmznShippingBusinessId = null)
+    {
+        $request = $this->submitNdrFeedbackRequest($body, $xAmznShippingBusinessId);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\ShippingApiV2\Model\ErrorListV2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation submitNdrFeedbackAsync
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\SubmitNdrFeedbackRequestV2 $body Request body for ndrFeedback operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitNdrFeedbackAsync($body, $xAmznShippingBusinessId = null)
+    {
+        return $this->submitNdrFeedbackAsyncWithHttpInfo($body, $xAmznShippingBusinessId)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation submitNdrFeedbackAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\SubmitNdrFeedbackRequestV2 $body Request body for ndrFeedback operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function submitNdrFeedbackAsyncWithHttpInfo($body, $xAmznShippingBusinessId = null)
+    {
+        $returnType = '';
+        $request = $this->submitNdrFeedbackRequest($body, $xAmznShippingBusinessId);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'submitNdrFeedback'
+     *
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\SubmitNdrFeedbackRequestV2 $body Request body for ndrFeedback operation (required)
+     * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function submitNdrFeedbackRequest($body, $xAmznShippingBusinessId = null)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling submitNdrFeedback'
+            );
+        }
+
+        $resourcePath = '/shipping/v2/ndrFeedback';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // header params
+        if ($xAmznShippingBusinessId !== null) {
+            $headerParams['x-amzn-shipping-business-id'] = ObjectSerializer::toHeaderValue($xAmznShippingBusinessId);
+        }
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation unlinkCarrierAccount
      *
      * @param  string $carrierId carrier Id to unlink with merchant. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body UnlinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -7497,7 +8710,7 @@ class ShippingApi
      * Operation unlinkCarrierAccountWithHttpInfo
      *
      * @param  string $carrierId carrier Id to unlink with merchant. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body UnlinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApiV2\ApiException on non-2xx response
@@ -7767,7 +8980,7 @@ class ShippingApi
      * 
      *
      * @param  string $carrierId carrier Id to unlink with merchant. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body UnlinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7789,7 +9002,7 @@ class ShippingApi
      * 
      *
      * @param  string $carrierId carrier Id to unlink with merchant. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body UnlinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException
@@ -7838,7 +9051,7 @@ class ShippingApi
      * Create request for operation 'unlinkCarrierAccount'
      *
      * @param  string $carrierId carrier Id to unlink with merchant. (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApiV2\Model\UnlinkCarrierAccountRequestV2 $body UnlinkCarrierAccountRequest body (required)
      * @param  string $xAmznShippingBusinessId Amazon shipping business to assume for this request. The default is AmazonShipping_UK. (optional)
      *
      * @throws \InvalidArgumentException

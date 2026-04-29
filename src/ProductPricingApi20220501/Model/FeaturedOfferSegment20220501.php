@@ -172,6 +172,7 @@ class FeaturedOfferSegment20220501 implements ModelInterface, ArrayAccess, \Json
 
     const CUSTOMER_MEMBERSHIP_PRIME = 'PRIME';
     const CUSTOMER_MEMBERSHIP_NON_PRIME = 'NON_PRIME';
+    const CUSTOMER_MEMBERSHIP__DEFAULT = 'DEFAULT';
     
 
     
@@ -185,6 +186,7 @@ class FeaturedOfferSegment20220501 implements ModelInterface, ArrayAccess, \Json
         return [
             self::CUSTOMER_MEMBERSHIP_PRIME,
             self::CUSTOMER_MEMBERSHIP_NON_PRIME,
+            self::CUSTOMER_MEMBERSHIP__DEFAULT,
         ];
     }
     
@@ -260,7 +262,7 @@ class FeaturedOfferSegment20220501 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets customerMembership
      *
-     * @param string $customerMembership The customer membership type that make up this segment
+     * @param string $customerMembership The customer membership type that makes up this segment
      *
      * @return self
      */

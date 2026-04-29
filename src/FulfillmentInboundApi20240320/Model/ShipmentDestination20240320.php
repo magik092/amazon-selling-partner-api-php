@@ -310,7 +310,7 @@ class ShipmentDestination20240320 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets warehouseId
      *
-     * @param string|null $warehouseId The warehouse that the shipment should be sent to. Empty if the destination type is `AMAZON_OPTIMIZED`.
+     * @param string|null $warehouseId The warehouse that the shipment should be sent to. This can be empty if the destination type is `AMAZON_OPTIMIZED`.
      *
      * @return self
      */

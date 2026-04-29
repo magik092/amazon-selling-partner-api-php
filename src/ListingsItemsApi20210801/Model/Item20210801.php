@@ -68,7 +68,9 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
         'issues' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\Issue20210801[]',
         'offers' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemOfferByMarketplace20210801[]',
         'fulfillmentAvailability' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\FulfillmentAvailability20210801[]',
-        'procurement' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProcurement20210801[]'
+        'procurement' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProcurement20210801[]',
+        'relationships' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemRelationshipsByMarketplace20210801[]',
+        'productTypes' => '\Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProductTypeByMarketplace20210801[]'
     ];
 
     /**
@@ -85,7 +87,9 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
         'issues' => null,
         'offers' => null,
         'fulfillmentAvailability' => null,
-        'procurement' => null
+        'procurement' => null,
+        'relationships' => null,
+        'productTypes' => null
     ];
 
     /**
@@ -121,7 +125,9 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
         'issues' => 'issues',
         'offers' => 'offers',
         'fulfillmentAvailability' => 'fulfillmentAvailability',
-        'procurement' => 'procurement'
+        'procurement' => 'procurement',
+        'relationships' => 'relationships',
+        'productTypes' => 'productTypes'
     ];
 
     /**
@@ -136,7 +142,9 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
         'issues' => 'setIssues',
         'offers' => 'setOffers',
         'fulfillmentAvailability' => 'setFulfillmentAvailability',
-        'procurement' => 'setProcurement'
+        'procurement' => 'setProcurement',
+        'relationships' => 'setRelationships',
+        'productTypes' => 'setProductTypes'
     ];
 
     /**
@@ -151,7 +159,9 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
         'issues' => 'getIssues',
         'offers' => 'getOffers',
         'fulfillmentAvailability' => 'getFulfillmentAvailability',
-        'procurement' => 'getProcurement'
+        'procurement' => 'getProcurement',
+        'relationships' => 'getRelationships',
+        'productTypes' => 'getProductTypes'
     ];
 
     /**
@@ -221,6 +231,8 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['offers'] = $data['offers'] ?? null;
         $this->container['fulfillmentAvailability'] = $data['fulfillmentAvailability'] ?? null;
         $this->container['procurement'] = $data['procurement'] ?? null;
+        $this->container['relationships'] = $data['relationships'] ?? null;
+        $this->container['productTypes'] = $data['productTypes'] ?? null;
     }
 
     /**
@@ -414,6 +426,54 @@ class Item20210801 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setProcurement($procurement)
     {
         $this->container['procurement'] = $procurement;
+
+        return $this;
+    }
+
+    /**
+     * Gets relationships
+     *
+     * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemRelationshipsByMarketplace20210801[]|null
+     */
+    public function getRelationships()
+    {
+        return $this->container['relationships'];
+    }
+
+    /**
+     * Sets relationships
+     *
+     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemRelationshipsByMarketplace20210801[]|null $relationships Relationships for a listing item, by marketplace (for example, variations).
+     *
+     * @return self
+     */
+    public function setRelationships($relationships)
+    {
+        $this->container['relationships'] = $relationships;
+
+        return $this;
+    }
+
+    /**
+     * Gets productTypes
+     *
+     * @return \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProductTypeByMarketplace20210801[]|null
+     */
+    public function getProductTypes()
+    {
+        return $this->container['productTypes'];
+    }
+
+    /**
+     * Sets productTypes
+     *
+     * @param \Webcom\Amazon\Rest\ListingsItemsApi20210801\Model\ItemProductTypeByMarketplace20210801[]|null $productTypes Product types for a listing item, by marketplace.
+     *
+     * @return self
+     */
+    public function setProductTypes($productTypes)
+    {
+        $this->container['productTypes'] = $productTypes;
 
         return $this;
     }

@@ -446,7 +446,7 @@ class AccessPointV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets exceptionOperatingHours
      *
-     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\ExceptionOperatingHoursV2[]|null $exceptionOperatingHours exceptionOperatingHours
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\ExceptionOperatingHoursV2[]|null $exceptionOperatingHours Exception operating hours for Access Point
      *
      * @return self
      */
@@ -470,7 +470,7 @@ class AccessPointV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets assistanceType
      *
-     * @param string|null $assistanceType assistanceType
+     * @param string|null $assistanceType Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED
      *
      * @return self
      */

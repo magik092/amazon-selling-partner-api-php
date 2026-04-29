@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ErrorV0 Class Doc Comment
  *
  * @category Class
+ * @description An object representing an error that occurred during the API operation.
  * @package  Webcom\Amazon\Rest\ProductFeesApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * LowestPricedOffersInput20220501 Class Doc Comment
  *
  * @category Class
- * @description The input required for building the &#x60;LowestPricedOffers&#x60; data in the response.
+ * @description The input required for building &#x60;LowestPricedOffers&#x60; data in the response.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -170,7 +170,7 @@ class LowestPricedOffersInput20220501 implements ModelInterface, ArrayAccess, \J
         return self::$openAPIModelName;
     }
 
-    const OFFER_TYPE_CONSUMER = 'CONSUMER';
+    const OFFER_TYPE_CONSUMER = 'Consumer';
     
 
     
@@ -282,7 +282,7 @@ class LowestPricedOffersInput20220501 implements ModelInterface, ArrayAccess, \J
     /**
      * Sets offerType
      *
-     * @param string $offerType The type of offers requested for the `LowestPricedOffers`. The `offerType` options are `Consumer` or `Business`. The default `offerType` is `Consumer`.
+     * @param string $offerType The input parameter specifies the type of offers requested for `LowestPricedOffers`. This applies to `Consumer` and `Business` offers. `Consumer` is the default `offerType`.
      *
      * @return self
      */

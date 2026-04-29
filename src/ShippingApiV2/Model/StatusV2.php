@@ -53,6 +53,7 @@ class StatusV2
     const UNDELIVERABLE = 'Undeliverable';
     const DELIVERY_ATTEMPTED = 'DeliveryAttempted';
     const PICKUP_CANCELLED = 'PickupCancelled';
+    const AWAITING_CUSTOMER_PICKUP = 'AwaitingCustomerPickup';
     
     /**
      * Gets allowable values of the enum
@@ -70,6 +71,7 @@ class StatusV2
             self::UNDELIVERABLE,
             self::DELIVERY_ATTEMPTED,
             self::PICKUP_CANCELLED,
+            self::AWAITING_CUSTOMER_PICKUP,
         ];
     }
 }

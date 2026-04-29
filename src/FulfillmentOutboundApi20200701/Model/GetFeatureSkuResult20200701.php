@@ -66,7 +66,10 @@ class GetFeatureSkuResult20200701 implements ModelInterface, ArrayAccess, \JsonS
         'featureName' => 'string',
         'isEligible' => 'bool',
         'ineligibleReasons' => 'string[]',
-        'skuInfo' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\FeatureSku20200701'
+        'sellerSku' => 'string',
+        'fnSku' => 'string',
+        'asin' => 'string',
+        'skuCount' => 'float'
     ];
 
     /**
@@ -81,7 +84,10 @@ class GetFeatureSkuResult20200701 implements ModelInterface, ArrayAccess, \JsonS
         'featureName' => null,
         'isEligible' => null,
         'ineligibleReasons' => null,
-        'skuInfo' => null
+        'sellerSku' => null,
+        'fnSku' => null,
+        'asin' => null,
+        'skuCount' => null
     ];
 
     /**
@@ -115,7 +121,10 @@ class GetFeatureSkuResult20200701 implements ModelInterface, ArrayAccess, \JsonS
         'featureName' => 'featureName',
         'isEligible' => 'isEligible',
         'ineligibleReasons' => 'ineligibleReasons',
-        'skuInfo' => 'skuInfo'
+        'sellerSku' => 'sellerSku',
+        'fnSku' => 'fnSku',
+        'asin' => 'asin',
+        'skuCount' => 'skuCount'
     ];
 
     /**
@@ -128,7 +137,10 @@ class GetFeatureSkuResult20200701 implements ModelInterface, ArrayAccess, \JsonS
         'featureName' => 'setFeatureName',
         'isEligible' => 'setIsEligible',
         'ineligibleReasons' => 'setIneligibleReasons',
-        'skuInfo' => 'setSkuInfo'
+        'sellerSku' => 'setSellerSku',
+        'fnSku' => 'setFnSku',
+        'asin' => 'setAsin',
+        'skuCount' => 'setSkuCount'
     ];
 
     /**
@@ -141,7 +153,10 @@ class GetFeatureSkuResult20200701 implements ModelInterface, ArrayAccess, \JsonS
         'featureName' => 'getFeatureName',
         'isEligible' => 'getIsEligible',
         'ineligibleReasons' => 'getIneligibleReasons',
-        'skuInfo' => 'getSkuInfo'
+        'sellerSku' => 'getSellerSku',
+        'fnSku' => 'getFnSku',
+        'asin' => 'getAsin',
+        'skuCount' => 'getSkuCount'
     ];
 
     /**
@@ -208,7 +223,10 @@ class GetFeatureSkuResult20200701 implements ModelInterface, ArrayAccess, \JsonS
         $this->container['featureName'] = $data['featureName'] ?? null;
         $this->container['isEligible'] = $data['isEligible'] ?? null;
         $this->container['ineligibleReasons'] = $data['ineligibleReasons'] ?? null;
-        $this->container['skuInfo'] = $data['skuInfo'] ?? null;
+        $this->container['sellerSku'] = $data['sellerSku'] ?? null;
+        $this->container['fnSku'] = $data['fnSku'] ?? null;
+        $this->container['asin'] = $data['asin'] ?? null;
+        $this->container['skuCount'] = $data['skuCount'] ?? null;
     }
 
     /**
@@ -329,7 +347,7 @@ class GetFeatureSkuResult20200701 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets ineligibleReasons
      *
-     * @param string[]|null $ineligibleReasons A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * `MERCHANT_NOT_ENROLLED` - The merchant isn't enrolled for the feature. * `SKU_NOT_ELIGIBLE` - The SKU doesn't reside in a warehouse that supports the feature. * `INVALID_SKU` - There is an issue with the SKU provided.
+     * @param string[]|null $ineligibleReasons A list of one or more reasons that the seller SKU is ineligible for the feature.  Possible values: * `MERCHANT_NOT_ENROLLED`: The merchant isn't enrolled for the feature. * `SKU_NOT_ELIGIBLE`: The SKU doesn't reside in a warehouse that supports the feature. * `INVALID_SKU`: There is an issue with the SKU provided.
      *
      * @return self
      */
@@ -341,25 +359,97 @@ class GetFeatureSkuResult20200701 implements ModelInterface, ArrayAccess, \JsonS
     }
 
     /**
-     * Gets skuInfo
+     * Gets sellerSku
      *
-     * @return \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\FeatureSku20200701|null
+     * @return string|null
      */
-    public function getSkuInfo()
+    public function getSellerSku()
     {
-        return $this->container['skuInfo'];
+        return $this->container['sellerSku'];
     }
 
     /**
-     * Sets skuInfo
+     * Sets sellerSku
      *
-     * @param \Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\FeatureSku20200701|null $skuInfo skuInfo
+     * @param string|null $sellerSku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
      *
      * @return self
      */
-    public function setSkuInfo($skuInfo)
+    public function setSellerSku($sellerSku)
     {
-        $this->container['skuInfo'] = $skuInfo;
+        $this->container['sellerSku'] = $sellerSku;
+
+        return $this;
+    }
+
+    /**
+     * Gets fnSku
+     *
+     * @return string|null
+     */
+    public function getFnSku()
+    {
+        return $this->container['fnSku'];
+    }
+
+    /**
+     * Sets fnSku
+     *
+     * @param string|null $fnSku The unique SKU used by Amazon's fulfillment network.
+     *
+     * @return self
+     */
+    public function setFnSku($fnSku)
+    {
+        $this->container['fnSku'] = $fnSku;
+
+        return $this;
+    }
+
+    /**
+     * Gets asin
+     *
+     * @return string|null
+     */
+    public function getAsin()
+    {
+        return $this->container['asin'];
+    }
+
+    /**
+     * Sets asin
+     *
+     * @param string|null $asin The Amazon Standard Identification Number (ASIN) of the item.
+     *
+     * @return self
+     */
+    public function setAsin($asin)
+    {
+        $this->container['asin'] = $asin;
+
+        return $this;
+    }
+
+    /**
+     * Gets skuCount
+     *
+     * @return float|null
+     */
+    public function getSkuCount()
+    {
+        return $this->container['skuCount'];
+    }
+
+    /**
+     * Sets skuCount
+     *
+     * @param float|null $skuCount The number of SKUs available for this service.
+     *
+     * @return self
+     */
+    public function setSkuCount($skuCount)
+    {
+        $this->container['skuCount'] = $skuCount;
 
         return $this;
     }

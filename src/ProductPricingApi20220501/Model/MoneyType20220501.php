@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * MoneyType20220501 Class Doc Comment
  *
  * @category Class
- * @description Currency type and monetary value. Schema for demonstrating pricing info.
+ * @description Currency type and monetary value schema to demonstrate pricing information.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

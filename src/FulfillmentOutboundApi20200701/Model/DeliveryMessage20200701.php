@@ -254,7 +254,7 @@ class DeliveryMessage20200701 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets locale
      *
-     * @param string|null $locale The locale for the message (for example, en_US).
+     * @param string|null $locale The locale for the message (e.g., `en_US`).
      *
      * @return self
      */

@@ -119,7 +119,7 @@ class FeesApi
      * Operation getMyFeesEstimateForASIN
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductFeesApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -135,7 +135,7 @@ class FeesApi
      * Operation getMyFeesEstimateForASINWithHttpInfo
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductFeesApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -364,7 +364,7 @@ class FeesApi
      * 
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -385,7 +385,7 @@ class FeesApi
      * 
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -433,7 +433,7 @@ class FeesApi
      * Create request for operation 'getMyFeesEstimateForASIN'
      *
      * @param  string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -539,7 +539,7 @@ class FeesApi
      * Operation getMyFeesEstimateForSKU
      *
      * @param  string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductFeesApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -555,7 +555,7 @@ class FeesApi
      * Operation getMyFeesEstimateForSKUWithHttpInfo
      *
      * @param  string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductFeesApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -784,7 +784,7 @@ class FeesApi
      * 
      *
      * @param  string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -805,7 +805,7 @@ class FeesApi
      * 
      *
      * @param  string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -853,7 +853,7 @@ class FeesApi
      * Create request for operation 'getMyFeesEstimateForSKU'
      *
      * @param  string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\GetMyFeesEstimateRequestV0 $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -958,7 +958,7 @@ class FeesApi
     /**
      * Operation getMyFeesEstimates
      *
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductFeesApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -973,7 +973,7 @@ class FeesApi
     /**
      * Operation getMyFeesEstimatesWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \Webcom\Amazon\Rest\ProductFeesApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1201,7 +1201,7 @@ class FeesApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1221,7 +1221,7 @@ class FeesApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1268,7 +1268,7 @@ class FeesApi
     /**
      * Create request for operation 'getMyFeesEstimates'
      *
-     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body (required)
+     * @param  \Webcom\Amazon\Rest\ProductFeesApiV0\Model\FeesEstimateByIdRequestV0[] $body The request body schema for the getMyFeesEstimates operation (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

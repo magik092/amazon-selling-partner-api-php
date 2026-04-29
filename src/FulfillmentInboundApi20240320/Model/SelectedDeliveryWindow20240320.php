@@ -272,7 +272,7 @@ class SelectedDeliveryWindow20240320 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets availabilityType
      *
-     * @param string $availabilityType Identifies type of Delivery Window Availability. Values: `AVAILABLE`, `CONGESTED`
+     * @param string $availabilityType The type of delivery window availability. Values: `AVAILABLE`, `BLOCKED`, `CONGESTED`, `DISCOUNTED`
      *
      * @return self
      */

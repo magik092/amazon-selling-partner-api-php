@@ -64,7 +64,8 @@ class EventV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'eventCode' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\EventCodeV2',
         'location' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\LocationV2',
-        'eventTime' => '\DateTime'
+        'eventTime' => '\DateTime',
+        'shipmentType' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\ShipmentTypeV2'
     ];
 
     /**
@@ -77,7 +78,8 @@ class EventV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'eventCode' => null,
         'location' => null,
-        'eventTime' => 'date-time'
+        'eventTime' => 'date-time',
+        'shipmentType' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class EventV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'eventCode' => 'eventCode',
         'location' => 'location',
-        'eventTime' => 'eventTime'
+        'eventTime' => 'eventTime',
+        'shipmentType' => 'shipmentType'
     ];
 
     /**
@@ -120,7 +123,8 @@ class EventV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'eventCode' => 'setEventCode',
         'location' => 'setLocation',
-        'eventTime' => 'setEventTime'
+        'eventTime' => 'setEventTime',
+        'shipmentType' => 'setShipmentType'
     ];
 
     /**
@@ -131,7 +135,8 @@ class EventV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'eventCode' => 'getEventCode',
         'location' => 'getLocation',
-        'eventTime' => 'getEventTime'
+        'eventTime' => 'getEventTime',
+        'shipmentType' => 'getShipmentType'
     ];
 
     /**
@@ -197,6 +202,7 @@ class EventV2 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['eventCode'] = $data['eventCode'] ?? null;
         $this->container['location'] = $data['location'] ?? null;
         $this->container['eventTime'] = $data['eventTime'] ?? null;
+        $this->container['shipmentType'] = $data['shipmentType'] ?? null;
     }
 
     /**
@@ -297,6 +303,30 @@ class EventV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setEventTime($eventTime)
     {
         $this->container['eventTime'] = $eventTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipmentType
+     *
+     * @return \Webcom\Amazon\Rest\ShippingApiV2\Model\ShipmentTypeV2|null
+     */
+    public function getShipmentType()
+    {
+        return $this->container['shipmentType'];
+    }
+
+    /**
+     * Sets shipmentType
+     *
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\ShipmentTypeV2|null $shipmentType shipmentType
+     *
+     * @return self
+     */
+    public function setShipmentType($shipmentType)
+    {
+        $this->container['shipmentType'] = $shipmentType;
 
         return $this;
     }

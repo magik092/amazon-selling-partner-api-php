@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ShippingLabelRequest20211228 Class Doc Comment
  *
  * @category Class
- * @description Represents the request payload to create a shipping label. Contains the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment.
+ * @description Represents the request payload for creating a shipping label, containing the purchase order number, selling party, ship from party, and a list of containers or packages in the shipment.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -255,7 +255,7 @@ class ShippingLabelRequest20211228 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets purchaseOrderNumber
      *
-     * @param string $purchaseOrderNumber Purchase order number of the order for which to create a shipping label.
+     * @param string $purchaseOrderNumber The purchase order number of the order for which to create a shipping label.
      *
      * @return self
      */

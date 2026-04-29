@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ItemQuantityV1 Class Doc Comment
  *
  * @category Class
- * @description Details about item quantity.
+ * @description Details of item quantity.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentInventoryApiV1
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

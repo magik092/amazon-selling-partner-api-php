@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * FeaturedOfferExpectedPriceResponseBody20220501 Class Doc Comment
  *
  * @category Class
- * @description The featured offer expected price response data for a requested SKU.
+ * @description The FOEP response data for a requested SKU.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -260,7 +260,7 @@ class FeaturedOfferExpectedPriceResponseBody20220501 implements ModelInterface, 
     /**
      * Sets featuredOfferExpectedPriceResults
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\FeaturedOfferExpectedPriceResult20220501[]|null $featuredOfferExpectedPriceResults A list of featured offer expected price results for the requested offer.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\FeaturedOfferExpectedPriceResult20220501[]|null $featuredOfferExpectedPriceResults A list of FOEP results for the requested offer.
      *
      * @return self
      */
@@ -284,7 +284,7 @@ class FeaturedOfferExpectedPriceResponseBody20220501 implements ModelInterface, 
     /**
      * Sets errors
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Error20220501[]|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\Error20220501[]|null $errors A list of error responses that are returned when a request is unsuccessful.
      *
      * @return self
      */

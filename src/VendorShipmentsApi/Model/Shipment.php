@@ -456,7 +456,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets transactionType
      *
-     * @param string $transactionType Indicates the type of  transportation request such as (New,Cancel,Confirm and PackageLabelRequest). Each transactiontype has a unique set of operation and there are corresponding details to be populated for each operation.
+     * @param string $transactionType Indicates the type of transportation request (for example, `New` or `Cancel`). Each `transactionType` has a unique set of operations and there are corresponding details to be populated for each operation.
      *
      * @return self
      */
@@ -692,7 +692,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipmentFreightTerm
      *
-     * @param string|null $shipmentFreightTerm Indicates if this transportation request is WePay/Collect or TheyPay/Prepaid. This is a mandatory information.
+     * @param string|null $shipmentFreightTerm Specifies if payment is Collect (WePay) or Prepaid (TheyPay). Required.
      *
      * @return self
      */

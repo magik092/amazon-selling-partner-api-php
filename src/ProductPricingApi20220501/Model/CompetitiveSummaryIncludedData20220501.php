@@ -34,7 +34,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CompetitiveSummaryIncludedData20220501 Class Doc Comment
  *
  * @category Class
- * @description The supported types of data in the &#x60;getCompetitiveSummary&#x60; API.
+ * @description The supported data types in the &#x60;getCompetitiveSummary&#x60; API.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -47,6 +47,7 @@ class CompetitiveSummaryIncludedData20220501
     const FEATURED_BUYING_OPTIONS = 'featuredBuyingOptions';
     const REFERENCE_PRICES = 'referencePrices';
     const LOWEST_PRICED_OFFERS = 'lowestPricedOffers';
+    const SIMILAR_ITEMS = 'similarItems';
     
     /**
      * Gets allowable values of the enum
@@ -58,6 +59,7 @@ class CompetitiveSummaryIncludedData20220501
             self::FEATURED_BUYING_OPTIONS,
             self::REFERENCE_PRICES,
             self::LOWEST_PRICED_OFFERS,
+            self::SIMILAR_ITEMS,
         ];
     }
 }

@@ -63,7 +63,10 @@ class PaymentExecutionDetailItemV0 implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'payment' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\MoneyV0',
-        'paymentMethod' => 'string'
+        'paymentMethod' => 'string',
+        'acquirerId' => 'string',
+        'cardBrand' => 'string',
+        'authorizationCode' => 'string'
     ];
 
     /**
@@ -75,7 +78,10 @@ class PaymentExecutionDetailItemV0 implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'payment' => null,
-        'paymentMethod' => null
+        'paymentMethod' => null,
+        'acquirerId' => null,
+        'cardBrand' => null,
+        'authorizationCode' => null
     ];
 
     /**
@@ -106,7 +112,10 @@ class PaymentExecutionDetailItemV0 implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'payment' => 'Payment',
-        'paymentMethod' => 'PaymentMethod'
+        'paymentMethod' => 'PaymentMethod',
+        'acquirerId' => 'AcquirerId',
+        'cardBrand' => 'CardBrand',
+        'authorizationCode' => 'AuthorizationCode'
     ];
 
     /**
@@ -116,7 +125,10 @@ class PaymentExecutionDetailItemV0 implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'payment' => 'setPayment',
-        'paymentMethod' => 'setPaymentMethod'
+        'paymentMethod' => 'setPaymentMethod',
+        'acquirerId' => 'setAcquirerId',
+        'cardBrand' => 'setCardBrand',
+        'authorizationCode' => 'setAuthorizationCode'
     ];
 
     /**
@@ -126,7 +138,10 @@ class PaymentExecutionDetailItemV0 implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'payment' => 'getPayment',
-        'paymentMethod' => 'getPaymentMethod'
+        'paymentMethod' => 'getPaymentMethod',
+        'acquirerId' => 'getAcquirerId',
+        'cardBrand' => 'getCardBrand',
+        'authorizationCode' => 'getAuthorizationCode'
     ];
 
     /**
@@ -191,6 +206,9 @@ class PaymentExecutionDetailItemV0 implements ModelInterface, ArrayAccess, \Json
     {
         $this->container['payment'] = $data['payment'] ?? null;
         $this->container['paymentMethod'] = $data['paymentMethod'] ?? null;
+        $this->container['acquirerId'] = $data['acquirerId'] ?? null;
+        $this->container['cardBrand'] = $data['cardBrand'] ?? null;
+        $this->container['authorizationCode'] = $data['authorizationCode'] ?? null;
     }
 
     /**
@@ -260,13 +278,85 @@ class PaymentExecutionDetailItemV0 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets paymentMethod
      *
-     * @param string $paymentMethod A sub-payment method for a COD order.  **Possible values**: * `COD`: Cash on delivery  * `GC`: Gift card  * `PointsAccount`: Amazon Points * `Invoice`: Invoice
+     * @param string $paymentMethod The sub-payment method for an order.   **Possible values**: * `COD`: Cash on delivery  * `GC`: Gift card  * `PointsAccount`: Amazon Points  * `Invoice`: Invoice  * `CreditCard`: Credit card  * `Pix`: Pix  * `Other`: Other.
      *
      * @return self
      */
     public function setPaymentMethod($paymentMethod)
     {
         $this->container['paymentMethod'] = $paymentMethod;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirerId
+     *
+     * @return string|null
+     */
+    public function getAcquirerId()
+    {
+        return $this->container['acquirerId'];
+    }
+
+    /**
+     * Sets acquirerId
+     *
+     * @param string|null $acquirerId The Brazilian Taxpayer Identifier (CNPJ) of the payment processor or acquiring bank that authorizes the payment.   **Note**: This attribute is only available for orders in the Brazil (BR) marketplace when the `PaymentMethod` is `CreditCard` or `Pix`.
+     *
+     * @return self
+     */
+    public function setAcquirerId($acquirerId)
+    {
+        $this->container['acquirerId'] = $acquirerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets cardBrand
+     *
+     * @return string|null
+     */
+    public function getCardBrand()
+    {
+        return $this->container['cardBrand'];
+    }
+
+    /**
+     * Sets cardBrand
+     *
+     * @param string|null $cardBrand The card network or brand used in the payment transaction (for example, Visa or Mastercard).   **Note**: This attribute is only available for orders in the Brazil (BR) marketplace when the `PaymentMethod` is `CreditCard`.
+     *
+     * @return self
+     */
+    public function setCardBrand($cardBrand)
+    {
+        $this->container['cardBrand'] = $cardBrand;
+
+        return $this;
+    }
+
+    /**
+     * Gets authorizationCode
+     *
+     * @return string|null
+     */
+    public function getAuthorizationCode()
+    {
+        return $this->container['authorizationCode'];
+    }
+
+    /**
+     * Sets authorizationCode
+     *
+     * @param string|null $authorizationCode The unique code that confirms the payment authorization.   **Note**: This attribute is only available for orders in the Brazil (BR) marketplace when the `PaymentMethod` is `CreditCard` or `Pix`.
+     *
+     * @return self
+     */
+    public function setAuthorizationCode($authorizationCode)
+    {
+        $this->container['authorizationCode'] = $authorizationCode;
 
         return $this;
     }

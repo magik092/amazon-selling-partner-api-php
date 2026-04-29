@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderListStatus Class Doc Comment
  *
  * @category Class
+ * @description A list of order statuses.
  * @package  Webcom\Amazon\Rest\VendorOrdersApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -253,7 +254,7 @@ class OrderListStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets ordersStatus
      *
-     * @param \Webcom\Amazon\Rest\VendorOrdersApi\Model\OrderStatus[]|null $ordersStatus ordersStatus
+     * @param \Webcom\Amazon\Rest\VendorOrdersApi\Model\OrderStatus[]|null $ordersStatus Represents an order status within the OrderListStatus.
      *
      * @return self
      */

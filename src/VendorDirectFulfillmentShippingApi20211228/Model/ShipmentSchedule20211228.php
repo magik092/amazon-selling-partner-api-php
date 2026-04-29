@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -236,7 +236,7 @@ class ShipmentSchedule20211228 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets estimatedDeliveryDateTime
      *
-     * @param \DateTime|null $estimatedDeliveryDateTime Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param \DateTime|null $estimatedDeliveryDateTime Date on which the shipment is expected to reach the customer delivery location. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      *
      * @return self
      */
@@ -260,7 +260,7 @@ class ShipmentSchedule20211228 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets apptWindowStartDateTime
      *
-     * @param \DateTime|null $apptWindowStartDateTime This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param \DateTime|null $apptWindowStartDateTime The date and time at the start of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      *
      * @return self
      */
@@ -284,7 +284,7 @@ class ShipmentSchedule20211228 implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets apptWindowEndDateTime
      *
-     * @param \DateTime|null $apptWindowEndDateTime This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param \DateTime|null $apptWindowEndDateTime The date and time at the end of the appointment window when the shipment is expected to be delivered. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      *
      * @return self
      */

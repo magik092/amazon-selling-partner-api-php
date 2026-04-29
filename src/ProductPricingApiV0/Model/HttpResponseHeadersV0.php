@@ -254,7 +254,7 @@ class HttpResponseHeadersV0 implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets xAmznRequestId
      *
-     * @param string|null $xAmznRequestId Unique request reference ID.
+     * @param string|null $xAmznRequestId Unique request reference identifier.
      *
      * @return self
      */

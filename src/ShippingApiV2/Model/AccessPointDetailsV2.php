@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * AccessPointDetailsV2 Class Doc Comment
  *
  * @category Class
+ * @description AccessPointDetails object
  * @package  Webcom\Amazon\Rest\ShippingApiV2
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

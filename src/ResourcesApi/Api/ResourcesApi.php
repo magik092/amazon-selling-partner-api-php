@@ -10,7 +10,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Psr7\Request;
 use Webcom\Amazon\Rest\AESCryptoStreamFactory;
 use Webcom\Amazon\Rest\AmazonTransportClient;
-use Webcom\Amazon\Rest\FeedsApi20210630\Model\CreateFeedDocumentResponse20210630;
+use Webcom\Amazon\Rest\FeedsApi20200904\Model\CreateFeedDocumentResult20200904;
 use Webcom\Amazon\Rest\FeedsApi20200904\Model\FeedDocument20200904;
 use Webcom\Amazon\Rest\FeedsApi20210630\Model\FeedDocument20210630;
 use Webcom\Amazon\Rest\ReportsApi20200904\Model\ReportDocument20200904;
@@ -39,10 +39,11 @@ class ResourcesApi
 
     /**
      * Upload document to CreateFeedDocumentResult resource URI
-     * @param CreateFeedDocumentResponse20210630 $documentResult
+     * @param CreateFeedDocumentResult20200904 $documentResult
      * @param string $contentType
      * @param string $plainDocument
      * @throws ApiException
+     * @throws \JsonException
      */
     public function putFeedDocument(CreateFeedDocumentResult20200904 $documentResult, string $contentType, string $plainDocument)
     {
@@ -64,7 +65,7 @@ class ResourcesApi
 
             if ($response->getStatusCode() !== 200) {
                 throw new ApiException(
-                    json_decode($response->getBody()->getContents()),
+                    json_decode($response->getBody()->getContents(), false, 512, JSON_THROW_ON_ERROR),
                     $response->getStatusCode(),
                     $response->getHeaders(),
                     $response->getBody()->getContents()
@@ -80,6 +81,7 @@ class ResourcesApi
      * @param ReportDocument20200904 $documentResponse
      * @return false|string
      * @throws ApiException
+     * @throws GuzzleException
      */
     public function getReportDocument(ReportDocument20200904 $documentResponse)
     {
@@ -100,9 +102,11 @@ class ResourcesApi
         );
 
         // after decoding document check for compressionAlgorithm
-        if($documentResponse->getCompressionAlgorithm() === 'GZIP') {
+        if ($documentResponse->getCompressionAlgorithm() === 'GZIP') {
             return gzdecode($document);
-        } elseif(!$documentResponse->getCompressionAlgorithm()) {
+        }
+
+        if(!$documentResponse->getCompressionAlgorithm()) {
             // document is not compressed
             return $document;
         }
@@ -119,6 +123,7 @@ class ResourcesApi
      * @param FeedDocumentInterface|FeedDocument20200904|FeedDocument20210630 $documentResponse
      * @return false|string
      * @throws ApiException
+     * @throws GuzzleException
      */
     public function getFeedDocument(FeedDocumentInterface $documentResponse)
     {
@@ -139,9 +144,11 @@ class ResourcesApi
         );
 
         // after decoding document check for compressionAlgorithm
-        if($documentResponse->getCompressionAlgorithm() === 'GZIP') {
+        if ($documentResponse->getCompressionAlgorithm() === 'GZIP') {
             return gzdecode($document);
-        } elseif(!$documentResponse->getCompressionAlgorithm()) {
+        }
+
+        if(!$documentResponse->getCompressionAlgorithm()) {
             // document is not compressed
             return $document;
         }

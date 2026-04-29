@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetMessagingActionsForOrderResponse Class Doc Comment
  *
  * @category Class
- * @description The response schema for the getMessagingActionsForOrder operation.
+ * @description The response schema for the &#x60;getMessagingActionsForOrder&#x60; operation.
  * @package  Webcom\Amazon\Rest\MessagingApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ExcludedBenefitV2 Class Doc Comment
  *
  * @category Class
- * @description Object representing an excluded benefit that is excluded for an ShippingOffering/Rate.
+ * @description Object representing a benefit that is excluded for a shipping offer or rate.
  * @package  Webcom\Amazon\Rest\ShippingApiV2
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,7 +63,7 @@ class ExcludedBenefitV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'benefit' => 'string',
-        'reasonCode' => 'string'
+        'reasonCodes' => 'string[]'
     ];
 
     /**
@@ -75,7 +75,7 @@ class ExcludedBenefitV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'benefit' => null,
-        'reasonCode' => null
+        'reasonCodes' => null
     ];
 
     /**
@@ -106,7 +106,7 @@ class ExcludedBenefitV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'benefit' => 'benefit',
-        'reasonCode' => 'reasonCode'
+        'reasonCodes' => 'reasonCodes'
     ];
 
     /**
@@ -116,7 +116,7 @@ class ExcludedBenefitV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'benefit' => 'setBenefit',
-        'reasonCode' => 'setReasonCode'
+        'reasonCodes' => 'setReasonCodes'
     ];
 
     /**
@@ -126,7 +126,7 @@ class ExcludedBenefitV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'benefit' => 'getBenefit',
-        'reasonCode' => 'getReasonCode'
+        'reasonCodes' => 'getReasonCodes'
     ];
 
     /**
@@ -190,7 +190,7 @@ class ExcludedBenefitV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(array $data = null)
     {
         $this->container['benefit'] = $data['benefit'] ?? null;
-        $this->container['reasonCode'] = $data['reasonCode'] ?? null;
+        $this->container['reasonCodes'] = $data['reasonCodes'] ?? null;
     }
 
     /**
@@ -204,9 +204,6 @@ class ExcludedBenefitV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
 
         if ($this->container['benefit'] === null) {
             $invalidProperties[] = "'benefit' can't be null";
-        }
-        if ($this->container['reasonCode'] === null) {
-            $invalidProperties[] = "'reasonCode' can't be null";
         }
         return $invalidProperties;
     }
@@ -248,25 +245,25 @@ class ExcludedBenefitV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets reasonCode
+     * Gets reasonCodes
      *
-     * @return string
+     * @return string[]|null
      */
-    public function getReasonCode()
+    public function getReasonCodes()
     {
-        return $this->container['reasonCode'];
+        return $this->container['reasonCodes'];
     }
 
     /**
-     * Sets reasonCode
+     * Sets reasonCodes
      *
-     * @param string $reasonCode reasonCode
+     * @param string[]|null $reasonCodes List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.
      *
      * @return self
      */
-    public function setReasonCode($reasonCode)
+    public function setReasonCodes($reasonCodes)
     {
-        $this->container['reasonCode'] = $reasonCode;
+        $this->container['reasonCodes'] = $reasonCodes;
 
         return $this;
     }

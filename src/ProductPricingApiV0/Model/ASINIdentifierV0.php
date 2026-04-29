@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ASINIdentifierV0 Class Doc Comment
  *
  * @category Class
+ * @description Schema to identify an item by MarketPlaceId and ASIN.
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

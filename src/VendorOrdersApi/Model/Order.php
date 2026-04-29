@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Order Class Doc Comment
  *
  * @category Class
+ * @description Represents an order placed by Amazon, including the purchase order number, current state, and order details.
  * @package  Webcom\Amazon\Rest\VendorOrdersApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

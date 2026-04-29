@@ -305,7 +305,7 @@ class SummaryV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets numberOfOffers
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\OfferCountTypeV0[]|null $numberOfOffers numberOfOffers
+     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\OfferCountTypeV0[]|null $numberOfOffers A list that contains the total number of offers information for given conditions and fulfillment channels.
      *
      * @return self
      */
@@ -329,7 +329,7 @@ class SummaryV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets lowestPrices
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\LowestPriceTypeV0[]|null $lowestPrices lowestPrices
+     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\LowestPriceTypeV0[]|null $lowestPrices A list of the lowest prices.
      *
      * @return self
      */
@@ -353,7 +353,7 @@ class SummaryV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyBoxPrices
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\BuyBoxPriceTypeV0[]|null $buyBoxPrices buyBoxPrices
+     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\BuyBoxPriceTypeV0[]|null $buyBoxPrices A list of the Buy Box prices.
      *
      * @return self
      */
@@ -473,7 +473,7 @@ class SummaryV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets buyBoxEligibleOffers
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\OfferCountTypeV0[]|null $buyBoxEligibleOffers buyBoxEligibleOffers
+     * @param \Webcom\Amazon\Rest\ProductPricingApiV0\Model\OfferCountTypeV0[]|null $buyBoxEligibleOffers A list that contains the total number of offers that are eligible for the Buy Box for the given conditions and fulfillment channels.
      *
      * @return self
      */

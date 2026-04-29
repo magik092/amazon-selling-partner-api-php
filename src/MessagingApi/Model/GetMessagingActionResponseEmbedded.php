@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * GetMessagingActionResponseEmbedded Class Doc Comment
  *
  * @category Class
+ * @description The embedded response associated with the messaging action.
  * @package  Webcom\Amazon\Rest\MessagingApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
