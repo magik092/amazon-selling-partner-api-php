@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Error20201101 Class Doc Comment
  *
  * @category Class
- * @description Error response returned when the request is unsuccessful.
+ * @description The error response that is returned when the request is unsuccessful.
  * @package  Webcom\Amazon\Rest\AplusContentApi20201101
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -254,7 +254,7 @@ class Error20201101 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets code
      *
-     * @param string $code The code that identifies the type of error condition.
+     * @param string $code An error code that identifies the type of error that occurred.
      *
      * @return self
      */
@@ -283,7 +283,7 @@ class Error20201101 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets message
      *
-     * @param string $message A human readable description of the error condition.
+     * @param string $message A message that describes the error condition.
      *
      * @return self
      */
@@ -312,7 +312,7 @@ class Error20201101 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets details
      *
-     * @param string|null $details Additional information, if available, to clarify the error condition.
+     * @param string|null $details Additional details that can help the caller understand or fix the issue.
      *
      * @return self
      */

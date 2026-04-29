@@ -118,9 +118,9 @@ class MessagingApi
     /**
      * Operation confirmCustomizationDetails
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -135,9 +135,9 @@ class MessagingApi
     /**
      * Operation confirmCustomizationDetailsWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -385,9 +385,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -407,9 +407,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -456,9 +456,9 @@ class MessagingApi
     /**
      * Create request for operation 'confirmCustomizationDetails'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmCustomizationDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -578,473 +578,11 @@ class MessagingApi
     }
 
     /**
-     * Operation createAmazonMotors
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsRequest $body body (required)
-     *
-     * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse
-     */
-    public function createAmazonMotors($amazonOrderId, $marketplaceIds, $body)
-    {
-        list($response) = $this->createAmazonMotorsWithHttpInfo($amazonOrderId, $marketplaceIds, $body);
-        return $response;
-    }
-
-    /**
-     * Operation createAmazonMotorsWithHttpInfo
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsRequest $body (required)
-     *
-     * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createAmazonMotorsWithHttpInfo($amazonOrderId, $marketplaceIds, $body)
-    {
-        $request = $this->createAmazonMotorsRequest($amazonOrderId, $marketplaceIds, $body);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 201:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 413:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 415:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 503:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 201:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 413:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createAmazonMotorsAsync
-     *
-     * 
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsRequest $body (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createAmazonMotorsAsync($amazonOrderId, $marketplaceIds, $body)
-    {
-        return $this->createAmazonMotorsAsyncWithHttpInfo($amazonOrderId, $marketplaceIds, $body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation createAmazonMotorsAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsRequest $body (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createAmazonMotorsAsyncWithHttpInfo($amazonOrderId, $marketplaceIds, $body)
-    {
-        $returnType = '\Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsResponse';
-        $request = $this->createAmazonMotorsRequest($amazonOrderId, $marketplaceIds, $body);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'createAmazonMotors'
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateAmazonMotorsRequest $body (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function createAmazonMotorsRequest($amazonOrderId, $marketplaceIds, $body)
-    {
-        // verify the required parameter 'amazonOrderId' is set
-        if ($amazonOrderId === null || (is_array($amazonOrderId) && count($amazonOrderId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $amazonOrderId when calling createAmazonMotors'
-            );
-        }
-        // verify the required parameter 'marketplaceIds' is set
-        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $marketplaceIds when calling createAmazonMotors'
-            );
-        }
-        if (count($marketplaceIds) > 1) {
-            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling MessagingApi.createAmazonMotors, number of items must be less than or equal to 1.');
-        }
-
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling createAmazonMotors'
-            );
-        }
-
-        $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/amazonMotors';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if (is_array($marketplaceIds)) {
-            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
-        }
-        if ($marketplaceIds !== null) {
-            $queryParams['marketplaceIds'] = $marketplaceIds;
-        }
-
-
-        // path params
-        if ($amazonOrderId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'amazonOrderId' . '}',
-                ObjectSerializer::toPathValue($amazonOrderId),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/hal+json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/hal+json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($body)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
-            } else {
-                $httpBody = $body;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation createConfirmDeliveryDetails
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1059,9 +597,9 @@ class MessagingApi
     /**
      * Operation createConfirmDeliveryDetailsWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1309,9 +847,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1331,9 +869,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1380,9 +918,9 @@ class MessagingApi
     /**
      * Create request for operation 'createConfirmDeliveryDetails'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmDeliveryDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1504,9 +1042,9 @@ class MessagingApi
     /**
      * Operation createConfirmOrderDetails
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1521,9 +1059,9 @@ class MessagingApi
     /**
      * Operation createConfirmOrderDetailsWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1771,9 +1309,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1793,9 +1331,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1842,9 +1380,9 @@ class MessagingApi
     /**
      * Create request for operation 'createConfirmOrderDetails'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmOrderDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1966,9 +1504,9 @@ class MessagingApi
     /**
      * Operation createConfirmServiceDetails
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1983,9 +1521,9 @@ class MessagingApi
     /**
      * Operation createConfirmServiceDetailsWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2233,9 +1771,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2255,9 +1793,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2304,9 +1842,9 @@ class MessagingApi
     /**
      * Create request for operation 'createConfirmServiceDetails'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateConfirmServiceDetailsRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2428,9 +1966,9 @@ class MessagingApi
     /**
      * Operation createDigitalAccessKey
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2445,9 +1983,9 @@ class MessagingApi
     /**
      * Operation createDigitalAccessKeyWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2695,9 +2233,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2717,9 +2255,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2766,9 +2304,9 @@ class MessagingApi
     /**
      * Create request for operation 'createDigitalAccessKey'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateDigitalAccessKeyRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2890,9 +2428,9 @@ class MessagingApi
     /**
      * Operation createLegalDisclosure
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2907,9 +2445,9 @@ class MessagingApi
     /**
      * Operation createLegalDisclosureWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3157,9 +2695,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3179,9 +2717,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3228,9 +2766,9 @@ class MessagingApi
     /**
      * Create request for operation 'createLegalDisclosure'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateLegalDisclosureRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3350,456 +2888,11 @@ class MessagingApi
     }
 
     /**
-     * Operation createNegativeFeedbackRemoval
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     *
-     * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse
-     */
-    public function createNegativeFeedbackRemoval($amazonOrderId, $marketplaceIds)
-    {
-        list($response) = $this->createNegativeFeedbackRemovalWithHttpInfo($amazonOrderId, $marketplaceIds);
-        return $response;
-    }
-
-    /**
-     * Operation createNegativeFeedbackRemovalWithHttpInfo
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     *
-     * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse|\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createNegativeFeedbackRemovalWithHttpInfo($amazonOrderId, $marketplaceIds)
-    {
-        $request = $this->createNegativeFeedbackRemovalRequest($amazonOrderId, $marketplaceIds);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            switch($statusCode) {
-                case 201:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 413:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 415:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 429:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 503:
-                    if ('\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse' === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse';
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = (string) $responseBody;
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 201:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 413:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 415:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 429:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createNegativeFeedbackRemovalAsync
-     *
-     * 
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createNegativeFeedbackRemovalAsync($amazonOrderId, $marketplaceIds)
-    {
-        return $this->createNegativeFeedbackRemovalAsyncWithHttpInfo($amazonOrderId, $marketplaceIds)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation createNegativeFeedbackRemovalAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createNegativeFeedbackRemovalAsyncWithHttpInfo($amazonOrderId, $marketplaceIds)
-    {
-        $returnType = '\Webcom\Amazon\Rest\MessagingApi\Model\CreateNegativeFeedbackRemovalResponse';
-        $request = $this->createNegativeFeedbackRemovalRequest($amazonOrderId, $marketplaceIds);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = (string) $responseBody;
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'createNegativeFeedbackRemoval'
-     *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function createNegativeFeedbackRemovalRequest($amazonOrderId, $marketplaceIds)
-    {
-        // verify the required parameter 'amazonOrderId' is set
-        if ($amazonOrderId === null || (is_array($amazonOrderId) && count($amazonOrderId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $amazonOrderId when calling createNegativeFeedbackRemoval'
-            );
-        }
-        // verify the required parameter 'marketplaceIds' is set
-        if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $marketplaceIds when calling createNegativeFeedbackRemoval'
-            );
-        }
-        if (count($marketplaceIds) > 1) {
-            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling MessagingApi.createNegativeFeedbackRemoval, number of items must be less than or equal to 1.');
-        }
-
-
-        $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if (is_array($marketplaceIds)) {
-            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
-        }
-        if ($marketplaceIds !== null) {
-            $queryParams['marketplaceIds'] = $marketplaceIds;
-        }
-
-
-        // path params
-        if ($amazonOrderId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'amazonOrderId' . '}',
-                ObjectSerializer::toPathValue($amazonOrderId),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/hal+json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/hal+json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation createUnexpectedProblem
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3814,9 +2907,9 @@ class MessagingApi
     /**
      * Operation createUnexpectedProblemWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4064,9 +3157,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4086,9 +3179,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4135,9 +3228,9 @@ class MessagingApi
     /**
      * Create request for operation 'createUnexpectedProblem'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateUnexpectedProblemRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4259,9 +3352,9 @@ class MessagingApi
     /**
      * Operation createWarranty
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4276,9 +3369,9 @@ class MessagingApi
     /**
      * Operation createWarrantyWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4526,9 +3619,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4548,9 +3641,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -4597,9 +3690,9 @@ class MessagingApi
     /**
      * Create request for operation 'createWarranty'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\CreateWarrantyRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -4721,8 +3814,8 @@ class MessagingApi
     /**
      * Operation getAttributes
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4737,8 +3830,8 @@ class MessagingApi
     /**
      * Operation getAttributesWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -4986,8 +4079,8 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5007,8 +4100,8 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5055,8 +4148,8 @@ class MessagingApi
     /**
      * Create request for operation 'getAttributes'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5167,7 +4260,7 @@ class MessagingApi
      * Operation getMessagingActionsForOrder
      *
      * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which you want a list of available message types. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5183,7 +4276,7 @@ class MessagingApi
      * Operation getMessagingActionsForOrderWithHttpInfo
      *
      * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which you want a list of available message types. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5432,7 +4525,7 @@ class MessagingApi
      * 
      *
      * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which you want a list of available message types. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5453,7 +4546,7 @@ class MessagingApi
      * 
      *
      * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which you want a list of available message types. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5501,7 +4594,7 @@ class MessagingApi
      * Create request for operation 'getMessagingActionsForOrder'
      *
      * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which you want a list of available message types. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -5611,9 +4704,9 @@ class MessagingApi
     /**
      * Operation sendInvoice
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5628,9 +4721,9 @@ class MessagingApi
     /**
      * Operation sendInvoiceWithHttpInfo
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body This contains the message body for a message. (required)
      *
      * @throws \Webcom\Amazon\Rest\MessagingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5878,9 +4971,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5900,9 +4993,9 @@ class MessagingApi
      *
      * 
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -5949,9 +5042,9 @@ class MessagingApi
     /**
      * Create request for operation 'sendInvoice'
      *
-     * @param  string $amazonOrderId An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param  string[] $marketplaceIds A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
-     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body (required)
+     * @param  string $amazonOrderId An Amazon order identifier. This identifies the order for which a message is sent. (required)
+     * @param  string[] $marketplaceIds A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
+     * @param  \Webcom\Amazon\Rest\MessagingApi\Model\InvoiceRequest $body This contains the message body for a message. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

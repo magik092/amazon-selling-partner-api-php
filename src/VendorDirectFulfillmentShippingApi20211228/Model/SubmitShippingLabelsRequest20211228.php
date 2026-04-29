@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -224,7 +224,7 @@ class SubmitShippingLabelsRequest20211228 implements ModelInterface, ArrayAccess
     /**
      * Sets shippingLabelRequests
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabelRequest20211228[]|null $shippingLabelRequests An array of shipping label requests you want to process.
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\Model\ShippingLabelRequest20211228[]|null $shippingLabelRequests An array of shipping label requests to be processed.
      *
      * @return self
      */

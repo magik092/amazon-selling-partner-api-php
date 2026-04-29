@@ -118,7 +118,7 @@ class ShippingApi
     /**
      * Operation cancelShipment
      *
-     * @param  string $shipmentId shipmentId (required)
+     * @param  string $shipmentId Shipment Id to cancel a shipment (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +133,7 @@ class ShippingApi
     /**
      * Operation cancelShipmentWithHttpInfo
      *
-     * @param  string $shipmentId (required)
+     * @param  string $shipmentId Shipment Id to cancel a shipment (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -361,7 +361,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $shipmentId (required)
+     * @param  string $shipmentId Shipment Id to cancel a shipment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -381,7 +381,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $shipmentId (required)
+     * @param  string $shipmentId Shipment Id to cancel a shipment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -428,7 +428,7 @@ class ShippingApi
     /**
      * Create request for operation 'cancelShipment'
      *
-     * @param  string $shipmentId (required)
+     * @param  string $shipmentId Shipment Id to cancel a shipment (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -521,7 +521,7 @@ class ShippingApi
     /**
      * Operation createShipment
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body CreateShipmentRequest Body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -536,7 +536,7 @@ class ShippingApi
     /**
      * Operation createShipmentWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body CreateShipmentRequest Body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -764,7 +764,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body CreateShipmentRequest Body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -784,7 +784,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body CreateShipmentRequest Body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -831,7 +831,7 @@ class ShippingApi
     /**
      * Create request for operation 'createShipment'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\CreateShipmentRequest $body CreateShipmentRequest Body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1306,7 +1306,7 @@ class ShippingApi
     /**
      * Operation getRates
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body GetRatesRequest body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1321,7 +1321,7 @@ class ShippingApi
     /**
      * Operation getRatesWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body GetRatesRequest body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1549,7 +1549,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body GetRatesRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1569,7 +1569,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body GetRatesRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1616,7 +1616,7 @@ class ShippingApi
     /**
      * Create request for operation 'getRates'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\GetRatesRequest $body GetRatesRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1707,7 +1707,7 @@ class ShippingApi
     /**
      * Operation getShipment
      *
-     * @param  string $shipmentId shipmentId (required)
+     * @param  string $shipmentId Shipment id to return the entire shipment object (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1722,7 +1722,7 @@ class ShippingApi
     /**
      * Operation getShipmentWithHttpInfo
      *
-     * @param  string $shipmentId (required)
+     * @param  string $shipmentId Shipment id to return the entire shipment object (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1950,7 +1950,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $shipmentId (required)
+     * @param  string $shipmentId Shipment id to return the entire shipment object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1970,7 +1970,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $shipmentId (required)
+     * @param  string $shipmentId Shipment id to return the entire shipment object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2017,7 +2017,7 @@ class ShippingApi
     /**
      * Create request for operation 'getShipment'
      *
-     * @param  string $shipmentId (required)
+     * @param  string $shipmentId Shipment id to return the entire shipment object (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2110,7 +2110,7 @@ class ShippingApi
     /**
      * Operation getTrackingInformation
      *
-     * @param  string $trackingId trackingId (required)
+     * @param  string $trackingId Tracking Id (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2125,7 +2125,7 @@ class ShippingApi
     /**
      * Operation getTrackingInformationWithHttpInfo
      *
-     * @param  string $trackingId (required)
+     * @param  string $trackingId Tracking Id (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2353,7 +2353,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $trackingId (required)
+     * @param  string $trackingId Tracking Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2373,7 +2373,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $trackingId (required)
+     * @param  string $trackingId Tracking Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2420,7 +2420,7 @@ class ShippingApi
     /**
      * Create request for operation 'getTrackingInformation'
      *
-     * @param  string $trackingId (required)
+     * @param  string $trackingId Tracking Id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2513,8 +2513,8 @@ class ShippingApi
     /**
      * Operation purchaseLabels
      *
-     * @param  string $shipmentId shipmentId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body body (required)
+     * @param  string $shipmentId Shipment id for purchase shipping label (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body PurchaseShippingLabelRequest body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2529,8 +2529,8 @@ class ShippingApi
     /**
      * Operation purchaseLabelsWithHttpInfo
      *
-     * @param  string $shipmentId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body (required)
+     * @param  string $shipmentId Shipment id for purchase shipping label (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body PurchaseShippingLabelRequest body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2758,8 +2758,8 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $shipmentId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body (required)
+     * @param  string $shipmentId Shipment id for purchase shipping label (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body PurchaseShippingLabelRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2779,8 +2779,8 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $shipmentId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body (required)
+     * @param  string $shipmentId Shipment id for purchase shipping label (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body PurchaseShippingLabelRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -2827,8 +2827,8 @@ class ShippingApi
     /**
      * Create request for operation 'purchaseLabels'
      *
-     * @param  string $shipmentId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body (required)
+     * @param  string $shipmentId Shipment id for purchase shipping label (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseLabelsRequest $body PurchaseShippingLabelRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2933,7 +2933,7 @@ class ShippingApi
     /**
      * Operation purchaseShipment
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body PurchaseShipmentRequest body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -2948,7 +2948,7 @@ class ShippingApi
     /**
      * Operation purchaseShipmentWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body PurchaseShipmentRequest body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3176,7 +3176,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body PurchaseShipmentRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3196,7 +3196,7 @@ class ShippingApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body PurchaseShipmentRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3243,7 +3243,7 @@ class ShippingApi
     /**
      * Create request for operation 'purchaseShipment'
      *
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\PurchaseShipmentRequest $body PurchaseShipmentRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3334,9 +3334,9 @@ class ShippingApi
     /**
      * Operation retrieveShippingLabel
      *
-     * @param  string $shipmentId shipmentId (required)
-     * @param  string $trackingId trackingId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body body (required)
+     * @param  string $shipmentId Shipment Id to retreive label (required)
+     * @param  string $trackingId Tracking Id (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body RetrieveShippingLabelRequest body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3351,9 +3351,9 @@ class ShippingApi
     /**
      * Operation retrieveShippingLabelWithHttpInfo
      *
-     * @param  string $shipmentId (required)
-     * @param  string $trackingId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body (required)
+     * @param  string $shipmentId Shipment Id to retreive label (required)
+     * @param  string $trackingId Tracking Id (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body RetrieveShippingLabelRequest body (required)
      *
      * @throws \Webcom\Amazon\Rest\ShippingApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3581,9 +3581,9 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $shipmentId (required)
-     * @param  string $trackingId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body (required)
+     * @param  string $shipmentId Shipment Id to retreive label (required)
+     * @param  string $trackingId Tracking Id (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body RetrieveShippingLabelRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3603,9 +3603,9 @@ class ShippingApi
      *
      * 
      *
-     * @param  string $shipmentId (required)
-     * @param  string $trackingId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body (required)
+     * @param  string $shipmentId Shipment Id to retreive label (required)
+     * @param  string $trackingId Tracking Id (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body RetrieveShippingLabelRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3652,9 +3652,9 @@ class ShippingApi
     /**
      * Create request for operation 'retrieveShippingLabel'
      *
-     * @param  string $shipmentId (required)
-     * @param  string $trackingId (required)
-     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body (required)
+     * @param  string $shipmentId Shipment Id to retreive label (required)
+     * @param  string $trackingId Tracking Id (required)
+     * @param  \Webcom\Amazon\Rest\ShippingApi\Model\RetrieveShippingLabelRequest $body RetrieveShippingLabelRequest body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

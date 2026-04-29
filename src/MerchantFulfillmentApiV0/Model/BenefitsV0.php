@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Merchant Fulfillment
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * BenefitsV0 Class Doc Comment
  *
  * @category Class
- * @description Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC
+ * @description Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (for example, &#x60;CLAIMS_PROTECTED&#x60;) when sellers purchase shipping through Amazon. Benefit details are made available for any shipment placed on or after January 1st 2024 00:00 UTC.
  * @package  Webcom\Amazon\Rest\MerchantFulfillmentApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -254,7 +254,7 @@ class BenefitsV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets excludedBenefits
      *
-     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\ExcludedBenefitV0[]|null $excludedBenefits A list of excluded benefit. Refer to the ExcludeBenefit object for further documentation.
+     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\ExcludedBenefitV0[]|null $excludedBenefits A list of excluded benefits. Refer to the `ExcludeBenefit` object for further documentation.
      *
      * @return self
      */

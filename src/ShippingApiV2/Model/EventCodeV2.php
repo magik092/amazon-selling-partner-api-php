@@ -55,6 +55,9 @@ class EventCodeV2
     const REJECTED = 'Rejected';
     const UNDELIVERABLE = 'Undeliverable';
     const PICKUP_CANCELLED = 'PickupCancelled';
+    const RETURN_INITIATED = 'ReturnInitiated';
+    const AVAILABLE_FOR_PICKUP = 'AvailableForPickup';
+    const RECIPIENT_REQUESTED_ALTERNATE_DELIVERY_TIMING = 'RecipientRequestedAlternateDeliveryTiming';
     
     /**
      * Gets allowable values of the enum
@@ -74,6 +77,9 @@ class EventCodeV2
             self::REJECTED,
             self::UNDELIVERABLE,
             self::PICKUP_CANCELLED,
+            self::RETURN_INITIATED,
+            self::AVAILABLE_FOR_PICKUP,
+            self::RECIPIENT_REQUESTED_ALTERNATE_DELIVERY_TIMING,
         ];
     }
 }

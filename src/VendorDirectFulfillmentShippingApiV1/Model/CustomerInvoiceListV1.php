@@ -254,7 +254,7 @@ class CustomerInvoiceListV1 implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets customerInvoices
      *
-     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\CustomerInvoiceV1[]|null $customerInvoices Represents a customer invoice within the `CustomerInvoiceList`.
+     * @param \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\Model\CustomerInvoiceV1[]|null $customerInvoices Represents a customer invoice within the CustomerInvoiceList.
      *
      * @return self
      */

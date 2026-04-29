@@ -12,7 +12,7 @@
 /**
  * Selling Partner API for Merchant Fulfillment
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -525,7 +525,7 @@ class MerchantFulfillmentApi
     /**
      * Operation createShipment
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body Request schema for CreateShipment operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body The request schema for the &#x60;CreateShipment&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -540,7 +540,7 @@ class MerchantFulfillmentApi
     /**
      * Operation createShipmentWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body Request schema for CreateShipment operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body The request schema for the &#x60;CreateShipment&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -768,7 +768,7 @@ class MerchantFulfillmentApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body Request schema for CreateShipment operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body The request schema for the &#x60;CreateShipment&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -788,7 +788,7 @@ class MerchantFulfillmentApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body Request schema for CreateShipment operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body The request schema for the &#x60;CreateShipment&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -835,7 +835,7 @@ class MerchantFulfillmentApi
     /**
      * Create request for operation 'createShipment'
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body Request schema for CreateShipment operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\CreateShipmentRequestV0 $body The request schema for the &#x60;CreateShipment&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -926,7 +926,7 @@ class MerchantFulfillmentApi
     /**
      * Operation getAdditionalSellerInputs
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body Request schema for GetAdditionalSellerInputs operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -941,7 +941,7 @@ class MerchantFulfillmentApi
     /**
      * Operation getAdditionalSellerInputsWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body Request schema for GetAdditionalSellerInputs operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1169,7 +1169,7 @@ class MerchantFulfillmentApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body Request schema for GetAdditionalSellerInputs operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1189,7 +1189,7 @@ class MerchantFulfillmentApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body Request schema for GetAdditionalSellerInputs operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1236,7 +1236,7 @@ class MerchantFulfillmentApi
     /**
      * Create request for operation 'getAdditionalSellerInputs'
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body Request schema for GetAdditionalSellerInputs operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetAdditionalSellerInputsRequestV0 $body The request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1327,7 +1327,7 @@ class MerchantFulfillmentApi
     /**
      * Operation getEligibleShipmentServices
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body Request schema for GetEligibleShipmentServices operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1342,7 +1342,7 @@ class MerchantFulfillmentApi
     /**
      * Operation getEligibleShipmentServicesWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body Request schema for GetEligibleShipmentServices operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1570,7 +1570,7 @@ class MerchantFulfillmentApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body Request schema for GetEligibleShipmentServices operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1590,7 +1590,7 @@ class MerchantFulfillmentApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body Request schema for GetEligibleShipmentServices operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1637,7 +1637,7 @@ class MerchantFulfillmentApi
     /**
      * Create request for operation 'getEligibleShipmentServices'
      *
-     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body Request schema for GetEligibleShipmentServices operation. (required)
+     * @param  \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\GetEligibleShipmentServicesRequestV0 $body The request schema for the &#x60;GetEligibleShipmentServices&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

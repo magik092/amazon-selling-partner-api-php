@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * PackedItem20211228 Class Doc Comment
  *
  * @category Class
- * @description Represents an item packed into a container for shipping.
+ * @description An item that has been packed into a container for shipping.
  * @package  Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -254,7 +254,7 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets itemSequenceNumber
      *
-     * @param int $itemSequenceNumber Item Sequence Number for the item. This must be the same value as sent in the order for a given item.
+     * @param int $itemSequenceNumber The sequence number of the item. The number must be the same as the order number of the item.
      *
      * @return self
      */
@@ -278,7 +278,7 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets buyerProductIdentifier
      *
-     * @param string|null $buyerProductIdentifier Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+     * @param string|null $buyerProductIdentifier The buyer's Amazon Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
      *
      * @return self
      */
@@ -326,7 +326,7 @@ class PackedItem20211228 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets vendorProductIdentifier
      *
-     * @param string|null $vendorProductIdentifier The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.
+     * @param string|null $vendorProductIdentifier An item's product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
      *
      * @return self
      */

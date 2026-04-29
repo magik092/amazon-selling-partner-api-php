@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Merchant Fulfillment
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ShipmentV0 Class Doc Comment
  *
  * @category Class
- * @description The details of a shipment, including the shipment status.
+ * @description The details of a shipment. Includes the shipment status.
  * @package  Webcom\Amazon\Rest\MerchantFulfillmentApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -424,7 +424,7 @@ class ShipmentV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets itemList
      *
-     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\ItemV0[] $itemList The list of items to be included in a shipment.
+     * @param \Webcom\Amazon\Rest\MerchantFulfillmentApiV0\Model\ItemV0[] $itemList The list of items you want to include in a shipment.
      *
      * @return self
      */

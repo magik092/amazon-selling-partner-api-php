@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SegmentDetails20220501 Class Doc Comment
  *
  * @category Class
- * @description The details about the segment.
+ * @description The details about the segment. The FeaturedOfferExpectedPrice API uses only the sampleLocation portion as input.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -62,7 +62,8 @@ class SegmentDetails20220501 implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'glanceViewWeightPercentage' => 'float'
+        'glanceViewWeightPercentage' => 'float',
+        'sampleLocation' => '\Webcom\Amazon\Rest\ProductPricingApi20220501\Model\SampleLocation20220501'
     ];
 
     /**
@@ -73,7 +74,8 @@ class SegmentDetails20220501 implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'glanceViewWeightPercentage' => null
+        'glanceViewWeightPercentage' => null,
+        'sampleLocation' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class SegmentDetails20220501 implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'glanceViewWeightPercentage' => 'glanceViewWeightPercentage'
+        'glanceViewWeightPercentage' => 'glanceViewWeightPercentage',
+        'sampleLocation' => 'sampleLocation'
     ];
 
     /**
@@ -112,7 +115,8 @@ class SegmentDetails20220501 implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'glanceViewWeightPercentage' => 'setGlanceViewWeightPercentage'
+        'glanceViewWeightPercentage' => 'setGlanceViewWeightPercentage',
+        'sampleLocation' => 'setSampleLocation'
     ];
 
     /**
@@ -121,7 +125,8 @@ class SegmentDetails20220501 implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'glanceViewWeightPercentage' => 'getGlanceViewWeightPercentage'
+        'glanceViewWeightPercentage' => 'getGlanceViewWeightPercentage',
+        'sampleLocation' => 'getSampleLocation'
     ];
 
     /**
@@ -185,6 +190,7 @@ class SegmentDetails20220501 implements ModelInterface, ArrayAccess, \JsonSerial
     public function __construct(array $data = null)
     {
         $this->container['glanceViewWeightPercentage'] = $data['glanceViewWeightPercentage'] ?? null;
+        $this->container['sampleLocation'] = $data['sampleLocation'] ?? null;
     }
 
     /**
@@ -224,13 +230,37 @@ class SegmentDetails20220501 implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets glanceViewWeightPercentage
      *
-     * @param float|null $glanceViewWeightPercentage Glance view weight percentage for this segment. The glance views for this segment as a percentage of total glance views across all segments on the ASIN. A higher percentage indicates more Amazon customers see this offer as the Featured Offer.
+     * @param float|null $glanceViewWeightPercentage The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer.
      *
      * @return self
      */
     public function setGlanceViewWeightPercentage($glanceViewWeightPercentage)
     {
         $this->container['glanceViewWeightPercentage'] = $glanceViewWeightPercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets sampleLocation
+     *
+     * @return \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\SampleLocation20220501|null
+     */
+    public function getSampleLocation()
+    {
+        return $this->container['sampleLocation'];
+    }
+
+    /**
+     * Sets sampleLocation
+     *
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\SampleLocation20220501|null $sampleLocation sampleLocation
+     *
+     * @return self
+     */
+    public function setSampleLocation($sampleLocation)
+    {
+        $this->container['sampleLocation'] = $sampleLocation;
 
         return $this;
     }

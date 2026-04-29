@@ -34,7 +34,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * FulfillmentPolicy20200701 Class Doc Comment
  *
  * @category Class
- * @description The &#x60;FulfillmentPolicy&#x60; value specified when you submitted the &#x60;createFulfillmentOrder&#x60; operation.
+ * @description The &#x60;FulfillmentPolicy&#x60; value specified when you called the &#x60;createFulfillmentOrder&#x60; operation.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

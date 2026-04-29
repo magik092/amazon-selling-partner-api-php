@@ -63,7 +63,8 @@ class GetShipmentDocumentsResultV2 implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'shipmentId' => 'string',
-        'packageDocumentDetail' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\PackageDocumentDetailV2'
+        'packageDocumentDetail' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\PackageDocumentDetailV2',
+        'benefits' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\BenefitsV2'
     ];
 
     /**
@@ -75,7 +76,8 @@ class GetShipmentDocumentsResultV2 implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'shipmentId' => null,
-        'packageDocumentDetail' => null
+        'packageDocumentDetail' => null,
+        'benefits' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class GetShipmentDocumentsResultV2 implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'shipmentId' => 'shipmentId',
-        'packageDocumentDetail' => 'packageDocumentDetail'
+        'packageDocumentDetail' => 'packageDocumentDetail',
+        'benefits' => 'benefits'
     ];
 
     /**
@@ -116,7 +119,8 @@ class GetShipmentDocumentsResultV2 implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'shipmentId' => 'setShipmentId',
-        'packageDocumentDetail' => 'setPackageDocumentDetail'
+        'packageDocumentDetail' => 'setPackageDocumentDetail',
+        'benefits' => 'setBenefits'
     ];
 
     /**
@@ -126,7 +130,8 @@ class GetShipmentDocumentsResultV2 implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'shipmentId' => 'getShipmentId',
-        'packageDocumentDetail' => 'getPackageDocumentDetail'
+        'packageDocumentDetail' => 'getPackageDocumentDetail',
+        'benefits' => 'getBenefits'
     ];
 
     /**
@@ -191,6 +196,7 @@ class GetShipmentDocumentsResultV2 implements ModelInterface, ArrayAccess, \Json
     {
         $this->container['shipmentId'] = $data['shipmentId'] ?? null;
         $this->container['packageDocumentDetail'] = $data['packageDocumentDetail'] ?? null;
+        $this->container['benefits'] = $data['benefits'] ?? null;
     }
 
     /**
@@ -267,6 +273,30 @@ class GetShipmentDocumentsResultV2 implements ModelInterface, ArrayAccess, \Json
     public function setPackageDocumentDetail($packageDocumentDetail)
     {
         $this->container['packageDocumentDetail'] = $packageDocumentDetail;
+
+        return $this;
+    }
+
+    /**
+     * Gets benefits
+     *
+     * @return \Webcom\Amazon\Rest\ShippingApiV2\Model\BenefitsV2|null
+     */
+    public function getBenefits()
+    {
+        return $this->container['benefits'];
+    }
+
+    /**
+     * Sets benefits
+     *
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\BenefitsV2|null $benefits benefits
+     *
+     * @return self
+     */
+    public function setBenefits($benefits)
+    {
+        $this->container['benefits'] = $benefits;
 
         return $this;
     }

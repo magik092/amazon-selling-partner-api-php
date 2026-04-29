@@ -64,7 +64,8 @@ class PurchaseShipmentResultV2 implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPITypes = [
         'shipmentId' => 'string',
         'packageDocumentDetails' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\PackageDocumentDetailV2[]',
-        'promise' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\PromiseV2'
+        'promise' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\PromiseV2',
+        'benefits' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\BenefitsV2'
     ];
 
     /**
@@ -77,7 +78,8 @@ class PurchaseShipmentResultV2 implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $openAPIFormats = [
         'shipmentId' => null,
         'packageDocumentDetails' => null,
-        'promise' => null
+        'promise' => null,
+        'benefits' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class PurchaseShipmentResultV2 implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $attributeMap = [
         'shipmentId' => 'shipmentId',
         'packageDocumentDetails' => 'packageDocumentDetails',
-        'promise' => 'promise'
+        'promise' => 'promise',
+        'benefits' => 'benefits'
     ];
 
     /**
@@ -120,7 +123,8 @@ class PurchaseShipmentResultV2 implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $setters = [
         'shipmentId' => 'setShipmentId',
         'packageDocumentDetails' => 'setPackageDocumentDetails',
-        'promise' => 'setPromise'
+        'promise' => 'setPromise',
+        'benefits' => 'setBenefits'
     ];
 
     /**
@@ -131,7 +135,8 @@ class PurchaseShipmentResultV2 implements ModelInterface, ArrayAccess, \JsonSeri
     protected static $getters = [
         'shipmentId' => 'getShipmentId',
         'packageDocumentDetails' => 'getPackageDocumentDetails',
-        'promise' => 'getPromise'
+        'promise' => 'getPromise',
+        'benefits' => 'getBenefits'
     ];
 
     /**
@@ -197,6 +202,7 @@ class PurchaseShipmentResultV2 implements ModelInterface, ArrayAccess, \JsonSeri
         $this->container['shipmentId'] = $data['shipmentId'] ?? null;
         $this->container['packageDocumentDetails'] = $data['packageDocumentDetails'] ?? null;
         $this->container['promise'] = $data['promise'] ?? null;
+        $this->container['benefits'] = $data['benefits'] ?? null;
     }
 
     /**
@@ -300,6 +306,30 @@ class PurchaseShipmentResultV2 implements ModelInterface, ArrayAccess, \JsonSeri
     public function setPromise($promise)
     {
         $this->container['promise'] = $promise;
+
+        return $this;
+    }
+
+    /**
+     * Gets benefits
+     *
+     * @return \Webcom\Amazon\Rest\ShippingApiV2\Model\BenefitsV2|null
+     */
+    public function getBenefits()
+    {
+        return $this->container['benefits'];
+    }
+
+    /**
+     * Sets benefits
+     *
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\BenefitsV2|null $benefits benefits
+     *
+     * @return self
+     */
+    public function setBenefits($benefits)
+    {
+        $this->container['benefits'] = $benefits;
 
         return $this;
     }

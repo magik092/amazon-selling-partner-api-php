@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * DeliveryPreferences20200701 Class Doc Comment
  *
  * @category Class
- * @description The delivery preferences applied to the destination address. These preferences will be applied when possible and are best effort. This feature is currently supported only in the JP marketplace and not applicable for other marketplaces.
+ * @description The delivery preferences applied to the destination address. These preferences are applied when possible and are best effort. This feature is currently supported only in the JP marketplace and not applicable for other marketplaces. For eligible orders, the default delivery preference will be to deliver the package unattended at the front door, unless you specify otherwise.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -234,7 +234,7 @@ class DeliveryPreferences20200701 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets deliveryInstructions
      *
-     * @param string|null $deliveryInstructions Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, 'Beware of dogs', etc.
+     * @param string|null $deliveryInstructions Additional delivery instructions. For example, this could be instructions on how to enter a building, nearby landmark or navigation instructions, or `Beware of dogs`.
      *
      * @return self
      */

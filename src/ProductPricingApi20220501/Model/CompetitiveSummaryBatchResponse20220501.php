@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CompetitiveSummaryBatchResponse20220501 Class Doc Comment
  *
  * @category Class
- * @description The response schema of the &#x60;competitiveSummaryBatch&#x60; operation.
+ * @description The response schema for the &#x60;competitiveSummaryBatch&#x60; operation.
  * @package  Webcom\Amazon\Rest\ProductPricingApi20220501
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -227,7 +227,7 @@ class CompetitiveSummaryBatchResponse20220501 implements ModelInterface, ArrayAc
     /**
      * Sets responses
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\CompetitiveSummaryResponse20220501[] $responses The response list of the `competitiveSummaryBatch` operation.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\CompetitiveSummaryResponse20220501[] $responses The response list for the `competitiveSummaryBatch` operation.
      *
      * @return self
      */

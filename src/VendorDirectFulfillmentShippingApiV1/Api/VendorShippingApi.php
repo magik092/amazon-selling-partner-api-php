@@ -118,7 +118,7 @@ class VendorShippingApi
     /**
      * Operation getPackingSlip
      *
-     * @param  string $purchaseOrderNumber The &#x60;purchaseOrderNumber&#x60; for the packing slip you want. (required)
+     * @param  string $purchaseOrderNumber The purchaseOrderNumber for the packing slip you want. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +133,7 @@ class VendorShippingApi
     /**
      * Operation getPackingSlipWithHttpInfo
      *
-     * @param  string $purchaseOrderNumber The &#x60;purchaseOrderNumber&#x60; for the packing slip you want. (required)
+     * @param  string $purchaseOrderNumber The purchaseOrderNumber for the packing slip you want. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApiV1\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -381,7 +381,7 @@ class VendorShippingApi
      *
      * 
      *
-     * @param  string $purchaseOrderNumber The &#x60;purchaseOrderNumber&#x60; for the packing slip you want. (required)
+     * @param  string $purchaseOrderNumber The purchaseOrderNumber for the packing slip you want. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -401,7 +401,7 @@ class VendorShippingApi
      *
      * 
      *
-     * @param  string $purchaseOrderNumber The &#x60;purchaseOrderNumber&#x60; for the packing slip you want. (required)
+     * @param  string $purchaseOrderNumber The purchaseOrderNumber for the packing slip you want. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -448,7 +448,7 @@ class VendorShippingApi
     /**
      * Create request for operation 'getPackingSlip'
      *
-     * @param  string $purchaseOrderNumber The &#x60;purchaseOrderNumber&#x60; for the packing slip you want. (required)
+     * @param  string $purchaseOrderNumber The purchaseOrderNumber for the packing slip you want. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -545,9 +545,9 @@ class VendorShippingApi
     /**
      * Operation getPackingSlips
      *
-     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -565,9 +565,9 @@ class VendorShippingApi
     /**
      * Operation getPackingSlipsWithHttpInfo
      *
-     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -818,9 +818,9 @@ class VendorShippingApi
      *
      * 
      *
-     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -843,9 +843,9 @@ class VendorShippingApi
      *
      * 
      *
-     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call. (optional)
@@ -895,9 +895,9 @@ class VendorShippingApi
     /**
      * Create request for operation 'getPackingSlips'
      *
-     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (required)
-     * @param  string $shipFromPartyId The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
+     * @param  \DateTime $createdAfter Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  \DateTime $createdBefore Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
      * @param  string $nextToken Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call. (optional)

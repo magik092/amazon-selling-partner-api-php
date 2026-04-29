@@ -295,9 +295,6 @@ class AddressV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         $allowedValues = $this->getAddressTypeAllowableValues();
         if (!is_null($this->container['addressType']) && !in_array($this->container['addressType'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -325,7 +322,7 @@ class AddressV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -335,7 +332,7 @@ class AddressV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name The name.
+     * @param string|null $name The name.
      *
      * @return self
      */

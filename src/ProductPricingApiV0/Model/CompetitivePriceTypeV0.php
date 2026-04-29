@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * CompetitivePriceTypeV0 Class Doc Comment
  *
  * @category Class
+ * @description Schema for competitive pricing information
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Amount20200701 Class Doc Comment
  *
  * @category Class
- * @description A quantity based on unit of measure.
+ * @description A quantity based on the specified unit of measurement.
  * @package  Webcom\Amazon\Rest\FulfillmentOutboundApi20200701
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

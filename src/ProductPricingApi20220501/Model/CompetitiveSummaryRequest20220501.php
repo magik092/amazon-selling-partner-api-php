@@ -277,7 +277,7 @@ class CompetitiveSummaryRequest20220501 implements ModelInterface, ArrayAccess, 
     /**
      * Sets asin
      *
-     * @param string $asin The Amazon Standard Identification Number (ASIN) of the item.
+     * @param string $asin The ASIN of the item.
      *
      * @return self
      */
@@ -301,7 +301,7 @@ class CompetitiveSummaryRequest20220501 implements ModelInterface, ArrayAccess, 
     /**
      * Sets marketplaceId
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which data is returned.
+     * @param string $marketplaceId The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      *
      * @return self
      */
@@ -349,7 +349,7 @@ class CompetitiveSummaryRequest20220501 implements ModelInterface, ArrayAccess, 
     /**
      * Sets lowestPricedOffersInputs
      *
-     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\LowestPricedOffersInput20220501[]|null $lowestPricedOffersInputs The list of `lowestPricedOffersInput` parameters used to build the `lowestPricedOffers` in the response. This attribute is valid only if `lowestPricedOffers` is requested in `includedData`.
+     * @param \Webcom\Amazon\Rest\ProductPricingApi20220501\Model\LowestPricedOffersInput20220501[]|null $lowestPricedOffersInputs The list of `lowestPricedOffersInput` parameters that are used to build `lowestPricedOffers` in the response. This attribute is only valid if `lowestPricedOffers` is requested in `includedData`
      *
      * @return self
      */
@@ -397,7 +397,7 @@ class CompetitiveSummaryRequest20220501 implements ModelInterface, ArrayAccess, 
     /**
      * Sets uri
      *
-     * @param string $uri The URI associated with the individual APIs being called as part of the batch request.
+     * @param string $uri The URI associated with the individual APIs that are called as part of the batch request.
      *
      * @return self
      */

@@ -287,7 +287,7 @@ class ReturnAuthorization20200701 implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets fulfillmentCenterId
      *
-     * @param string $fulfillmentCenterId An identifier for the Amazon fulfillment center that the return items should be sent to.
+     * @param string $fulfillmentCenterId An identifier for the Amazon fulfillment center to which the return items should be sent.
      *
      * @return self
      */

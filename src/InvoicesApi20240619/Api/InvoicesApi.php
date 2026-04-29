@@ -116,6 +116,291 @@ class InvoicesApi
     }
 
     /**
+     * Operation createGovernmentInvoice
+     *
+     * @param  \Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceRequest20240619 $body Information required to create the government invoice. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\InvoicesApi20240619\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function createGovernmentInvoice($body)
+    {
+        $this->createGovernmentInvoiceWithHttpInfo($body);
+    }
+
+    /**
+     * Operation createGovernmentInvoiceWithHttpInfo
+     *
+     * @param  \Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceRequest20240619 $body Information required to create the government invoice. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\InvoicesApi20240619\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createGovernmentInvoiceWithHttpInfo($body)
+    {
+        $request = $this->createGovernmentInvoiceRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createGovernmentInvoiceAsync
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceRequest20240619 $body Information required to create the government invoice. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createGovernmentInvoiceAsync($body)
+    {
+        return $this->createGovernmentInvoiceAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createGovernmentInvoiceAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceRequest20240619 $body Information required to create the government invoice. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createGovernmentInvoiceAsyncWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->createGovernmentInvoiceRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createGovernmentInvoice'
+     *
+     * @param  \Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceRequest20240619 $body Information required to create the government invoice. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createGovernmentInvoiceRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createGovernmentInvoice'
+            );
+        }
+
+        $resourcePath = '/tax/invoices/2024-06-19/governmentInvoiceRequests';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation createInvoicesExport
      *
      * @param  \Webcom\Amazon\Rest\InvoicesApi20240619\Model\ExportInvoicesRequest20240619 $body Information required to create the export request. (required)
@@ -550,6 +835,1035 @@ class InvoicesApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getGovernmentInvoiceDocument
+     *
+     * @param  string $marketplaceId The invoices returned will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     * @param  string $fileFormat Requested file format. Default is XML (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\InvoicesApi20240619\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovtInvoiceDocumentResponse20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619
+     */
+    public function getGovernmentInvoiceDocument($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null, $fileFormat = null)
+    {
+        list($response) = $this->getGovernmentInvoiceDocumentWithHttpInfo($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId, $fileFormat);
+        return $response;
+    }
+
+    /**
+     * Operation getGovernmentInvoiceDocumentWithHttpInfo
+     *
+     * @param  string $marketplaceId The invoices returned will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     * @param  string $fileFormat Requested file format. Default is XML (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\InvoicesApi20240619\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovtInvoiceDocumentResponse20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGovernmentInvoiceDocumentWithHttpInfo($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null, $fileFormat = null)
+    {
+        $request = $this->getGovernmentInvoiceDocumentRequest($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId, $fileFormat);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovtInvoiceDocumentResponse20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovtInvoiceDocumentResponse20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovtInvoiceDocumentResponse20240619';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovtInvoiceDocumentResponse20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getGovernmentInvoiceDocumentAsync
+     *
+     * 
+     *
+     * @param  string $marketplaceId The invoices returned will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     * @param  string $fileFormat Requested file format. Default is XML (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGovernmentInvoiceDocumentAsync($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null, $fileFormat = null)
+    {
+        return $this->getGovernmentInvoiceDocumentAsyncWithHttpInfo($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId, $fileFormat)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getGovernmentInvoiceDocumentAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $marketplaceId The invoices returned will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     * @param  string $fileFormat Requested file format. Default is XML (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGovernmentInvoiceDocumentAsyncWithHttpInfo($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null, $fileFormat = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovtInvoiceDocumentResponse20240619';
+        $request = $this->getGovernmentInvoiceDocumentRequest($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId, $fileFormat);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getGovernmentInvoiceDocument'
+     *
+     * @param  string $marketplaceId The invoices returned will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     * @param  string $fileFormat Requested file format. Default is XML (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getGovernmentInvoiceDocumentRequest($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null, $fileFormat = null)
+    {
+        // verify the required parameter 'marketplaceId' is set
+        if ($marketplaceId === null || (is_array($marketplaceId) && count($marketplaceId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceId when calling getGovernmentInvoiceDocument'
+            );
+        }
+        // verify the required parameter 'transactionType' is set
+        if ($transactionType === null || (is_array($transactionType) && count($transactionType) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $transactionType when calling getGovernmentInvoiceDocument'
+            );
+        }
+        // verify the required parameter 'shipmentId' is set
+        if ($shipmentId === null || (is_array($shipmentId) && count($shipmentId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $shipmentId when calling getGovernmentInvoiceDocument'
+            );
+        }
+        // verify the required parameter 'invoiceType' is set
+        if ($invoiceType === null || (is_array($invoiceType) && count($invoiceType) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $invoiceType when calling getGovernmentInvoiceDocument'
+            );
+        }
+
+        $resourcePath = '/tax/invoices/2024-06-19/governmentInvoiceRequests/{shipmentId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceId)) {
+            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        }
+        if ($marketplaceId !== null) {
+            $queryParams['marketplaceId'] = $marketplaceId;
+        }
+        // query params
+        if (is_array($transactionType)) {
+            $transactionType = ObjectSerializer::serializeCollection($transactionType, '', true);
+        }
+        if ($transactionType !== null) {
+            $queryParams['transactionType'] = $transactionType;
+        }
+        // query params
+        if (is_array($invoiceType)) {
+            $invoiceType = ObjectSerializer::serializeCollection($invoiceType, '', true);
+        }
+        if ($invoiceType !== null) {
+            $queryParams['invoiceType'] = $invoiceType;
+        }
+        // query params
+        if (is_array($inboundPlanId)) {
+            $inboundPlanId = ObjectSerializer::serializeCollection($inboundPlanId, '', true);
+        }
+        if ($inboundPlanId !== null) {
+            $queryParams['inboundPlanId'] = $inboundPlanId;
+        }
+        // query params
+        if (is_array($fileFormat)) {
+            $fileFormat = ObjectSerializer::serializeCollection($fileFormat, '', true);
+        }
+        if ($fileFormat !== null) {
+            $queryParams['fileFormat'] = $fileFormat;
+        }
+
+
+        // path params
+        if ($shipmentId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'shipmentId' . '}',
+                ObjectSerializer::toPathValue($shipmentId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getGovernmentInvoiceStatus
+     *
+     * @param  string $marketplaceId The invoices status will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\InvoicesApi20240619\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceStatusResponse20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619
+     */
+    public function getGovernmentInvoiceStatus($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null)
+    {
+        list($response) = $this->getGovernmentInvoiceStatusWithHttpInfo($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId);
+        return $response;
+    }
+
+    /**
+     * Operation getGovernmentInvoiceStatusWithHttpInfo
+     *
+     * @param  string $marketplaceId The invoices status will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\InvoicesApi20240619\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceStatusResponse20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619|\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getGovernmentInvoiceStatusWithHttpInfo($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null)
+    {
+        $request = $this->getGovernmentInvoiceStatusRequest($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceStatusResponse20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceStatusResponse20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 401:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceStatusResponse20240619';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceStatusResponse20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\ErrorList20240619',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getGovernmentInvoiceStatusAsync
+     *
+     * 
+     *
+     * @param  string $marketplaceId The invoices status will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGovernmentInvoiceStatusAsync($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null)
+    {
+        return $this->getGovernmentInvoiceStatusAsyncWithHttpInfo($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getGovernmentInvoiceStatusAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $marketplaceId The invoices status will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getGovernmentInvoiceStatusAsyncWithHttpInfo($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\InvoicesApi20240619\Model\GovernmentInvoiceStatusResponse20240619';
+        $request = $this->getGovernmentInvoiceStatusRequest($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getGovernmentInvoiceStatus'
+     *
+     * @param  string $marketplaceId The invoices status will match the marketplace that you specify. (required)
+     * @param  string $transactionType Marketplace specific classification of the transaction type that originated the invoice. Check &#39;transactionType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $shipmentId The unique shipment identifier to get an invoice for. (required)
+     * @param  string $invoiceType Marketplace specific classification of the invoice type. Check &#39;invoiceType&#39; options using &#39;getInvoicesAttributes&#39; operation. (required)
+     * @param  string $inboundPlanId The unique InboundPlan identifier in which the shipment is contained and for which the invoice will be created. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getGovernmentInvoiceStatusRequest($marketplaceId, $transactionType, $shipmentId, $invoiceType, $inboundPlanId = null)
+    {
+        // verify the required parameter 'marketplaceId' is set
+        if ($marketplaceId === null || (is_array($marketplaceId) && count($marketplaceId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $marketplaceId when calling getGovernmentInvoiceStatus'
+            );
+        }
+        // verify the required parameter 'transactionType' is set
+        if ($transactionType === null || (is_array($transactionType) && count($transactionType) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $transactionType when calling getGovernmentInvoiceStatus'
+            );
+        }
+        // verify the required parameter 'shipmentId' is set
+        if ($shipmentId === null || (is_array($shipmentId) && count($shipmentId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $shipmentId when calling getGovernmentInvoiceStatus'
+            );
+        }
+        // verify the required parameter 'invoiceType' is set
+        if ($invoiceType === null || (is_array($invoiceType) && count($invoiceType) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $invoiceType when calling getGovernmentInvoiceStatus'
+            );
+        }
+
+        $resourcePath = '/tax/invoices/2024-06-19/governmentInvoiceRequests';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($marketplaceId)) {
+            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        }
+        if ($marketplaceId !== null) {
+            $queryParams['marketplaceId'] = $marketplaceId;
+        }
+        // query params
+        if (is_array($transactionType)) {
+            $transactionType = ObjectSerializer::serializeCollection($transactionType, '', true);
+        }
+        if ($transactionType !== null) {
+            $queryParams['transactionType'] = $transactionType;
+        }
+        // query params
+        if (is_array($shipmentId)) {
+            $shipmentId = ObjectSerializer::serializeCollection($shipmentId, '', true);
+        }
+        if ($shipmentId !== null) {
+            $queryParams['shipmentId'] = $shipmentId;
+        }
+        // query params
+        if (is_array($invoiceType)) {
+            $invoiceType = ObjectSerializer::serializeCollection($invoiceType, '', true);
+        }
+        if ($invoiceType !== null) {
+            $queryParams['invoiceType'] = $invoiceType;
+        }
+        // query params
+        if (is_array($inboundPlanId)) {
+            $inboundPlanId = ObjectSerializer::serializeCollection($inboundPlanId, '', true);
+        }
+        if ($inboundPlanId !== null) {
+            $queryParams['inboundPlanId'] = $inboundPlanId;
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

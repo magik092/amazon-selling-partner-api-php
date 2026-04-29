@@ -63,7 +63,6 @@ class OrderBuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'amazonOrderId' => 'string',
-        'buyerEmail' => 'string',
         'buyerName' => 'string',
         'buyerCounty' => 'string',
         'buyerTaxInfo' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\BuyerTaxInfoV0',
@@ -79,7 +78,6 @@ class OrderBuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'amazonOrderId' => null,
-        'buyerEmail' => null,
         'buyerName' => null,
         'buyerCounty' => null,
         'buyerTaxInfo' => null,
@@ -114,7 +112,6 @@ class OrderBuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'amazonOrderId' => 'AmazonOrderId',
-        'buyerEmail' => 'BuyerEmail',
         'buyerName' => 'BuyerName',
         'buyerCounty' => 'BuyerCounty',
         'buyerTaxInfo' => 'BuyerTaxInfo',
@@ -128,7 +125,6 @@ class OrderBuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'amazonOrderId' => 'setAmazonOrderId',
-        'buyerEmail' => 'setBuyerEmail',
         'buyerName' => 'setBuyerName',
         'buyerCounty' => 'setBuyerCounty',
         'buyerTaxInfo' => 'setBuyerTaxInfo',
@@ -142,7 +138,6 @@ class OrderBuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'amazonOrderId' => 'getAmazonOrderId',
-        'buyerEmail' => 'getBuyerEmail',
         'buyerName' => 'getBuyerName',
         'buyerCounty' => 'getBuyerCounty',
         'buyerTaxInfo' => 'getBuyerTaxInfo',
@@ -210,7 +205,6 @@ class OrderBuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['amazonOrderId'] = $data['amazonOrderId'] ?? null;
-        $this->container['buyerEmail'] = $data['buyerEmail'] ?? null;
         $this->container['buyerName'] = $data['buyerName'] ?? null;
         $this->container['buyerCounty'] = $data['buyerCounty'] ?? null;
         $this->container['buyerTaxInfo'] = $data['buyerTaxInfo'] ?? null;
@@ -264,30 +258,6 @@ class OrderBuyerInfoV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAmazonOrderId($amazonOrderId)
     {
         $this->container['amazonOrderId'] = $amazonOrderId;
-
-        return $this;
-    }
-
-    /**
-     * Gets buyerEmail
-     *
-     * @return string|null
-     */
-    public function getBuyerEmail()
-    {
-        return $this->container['buyerEmail'];
-    }
-
-    /**
-     * Sets buyerEmail
-     *
-     * @param string|null $buyerEmail The anonymized email address of the buyer.
-     *
-     * @return self
-     */
-    public function setBuyerEmail($buyerEmail)
-    {
-        $this->container['buyerEmail'] = $buyerEmail;
 
         return $this;
     }

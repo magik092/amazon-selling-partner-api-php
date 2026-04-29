@@ -254,7 +254,7 @@ class Destination20200701 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets ipAddress
      *
-     * @param string|null $ipAddress An IP Address.
+     * @param string|null $ipAddress An IP address.
      *
      * @return self
      */

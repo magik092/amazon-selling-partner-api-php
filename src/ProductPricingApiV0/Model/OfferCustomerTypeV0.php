@@ -34,6 +34,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OfferCustomerTypeV0 Class Doc Comment
  *
  * @category Class
+ * @description Indicates whether the offer is a B2B or B2C offer
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

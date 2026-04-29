@@ -284,7 +284,7 @@ class OperatingHoursV2 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets midDayClosures
      *
-     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\TimeOfDayV2[]|null $midDayClosures midDayClosures
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\TimeOfDayV2[]|null $midDayClosures midDayClosures operating hours array
      *
      * @return self
      */

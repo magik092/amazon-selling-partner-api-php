@@ -68,6 +68,7 @@ class ShipmentDetailV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'purchaseDate' => '\DateTime',
         'shippingAddress' => '\Webcom\Amazon\Rest\ShipmentInvoicingApiV0\Model\AddressV0',
         'paymentMethodDetails' => 'string[]',
+        'payments' => '\Webcom\Amazon\Rest\ShipmentInvoicingApiV0\Model\PaymentInformationV0[]',
         'marketplaceId' => 'string',
         'sellerId' => 'string',
         'buyerName' => 'string',
@@ -92,6 +93,7 @@ class ShipmentDetailV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'purchaseDate' => 'date-time',
         'shippingAddress' => null,
         'paymentMethodDetails' => null,
+        'payments' => null,
         'marketplaceId' => null,
         'sellerId' => null,
         'buyerName' => null,
@@ -135,6 +137,7 @@ class ShipmentDetailV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'purchaseDate' => 'PurchaseDate',
         'shippingAddress' => 'ShippingAddress',
         'paymentMethodDetails' => 'PaymentMethodDetails',
+        'payments' => 'Payments',
         'marketplaceId' => 'MarketplaceId',
         'sellerId' => 'SellerId',
         'buyerName' => 'BuyerName',
@@ -157,6 +160,7 @@ class ShipmentDetailV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'purchaseDate' => 'setPurchaseDate',
         'shippingAddress' => 'setShippingAddress',
         'paymentMethodDetails' => 'setPaymentMethodDetails',
+        'payments' => 'setPayments',
         'marketplaceId' => 'setMarketplaceId',
         'sellerId' => 'setSellerId',
         'buyerName' => 'setBuyerName',
@@ -179,6 +183,7 @@ class ShipmentDetailV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         'purchaseDate' => 'getPurchaseDate',
         'shippingAddress' => 'getShippingAddress',
         'paymentMethodDetails' => 'getPaymentMethodDetails',
+        'payments' => 'getPayments',
         'marketplaceId' => 'getMarketplaceId',
         'sellerId' => 'getSellerId',
         'buyerName' => 'getBuyerName',
@@ -255,6 +260,7 @@ class ShipmentDetailV0 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['purchaseDate'] = $data['purchaseDate'] ?? null;
         $this->container['shippingAddress'] = $data['shippingAddress'] ?? null;
         $this->container['paymentMethodDetails'] = $data['paymentMethodDetails'] ?? null;
+        $this->container['payments'] = $data['payments'] ?? null;
         $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
         $this->container['sellerId'] = $data['sellerId'] ?? null;
         $this->container['buyerName'] = $data['buyerName'] ?? null;
@@ -429,6 +435,30 @@ class ShipmentDetailV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPaymentMethodDetails($paymentMethodDetails)
     {
         $this->container['paymentMethodDetails'] = $paymentMethodDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets payments
+     *
+     * @return \Webcom\Amazon\Rest\ShipmentInvoicingApiV0\Model\PaymentInformationV0[]|null
+     */
+    public function getPayments()
+    {
+        return $this->container['payments'];
+    }
+
+    /**
+     * Sets payments
+     *
+     * @param \Webcom\Amazon\Rest\ShipmentInvoicingApiV0\Model\PaymentInformationV0[]|null $payments A list of payment transactions.
+     *
+     * @return self
+     */
+    public function setPayments($payments)
+    {
+        $this->container['payments'] = $payments;
 
         return $this;
     }

@@ -12,7 +12,7 @@
 /**
  * Selling Partner API for Direct Fulfillment Shipping
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  * 
@@ -118,6 +118,8 @@ class CustomerInvoicesApi
     /**
      * Operation getCustomerInvoice
      *
+     * getCustomerInvoice
+     *
      * @param  string $purchaseOrderNumber Purchase order number of the shipment for which to return the invoice. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorDirectFulfillmentShippingApi20211228\ApiException on non-2xx response
@@ -132,6 +134,8 @@ class CustomerInvoicesApi
 
     /**
      * Operation getCustomerInvoiceWithHttpInfo
+     *
+     * getCustomerInvoice
      *
      * @param  string $purchaseOrderNumber Purchase order number of the shipment for which to return the invoice. (required)
      *
@@ -379,7 +383,7 @@ class CustomerInvoicesApi
     /**
      * Operation getCustomerInvoiceAsync
      *
-     * 
+     * getCustomerInvoice
      *
      * @param  string $purchaseOrderNumber Purchase order number of the shipment for which to return the invoice. (required)
      *
@@ -399,7 +403,7 @@ class CustomerInvoicesApi
     /**
      * Operation getCustomerInvoiceAsyncWithHttpInfo
      *
-     * 
+     * getCustomerInvoice
      *
      * @param  string $purchaseOrderNumber Purchase order number of the shipment for which to return the invoice. (required)
      *
@@ -545,8 +549,10 @@ class CustomerInvoicesApi
     /**
      * Operation getCustomerInvoices
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * getCustomerInvoices
+     *
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
      * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)
@@ -565,8 +571,10 @@ class CustomerInvoicesApi
     /**
      * Operation getCustomerInvoicesWithHttpInfo
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * getCustomerInvoices
+     *
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
      * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)
@@ -796,10 +804,10 @@ class CustomerInvoicesApi
     /**
      * Operation getCustomerInvoicesAsync
      *
-     * 
+     * getCustomerInvoices
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
      * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)
@@ -821,10 +829,10 @@ class CustomerInvoicesApi
     /**
      * Operation getCustomerInvoicesAsyncWithHttpInfo
      *
-     * 
+     * getCustomerInvoices
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
      * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)
@@ -875,8 +883,8 @@ class CustomerInvoicesApi
     /**
      * Create request for operation 'getCustomerInvoices'
      *
-     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * @param  \DateTime $createdAfter Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
+     * @param  \DateTime $createdBefore Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
      * @param  string $shipFromPartyId The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param  int $limit The limit to the number of records returned (optional)
      * @param  string $sortOrder Sort ASC or DESC by order creation date. (optional)

@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * BatchOffersRequestParamsV0 Class Doc Comment
  *
  * @category Class
+ * @description Common request parameters that can be accepted by &#x60;ItemOffersRequest&#x60; and &#x60;ListingOffersRequest&#x60;
  * @package  Webcom\Amazon\Rest\ProductPricingApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

@@ -1623,7 +1623,7 @@ class VendorOrdersApi
     /**
      * Operation submitAcknowledgement
      *
-     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body body (required)
+     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body Submits acknowledgements for one or more purchase orders from a vendor. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorOrdersApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1638,7 +1638,7 @@ class VendorOrdersApi
     /**
      * Operation submitAcknowledgementWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body Submits acknowledgements for one or more purchase orders from a vendor. (required)
      *
      * @throws \Webcom\Amazon\Rest\VendorOrdersApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1886,7 +1886,7 @@ class VendorOrdersApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body Submits acknowledgements for one or more purchase orders from a vendor. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1906,7 +1906,7 @@ class VendorOrdersApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body Submits acknowledgements for one or more purchase orders from a vendor. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1953,7 +1953,7 @@ class VendorOrdersApi
     /**
      * Create request for operation 'submitAcknowledgement'
      *
-     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\VendorOrdersApi\Model\SubmitAcknowledgementRequest $body Submits acknowledgements for one or more purchase orders from a vendor. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

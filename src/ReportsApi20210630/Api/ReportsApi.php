@@ -1942,14 +1942,15 @@ class ReportsApi
      * Operation getReportDocument
      *
      * @param  string $reportDocumentId The identifier for the report document. (required)
+     * @param  bool $enableContentEncodingUrlHeader When &#x60;true&#x60;, the Content-Encoding header on the returned URL is set to &#x60;gzip&#x60; instead of the default &#x60;identity&#x60; when &#x60;compressionAlgorithm&#x60; is &#x60;GZIP&#x60;. This allows automatic decompression by HTTP clients. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\ReportsApi20210630\Model\ReportDocument20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630
      */
-    public function getReportDocument($reportDocumentId)
+    public function getReportDocument($reportDocumentId, $enableContentEncodingUrlHeader = null)
     {
-        list($response) = $this->getReportDocumentWithHttpInfo($reportDocumentId);
+        list($response) = $this->getReportDocumentWithHttpInfo($reportDocumentId, $enableContentEncodingUrlHeader);
         return $response;
     }
 
@@ -1957,14 +1958,15 @@ class ReportsApi
      * Operation getReportDocumentWithHttpInfo
      *
      * @param  string $reportDocumentId The identifier for the report document. (required)
+     * @param  bool $enableContentEncodingUrlHeader When &#x60;true&#x60;, the Content-Encoding header on the returned URL is set to &#x60;gzip&#x60; instead of the default &#x60;identity&#x60; when &#x60;compressionAlgorithm&#x60; is &#x60;GZIP&#x60;. This allows automatic decompression by HTTP clients. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ReportsApi20210630\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\ReportsApi20210630\Model\ReportDocument20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630|\Webcom\Amazon\Rest\ReportsApi20210630\Model\ErrorList20210630, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getReportDocumentWithHttpInfo($reportDocumentId)
+    public function getReportDocumentWithHttpInfo($reportDocumentId, $enableContentEncodingUrlHeader = null)
     {
-        $request = $this->getReportDocumentRequest($reportDocumentId);
+        $request = $this->getReportDocumentRequest($reportDocumentId, $enableContentEncodingUrlHeader);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2205,13 +2207,14 @@ class ReportsApi
      * 
      *
      * @param  string $reportDocumentId The identifier for the report document. (required)
+     * @param  bool $enableContentEncodingUrlHeader When &#x60;true&#x60;, the Content-Encoding header on the returned URL is set to &#x60;gzip&#x60; instead of the default &#x60;identity&#x60; when &#x60;compressionAlgorithm&#x60; is &#x60;GZIP&#x60;. This allows automatic decompression by HTTP clients. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReportDocumentAsync($reportDocumentId)
+    public function getReportDocumentAsync($reportDocumentId, $enableContentEncodingUrlHeader = null)
     {
-        return $this->getReportDocumentAsyncWithHttpInfo($reportDocumentId)
+        return $this->getReportDocumentAsyncWithHttpInfo($reportDocumentId, $enableContentEncodingUrlHeader)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2225,14 +2228,15 @@ class ReportsApi
      * 
      *
      * @param  string $reportDocumentId The identifier for the report document. (required)
+     * @param  bool $enableContentEncodingUrlHeader When &#x60;true&#x60;, the Content-Encoding header on the returned URL is set to &#x60;gzip&#x60; instead of the default &#x60;identity&#x60; when &#x60;compressionAlgorithm&#x60; is &#x60;GZIP&#x60;. This allows automatic decompression by HTTP clients. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getReportDocumentAsyncWithHttpInfo($reportDocumentId)
+    public function getReportDocumentAsyncWithHttpInfo($reportDocumentId, $enableContentEncodingUrlHeader = null)
     {
         $returnType = '\Webcom\Amazon\Rest\ReportsApi20210630\Model\ReportDocument20210630';
-        $request = $this->getReportDocumentRequest($reportDocumentId);
+        $request = $this->getReportDocumentRequest($reportDocumentId, $enableContentEncodingUrlHeader);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2272,11 +2276,12 @@ class ReportsApi
      * Create request for operation 'getReportDocument'
      *
      * @param  string $reportDocumentId The identifier for the report document. (required)
+     * @param  bool $enableContentEncodingUrlHeader When &#x60;true&#x60;, the Content-Encoding header on the returned URL is set to &#x60;gzip&#x60; instead of the default &#x60;identity&#x60; when &#x60;compressionAlgorithm&#x60; is &#x60;GZIP&#x60;. This allows automatic decompression by HTTP clients. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getReportDocumentRequest($reportDocumentId)
+    public function getReportDocumentRequest($reportDocumentId, $enableContentEncodingUrlHeader = null)
     {
         // verify the required parameter 'reportDocumentId' is set
         if ($reportDocumentId === null || (is_array($reportDocumentId) && count($reportDocumentId) === 0)) {
@@ -2292,6 +2297,13 @@ class ReportsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if (is_array($enableContentEncodingUrlHeader)) {
+            $enableContentEncodingUrlHeader = ObjectSerializer::serializeCollection($enableContentEncodingUrlHeader, '', true);
+        }
+        if ($enableContentEncodingUrlHeader !== null) {
+            $queryParams['enableContentEncodingUrlHeader'] = $enableContentEncodingUrlHeader;
+        }
 
 
         // path params

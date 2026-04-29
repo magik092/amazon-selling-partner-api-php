@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for Merchant Fulfillment
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  * 
@@ -248,7 +248,7 @@ class PackageDimensionsV0 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets length
      *
-     * @param double|null $length Number representing the given package dimension.
+     * @param double|null $length A number that represents the given package dimension.
      *
      * @return self
      */
@@ -272,7 +272,7 @@ class PackageDimensionsV0 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets width
      *
-     * @param double|null $width Number representing the given package dimension.
+     * @param double|null $width A number that represents the given package dimension.
      *
      * @return self
      */
@@ -296,7 +296,7 @@ class PackageDimensionsV0 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets height
      *
-     * @param double|null $height Number representing the given package dimension.
+     * @param double|null $height A number that represents the given package dimension.
      *
      * @return self
      */

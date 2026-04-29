@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderItem Class Doc Comment
  *
  * @category Class
+ * @description Represents an individual item in an order, including item details, quantities, pricing, and backorder information.
  * @package  Webcom\Amazon\Rest\VendorOrdersApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

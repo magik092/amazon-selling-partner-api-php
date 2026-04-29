@@ -13,7 +13,7 @@
 /**
  * Selling Partner API for A+ Content Management
  *
- * With the A+ Content API, you can build applications that help selling partners add rich marketing content to their Amazon product detail pages. A+ content helps selling partners share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners assemble content by choosing from content modules and adding images and text.
+ * Use the A+ Content API to build applications that help selling partners add rich marketing content to their Amazon product detail pages. Selling partners can use A+ content to share their brand and product story, which helps buyers make informed purchasing decisions. Selling partners use content modules to add images and text.
  *
  * The version of the OpenAPI document: 2020-11-01
  * 
@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * AplusPaginatedResponse20201101 Class Doc Comment
  *
  * @category Class
- * @description The base response data for paginated A+ Content operations. Individual operations may extend this with additional data. If nextPageToken is not returned, there are no more pages to return.
+ * @description A token that you use to retrieve the next page of results. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextPageToken&#x60; is null. Note that this operation can return empty pages.
  * @package  Webcom\Amazon\Rest\AplusContentApi20201101
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -258,7 +258,7 @@ class AplusPaginatedResponse20201101 implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets nextPageToken
      *
-     * @param string|null $nextPageToken A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
+     * @param string|null $nextPageToken A token that you use to fetch a specific page when there are multiple pages of results.
      *
      * @return self
      */

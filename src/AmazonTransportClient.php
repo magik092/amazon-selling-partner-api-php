@@ -82,17 +82,11 @@ class AmazonTransportClient extends Client
             }
             $request = $request->withHeader('user-agent', $this->userAgent . ' (Language=PHP/' . PHP_VERSION . ')');
             // if isn't authorization request, attach access/rdt token
-            if ($token && $request->getUri()->getHost() !== 'api.amazon.com' && substr(
-                    $request->getUri()->getPath(),
-                    0,
-                    15
-                ) !== '/authorization/') {
+            if ($token && $request->getUri()->getHost() !== 'api.amazon.com' && strpos($request->getUri()->getPath(), '/authorization/') !== 0) {
                 $request = $request->withHeader('x-amz-access-token', [$token]);
             }
             $request = $this->requestSigner->signRequest($request);
         }
-
-//        dump($request);
 
         return $handler($request, $options);
     }

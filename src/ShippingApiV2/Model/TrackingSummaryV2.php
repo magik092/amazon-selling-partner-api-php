@@ -62,7 +62,8 @@ class TrackingSummaryV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\StatusV2'
+        'status' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\StatusV2',
+        'trackingDetailCodes' => '\Webcom\Amazon\Rest\ShippingApiV2\Model\TrackingDetailCodesV2'
     ];
 
     /**
@@ -73,7 +74,8 @@ class TrackingSummaryV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null
+        'status' => null,
+        'trackingDetailCodes' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class TrackingSummaryV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status'
+        'status' => 'status',
+        'trackingDetailCodes' => 'trackingDetailCodes'
     ];
 
     /**
@@ -112,7 +115,8 @@ class TrackingSummaryV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus'
+        'status' => 'setStatus',
+        'trackingDetailCodes' => 'setTrackingDetailCodes'
     ];
 
     /**
@@ -121,7 +125,8 @@ class TrackingSummaryV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus'
+        'status' => 'getStatus',
+        'trackingDetailCodes' => 'getTrackingDetailCodes'
     ];
 
     /**
@@ -185,6 +190,7 @@ class TrackingSummaryV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function __construct(array $data = null)
     {
         $this->container['status'] = $data['status'] ?? null;
+        $this->container['trackingDetailCodes'] = $data['trackingDetailCodes'] ?? null;
     }
 
     /**
@@ -231,6 +237,30 @@ class TrackingSummaryV2 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setStatus($status)
     {
         $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets trackingDetailCodes
+     *
+     * @return \Webcom\Amazon\Rest\ShippingApiV2\Model\TrackingDetailCodesV2|null
+     */
+    public function getTrackingDetailCodes()
+    {
+        return $this->container['trackingDetailCodes'];
+    }
+
+    /**
+     * Sets trackingDetailCodes
+     *
+     * @param \Webcom\Amazon\Rest\ShippingApiV2\Model\TrackingDetailCodesV2|null $trackingDetailCodes trackingDetailCodes
+     *
+     * @return self
+     */
+    public function setTrackingDetailCodes($trackingDetailCodes)
+    {
+        $this->container['trackingDetailCodes'] = $trackingDetailCodes;
 
         return $this;
     }

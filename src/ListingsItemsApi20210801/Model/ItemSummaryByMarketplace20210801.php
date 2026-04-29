@@ -305,9 +305,6 @@ class ItemSummaryByMarketplace20210801 implements ModelInterface, ArrayAccess, \
         if ($this->container['marketplaceId'] === null) {
             $invalidProperties[] = "'marketplaceId' can't be null";
         }
-        if ($this->container['asin'] === null) {
-            $invalidProperties[] = "'asin' can't be null";
-        }
         if ($this->container['productType'] === null) {
             $invalidProperties[] = "'productType' can't be null";
         }
@@ -322,9 +319,6 @@ class ItemSummaryByMarketplace20210801 implements ModelInterface, ArrayAccess, \
 
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['itemName'] === null) {
-            $invalidProperties[] = "'itemName' can't be null";
         }
         if ($this->container['createdDate'] === null) {
             $invalidProperties[] = "'createdDate' can't be null";
@@ -374,7 +368,7 @@ class ItemSummaryByMarketplace20210801 implements ModelInterface, ArrayAccess, \
     /**
      * Gets asin
      *
-     * @return string
+     * @return string|null
      */
     public function getAsin()
     {
@@ -384,7 +378,7 @@ class ItemSummaryByMarketplace20210801 implements ModelInterface, ArrayAccess, \
     /**
      * Sets asin
      *
-     * @param string $asin Amazon Standard Identification Number (ASIN) of the listings item.
+     * @param string|null $asin Amazon Standard Identification Number (ASIN) of the listings item.
      *
      * @return self
      */
@@ -513,7 +507,7 @@ class ItemSummaryByMarketplace20210801 implements ModelInterface, ArrayAccess, \
     /**
      * Gets itemName
      *
-     * @return string
+     * @return string|null
      */
     public function getItemName()
     {
@@ -523,7 +517,7 @@ class ItemSummaryByMarketplace20210801 implements ModelInterface, ArrayAccess, \
     /**
      * Sets itemName
      *
-     * @param string $itemName The name or title associated with an Amazon catalog item.
+     * @param string|null $itemName The name or title associated with an Amazon catalog item.
      *
      * @return self
      */

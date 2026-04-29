@@ -64,6 +64,7 @@ class AdjustmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'adjustmentType' => 'string',
         'postedDate' => '\DateTime',
+        'storeName' => 'string',
         'adjustmentAmount' => '\Webcom\Amazon\Rest\FinancesApiV0\Model\CurrencyV0',
         'adjustmentItemList' => '\Webcom\Amazon\Rest\FinancesApiV0\Model\AdjustmentItemV0[]'
     ];
@@ -78,6 +79,7 @@ class AdjustmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPIFormats = [
         'adjustmentType' => null,
         'postedDate' => 'date-time',
+        'storeName' => null,
         'adjustmentAmount' => null,
         'adjustmentItemList' => null
     ];
@@ -111,6 +113,7 @@ class AdjustmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $attributeMap = [
         'adjustmentType' => 'AdjustmentType',
         'postedDate' => 'PostedDate',
+        'storeName' => 'StoreName',
         'adjustmentAmount' => 'AdjustmentAmount',
         'adjustmentItemList' => 'AdjustmentItemList'
     ];
@@ -123,6 +126,7 @@ class AdjustmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $setters = [
         'adjustmentType' => 'setAdjustmentType',
         'postedDate' => 'setPostedDate',
+        'storeName' => 'setStoreName',
         'adjustmentAmount' => 'setAdjustmentAmount',
         'adjustmentItemList' => 'setAdjustmentItemList'
     ];
@@ -135,6 +139,7 @@ class AdjustmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $getters = [
         'adjustmentType' => 'getAdjustmentType',
         'postedDate' => 'getPostedDate',
+        'storeName' => 'getStoreName',
         'adjustmentAmount' => 'getAdjustmentAmount',
         'adjustmentItemList' => 'getAdjustmentItemList'
     ];
@@ -201,6 +206,7 @@ class AdjustmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $this->container['adjustmentType'] = $data['adjustmentType'] ?? null;
         $this->container['postedDate'] = $data['postedDate'] ?? null;
+        $this->container['storeName'] = $data['storeName'] ?? null;
         $this->container['adjustmentAmount'] = $data['adjustmentAmount'] ?? null;
         $this->container['adjustmentItemList'] = $data['adjustmentItemList'] ?? null;
     }
@@ -273,6 +279,30 @@ class AdjustmentEventV0 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setPostedDate($postedDate)
     {
         $this->container['postedDate'] = $postedDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets storeName
+     *
+     * @return string|null
+     */
+    public function getStoreName()
+    {
+        return $this->container['storeName'];
+    }
+
+    /**
+     * Sets storeName
+     *
+     * @param string|null $storeName The name of the store where the event occurred.
+     *
+     * @return self
+     */
+    public function setStoreName($storeName)
+    {
+        $this->container['storeName'] = $storeName;
 
         return $this;
     }

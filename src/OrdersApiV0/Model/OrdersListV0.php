@@ -293,7 +293,7 @@ class OrdersListV0 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets lastUpdatedBefore
      *
-     * @param string|null $lastUpdatedBefore Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     * @param string|null $lastUpdatedBefore Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. Use [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format for all dates.
      *
      * @return self
      */

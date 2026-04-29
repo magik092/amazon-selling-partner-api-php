@@ -65,6 +65,7 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'int',
         'carrierCode' => 'string',
         'trackingNumber' => 'string',
+        'amazonFulfillmentTrackingNumber' => 'string',
         'estimatedArrivalDate' => '\DateTime',
         'lockerDetails' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\LockerDetails20200701',
         'deliveryInformation' => '\Webcom\Amazon\Rest\FulfillmentOutboundApi20200701\Model\DeliveryInformation20200701'
@@ -81,6 +82,7 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'int32',
         'carrierCode' => null,
         'trackingNumber' => null,
+        'amazonFulfillmentTrackingNumber' => null,
         'estimatedArrivalDate' => 'date-time',
         'lockerDetails' => null,
         'deliveryInformation' => null
@@ -116,6 +118,7 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'packageNumber',
         'carrierCode' => 'carrierCode',
         'trackingNumber' => 'trackingNumber',
+        'amazonFulfillmentTrackingNumber' => 'amazonFulfillmentTrackingNumber',
         'estimatedArrivalDate' => 'estimatedArrivalDate',
         'lockerDetails' => 'lockerDetails',
         'deliveryInformation' => 'deliveryInformation'
@@ -130,6 +133,7 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'setPackageNumber',
         'carrierCode' => 'setCarrierCode',
         'trackingNumber' => 'setTrackingNumber',
+        'amazonFulfillmentTrackingNumber' => 'setAmazonFulfillmentTrackingNumber',
         'estimatedArrivalDate' => 'setEstimatedArrivalDate',
         'lockerDetails' => 'setLockerDetails',
         'deliveryInformation' => 'setDeliveryInformation'
@@ -144,6 +148,7 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         'packageNumber' => 'getPackageNumber',
         'carrierCode' => 'getCarrierCode',
         'trackingNumber' => 'getTrackingNumber',
+        'amazonFulfillmentTrackingNumber' => 'getAmazonFulfillmentTrackingNumber',
         'estimatedArrivalDate' => 'getEstimatedArrivalDate',
         'lockerDetails' => 'getLockerDetails',
         'deliveryInformation' => 'getDeliveryInformation'
@@ -212,6 +217,7 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
         $this->container['packageNumber'] = $data['packageNumber'] ?? null;
         $this->container['carrierCode'] = $data['carrierCode'] ?? null;
         $this->container['trackingNumber'] = $data['trackingNumber'] ?? null;
+        $this->container['amazonFulfillmentTrackingNumber'] = $data['amazonFulfillmentTrackingNumber'] ?? null;
         $this->container['estimatedArrivalDate'] = $data['estimatedArrivalDate'] ?? null;
         $this->container['lockerDetails'] = $data['lockerDetails'] ?? null;
         $this->container['deliveryInformation'] = $data['deliveryInformation'] ?? null;
@@ -315,6 +321,30 @@ class FulfillmentShipmentPackage20200701 implements ModelInterface, ArrayAccess,
     public function setTrackingNumber($trackingNumber)
     {
         $this->container['trackingNumber'] = $trackingNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets amazonFulfillmentTrackingNumber
+     *
+     * @return string|null
+     */
+    public function getAmazonFulfillmentTrackingNumber()
+    {
+        return $this->container['amazonFulfillmentTrackingNumber'];
+    }
+
+    /**
+     * Sets amazonFulfillmentTrackingNumber
+     *
+     * @param string|null $amazonFulfillmentTrackingNumber The Amazon fulfillment tracking number, if provided, can be used to obtain tracking and delivery information.
+     *
+     * @return self
+     */
+    public function setAmazonFulfillmentTrackingNumber($amazonFulfillmentTrackingNumber)
+    {
+        $this->container['amazonFulfillmentTrackingNumber'] = $amazonFulfillmentTrackingNumber;
 
         return $this;
     }

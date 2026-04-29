@@ -268,8 +268,8 @@ class DangerousGoodsDetailsV2 implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if (!is_null($this->container['unitedNationsRegulatoryId']) && !preg_match("/^[0-9]{4}$/", $this->container['unitedNationsRegulatoryId'])) {
-            $invalidProperties[] = "invalid value for 'unitedNationsRegulatoryId', must be conform to the pattern /^[0-9]{4}$/.";
+        if (!is_null($this->container['unitedNationsRegulatoryId']) && !preg_match("/^(UN|ID|NA)[0-9]{4}$/", $this->container['unitedNationsRegulatoryId'])) {
+            $invalidProperties[] = "invalid value for 'unitedNationsRegulatoryId', must be conform to the pattern /^(UN|ID|NA)[0-9]{4}$/.";
         }
 
         if (!is_null($this->container['transportationRegulatoryClass']) && !preg_match("/^[1-9](\\.[1-9])?$/", $this->container['transportationRegulatoryClass'])) {
@@ -329,8 +329,8 @@ class DangerousGoodsDetailsV2 implements ModelInterface, ArrayAccess, \JsonSeria
     public function setUnitedNationsRegulatoryId($unitedNationsRegulatoryId)
     {
 
-        if (!is_null($unitedNationsRegulatoryId) && (!preg_match("/^[0-9]{4}$/", $unitedNationsRegulatoryId))) {
-            throw new \InvalidArgumentException("invalid value for $unitedNationsRegulatoryId when calling DangerousGoodsDetailsV2., must conform to the pattern /^[0-9]{4}$/.");
+        if (!is_null($unitedNationsRegulatoryId) && (!preg_match("/^(UN|ID|NA)[0-9]{4}$/", $unitedNationsRegulatoryId))) {
+            throw new \InvalidArgumentException("invalid value for $unitedNationsRegulatoryId when calling DangerousGoodsDetailsV2., must conform to the pattern /^(UN|ID|NA)[0-9]{4}$/.");
         }
 
         $this->container['unitedNationsRegulatoryId'] = $unitedNationsRegulatoryId;

@@ -62,6 +62,7 @@ class SetAppointmentFulfillmentDataRequest implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static $openAPITypes = [
+        'estimatedArrivalTime' => '\Webcom\Amazon\Rest\ServicesApi\Model\DateTimeRange',
         'fulfillmentTime' => '\Webcom\Amazon\Rest\ServicesApi\Model\FulfillmentTime',
         'appointmentResources' => '\Webcom\Amazon\Rest\ServicesApi\Model\AppointmentResource[]',
         'fulfillmentDocuments' => '\Webcom\Amazon\Rest\ServicesApi\Model\FulfillmentDocument[]'
@@ -75,6 +76,7 @@ class SetAppointmentFulfillmentDataRequest implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'estimatedArrivalTime' => null,
         'fulfillmentTime' => null,
         'appointmentResources' => null,
         'fulfillmentDocuments' => null
@@ -107,6 +109,7 @@ class SetAppointmentFulfillmentDataRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $attributeMap = [
+        'estimatedArrivalTime' => 'estimatedArrivalTime',
         'fulfillmentTime' => 'fulfillmentTime',
         'appointmentResources' => 'appointmentResources',
         'fulfillmentDocuments' => 'fulfillmentDocuments'
@@ -118,6 +121,7 @@ class SetAppointmentFulfillmentDataRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $setters = [
+        'estimatedArrivalTime' => 'setEstimatedArrivalTime',
         'fulfillmentTime' => 'setFulfillmentTime',
         'appointmentResources' => 'setAppointmentResources',
         'fulfillmentDocuments' => 'setFulfillmentDocuments'
@@ -129,6 +133,7 @@ class SetAppointmentFulfillmentDataRequest implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static $getters = [
+        'estimatedArrivalTime' => 'getEstimatedArrivalTime',
         'fulfillmentTime' => 'getFulfillmentTime',
         'appointmentResources' => 'getAppointmentResources',
         'fulfillmentDocuments' => 'getFulfillmentDocuments'
@@ -194,6 +199,7 @@ class SetAppointmentFulfillmentDataRequest implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
+        $this->container['estimatedArrivalTime'] = $data['estimatedArrivalTime'] ?? null;
         $this->container['fulfillmentTime'] = $data['fulfillmentTime'] ?? null;
         $this->container['appointmentResources'] = $data['appointmentResources'] ?? null;
         $this->container['fulfillmentDocuments'] = $data['fulfillmentDocuments'] ?? null;
@@ -222,6 +228,30 @@ class SetAppointmentFulfillmentDataRequest implements ModelInterface, ArrayAcces
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets estimatedArrivalTime
+     *
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\DateTimeRange|null
+     */
+    public function getEstimatedArrivalTime()
+    {
+        return $this->container['estimatedArrivalTime'];
+    }
+
+    /**
+     * Sets estimatedArrivalTime
+     *
+     * @param \Webcom\Amazon\Rest\ServicesApi\Model\DateTimeRange|null $estimatedArrivalTime estimatedArrivalTime
+     *
+     * @return self
+     */
+    public function setEstimatedArrivalTime($estimatedArrivalTime)
+    {
+        $this->container['estimatedArrivalTime'] = $estimatedArrivalTime;
+
+        return $this;
+    }
 
     /**
      * Gets fulfillmentTime
