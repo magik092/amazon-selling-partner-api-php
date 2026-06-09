@@ -75,7 +75,8 @@ class Address20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'string',
         'copyEmails' => 'string[]',
         'phoneNumber' => 'string',
-        'addressType' => 'string'
+        'addressType' => 'string',
+        'geocodes' => '\Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\Geocodes20240911'
     ];
 
     /**
@@ -99,7 +100,8 @@ class Address20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => null,
         'copyEmails' => null,
         'phoneNumber' => null,
-        'addressType' => null
+        'addressType' => null,
+        'geocodes' => null
     ];
 
     /**
@@ -142,7 +144,8 @@ class Address20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'email',
         'copyEmails' => 'copyEmails',
         'phoneNumber' => 'phoneNumber',
-        'addressType' => 'addressType'
+        'addressType' => 'addressType',
+        'geocodes' => 'geocodes'
     ];
 
     /**
@@ -164,7 +167,8 @@ class Address20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'setEmail',
         'copyEmails' => 'setCopyEmails',
         'phoneNumber' => 'setPhoneNumber',
-        'addressType' => 'setAddressType'
+        'addressType' => 'setAddressType',
+        'geocodes' => 'setGeocodes'
     ];
 
     /**
@@ -186,7 +190,8 @@ class Address20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
         'email' => 'getEmail',
         'copyEmails' => 'getCopyEmails',
         'phoneNumber' => 'getPhoneNumber',
-        'addressType' => 'getAddressType'
+        'addressType' => 'getAddressType',
+        'geocodes' => 'getGeocodes'
     ];
 
     /**
@@ -263,6 +268,7 @@ class Address20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['copyEmails'] = $data['copyEmails'] ?? null;
         $this->container['phoneNumber'] = $data['phoneNumber'] ?? null;
         $this->container['addressType'] = $data['addressType'] ?? null;
+        $this->container['geocodes'] = $data['geocodes'] ?? null;
     }
 
     /**
@@ -529,7 +535,7 @@ class Address20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets municipality
      *
-     * @param string|null $municipality The municiplaity where the person, business, or institution is located.
+     * @param string|null $municipality The municipality where the person, business, or institution is located.
      *
      * @return self
      */
@@ -767,6 +773,30 @@ class Address20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['addressType'] = $addressType;
+
+        return $this;
+    }
+
+    /**
+     * Gets geocodes
+     *
+     * @return \Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\Geocodes20240911|null
+     */
+    public function getGeocodes()
+    {
+        return $this->container['geocodes'];
+    }
+
+    /**
+     * Sets geocodes
+     *
+     * @param \Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\Geocodes20240911|null $geocodes geocodes
+     *
+     * @return self
+     */
+    public function setGeocodes($geocodes)
+    {
+        $this->container['geocodes'] = $geocodes;
 
         return $this;
     }

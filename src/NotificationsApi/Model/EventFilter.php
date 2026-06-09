@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * EventFilter Class Doc Comment
  *
  * @category Class
- * @description A &#x60;notificationType&#x60; specific filter. This object contains all of the currently available filters and properties that you can use to define a &#x60;notificationType&#x60; specific filter.
+ * @description A &#x60;notificationType&#x60; filter. This object contains all of the available filters and properties that you can use to define a &#x60;notificationType&#x60; specific filter.
  * @package  Webcom\Amazon\Rest\NotificationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -293,7 +293,7 @@ class EventFilter implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets marketplaceIds
      *
-     * @param string[]|null $marketplaceIds A list of marketplace identifiers to subscribe to (for example: ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
+     * @param string[]|null $marketplaceIds A list of marketplace identifiers you can subscribe to (for example, `ATVPDKIKX0DER`). To receive notifications in every marketplace, do not provide this list.
      *
      * @return self
      */
@@ -317,7 +317,7 @@ class EventFilter implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets orderChangeTypes
      *
-     * @param \Webcom\Amazon\Rest\NotificationsApi\Model\OrderChangeTypeEnum[]|null $orderChangeTypes A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
+     * @param \Webcom\Amazon\Rest\NotificationsApi\Model\OrderChangeTypeEnum[]|null $orderChangeTypes A list of order change types you can subscribe to (for example, `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
      *
      * @return self
      */
@@ -341,7 +341,7 @@ class EventFilter implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets eventFilterType
      *
-     * @param string $eventFilterType An `eventFilterType` value that is supported by the specific `notificationType`. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an `eventFilterType` is supported.
+     * @param string $eventFilterType An `eventFilterType` value that the `notificationType` supports. The subscription service uses the `eventFilterType` to determine the type of event filter. To determine if a specific `notificationType` supports an `eventFilterType`, refer to [Notification Type Values]( https://developer-docs.amazon.com/sp-api/docs/notification-type-values).
      *
      * @return self
      */

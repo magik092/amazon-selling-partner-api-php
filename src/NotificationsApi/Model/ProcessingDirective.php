@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ProcessingDirective Class Doc Comment
  *
  * @category Class
- * @description Additional information passed to the subscription to control the processing of notifications. For example, you can use an &#x60;eventFilter&#x60; to customize your subscription to send notifications for only the specified &#x60;marketplaceId&#x60;s, or select the aggregation time period at which to send notifications (for example: limit to one notification every five minutes for high frequency notifications). The specific features available vary depending on the &#x60;notificationType&#x60;.  This feature is currently only supported by the &#x60;ANY_OFFER_CHANGED&#x60; and &#x60;ORDER_CHANGE&#x60; &#x60;notificationType&#x60;s.
+ * @description Additional information passed to the subscription to control the processing of notifications. For example, you can use an &#x60;eventFilter&#x60; to customize your subscription to send notifications for only the &#x60;marketplaceId&#x60;s that you specify, or select the aggregation time period at which to send notifications (for example, you can set a limit of one notification every five minutes for high frequency notifications). You can also use &#x60;filterExpression&#x60; to filter events based on notification payload. The specific features available can vary by the &#x60;notificationType&#x60;.
  * @package  Webcom\Amazon\Rest\NotificationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -62,7 +62,8 @@ class ProcessingDirective implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'eventFilter' => '\Webcom\Amazon\Rest\NotificationsApi\Model\EventFilter'
+        'eventFilter' => '\Webcom\Amazon\Rest\NotificationsApi\Model\EventFilter',
+        'filterExpression' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class ProcessingDirective implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'eventFilter' => null
+        'eventFilter' => null,
+        'filterExpression' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class ProcessingDirective implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'eventFilter' => 'eventFilter'
+        'eventFilter' => 'eventFilter',
+        'filterExpression' => 'filterExpression'
     ];
 
     /**
@@ -112,7 +115,8 @@ class ProcessingDirective implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'eventFilter' => 'setEventFilter'
+        'eventFilter' => 'setEventFilter',
+        'filterExpression' => 'setFilterExpression'
     ];
 
     /**
@@ -121,7 +125,8 @@ class ProcessingDirective implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'eventFilter' => 'getEventFilter'
+        'eventFilter' => 'getEventFilter',
+        'filterExpression' => 'getFilterExpression'
     ];
 
     /**
@@ -185,6 +190,7 @@ class ProcessingDirective implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['eventFilter'] = $data['eventFilter'] ?? null;
+        $this->container['filterExpression'] = $data['filterExpression'] ?? null;
     }
 
     /**
@@ -195,6 +201,14 @@ class ProcessingDirective implements ModelInterface, ArrayAccess, \JsonSerializa
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['filterExpression']) && (mb_strlen($this->container['filterExpression']) > 256)) {
+            $invalidProperties[] = "invalid value for 'filterExpression', the character length must be smaller than or equal to 256.";
+        }
+
+        if (!is_null($this->container['filterExpression']) && (mb_strlen($this->container['filterExpression']) < 1)) {
+            $invalidProperties[] = "invalid value for 'filterExpression', the character length must be bigger than or equal to 1.";
+        }
 
         return $invalidProperties;
     }
@@ -231,6 +245,37 @@ class ProcessingDirective implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setEventFilter($eventFilter)
     {
         $this->container['eventFilter'] = $eventFilter;
+
+        return $this;
+    }
+
+    /**
+     * Gets filterExpression
+     *
+     * @return string|null
+     */
+    public function getFilterExpression()
+    {
+        return $this->container['filterExpression'];
+    }
+
+    /**
+     * Sets filterExpression
+     *
+     * @param string|null $filterExpression An expression for filtering events before delivery to destination based on the notification payload (example: FulfillmentOrderStatusNotification.FulfillmentOrderStatus == `SHIPPED` ). The `filterExpression` is a string that follows the CEL expression syntax (https://github.com/google/cel-spec) excluding arithmetic operators (+, -, *, /, %) and list/map indexing ([]). Refer to Notification Type Values to determine if filter Expression is supported for a Notification Type. Refer to CEL Operators (https://developer-docs.amazon.com/sp-api/docs/filter-notification-subscriptions) to see if a CEL operator is supported.   Note: eventFilter and filterExpression are mutually exclusive. You can use filterExpression to replace existing eventFilter configurations.
+     *
+     * @return self
+     */
+    public function setFilterExpression($filterExpression)
+    {
+        if (!is_null($filterExpression) && (mb_strlen($filterExpression) > 256)) {
+            throw new \InvalidArgumentException('invalid length for $filterExpression when calling ProcessingDirective., must be smaller than or equal to 256.');
+        }
+        if (!is_null($filterExpression) && (mb_strlen($filterExpression) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $filterExpression when calling ProcessingDirective., must be bigger than or equal to 1.');
+        }
+
+        $this->container['filterExpression'] = $filterExpression;
 
         return $this;
     }

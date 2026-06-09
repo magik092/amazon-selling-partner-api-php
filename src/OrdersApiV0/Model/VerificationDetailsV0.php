@@ -62,7 +62,9 @@ class VerificationDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'prescriptionDetail' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\PrescriptionDetailV0'
+        'prescriptionDetail' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\PrescriptionDetailV0',
+        'approvedAlternativeDetails' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\ApprovedAttributeV0[]',
+        'interimStatusDetail' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\InterimStatusDetailV0'
     ];
 
     /**
@@ -73,7 +75,9 @@ class VerificationDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'prescriptionDetail' => null
+        'prescriptionDetail' => null,
+        'approvedAlternativeDetails' => null,
+        'interimStatusDetail' => null
     ];
 
     /**
@@ -103,7 +107,9 @@ class VerificationDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'prescriptionDetail' => 'prescriptionDetail'
+        'prescriptionDetail' => 'prescriptionDetail',
+        'approvedAlternativeDetails' => 'approvedAlternativeDetails',
+        'interimStatusDetail' => 'interimStatusDetail'
     ];
 
     /**
@@ -112,7 +118,9 @@ class VerificationDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'prescriptionDetail' => 'setPrescriptionDetail'
+        'prescriptionDetail' => 'setPrescriptionDetail',
+        'approvedAlternativeDetails' => 'setApprovedAlternativeDetails',
+        'interimStatusDetail' => 'setInterimStatusDetail'
     ];
 
     /**
@@ -121,7 +129,9 @@ class VerificationDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'prescriptionDetail' => 'getPrescriptionDetail'
+        'prescriptionDetail' => 'getPrescriptionDetail',
+        'approvedAlternativeDetails' => 'getApprovedAlternativeDetails',
+        'interimStatusDetail' => 'getInterimStatusDetail'
     ];
 
     /**
@@ -185,6 +195,8 @@ class VerificationDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->container['prescriptionDetail'] = $data['prescriptionDetail'] ?? null;
+        $this->container['approvedAlternativeDetails'] = $data['approvedAlternativeDetails'] ?? null;
+        $this->container['interimStatusDetail'] = $data['interimStatusDetail'] ?? null;
     }
 
     /**
@@ -231,6 +243,54 @@ class VerificationDetailsV0 implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setPrescriptionDetail($prescriptionDetail)
     {
         $this->container['prescriptionDetail'] = $prescriptionDetail;
+
+        return $this;
+    }
+
+    /**
+     * Gets approvedAlternativeDetails
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\ApprovedAttributeV0[]|null
+     */
+    public function getApprovedAlternativeDetails()
+    {
+        return $this->container['approvedAlternativeDetails'];
+    }
+
+    /**
+     * Sets approvedAlternativeDetails
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\ApprovedAttributeV0[]|null $approvedAlternativeDetails Pre-approved alternative product attributes available for a rejected order. Each element contains an attribute name, its original value from the rejected order, and the corrected value that would result in approval (for example, a substituted `asin` or adjusted `petWeight`).
+     *
+     * @return self
+     */
+    public function setApprovedAlternativeDetails($approvedAlternativeDetails)
+    {
+        $this->container['approvedAlternativeDetails'] = $approvedAlternativeDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets interimStatusDetail
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\InterimStatusDetailV0|null
+     */
+    public function getInterimStatusDetail()
+    {
+        return $this->container['interimStatusDetail'];
+    }
+
+    /**
+     * Sets interimStatusDetail
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\InterimStatusDetailV0|null $interimStatusDetail interimStatusDetail
+     *
+     * @return self
+     */
+    public function setInterimStatusDetail($interimStatusDetail)
+    {
+        $this->container['interimStatusDetail'] = $interimStatusDetail;
 
         return $this;
     }

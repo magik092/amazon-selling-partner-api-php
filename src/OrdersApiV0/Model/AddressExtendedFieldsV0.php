@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * AddressExtendedFieldsV0 Class Doc Comment
  *
  * @category Class
- * @description The container for address extended fields (such as &#x60;street name&#x60; and &#x60;street number&#x60;). Currently only available with Brazil shipping addresses.
+ * @description Extended address fields for additional address components including the street name or number.   Note: Available for grocery sellers and Brazil shipping addresses.
  * @package  Webcom\Amazon\Rest\OrdersApiV0
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -65,7 +65,8 @@ class AddressExtendedFieldsV0 implements ModelInterface, ArrayAccess, \JsonSeria
         'streetName' => 'string',
         'streetNumber' => 'string',
         'complement' => 'string',
-        'neighborhood' => 'string'
+        'neighborhood' => 'string',
+        'geoCoordinates' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\GeoCoordinatesV0'
     ];
 
     /**
@@ -79,7 +80,8 @@ class AddressExtendedFieldsV0 implements ModelInterface, ArrayAccess, \JsonSeria
         'streetName' => null,
         'streetNumber' => null,
         'complement' => null,
-        'neighborhood' => null
+        'neighborhood' => null,
+        'geoCoordinates' => null
     ];
 
     /**
@@ -112,7 +114,8 @@ class AddressExtendedFieldsV0 implements ModelInterface, ArrayAccess, \JsonSeria
         'streetName' => 'StreetName',
         'streetNumber' => 'StreetNumber',
         'complement' => 'Complement',
-        'neighborhood' => 'Neighborhood'
+        'neighborhood' => 'Neighborhood',
+        'geoCoordinates' => 'GeoCoordinates'
     ];
 
     /**
@@ -124,7 +127,8 @@ class AddressExtendedFieldsV0 implements ModelInterface, ArrayAccess, \JsonSeria
         'streetName' => 'setStreetName',
         'streetNumber' => 'setStreetNumber',
         'complement' => 'setComplement',
-        'neighborhood' => 'setNeighborhood'
+        'neighborhood' => 'setNeighborhood',
+        'geoCoordinates' => 'setGeoCoordinates'
     ];
 
     /**
@@ -136,7 +140,8 @@ class AddressExtendedFieldsV0 implements ModelInterface, ArrayAccess, \JsonSeria
         'streetName' => 'getStreetName',
         'streetNumber' => 'getStreetNumber',
         'complement' => 'getComplement',
-        'neighborhood' => 'getNeighborhood'
+        'neighborhood' => 'getNeighborhood',
+        'geoCoordinates' => 'getGeoCoordinates'
     ];
 
     /**
@@ -203,6 +208,7 @@ class AddressExtendedFieldsV0 implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['streetNumber'] = $data['streetNumber'] ?? null;
         $this->container['complement'] = $data['complement'] ?? null;
         $this->container['neighborhood'] = $data['neighborhood'] ?? null;
+        $this->container['geoCoordinates'] = $data['geoCoordinates'] ?? null;
     }
 
     /**
@@ -321,6 +327,30 @@ class AddressExtendedFieldsV0 implements ModelInterface, ArrayAccess, \JsonSeria
     public function setNeighborhood($neighborhood)
     {
         $this->container['neighborhood'] = $neighborhood;
+
+        return $this;
+    }
+
+    /**
+     * Gets geoCoordinates
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\GeoCoordinatesV0|null
+     */
+    public function getGeoCoordinates()
+    {
+        return $this->container['geoCoordinates'];
+    }
+
+    /**
+     * Sets geoCoordinates
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\GeoCoordinatesV0|null $geoCoordinates geoCoordinates
+     *
+     * @return self
+     */
+    public function setGeoCoordinates($geoCoordinates)
+    {
+        $this->container['geoCoordinates'] = $geoCoordinates;
 
         return $this;
     }

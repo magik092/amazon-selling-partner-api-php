@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * Destination Class Doc Comment
  *
  * @category Class
- * @description Information about the destination created when you call the &#x60;createDestination&#x60; operation.
+ * @description Information about the destination you create when you call the &#x60;createDestination&#x60; operation.
  * @package  Webcom\Amazon\Rest\NotificationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

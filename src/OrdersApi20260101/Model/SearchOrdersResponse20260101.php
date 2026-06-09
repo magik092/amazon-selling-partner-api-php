@@ -293,7 +293,7 @@ class SearchOrdersResponse20260101 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets lastUpdatedBefore
      *
-     * @param \DateTime|null $lastUpdatedBefore Only orders updated before the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     * @param \DateTime|null $lastUpdatedBefore Only orders updated before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      *
      * @return self
      */
@@ -317,7 +317,7 @@ class SearchOrdersResponse20260101 implements ModelInterface, ArrayAccess, \Json
     /**
      * Sets createdBefore
      *
-     * @param \DateTime|null $createdBefore Only orders placed before the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
+     * @param \DateTime|null $createdBefore Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
      *
      * @return self
      */

@@ -236,7 +236,7 @@ class ProductTypeList20200901 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets productTypes
      *
-     * @param \Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ProductType20200901[] $productTypes productTypes
+     * @param \Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\ProductType20200901[] $productTypes A list of product types.
      *
      * @return self
      */

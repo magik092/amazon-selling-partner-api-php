@@ -172,6 +172,8 @@ class Weight20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
 
     const WEIGHT_UNIT_G = 'G';
     const WEIGHT_UNIT_KG = 'KG';
+    const WEIGHT_UNIT_LB = 'LB';
+    const WEIGHT_UNIT_OZ = 'OZ';
     
 
     
@@ -185,6 +187,8 @@ class Weight20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
         return [
             self::WEIGHT_UNIT_G,
             self::WEIGHT_UNIT_KG,
+            self::WEIGHT_UNIT_LB,
+            self::WEIGHT_UNIT_OZ,
         ];
     }
     

@@ -77,6 +77,8 @@ class EventCode20200701
     const _417 = 'EVENT_417';
     const _418 = 'EVENT_418';
     const _419 = 'EVENT_419';
+    const _801 = 'EVENT_801';
+    const _804 = 'EVENT_804';
     
     /**
      * Gets allowable values of the enum
@@ -118,6 +120,8 @@ class EventCode20200701
             self::_417,
             self::_418,
             self::_419,
+            self::_801,
+            self::_804,
         ];
     }
 }

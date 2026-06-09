@@ -1427,10 +1427,6 @@ class ListingsApi
                 'Missing the required parameter $marketplaceIds when calling patchListingsItem'
             );
         }
-        if (count($marketplaceIds) > 1) {
-            throw new \InvalidArgumentException('invalid value for "$marketplaceIds" when calling ListingsApi.patchListingsItem, number of items must be less than or equal to 1.');
-        }
-
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(

@@ -118,7 +118,7 @@ class NotificationsApi
     /**
      * Operation createDestination
      *
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body body (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body The request schema for the &#x60;createDestination&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +133,7 @@ class NotificationsApi
     /**
      * Operation createDestinationWithHttpInfo
      *
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body The request schema for the &#x60;createDestination&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -401,7 +401,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body The request schema for the &#x60;createDestination&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -421,7 +421,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body The request schema for the &#x60;createDestination&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -468,7 +468,7 @@ class NotificationsApi
     /**
      * Create request for operation 'createDestination'
      *
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateDestinationRequest $body The request schema for the &#x60;createDestination&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -559,8 +559,8 @@ class NotificationsApi
     /**
      * Operation createSubscription
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body body (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body The request schema for the &#x60;createSubscription&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -575,8 +575,8 @@ class NotificationsApi
     /**
      * Operation createSubscriptionWithHttpInfo
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body The request schema for the &#x60;createSubscription&#x60; operation. (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -844,8 +844,8 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body The request schema for the &#x60;createSubscription&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -865,8 +865,8 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body The request schema for the &#x60;createSubscription&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -913,8 +913,8 @@ class NotificationsApi
     /**
      * Create request for operation 'createSubscription'
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
-     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\CreateSubscriptionRequest $body The request schema for the &#x60;createSubscription&#x60; operation. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1463,7 +1463,7 @@ class NotificationsApi
      * Operation deleteSubscriptionById
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1479,7 +1479,7 @@ class NotificationsApi
      * Operation deleteSubscriptionByIdWithHttpInfo
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1748,7 +1748,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1769,7 +1769,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1817,7 +1817,7 @@ class NotificationsApi
      * Create request for operation 'deleteSubscriptionById'
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to delete. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -2791,7 +2791,7 @@ class NotificationsApi
     /**
      * Operation getSubscription
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
@@ -2807,7 +2807,7 @@ class NotificationsApi
     /**
      * Operation getSubscriptionWithHttpInfo
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
@@ -3056,7 +3056,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3077,7 +3077,7 @@ class NotificationsApi
      *
      * 
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3125,7 +3125,7 @@ class NotificationsApi
     /**
      * Create request for operation 'getSubscription'
      *
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      * @param  string $payloadVersion The version of the payload object to be used in the notification. (optional)
      *
      * @throws \InvalidArgumentException
@@ -3227,7 +3227,7 @@ class NotificationsApi
      * Operation getSubscriptionById
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3243,7 +3243,7 @@ class NotificationsApi
      * Operation getSubscriptionByIdWithHttpInfo
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3512,7 +3512,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3533,7 +3533,7 @@ class NotificationsApi
      * 
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -3581,7 +3581,7 @@ class NotificationsApi
      * Create request for operation 'getSubscriptionById'
      *
      * @param  string $subscriptionId The identifier for the subscription that you want to get. (required)
-     * @param  string $notificationType The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -3679,6 +3679,466 @@ class NotificationsApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation sendTestNotification
+     *
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationRequest $body The request schema for the &#x60;sendTestNotification&#x60; operation. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse
+     */
+    public function sendTestNotification($notificationType, $body)
+    {
+        list($response) = $this->sendTestNotificationWithHttpInfo($notificationType, $body);
+        return $response;
+    }
+
+    /**
+     * Operation sendTestNotificationWithHttpInfo
+     *
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationRequest $body The request schema for the &#x60;sendTestNotification&#x60; operation. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\NotificationsApi\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse|\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function sendTestNotificationWithHttpInfo($notificationType, $body)
+    {
+        $request = $this->sendTestNotificationRequest($notificationType, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 409:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sendTestNotificationAsync
+     *
+     * 
+     *
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationRequest $body The request schema for the &#x60;sendTestNotification&#x60; operation. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sendTestNotificationAsync($notificationType, $body)
+    {
+        return $this->sendTestNotificationAsyncWithHttpInfo($notificationType, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation sendTestNotificationAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationRequest $body The request schema for the &#x60;sendTestNotification&#x60; operation. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function sendTestNotificationAsyncWithHttpInfo($notificationType, $body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationResponse';
+        $request = $this->sendTestNotificationRequest($notificationType, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'sendTestNotification'
+     *
+     * @param  string $notificationType The type of notification.   For more information about notification types, refer to the [Notifications API v1 Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param  \Webcom\Amazon\Rest\NotificationsApi\Model\SendTestNotificationRequest $body The request schema for the &#x60;sendTestNotification&#x60; operation. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function sendTestNotificationRequest($notificationType, $body)
+    {
+        // verify the required parameter 'notificationType' is set
+        if ($notificationType === null || (is_array($notificationType) && count($notificationType) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $notificationType when calling sendTestNotification'
+            );
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling sendTestNotification'
+            );
+        }
+
+        $resourcePath = '/notifications/v1/subscriptions/{notificationType}/testNotification';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($notificationType !== null) {
+            $resourcePath = str_replace(
+                '{' . 'notificationType' . '}',
+                ObjectSerializer::toPathValue($notificationType),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'Successful Response', 'Response']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'Successful Response', 'Response'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

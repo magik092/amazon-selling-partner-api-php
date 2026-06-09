@@ -8,3 +8,4 @@ generate.sh
 openapitools.json
 composer.lock
 migrate.php
+docs/

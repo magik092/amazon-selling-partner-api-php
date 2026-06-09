@@ -227,7 +227,7 @@ class RestrictionList20210801 implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Sets restrictions
      *
-     * @param \Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Restriction20210801[] $restrictions restrictions
+     * @param \Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Restriction20210801[] $restrictions A list of restrictions.
      *
      * @return self
      */

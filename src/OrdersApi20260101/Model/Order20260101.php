@@ -72,9 +72,12 @@ class Order20260101 implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\Buyer20260101',
         'recipient' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\Recipient20260101',
         'proceeds' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderProceeds20260101',
+        'payment' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderPayment20260101',
+        'tax' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderTax20260101',
         'fulfillment' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderFulfillment20260101',
         'orderItems' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderItem20260101[]',
-        'packages' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderPackage20260101[]'
+        'packages' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderPackage20260101[]',
+        'fulfillmentOrders' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\FulfillmentOrder20260101[]'
     ];
 
     /**
@@ -95,9 +98,12 @@ class Order20260101 implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer' => null,
         'recipient' => null,
         'proceeds' => null,
+        'payment' => null,
+        'tax' => null,
         'fulfillment' => null,
         'orderItems' => null,
-        'packages' => null
+        'packages' => null,
+        'fulfillmentOrders' => null
     ];
 
     /**
@@ -137,9 +143,12 @@ class Order20260101 implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer' => 'buyer',
         'recipient' => 'recipient',
         'proceeds' => 'proceeds',
+        'payment' => 'payment',
+        'tax' => 'tax',
         'fulfillment' => 'fulfillment',
         'orderItems' => 'orderItems',
-        'packages' => 'packages'
+        'packages' => 'packages',
+        'fulfillmentOrders' => 'fulfillmentOrders'
     ];
 
     /**
@@ -158,9 +167,12 @@ class Order20260101 implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer' => 'setBuyer',
         'recipient' => 'setRecipient',
         'proceeds' => 'setProceeds',
+        'payment' => 'setPayment',
+        'tax' => 'setTax',
         'fulfillment' => 'setFulfillment',
         'orderItems' => 'setOrderItems',
-        'packages' => 'setPackages'
+        'packages' => 'setPackages',
+        'fulfillmentOrders' => 'setFulfillmentOrders'
     ];
 
     /**
@@ -179,9 +191,12 @@ class Order20260101 implements ModelInterface, ArrayAccess, \JsonSerializable
         'buyer' => 'getBuyer',
         'recipient' => 'getRecipient',
         'proceeds' => 'getProceeds',
+        'payment' => 'getPayment',
+        'tax' => 'getTax',
         'fulfillment' => 'getFulfillment',
         'orderItems' => 'getOrderItems',
-        'packages' => 'getPackages'
+        'packages' => 'getPackages',
+        'fulfillmentOrders' => 'getFulfillmentOrders'
     ];
 
     /**
@@ -254,9 +269,12 @@ class Order20260101 implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['buyer'] = $data['buyer'] ?? null;
         $this->container['recipient'] = $data['recipient'] ?? null;
         $this->container['proceeds'] = $data['proceeds'] ?? null;
+        $this->container['payment'] = $data['payment'] ?? null;
+        $this->container['tax'] = $data['tax'] ?? null;
         $this->container['fulfillment'] = $data['fulfillment'] ?? null;
         $this->container['orderItems'] = $data['orderItems'] ?? null;
         $this->container['packages'] = $data['packages'] ?? null;
+        $this->container['fulfillmentOrders'] = $data['fulfillmentOrders'] ?? null;
     }
 
     /**
@@ -407,7 +425,7 @@ class Order20260101 implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets programs
      *
-     * @param string[]|null $programs Special programs associated with this order that may affect fulfillment or customer experience.   **Possible values**: `AMAZON_BAZAAR`, `AMAZON_BUSINESS`,  `AMAZON_EASY_SHIP`, `AMAZON_HAUL`, `DELIVERY_BY_AMAZON`, `FBM_SHIP_PLUS`, `IN_STORE_PICK_UP`, `PREMIUM`, `PREORDER`, `PRIME`
+     * @param string[]|null $programs Special programs associated with this order that may affect fulfillment or customer experience.   **Possible values**: `AMAZON_BAZAAR`, `AMAZON_BUSINESS`, `AMAZON_EASY_SHIP`, `AMAZON_HAUL`, `DELIVERY_BY_AMAZON`, `FBM_SHIP_PLUS`, `INVOICE_BY_AMAZON`, `IN_STORE_PICK_UP`, `PREMIUM`, `PREORDER`, `PRIME`
      *
      * @return self
      */
@@ -539,6 +557,54 @@ class Order20260101 implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets payment
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderPayment20260101|null
+     */
+    public function getPayment()
+    {
+        return $this->container['payment'];
+    }
+
+    /**
+     * Sets payment
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderPayment20260101|null $payment payment
+     *
+     * @return self
+     */
+    public function setPayment($payment)
+    {
+        $this->container['payment'] = $payment;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderTax20260101|null
+     */
+    public function getTax()
+    {
+        return $this->container['tax'];
+    }
+
+    /**
+     * Sets tax
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderTax20260101|null $tax tax
+     *
+     * @return self
+     */
+    public function setTax($tax)
+    {
+        $this->container['tax'] = $tax;
+
+        return $this;
+    }
+
+    /**
      * Gets fulfillment
      *
      * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderFulfillment20260101|null
@@ -606,6 +672,30 @@ class Order20260101 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPackages($packages)
     {
         $this->container['packages'] = $packages;
+
+        return $this;
+    }
+
+    /**
+     * Gets fulfillmentOrders
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\FulfillmentOrder20260101[]|null
+     */
+    public function getFulfillmentOrders()
+    {
+        return $this->container['fulfillmentOrders'];
+    }
+
+    /**
+     * Sets fulfillmentOrders
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApi20260101\Model\FulfillmentOrder20260101[]|null $fulfillmentOrders The list of fulfillment orders associated with this customer order. Each entry corresponds to one fulfillment unit created by Amazon for this order. **Note:** Only available for EasyShip orders at present.
+     *
+     * @return self
+     */
+    public function setFulfillmentOrders($fulfillmentOrders)
+    {
+        $this->container['fulfillmentOrders'] = $fulfillmentOrders;
 
         return $this;
     }

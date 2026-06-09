@@ -65,13 +65,15 @@ class OrderItem20260101 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'orderItemId' => 'string',
         'quantityOrdered' => 'int',
         'measurement' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\Measurement20260101',
+        'associatedOrderItems' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\AssociatedOrderItem20260101[]',
         'programs' => 'string[]',
         'product' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemProduct20260101',
         'proceeds' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemProceeds20260101',
         'expense' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemExpense20260101',
         'promotion' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemPromotion20260101',
         'cancellation' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemCancellation20260101',
-        'fulfillment' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemFulfillment20260101'
+        'fulfillment' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemFulfillment20260101',
+        'tax' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemTax20260101'
     ];
 
     /**
@@ -85,13 +87,15 @@ class OrderItem20260101 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'orderItemId' => null,
         'quantityOrdered' => null,
         'measurement' => null,
+        'associatedOrderItems' => null,
         'programs' => null,
         'product' => null,
         'proceeds' => null,
         'expense' => null,
         'promotion' => null,
         'cancellation' => null,
-        'fulfillment' => null
+        'fulfillment' => null,
+        'tax' => null
     ];
 
     /**
@@ -124,13 +128,15 @@ class OrderItem20260101 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'orderItemId' => 'orderItemId',
         'quantityOrdered' => 'quantityOrdered',
         'measurement' => 'measurement',
+        'associatedOrderItems' => 'associatedOrderItems',
         'programs' => 'programs',
         'product' => 'product',
         'proceeds' => 'proceeds',
         'expense' => 'expense',
         'promotion' => 'promotion',
         'cancellation' => 'cancellation',
-        'fulfillment' => 'fulfillment'
+        'fulfillment' => 'fulfillment',
+        'tax' => 'tax'
     ];
 
     /**
@@ -142,13 +148,15 @@ class OrderItem20260101 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'orderItemId' => 'setOrderItemId',
         'quantityOrdered' => 'setQuantityOrdered',
         'measurement' => 'setMeasurement',
+        'associatedOrderItems' => 'setAssociatedOrderItems',
         'programs' => 'setPrograms',
         'product' => 'setProduct',
         'proceeds' => 'setProceeds',
         'expense' => 'setExpense',
         'promotion' => 'setPromotion',
         'cancellation' => 'setCancellation',
-        'fulfillment' => 'setFulfillment'
+        'fulfillment' => 'setFulfillment',
+        'tax' => 'setTax'
     ];
 
     /**
@@ -160,13 +168,15 @@ class OrderItem20260101 implements ModelInterface, ArrayAccess, \JsonSerializabl
         'orderItemId' => 'getOrderItemId',
         'quantityOrdered' => 'getQuantityOrdered',
         'measurement' => 'getMeasurement',
+        'associatedOrderItems' => 'getAssociatedOrderItems',
         'programs' => 'getPrograms',
         'product' => 'getProduct',
         'proceeds' => 'getProceeds',
         'expense' => 'getExpense',
         'promotion' => 'getPromotion',
         'cancellation' => 'getCancellation',
-        'fulfillment' => 'getFulfillment'
+        'fulfillment' => 'getFulfillment',
+        'tax' => 'getTax'
     ];
 
     /**
@@ -232,6 +242,7 @@ class OrderItem20260101 implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['orderItemId'] = $data['orderItemId'] ?? null;
         $this->container['quantityOrdered'] = $data['quantityOrdered'] ?? null;
         $this->container['measurement'] = $data['measurement'] ?? null;
+        $this->container['associatedOrderItems'] = $data['associatedOrderItems'] ?? null;
         $this->container['programs'] = $data['programs'] ?? null;
         $this->container['product'] = $data['product'] ?? null;
         $this->container['proceeds'] = $data['proceeds'] ?? null;
@@ -239,6 +250,7 @@ class OrderItem20260101 implements ModelInterface, ArrayAccess, \JsonSerializabl
         $this->container['promotion'] = $data['promotion'] ?? null;
         $this->container['cancellation'] = $data['cancellation'] ?? null;
         $this->container['fulfillment'] = $data['fulfillment'] ?? null;
+        $this->container['tax'] = $data['tax'] ?? null;
     }
 
     /**
@@ -342,6 +354,30 @@ class OrderItem20260101 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setMeasurement($measurement)
     {
         $this->container['measurement'] = $measurement;
+
+        return $this;
+    }
+
+    /**
+     * Gets associatedOrderItems
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\AssociatedOrderItem20260101[]|null
+     */
+    public function getAssociatedOrderItems()
+    {
+        return $this->container['associatedOrderItems'];
+    }
+
+    /**
+     * Sets associatedOrderItems
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApi20260101\Model\AssociatedOrderItem20260101[]|null $associatedOrderItems A list of order items associated with this item. For example, a value-add service purchased with the product.
+     *
+     * @return self
+     */
+    public function setAssociatedOrderItems($associatedOrderItems)
+    {
+        $this->container['associatedOrderItems'] = $associatedOrderItems;
 
         return $this;
     }
@@ -510,6 +546,30 @@ class OrderItem20260101 implements ModelInterface, ArrayAccess, \JsonSerializabl
     public function setFulfillment($fulfillment)
     {
         $this->container['fulfillment'] = $fulfillment;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemTax20260101|null
+     */
+    public function getTax()
+    {
+        return $this->container['tax'];
+    }
+
+    /**
+     * Sets tax
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApi20260101\Model\ItemTax20260101|null $tax tax
+     *
+     * @return self
+     */
+    public function setTax($tax)
+    {
+        $this->container['tax'] = $tax;
 
         return $this;
     }

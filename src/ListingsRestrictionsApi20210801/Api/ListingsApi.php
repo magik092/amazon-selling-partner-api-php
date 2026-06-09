@@ -123,14 +123,15 @@ class ListingsApi
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param  string $conditionType The condition used to filter restrictions. (optional)
      * @param  string $reasonLocale A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $productType The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\RestrictionList20210801|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]
      */
-    public function getListingsRestrictions($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null)
+    public function getListingsRestrictions($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null, $productType = null)
     {
-        list($response) = $this->getListingsRestrictionsWithHttpInfo($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale);
+        list($response) = $this->getListingsRestrictionsWithHttpInfo($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale, $productType);
         return $response;
     }
 
@@ -142,14 +143,15 @@ class ListingsApi
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param  string $conditionType The condition used to filter restrictions. (optional)
      * @param  string $reasonLocale A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $productType The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type. (optional)
      *
      * @throws \Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\RestrictionList20210801|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[]|\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\Error20210801[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getListingsRestrictionsWithHttpInfo($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null)
+    public function getListingsRestrictionsWithHttpInfo($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null, $productType = null)
     {
-        $request = $this->getListingsRestrictionsRequest($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale);
+        $request = $this->getListingsRestrictionsRequest($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale, $productType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -394,13 +396,14 @@ class ListingsApi
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param  string $conditionType The condition used to filter restrictions. (optional)
      * @param  string $reasonLocale A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $productType The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListingsRestrictionsAsync($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null)
+    public function getListingsRestrictionsAsync($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null, $productType = null)
     {
-        return $this->getListingsRestrictionsAsyncWithHttpInfo($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale)
+        return $this->getListingsRestrictionsAsyncWithHttpInfo($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale, $productType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -418,14 +421,15 @@ class ListingsApi
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param  string $conditionType The condition used to filter restrictions. (optional)
      * @param  string $reasonLocale A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $productType The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getListingsRestrictionsAsyncWithHttpInfo($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null)
+    public function getListingsRestrictionsAsyncWithHttpInfo($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null, $productType = null)
     {
         $returnType = '\Webcom\Amazon\Rest\ListingsRestrictionsApi20210801\Model\RestrictionList20210801';
-        $request = $this->getListingsRestrictionsRequest($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale);
+        $request = $this->getListingsRestrictionsRequest($asin, $sellerId, $marketplaceIds, $conditionType, $reasonLocale, $productType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -469,11 +473,12 @@ class ListingsApi
      * @param  string[] $marketplaceIds A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param  string $conditionType The condition used to filter restrictions. (optional)
      * @param  string $reasonLocale A locale for reason text localization. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param  string $productType The product type of the item. When provided with the brand name, the API evaluates GTIN exemption restrictions in addition to brand restrictions for the specified product type. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getListingsRestrictionsRequest($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null)
+    public function getListingsRestrictionsRequest($asin, $sellerId, $marketplaceIds, $conditionType = null, $reasonLocale = null, $productType = null)
     {
         // verify the required parameter 'asin' is set
         if ($asin === null || (is_array($asin) && count($asin) === 0)) {
@@ -535,6 +540,13 @@ class ListingsApi
         }
         if ($reasonLocale !== null) {
             $queryParams['reasonLocale'] = $reasonLocale;
+        }
+        // query params
+        if (is_array($productType)) {
+            $productType = ObjectSerializer::serializeCollection($productType, '', true);
+        }
+        if ($productType !== null) {
+            $queryParams['productType'] = $productType;
         }
 
 

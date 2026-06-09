@@ -44,6 +44,7 @@ class AggregationFrequency20221107
     /**
      * Possible values of this enum
      */
+    const DAY = 'DAY';
     const WEEK = 'WEEK';
     const MONTH = 'MONTH';
     const QUARTER = 'QUARTER';
@@ -56,6 +57,7 @@ class AggregationFrequency20221107
     public static function getAllowableEnumValues()
     {
         return [
+            self::DAY,
             self::WEEK,
             self::MONTH,
             self::QUARTER,

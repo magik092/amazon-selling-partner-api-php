@@ -269,7 +269,7 @@ class ProductType20200901 implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets displayName
      *
-     * @param string $displayName The human-readable and localized description of the Amazon product type.
+     * @param string $displayName Human-readable and localized description of the Amazon product type.
      *
      * @return self
      */

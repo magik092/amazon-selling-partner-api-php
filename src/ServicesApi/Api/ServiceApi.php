@@ -5765,6 +5765,8 @@ class ServiceApi
      *
      * @param  string[] $marketplaceIds Used to select jobs that were placed in the specified marketplaces. (required)
      * @param  string[] $serviceOrderIds List of service order ids for the query you want to perform.Max values supported 20. (optional)
+     * @param  string[] $productOrderIds A list of up to 20 associated product order IDs. You can use these IDs to query service jobs. (optional)
+     * @param  string[] $trackingIds A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs. (optional)
      * @param  string[] $serviceJobStatus A list of one or more job status by which to filter the list of jobs. (optional)
      * @param  string $pageToken String returned in the response of your previous request. (optional)
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
@@ -5784,9 +5786,9 @@ class ServiceApi
      * @throws \InvalidArgumentException
      * @return \Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse
      */
-    public function getServiceJobs($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
+    public function getServiceJobs($marketplaceIds, $serviceOrderIds = null, $productOrderIds = null, $trackingIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
-        list($response) = $this->getServiceJobsWithHttpInfo($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
+        list($response) = $this->getServiceJobsWithHttpInfo($marketplaceIds, $serviceOrderIds, $productOrderIds, $trackingIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
         return $response;
     }
 
@@ -5795,6 +5797,8 @@ class ServiceApi
      *
      * @param  string[] $marketplaceIds Used to select jobs that were placed in the specified marketplaces. (required)
      * @param  string[] $serviceOrderIds List of service order ids for the query you want to perform.Max values supported 20. (optional)
+     * @param  string[] $productOrderIds A list of up to 20 associated product order IDs. You can use these IDs to query service jobs. (optional)
+     * @param  string[] $trackingIds A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs. (optional)
      * @param  string[] $serviceJobStatus A list of one or more job status by which to filter the list of jobs. (optional)
      * @param  string $pageToken String returned in the response of your previous request. (optional)
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
@@ -5814,9 +5818,9 @@ class ServiceApi
      * @throws \InvalidArgumentException
      * @return array of \Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse|\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getServiceJobsWithHttpInfo($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
+    public function getServiceJobsWithHttpInfo($marketplaceIds, $serviceOrderIds = null, $productOrderIds = null, $trackingIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
-        $request = $this->getServiceJobsRequest($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
+        $request = $this->getServiceJobsRequest($marketplaceIds, $serviceOrderIds, $productOrderIds, $trackingIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6058,6 +6062,8 @@ class ServiceApi
      *
      * @param  string[] $marketplaceIds Used to select jobs that were placed in the specified marketplaces. (required)
      * @param  string[] $serviceOrderIds List of service order ids for the query you want to perform.Max values supported 20. (optional)
+     * @param  string[] $productOrderIds A list of up to 20 associated product order IDs. You can use these IDs to query service jobs. (optional)
+     * @param  string[] $trackingIds A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs. (optional)
      * @param  string[] $serviceJobStatus A list of one or more job status by which to filter the list of jobs. (optional)
      * @param  string $pageToken String returned in the response of your previous request. (optional)
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
@@ -6076,9 +6082,9 @@ class ServiceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceJobsAsync($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
+    public function getServiceJobsAsync($marketplaceIds, $serviceOrderIds = null, $productOrderIds = null, $trackingIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
-        return $this->getServiceJobsAsyncWithHttpInfo($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds)
+        return $this->getServiceJobsAsyncWithHttpInfo($marketplaceIds, $serviceOrderIds, $productOrderIds, $trackingIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6093,6 +6099,8 @@ class ServiceApi
      *
      * @param  string[] $marketplaceIds Used to select jobs that were placed in the specified marketplaces. (required)
      * @param  string[] $serviceOrderIds List of service order ids for the query you want to perform.Max values supported 20. (optional)
+     * @param  string[] $productOrderIds A list of up to 20 associated product order IDs. You can use these IDs to query service jobs. (optional)
+     * @param  string[] $trackingIds A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs. (optional)
      * @param  string[] $serviceJobStatus A list of one or more job status by which to filter the list of jobs. (optional)
      * @param  string $pageToken String returned in the response of your previous request. (optional)
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
@@ -6111,10 +6119,10 @@ class ServiceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getServiceJobsAsyncWithHttpInfo($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
+    public function getServiceJobsAsyncWithHttpInfo($marketplaceIds, $serviceOrderIds = null, $productOrderIds = null, $trackingIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
         $returnType = '\Webcom\Amazon\Rest\ServicesApi\Model\GetServiceJobsResponse';
-        $request = $this->getServiceJobsRequest($marketplaceIds, $serviceOrderIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
+        $request = $this->getServiceJobsRequest($marketplaceIds, $serviceOrderIds, $productOrderIds, $trackingIds, $serviceJobStatus, $pageToken, $pageSize, $sortField, $sortOrder, $createdAfter, $createdBefore, $lastUpdatedAfter, $lastUpdatedBefore, $scheduleStartDate, $scheduleEndDate, $asins, $requiredSkills, $storeIds);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -6155,6 +6163,8 @@ class ServiceApi
      *
      * @param  string[] $marketplaceIds Used to select jobs that were placed in the specified marketplaces. (required)
      * @param  string[] $serviceOrderIds List of service order ids for the query you want to perform.Max values supported 20. (optional)
+     * @param  string[] $productOrderIds A list of up to 20 associated product order IDs. You can use these IDs to query service jobs. (optional)
+     * @param  string[] $trackingIds A list of up to 20 associated product tracking IDs. You can use these IDs to query service jobs. (optional)
      * @param  string[] $serviceJobStatus A list of one or more job status by which to filter the list of jobs. (optional)
      * @param  string $pageToken String returned in the response of your previous request. (optional)
      * @param  int $pageSize A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
@@ -6173,7 +6183,7 @@ class ServiceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getServiceJobsRequest($marketplaceIds, $serviceOrderIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
+    public function getServiceJobsRequest($marketplaceIds, $serviceOrderIds = null, $productOrderIds = null, $trackingIds = null, $serviceJobStatus = null, $pageToken = null, $pageSize = 20, $sortField = null, $sortOrder = null, $createdAfter = null, $createdBefore = null, $lastUpdatedAfter = null, $lastUpdatedBefore = null, $scheduleStartDate = null, $scheduleEndDate = null, $asins = null, $requiredSkills = null, $storeIds = null)
     {
         // verify the required parameter 'marketplaceIds' is set
         if ($marketplaceIds === null || (is_array($marketplaceIds) && count($marketplaceIds) === 0)) {
@@ -6190,6 +6200,20 @@ class ServiceApi
         }
         if ($serviceOrderIds !== null && count($serviceOrderIds) < 1) {
             throw new \InvalidArgumentException('invalid value for "$serviceOrderIds" when calling ServiceApi.getServiceJobs, number of items must be greater than or equal to 1.');
+        }
+
+        if ($productOrderIds !== null && count($productOrderIds) > 20) {
+            throw new \InvalidArgumentException('invalid value for "$productOrderIds" when calling ServiceApi.getServiceJobs, number of items must be less than or equal to 20.');
+        }
+        if ($productOrderIds !== null && count($productOrderIds) < 1) {
+            throw new \InvalidArgumentException('invalid value for "$productOrderIds" when calling ServiceApi.getServiceJobs, number of items must be greater than or equal to 1.');
+        }
+
+        if ($trackingIds !== null && count($trackingIds) > 20) {
+            throw new \InvalidArgumentException('invalid value for "$trackingIds" when calling ServiceApi.getServiceJobs, number of items must be less than or equal to 20.');
+        }
+        if ($trackingIds !== null && count($trackingIds) < 1) {
+            throw new \InvalidArgumentException('invalid value for "$trackingIds" when calling ServiceApi.getServiceJobs, number of items must be greater than or equal to 1.');
         }
 
         if ($pageSize !== null && $pageSize > 20) {
@@ -6234,6 +6258,20 @@ class ServiceApi
         }
         if ($serviceOrderIds !== null) {
             $queryParams['serviceOrderIds'] = $serviceOrderIds;
+        }
+        // query params
+        if (is_array($productOrderIds)) {
+            $productOrderIds = ObjectSerializer::serializeCollection($productOrderIds, 'form', true);
+        }
+        if ($productOrderIds !== null) {
+            $queryParams['productOrderIds'] = $productOrderIds;
+        }
+        // query params
+        if (is_array($trackingIds)) {
+            $trackingIds = ObjectSerializer::serializeCollection($trackingIds, 'form', true);
+        }
+        if ($trackingIds !== null) {
+            $queryParams['trackingIds'] = $trackingIds;
         }
         // query params
         if (is_array($serviceJobStatus)) {

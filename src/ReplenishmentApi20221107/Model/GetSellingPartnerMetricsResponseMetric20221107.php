@@ -1181,7 +1181,7 @@ class GetSellingPartnerMetricsResponseMetric20221107 implements ModelInterface, 
     /**
      * Sets shareOfCouponSubscriptions
      *
-     * @param double|null $shareOfCouponSubscriptions The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.
+     * @param double|null $shareOfCouponSubscriptions The percentage of new subscriptions from coupons. Applicable to `PERFORMANCE` `timePeriodType`.
      *
      * @return self
      */
@@ -1416,7 +1416,7 @@ class GetSellingPartnerMetricsResponseMetric20221107 implements ModelInterface, 
     /**
      * Sets signupConversionFor0PercentSellerFunding
      *
-     * @param double|null $signupConversionFor0PercentSellerFunding Percentage of subscriptions created by offers with 0% seller-funded discount out of the total number of new orders placed over the past 12 months
+     * @param double|null $signupConversionFor0PercentSellerFunding Percentage of subscriptions from offers with 0% seller-funded discount out of the total number of new orders placed over the past 12 months.
      *
      * @return self
      */
@@ -1448,7 +1448,7 @@ class GetSellingPartnerMetricsResponseMetric20221107 implements ModelInterface, 
     /**
      * Sets signupConversionFor5PercentSellerFunding
      *
-     * @param double|null $signupConversionFor5PercentSellerFunding [Applicable only for Sellers] Percentage of subscriptions created by offers with 5% seller-funded discount out of the total number of new orders placed over the past 12 months
+     * @param double|null $signupConversionFor5PercentSellerFunding [Applicable only for Sellers] Percentage of subscriptions from offers with 5% seller-funded discount out of the total number of new orders placed over the past 12 months.
      *
      * @return self
      */
@@ -1480,7 +1480,7 @@ class GetSellingPartnerMetricsResponseMetric20221107 implements ModelInterface, 
     /**
      * Sets signupConversionFor10PercentSellerFunding
      *
-     * @param double|null $signupConversionFor10PercentSellerFunding [Applicable only for Sellers] Percentage of subscriptions created by offers with 10% seller-funded discount out of the total number of new orders placed over the past 12 months
+     * @param double|null $signupConversionFor10PercentSellerFunding [Applicable only for Sellers] Percentage of subscriptions from offers with 10% seller-funded discount out of the total number of new orders placed over the past 12 months.
      *
      * @return self
      */
@@ -1512,7 +1512,7 @@ class GetSellingPartnerMetricsResponseMetric20221107 implements ModelInterface, 
     /**
      * Sets signupConversionFor5PlusPercentSellerFunding
      *
-     * @param double|null $signupConversionFor5PlusPercentSellerFunding [Applicable only for Vendors] Percentage of subscriptions created by offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months
+     * @param double|null $signupConversionFor5PlusPercentSellerFunding [Applicable only for Vendors] Percentage of subscriptions from offers with 5% or above seller-funded discount out of the total number of new orders placed over the past 12 months.
      *
      * @return self
      */

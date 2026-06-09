@@ -1111,6 +1111,285 @@ class AwdApi
     }
 
     /**
+     * Operation confirmOutbound
+     *
+     * @param  string $orderId ID for the outbound order you want to confirm. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function confirmOutbound($orderId)
+    {
+        $this->confirmOutboundWithHttpInfo($orderId);
+    }
+
+    /**
+     * Operation confirmOutboundWithHttpInfo
+     *
+     * @param  string $orderId ID for the outbound order you want to confirm. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function confirmOutboundWithHttpInfo($orderId)
+    {
+        $request = $this->confirmOutboundRequest($orderId);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation confirmOutboundAsync
+     *
+     * 
+     *
+     * @param  string $orderId ID for the outbound order you want to confirm. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function confirmOutboundAsync($orderId)
+    {
+        return $this->confirmOutboundAsyncWithHttpInfo($orderId)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation confirmOutboundAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $orderId ID for the outbound order you want to confirm. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function confirmOutboundAsyncWithHttpInfo($orderId)
+    {
+        $returnType = '';
+        $request = $this->confirmOutboundRequest($orderId);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'confirmOutbound'
+     *
+     * @param  string $orderId ID for the outbound order you want to confirm. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function confirmOutboundRequest($orderId)
+    {
+        // verify the required parameter 'orderId' is set
+        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $orderId when calling confirmOutbound'
+            );
+        }
+
+        $resourcePath = '/awd/2024-05-09/outboundOrders/{orderId}/confirmation';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($orderId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($orderId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation confirmReplenishmentOrder
      *
      * @param  string $orderId ID of the replenishment order to be confirmed. (required)
@@ -1737,6 +2016,427 @@ class AwdApi
         }
 
         $resourcePath = '/awd/2024-05-09/inboundOrders';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createOutbound
+     *
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderCreationData20240509 $body Payload for creating an outbound order. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509
+     */
+    public function createOutbound($body)
+    {
+        list($response) = $this->createOutboundWithHttpInfo($body);
+        return $response;
+    }
+
+    /**
+     * Operation createOutboundWithHttpInfo
+     *
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderCreationData20240509 $body Payload for creating an outbound order. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createOutboundWithHttpInfo($body)
+    {
+        $request = $this->createOutboundRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 201:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 201:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createOutboundAsync
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderCreationData20240509 $body Payload for creating an outbound order. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createOutboundAsync($body)
+    {
+        return $this->createOutboundAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createOutboundAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderCreationData20240509 $body Payload for creating an outbound order. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createOutboundAsyncWithHttpInfo($body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509';
+        $request = $this->createOutboundRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createOutbound'
+     *
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderCreationData20240509 $body Payload for creating an outbound order. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createOutboundRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createOutbound'
+            );
+        }
+
+        $resourcePath = '/awd/2024-05-09/outboundOrders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3545,6 +4245,856 @@ class AwdApi
     }
 
     /**
+     * Operation getLabelPageTypes
+     *
+     * @param  string $shipmentId ID for the shipment. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ShipmentLabelPageTypes20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509
+     */
+    public function getLabelPageTypes($shipmentId)
+    {
+        list($response) = $this->getLabelPageTypesWithHttpInfo($shipmentId);
+        return $response;
+    }
+
+    /**
+     * Operation getLabelPageTypesWithHttpInfo
+     *
+     * @param  string $shipmentId ID for the shipment. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ShipmentLabelPageTypes20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getLabelPageTypesWithHttpInfo($shipmentId)
+    {
+        $request = $this->getLabelPageTypesRequest($shipmentId);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ShipmentLabelPageTypes20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ShipmentLabelPageTypes20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ShipmentLabelPageTypes20240509';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ShipmentLabelPageTypes20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getLabelPageTypesAsync
+     *
+     * 
+     *
+     * @param  string $shipmentId ID for the shipment. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getLabelPageTypesAsync($shipmentId)
+    {
+        return $this->getLabelPageTypesAsyncWithHttpInfo($shipmentId)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getLabelPageTypesAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $shipmentId ID for the shipment. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getLabelPageTypesAsyncWithHttpInfo($shipmentId)
+    {
+        $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ShipmentLabelPageTypes20240509';
+        $request = $this->getLabelPageTypesRequest($shipmentId);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getLabelPageTypes'
+     *
+     * @param  string $shipmentId ID for the shipment. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getLabelPageTypesRequest($shipmentId)
+    {
+        // verify the required parameter 'shipmentId' is set
+        if ($shipmentId === null || (is_array($shipmentId) && count($shipmentId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $shipmentId when calling getLabelPageTypes'
+            );
+        }
+        if (strlen($shipmentId) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$shipmentId" when calling AwdApi.getLabelPageTypes, must be bigger than or equal to 1.');
+        }
+
+
+        $resourcePath = '/awd/2024-05-09/inboundShipments/{shipmentId}/labelPageTypes';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($shipmentId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'shipmentId' . '}',
+                ObjectSerializer::toPathValue($shipmentId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getOutbound
+     *
+     * @param  string $orderId ID for the outbound order to be retrieved. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509
+     */
+    public function getOutbound($orderId)
+    {
+        list($response) = $this->getOutboundWithHttpInfo($orderId);
+        return $response;
+    }
+
+    /**
+     * Operation getOutboundWithHttpInfo
+     *
+     * @param  string $orderId ID for the outbound order to be retrieved. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getOutboundWithHttpInfo($orderId)
+    {
+        $request = $this->getOutboundRequest($orderId);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getOutboundAsync
+     *
+     * 
+     *
+     * @param  string $orderId ID for the outbound order to be retrieved. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOutboundAsync($orderId)
+    {
+        return $this->getOutboundAsyncWithHttpInfo($orderId)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getOutboundAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $orderId ID for the outbound order to be retrieved. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getOutboundAsyncWithHttpInfo($orderId)
+    {
+        $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509';
+        $request = $this->getOutboundRequest($orderId);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getOutbound'
+     *
+     * @param  string $orderId ID for the outbound order to be retrieved. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getOutboundRequest($orderId)
+    {
+        // verify the required parameter 'orderId' is set
+        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $orderId when calling getOutbound'
+            );
+        }
+
+        $resourcePath = '/awd/2024-05-09/outboundOrders/{orderId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($orderId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($orderId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation getReplenishmentOrder
      *
      * @param  string $orderId ID of the replenishment order to be retrieved. (required)
@@ -4934,6 +6484,477 @@ class AwdApi
     }
 
     /**
+     * Operation listOutbounds
+     *
+     * @param  \DateTime $updatedAfter Get the outbound orders updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $updatedBefore Get the outbound orders updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $sortOrder Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)
+     * @param  int $maxResults Maximum number of results to return. (optional, default to 25)
+     * @param  string $nextToken A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundListing20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509
+     */
+    public function listOutbounds($updatedAfter = null, $updatedBefore = null, $sortOrder = null, $maxResults = 25, $nextToken = null)
+    {
+        list($response) = $this->listOutboundsWithHttpInfo($updatedAfter, $updatedBefore, $sortOrder, $maxResults, $nextToken);
+        return $response;
+    }
+
+    /**
+     * Operation listOutboundsWithHttpInfo
+     *
+     * @param  \DateTime $updatedAfter Get the outbound orders updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $updatedBefore Get the outbound orders updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $sortOrder Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)
+     * @param  int $maxResults Maximum number of results to return. (optional, default to 25)
+     * @param  string $nextToken A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundListing20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function listOutboundsWithHttpInfo($updatedAfter = null, $updatedBefore = null, $sortOrder = null, $maxResults = 25, $nextToken = null)
+    {
+        $request = $this->listOutboundsRequest($updatedAfter, $updatedBefore, $sortOrder, $maxResults, $nextToken);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundListing20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundListing20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundListing20240509';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundListing20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation listOutboundsAsync
+     *
+     * 
+     *
+     * @param  \DateTime $updatedAfter Get the outbound orders updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $updatedBefore Get the outbound orders updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $sortOrder Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)
+     * @param  int $maxResults Maximum number of results to return. (optional, default to 25)
+     * @param  string $nextToken A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listOutboundsAsync($updatedAfter = null, $updatedBefore = null, $sortOrder = null, $maxResults = 25, $nextToken = null)
+    {
+        return $this->listOutboundsAsyncWithHttpInfo($updatedAfter, $updatedBefore, $sortOrder, $maxResults, $nextToken)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation listOutboundsAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \DateTime $updatedAfter Get the outbound orders updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $updatedBefore Get the outbound orders updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $sortOrder Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)
+     * @param  int $maxResults Maximum number of results to return. (optional, default to 25)
+     * @param  string $nextToken A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function listOutboundsAsyncWithHttpInfo($updatedAfter = null, $updatedBefore = null, $sortOrder = null, $maxResults = 25, $nextToken = null)
+    {
+        $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundListing20240509';
+        $request = $this->listOutboundsRequest($updatedAfter, $updatedBefore, $sortOrder, $maxResults, $nextToken);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'listOutbounds'
+     *
+     * @param  \DateTime $updatedAfter Get the outbound orders updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  \DateTime $updatedBefore Get the outbound orders updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param  string $sortOrder Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)
+     * @param  int $maxResults Maximum number of results to return. (optional, default to 25)
+     * @param  string $nextToken A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function listOutboundsRequest($updatedAfter = null, $updatedBefore = null, $sortOrder = null, $maxResults = 25, $nextToken = null)
+    {
+        if ($maxResults !== null && $maxResults > 100) {
+            throw new \InvalidArgumentException('invalid value for "$maxResults" when calling AwdApi.listOutbounds, must be smaller than or equal to 100.');
+        }
+        if ($maxResults !== null && $maxResults < 1) {
+            throw new \InvalidArgumentException('invalid value for "$maxResults" when calling AwdApi.listOutbounds, must be bigger than or equal to 1.');
+        }
+
+
+        $resourcePath = '/awd/2024-05-09/outboundOrders';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if (is_array($updatedAfter)) {
+            $updatedAfter = ObjectSerializer::serializeCollection($updatedAfter, '', true);
+        }
+        if ($updatedAfter !== null) {
+            $queryParams['updatedAfter'] = $updatedAfter;
+        }
+        // query params
+        if (is_array($updatedBefore)) {
+            $updatedBefore = ObjectSerializer::serializeCollection($updatedBefore, '', true);
+        }
+        if ($updatedBefore !== null) {
+            $queryParams['updatedBefore'] = $updatedBefore;
+        }
+        // query params
+        if (is_array($sortOrder)) {
+            $sortOrder = ObjectSerializer::serializeCollection($sortOrder, '', true);
+        }
+        if ($sortOrder !== null) {
+            $queryParams['sortOrder'] = $sortOrder;
+        }
+        // query params
+        if (is_array($maxResults)) {
+            $maxResults = ObjectSerializer::serializeCollection($maxResults, '', true);
+        }
+        if ($maxResults !== null) {
+            $queryParams['maxResults'] = $maxResults;
+        }
+        // query params
+        if (is_array($nextToken)) {
+            $nextToken = ObjectSerializer::serializeCollection($nextToken, '', true);
+        }
+        if ($nextToken !== null) {
+            $queryParams['nextToken'] = $nextToken;
+        }
+
+
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation listReplenishmentOrders
      *
      * @param  \DateTime $updatedAfter Get the replenishment orders updated after certain time (Inclusive) Date should be in ISO 8601 format as defined by date-time in - https://www.rfc-editor.org/rfc/rfc3339. (optional)
@@ -5940,6 +7961,446 @@ class AwdApi
             $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipmentId),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateOutbound
+     *
+     * @param  string $orderId ID for the outbound order to be updated. (required)
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509 $body Represents an AWD outbound order. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509
+     */
+    public function updateOutbound($orderId, $body)
+    {
+        list($response) = $this->updateOutboundWithHttpInfo($orderId, $body);
+        return $response;
+    }
+
+    /**
+     * Operation updateOutboundWithHttpInfo
+     *
+     * @param  string $orderId ID for the outbound order to be updated. (required)
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509 $body Represents an AWD outbound order. (required)
+     *
+     * @throws \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509|\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateOutboundWithHttpInfo($orderId, $body)
+    {
+        $request = $this->updateOutboundRequest($orderId, $body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            switch($statusCode) {
+                case 200:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 400:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 403:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 413:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 415:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 429:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 500:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 503:
+                    if ('\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509' === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509';
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = (string) $responseBody;
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 413:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 415:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 503:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\ErrorList20240509',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateOutboundAsync
+     *
+     * 
+     *
+     * @param  string $orderId ID for the outbound order to be updated. (required)
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509 $body Represents an AWD outbound order. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateOutboundAsync($orderId, $body)
+    {
+        return $this->updateOutboundAsyncWithHttpInfo($orderId, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateOutboundAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $orderId ID for the outbound order to be updated. (required)
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509 $body Represents an AWD outbound order. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateOutboundAsyncWithHttpInfo($orderId, $body)
+    {
+        $returnType = '\Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrderReference20240509';
+        $request = $this->updateOutboundRequest($orderId, $body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = (string) $responseBody;
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateOutbound'
+     *
+     * @param  string $orderId ID for the outbound order to be updated. (required)
+     * @param  \Webcom\Amazon\Rest\AmazonWarehousingAndDistribution20240509\Model\OutboundOrder20240509 $body Represents an AWD outbound order. (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function updateOutboundRequest($orderId, $body)
+    {
+        // verify the required parameter 'orderId' is set
+        if ($orderId === null || (is_array($orderId) && count($orderId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $orderId when calling updateOutbound'
+            );
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling updateOutbound'
+            );
+        }
+
+        $resourcePath = '/awd/2024-05-09/outboundOrders/{orderId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($orderId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($orderId),
                 $resourcePath
             );
         }

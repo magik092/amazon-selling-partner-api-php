@@ -68,7 +68,8 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'orderId' => 'string',
         'itemStatus' => 'string',
         'brandName' => 'string',
-        'itemDelivery' => '\Webcom\Amazon\Rest\ServicesApi\Model\ItemDelivery'
+        'itemDelivery' => '\Webcom\Amazon\Rest\ServicesApi\Model\ItemDelivery',
+        'linkedAssets' => '\Webcom\Amazon\Rest\ServicesApi\Model\LinkedAsset[]'
     ];
 
     /**
@@ -85,7 +86,8 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'orderId' => null,
         'itemStatus' => null,
         'brandName' => null,
-        'itemDelivery' => null
+        'itemDelivery' => null,
+        'linkedAssets' => null
     ];
 
     /**
@@ -121,7 +123,8 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'orderId' => 'orderId',
         'itemStatus' => 'itemStatus',
         'brandName' => 'brandName',
-        'itemDelivery' => 'itemDelivery'
+        'itemDelivery' => 'itemDelivery',
+        'linkedAssets' => 'linkedAssets'
     ];
 
     /**
@@ -136,7 +139,8 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'orderId' => 'setOrderId',
         'itemStatus' => 'setItemStatus',
         'brandName' => 'setBrandName',
-        'itemDelivery' => 'setItemDelivery'
+        'itemDelivery' => 'setItemDelivery',
+        'linkedAssets' => 'setLinkedAssets'
     ];
 
     /**
@@ -151,7 +155,8 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'orderId' => 'getOrderId',
         'itemStatus' => 'getItemStatus',
         'brandName' => 'getBrandName',
-        'itemDelivery' => 'getItemDelivery'
+        'itemDelivery' => 'getItemDelivery',
+        'linkedAssets' => 'getLinkedAssets'
     ];
 
     /**
@@ -240,6 +245,7 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['itemStatus'] = $data['itemStatus'] ?? null;
         $this->container['brandName'] = $data['brandName'] ?? null;
         $this->container['itemDelivery'] = $data['itemDelivery'] ?? null;
+        $this->container['linkedAssets'] = $data['linkedAssets'] ?? null;
     }
 
     /**
@@ -464,6 +470,30 @@ class AssociatedItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setItemDelivery($itemDelivery)
     {
         $this->container['itemDelivery'] = $itemDelivery;
+
+        return $this;
+    }
+
+    /**
+     * Gets linkedAssets
+     *
+     * @return \Webcom\Amazon\Rest\ServicesApi\Model\LinkedAsset[]|null
+     */
+    public function getLinkedAssets()
+    {
+        return $this->container['linkedAssets'];
+    }
+
+    /**
+     * Sets linkedAssets
+     *
+     * @param \Webcom\Amazon\Rest\ServicesApi\Model\LinkedAsset[]|null $linkedAssets A list of customer-owned assets on which the service must be performed.
+     *
+     * @return self
+     */
+    public function setLinkedAssets($linkedAssets)
+    {
+        $this->container['linkedAssets'] = $linkedAssets;
 
         return $this;
     }

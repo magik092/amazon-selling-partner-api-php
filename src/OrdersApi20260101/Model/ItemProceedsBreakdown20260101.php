@@ -208,6 +208,12 @@ class ItemProceedsBreakdown20260101 implements ModelInterface, ArrayAccess, \Jso
     {
         $invalidProperties = [];
 
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
+        }
+        if ($this->container['subtotal'] === null) {
+            $invalidProperties[] = "'subtotal' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -226,7 +232,7 @@ class ItemProceedsBreakdown20260101 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets type
      *
-     * @return string|null
+     * @return string
      */
     public function getType()
     {
@@ -236,7 +242,7 @@ class ItemProceedsBreakdown20260101 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets type
      *
-     * @param string|null $type Category classification of the proceeds breakdown.   **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `TAX`, `DISCOUNT`
+     * @param string $type Category classification of the proceeds breakdown.   **Possible values**: `ITEM`, `SHIPPING`, `GIFT_WRAP`, `COD_FEE`, `OTHER`, `TAX`, `DISCOUNT`
      *
      * @return self
      */
@@ -250,7 +256,7 @@ class ItemProceedsBreakdown20260101 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Gets subtotal
      *
-     * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\Money20260101|null
+     * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\Money20260101
      */
     public function getSubtotal()
     {
@@ -260,7 +266,7 @@ class ItemProceedsBreakdown20260101 implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets subtotal
      *
-     * @param \Webcom\Amazon\Rest\OrdersApi20260101\Model\Money20260101|null $subtotal subtotal
+     * @param \Webcom\Amazon\Rest\OrdersApi20260101\Model\Money20260101 $subtotal subtotal
      *
      * @return self
      */

@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * OrderChangeTypeFilter Class Doc Comment
  *
  * @category Class
- * @description An event filter to customize your subscription to send notifications for only the specified &#x60;orderChangeType&#x60;.
+ * @description An event filter you can use to customize your subscription to send notifications for a specific &#x60;orderChangeType&#x60;.
  * @package  Webcom\Amazon\Rest\NotificationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -224,7 +224,7 @@ class OrderChangeTypeFilter implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets orderChangeTypes
      *
-     * @param \Webcom\Amazon\Rest\NotificationsApi\Model\OrderChangeTypeEnum[]|null $orderChangeTypes A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
+     * @param \Webcom\Amazon\Rest\NotificationsApi\Model\OrderChangeTypeEnum[]|null $orderChangeTypes A list of order change types you can subscribe to (for example, `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
      *
      * @return self
      */

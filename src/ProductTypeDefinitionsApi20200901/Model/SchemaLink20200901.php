@@ -37,6 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * SchemaLink20200901 Class Doc Comment
  *
  * @category Class
+ * @description A link to metadata schema.
  * @package  Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -259,7 +260,7 @@ class SchemaLink20200901 implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets checksum
      *
-     * @param string $checksum Checksum hash of the schema (Base64 MD5). Can be used to verify schema contents, identify changes between schema versions, and for caching.
+     * @param string $checksum Checksum hash of the schema (Base64 MD5). Use this to verify schema contents, identify changes between schema versions, and for caching.
      *
      * @return self
      */

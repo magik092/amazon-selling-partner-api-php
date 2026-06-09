@@ -354,6 +354,9 @@ class ShippingInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setShippingType($shippingType)
     {
         $allowedValues = $this->getShippingTypeAllowableValues();
+        if (!in_array($shippingType, $allowedValues, true) && in_array(strtoupper($shippingType), $allowedValues, true)) {
+            $shippingType = strtoupper($shippingType);
+        }
         if (!is_null($shippingType) && !in_array($shippingType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(

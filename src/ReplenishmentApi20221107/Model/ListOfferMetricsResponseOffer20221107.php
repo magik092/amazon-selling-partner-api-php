@@ -65,6 +65,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'asin' => 'string',
         'sku' => 'string',
         'fulfillmentChannelType' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\FulfillmentChannelType20221107',
+        'brandName' => 'string',
+        'productGroup' => 'string',
         'notDeliveredDueToOOS' => 'double',
         'totalSubscriptionsRevenue' => 'double',
         'shippedSubscriptionUnits' => 'float',
@@ -94,6 +96,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'asin' => null,
         'sku' => null,
         'fulfillmentChannelType' => null,
+        'brandName' => null,
+        'productGroup' => null,
         'notDeliveredDueToOOS' => 'double',
         'totalSubscriptionsRevenue' => 'double',
         'shippedSubscriptionUnits' => 'int64',
@@ -142,6 +146,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'asin' => 'asin',
         'sku' => 'sku',
         'fulfillmentChannelType' => 'fulfillmentChannelType',
+        'brandName' => 'brandName',
+        'productGroup' => 'productGroup',
         'notDeliveredDueToOOS' => 'notDeliveredDueToOOS',
         'totalSubscriptionsRevenue' => 'totalSubscriptionsRevenue',
         'shippedSubscriptionUnits' => 'shippedSubscriptionUnits',
@@ -169,6 +175,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'asin' => 'setAsin',
         'sku' => 'setSku',
         'fulfillmentChannelType' => 'setFulfillmentChannelType',
+        'brandName' => 'setBrandName',
+        'productGroup' => 'setProductGroup',
         'notDeliveredDueToOOS' => 'setNotDeliveredDueToOOS',
         'totalSubscriptionsRevenue' => 'setTotalSubscriptionsRevenue',
         'shippedSubscriptionUnits' => 'setShippedSubscriptionUnits',
@@ -196,6 +204,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         'asin' => 'getAsin',
         'sku' => 'getSku',
         'fulfillmentChannelType' => 'getFulfillmentChannelType',
+        'brandName' => 'getBrandName',
+        'productGroup' => 'getProductGroup',
         'notDeliveredDueToOOS' => 'getNotDeliveredDueToOOS',
         'totalSubscriptionsRevenue' => 'getTotalSubscriptionsRevenue',
         'shippedSubscriptionUnits' => 'getShippedSubscriptionUnits',
@@ -277,6 +287,8 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
         $this->container['asin'] = $data['asin'] ?? null;
         $this->container['sku'] = $data['sku'] ?? null;
         $this->container['fulfillmentChannelType'] = $data['fulfillmentChannelType'] ?? null;
+        $this->container['brandName'] = $data['brandName'] ?? null;
+        $this->container['productGroup'] = $data['productGroup'] ?? null;
         $this->container['notDeliveredDueToOOS'] = $data['notDeliveredDueToOOS'] ?? null;
         $this->container['totalSubscriptionsRevenue'] = $data['totalSubscriptionsRevenue'] ?? null;
         $this->container['shippedSubscriptionUnits'] = $data['shippedSubscriptionUnits'] ?? null;
@@ -459,6 +471,54 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     public function setFulfillmentChannelType($fulfillmentChannelType)
     {
         $this->container['fulfillmentChannelType'] = $fulfillmentChannelType;
+
+        return $this;
+    }
+
+    /**
+     * Gets brandName
+     *
+     * @return string|null
+     */
+    public function getBrandName()
+    {
+        return $this->container['brandName'];
+    }
+
+    /**
+     * Sets brandName
+     *
+     * @param string|null $brandName The brand name associated with the offer.
+     *
+     * @return self
+     */
+    public function setBrandName($brandName)
+    {
+        $this->container['brandName'] = $brandName;
+
+        return $this;
+    }
+
+    /**
+     * Gets productGroup
+     *
+     * @return string|null
+     */
+    public function getProductGroup()
+    {
+        return $this->container['productGroup'];
+    }
+
+    /**
+     * Sets productGroup
+     *
+     * @param string|null $productGroup The product group associated with the offer. This property is only supported for vendors and not for sellers.
+     *
+     * @return self
+     */
+    public function setProductGroup($productGroup)
+    {
+        $this->container['productGroup'] = $productGroup;
 
         return $this;
     }
@@ -688,7 +748,7 @@ class ListOfferMetricsResponseOffer20221107 implements ModelInterface, ArrayAcce
     /**
      * Sets shareOfCouponSubscriptions
      *
-     * @param double|null $shareOfCouponSubscriptions The percentage of new subscriptions acquired through coupons. Applicable to `PERFORMANCE` `timePeriodType`.
+     * @param double|null $shareOfCouponSubscriptions The percentage of new subscriptions from coupons. Applicable to `PERFORMANCE` `timePeriodType`.
      *
      * @return self
      */

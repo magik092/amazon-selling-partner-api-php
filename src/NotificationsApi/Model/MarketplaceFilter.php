@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * MarketplaceFilter Class Doc Comment
  *
  * @category Class
- * @description An event filter to customize your subscription to send notifications for only the specified &#x60;marketplaceId&#x60;s.
+ * @description An event filter you can use to customize your subscription to send notifications for specific &#x60;marketplaceId&#x60;s.
  * @package  Webcom\Amazon\Rest\NotificationsApi
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -224,7 +224,7 @@ class MarketplaceFilter implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets marketplaceIds
      *
-     * @param string[]|null $marketplaceIds A list of marketplace identifiers to subscribe to (for example: ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
+     * @param string[]|null $marketplaceIds A list of marketplace identifiers you can subscribe to (for example, `ATVPDKIKX0DER`). To receive notifications in every marketplace, do not provide this list.
      *
      * @return self
      */

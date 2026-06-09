@@ -345,6 +345,9 @@ class Charge20240911 implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setChargeType($chargeType)
     {
         $allowedValues = $this->getChargeTypeAllowableValues();
+        if (!in_array($chargeType, $allowedValues, true) && in_array(strtoupper($chargeType), $allowedValues, true)) {
+            $chargeType = strtoupper($chargeType);
+        }
         if (!in_array($chargeType, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(

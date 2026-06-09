@@ -68,7 +68,8 @@ class RegulatedOrderVerificationStatusV0 implements ModelInterface, ArrayAccess,
         'rejectionReason' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\RejectionReasonV0',
         'reviewDate' => 'string',
         'externalReviewerId' => 'string',
-        'validVerificationDetails' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\ValidVerificationDetailV0[]'
+        'validVerificationDetails' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\ValidVerificationDetailV0[]',
+        'validInterimStatusCodes' => '\Webcom\Amazon\Rest\OrdersApiV0\Model\ValidInterimStatusCodeV0[]'
     ];
 
     /**
@@ -85,7 +86,8 @@ class RegulatedOrderVerificationStatusV0 implements ModelInterface, ArrayAccess,
         'rejectionReason' => null,
         'reviewDate' => null,
         'externalReviewerId' => null,
-        'validVerificationDetails' => null
+        'validVerificationDetails' => null,
+        'validInterimStatusCodes' => null
     ];
 
     /**
@@ -121,7 +123,8 @@ class RegulatedOrderVerificationStatusV0 implements ModelInterface, ArrayAccess,
         'rejectionReason' => 'RejectionReason',
         'reviewDate' => 'ReviewDate',
         'externalReviewerId' => 'ExternalReviewerId',
-        'validVerificationDetails' => 'ValidVerificationDetails'
+        'validVerificationDetails' => 'ValidVerificationDetails',
+        'validInterimStatusCodes' => 'ValidInterimStatusCodes'
     ];
 
     /**
@@ -136,7 +139,8 @@ class RegulatedOrderVerificationStatusV0 implements ModelInterface, ArrayAccess,
         'rejectionReason' => 'setRejectionReason',
         'reviewDate' => 'setReviewDate',
         'externalReviewerId' => 'setExternalReviewerId',
-        'validVerificationDetails' => 'setValidVerificationDetails'
+        'validVerificationDetails' => 'setValidVerificationDetails',
+        'validInterimStatusCodes' => 'setValidInterimStatusCodes'
     ];
 
     /**
@@ -151,7 +155,8 @@ class RegulatedOrderVerificationStatusV0 implements ModelInterface, ArrayAccess,
         'rejectionReason' => 'getRejectionReason',
         'reviewDate' => 'getReviewDate',
         'externalReviewerId' => 'getExternalReviewerId',
-        'validVerificationDetails' => 'getValidVerificationDetails'
+        'validVerificationDetails' => 'getValidVerificationDetails',
+        'validInterimStatusCodes' => 'getValidInterimStatusCodes'
     ];
 
     /**
@@ -221,6 +226,7 @@ class RegulatedOrderVerificationStatusV0 implements ModelInterface, ArrayAccess,
         $this->container['reviewDate'] = $data['reviewDate'] ?? null;
         $this->container['externalReviewerId'] = $data['externalReviewerId'] ?? null;
         $this->container['validVerificationDetails'] = $data['validVerificationDetails'] ?? null;
+        $this->container['validInterimStatusCodes'] = $data['validInterimStatusCodes'] ?? null;
     }
 
     /**
@@ -420,6 +426,30 @@ class RegulatedOrderVerificationStatusV0 implements ModelInterface, ArrayAccess,
     public function setValidVerificationDetails($validVerificationDetails)
     {
         $this->container['validVerificationDetails'] = $validVerificationDetails;
+
+        return $this;
+    }
+
+    /**
+     * Gets validInterimStatusCodes
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApiV0\Model\ValidInterimStatusCodeV0[]|null
+     */
+    public function getValidInterimStatusCodes()
+    {
+        return $this->container['validInterimStatusCodes'];
+    }
+
+    /**
+     * Sets validInterimStatusCodes
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApiV0\Model\ValidInterimStatusCodeV0[]|null $validInterimStatusCodes Valid interim status codes that may be used when populating `InterimStatusDetail`. Each element contains a `StatusCode` identifier and its customer-facing `StatusDescription`.
+     *
+     * @return self
+     */
+    public function setValidInterimStatusCodes($validInterimStatusCodes)
+    {
+        $this->container['validInterimStatusCodes'] = $validInterimStatusCodes;
 
         return $this;
     }

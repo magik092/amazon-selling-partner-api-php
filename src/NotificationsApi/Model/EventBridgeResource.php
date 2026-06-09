@@ -277,7 +277,7 @@ class EventBridgeResource implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets region
      *
-     * @param string $region The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html).
+     * @param string $region The AWS region in which you receive the notifications. For AWS regions that Amazon EventBridge supports, refer to [Amazon EventBridge endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ev.html).
      *
      * @return self
      */

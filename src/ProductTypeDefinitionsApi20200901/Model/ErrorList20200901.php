@@ -227,7 +227,7 @@ class ErrorList20200901 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets errors
      *
-     * @param \Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\Error20200901[] $errors errors
+     * @param \Webcom\Amazon\Rest\ProductTypeDefinitionsApi20200901\Model\Error20200901[] $errors A list of error responses.
      *
      * @return self
      */

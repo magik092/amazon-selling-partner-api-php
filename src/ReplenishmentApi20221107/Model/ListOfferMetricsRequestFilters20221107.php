@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ListOfferMetricsRequestFilters20221107 Class Doc Comment
  *
  * @category Class
- * @description Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
+ * @description Use these parameters to filter results. Any result must match all provided parameters. For parameters that accept multiple values (arrays), the API returns results that match at least one value in the array.
  * @package  Webcom\Amazon\Rest\ReplenishmentApi20221107
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -67,7 +67,11 @@ class ListOfferMetricsRequestFilters20221107 implements ModelInterface, ArrayAcc
         'timePeriodType' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\TimePeriodType20221107',
         'marketplaceId' => 'string',
         'programTypes' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\ProgramType20221107[]',
-        'asins' => 'string[]'
+        'asins' => 'string[]',
+        'skus' => 'string[]',
+        'fulfillmentChannelTypes' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\FulfillmentChannelType20221107[]',
+        'brandNames' => 'string[]',
+        'productGroups' => 'string[]'
     ];
 
     /**
@@ -83,7 +87,11 @@ class ListOfferMetricsRequestFilters20221107 implements ModelInterface, ArrayAcc
         'timePeriodType' => null,
         'marketplaceId' => null,
         'programTypes' => null,
-        'asins' => null
+        'asins' => null,
+        'skus' => null,
+        'fulfillmentChannelTypes' => null,
+        'brandNames' => null,
+        'productGroups' => null
     ];
 
     /**
@@ -118,7 +126,11 @@ class ListOfferMetricsRequestFilters20221107 implements ModelInterface, ArrayAcc
         'timePeriodType' => 'timePeriodType',
         'marketplaceId' => 'marketplaceId',
         'programTypes' => 'programTypes',
-        'asins' => 'asins'
+        'asins' => 'asins',
+        'skus' => 'skus',
+        'fulfillmentChannelTypes' => 'fulfillmentChannelTypes',
+        'brandNames' => 'brandNames',
+        'productGroups' => 'productGroups'
     ];
 
     /**
@@ -132,7 +144,11 @@ class ListOfferMetricsRequestFilters20221107 implements ModelInterface, ArrayAcc
         'timePeriodType' => 'setTimePeriodType',
         'marketplaceId' => 'setMarketplaceId',
         'programTypes' => 'setProgramTypes',
-        'asins' => 'setAsins'
+        'asins' => 'setAsins',
+        'skus' => 'setSkus',
+        'fulfillmentChannelTypes' => 'setFulfillmentChannelTypes',
+        'brandNames' => 'setBrandNames',
+        'productGroups' => 'setProductGroups'
     ];
 
     /**
@@ -146,7 +162,11 @@ class ListOfferMetricsRequestFilters20221107 implements ModelInterface, ArrayAcc
         'timePeriodType' => 'getTimePeriodType',
         'marketplaceId' => 'getMarketplaceId',
         'programTypes' => 'getProgramTypes',
-        'asins' => 'getAsins'
+        'asins' => 'getAsins',
+        'skus' => 'getSkus',
+        'fulfillmentChannelTypes' => 'getFulfillmentChannelTypes',
+        'brandNames' => 'getBrandNames',
+        'productGroups' => 'getProductGroups'
     ];
 
     /**
@@ -215,6 +235,10 @@ class ListOfferMetricsRequestFilters20221107 implements ModelInterface, ArrayAcc
         $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
         $this->container['programTypes'] = $data['programTypes'] ?? null;
         $this->container['asins'] = $data['asins'] ?? null;
+        $this->container['skus'] = $data['skus'] ?? null;
+        $this->container['fulfillmentChannelTypes'] = $data['fulfillmentChannelTypes'] ?? null;
+        $this->container['brandNames'] = $data['brandNames'] ?? null;
+        $this->container['productGroups'] = $data['productGroups'] ?? null;
     }
 
     /**
@@ -386,13 +410,109 @@ class ListOfferMetricsRequestFilters20221107 implements ModelInterface, ArrayAcc
     /**
      * Sets asins
      *
-     * @param string[]|null $asins A list of Amazon Standard Identification Numbers (ASINs).
+     * @param string[]|null $asins A list of Amazon Standard Identification Numbers (ASINs) to filter by.
      *
      * @return self
      */
     public function setAsins($asins)
     {
         $this->container['asins'] = $asins;
+
+        return $this;
+    }
+
+    /**
+     * Gets skus
+     *
+     * @return string[]|null
+     */
+    public function getSkus()
+    {
+        return $this->container['skus'];
+    }
+
+    /**
+     * Sets skus
+     *
+     * @param string[]|null $skus [Applicable only for Sellers] A list of SKUs to filter by.
+     *
+     * @return self
+     */
+    public function setSkus($skus)
+    {
+        $this->container['skus'] = $skus;
+
+        return $this;
+    }
+
+    /**
+     * Gets fulfillmentChannelTypes
+     *
+     * @return \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\FulfillmentChannelType20221107[]|null
+     */
+    public function getFulfillmentChannelTypes()
+    {
+        return $this->container['fulfillmentChannelTypes'];
+    }
+
+    /**
+     * Sets fulfillmentChannelTypes
+     *
+     * @param \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\FulfillmentChannelType20221107[]|null $fulfillmentChannelTypes [Applicable only for Sellers] The fulfillment channel types to filter by.
+     *
+     * @return self
+     */
+    public function setFulfillmentChannelTypes($fulfillmentChannelTypes)
+    {
+        $this->container['fulfillmentChannelTypes'] = $fulfillmentChannelTypes;
+
+        return $this;
+    }
+
+    /**
+     * Gets brandNames
+     *
+     * @return string[]|null
+     */
+    public function getBrandNames()
+    {
+        return $this->container['brandNames'];
+    }
+
+    /**
+     * Sets brandNames
+     *
+     * @param string[]|null $brandNames [Applicable only for US marketplace] A list of brand names to filter by.
+     *
+     * @return self
+     */
+    public function setBrandNames($brandNames)
+    {
+        $this->container['brandNames'] = $brandNames;
+
+        return $this;
+    }
+
+    /**
+     * Gets productGroups
+     *
+     * @return string[]|null
+     */
+    public function getProductGroups()
+    {
+        return $this->container['productGroups'];
+    }
+
+    /**
+     * Sets productGroups
+     *
+     * @param string[]|null $productGroups [Applicable only for Vendors] A list of product group names to filter by.
+     *
+     * @return self
+     */
+    public function setProductGroups($productGroups)
+    {
+        $this->container['productGroups'] = $productGroups;
 
         return $this;
     }

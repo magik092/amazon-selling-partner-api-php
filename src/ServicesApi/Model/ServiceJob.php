@@ -71,6 +71,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'preferredAppointmentTimes' => '\Webcom\Amazon\Rest\ServicesApi\Model\AppointmentTime[]',
         'appointments' => '\Webcom\Amazon\Rest\ServicesApi\Model\Appointment[]',
         'serviceOrderId' => 'string',
+        'productOrderIds' => 'string[]',
+        'trackingIds' => 'string[]',
         'marketplaceId' => 'string',
         'storeId' => 'string',
         'buyer' => '\Webcom\Amazon\Rest\ServicesApi\Model\Buyer',
@@ -96,6 +98,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'preferredAppointmentTimes' => null,
         'appointments' => null,
         'serviceOrderId' => null,
+        'productOrderIds' => null,
+        'trackingIds' => null,
         'marketplaceId' => null,
         'storeId' => null,
         'buyer' => null,
@@ -140,6 +144,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'preferredAppointmentTimes' => 'preferredAppointmentTimes',
         'appointments' => 'appointments',
         'serviceOrderId' => 'serviceOrderId',
+        'productOrderIds' => 'productOrderIds',
+        'trackingIds' => 'trackingIds',
         'marketplaceId' => 'marketplaceId',
         'storeId' => 'storeId',
         'buyer' => 'buyer',
@@ -163,6 +169,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'preferredAppointmentTimes' => 'setPreferredAppointmentTimes',
         'appointments' => 'setAppointments',
         'serviceOrderId' => 'setServiceOrderId',
+        'productOrderIds' => 'setProductOrderIds',
+        'trackingIds' => 'setTrackingIds',
         'marketplaceId' => 'setMarketplaceId',
         'storeId' => 'setStoreId',
         'buyer' => 'setBuyer',
@@ -186,6 +194,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         'preferredAppointmentTimes' => 'getPreferredAppointmentTimes',
         'appointments' => 'getAppointments',
         'serviceOrderId' => 'getServiceOrderId',
+        'productOrderIds' => 'getProductOrderIds',
+        'trackingIds' => 'getTrackingIds',
         'marketplaceId' => 'getMarketplaceId',
         'storeId' => 'getStoreId',
         'buyer' => 'getBuyer',
@@ -288,6 +298,8 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['preferredAppointmentTimes'] = $data['preferredAppointmentTimes'] ?? null;
         $this->container['appointments'] = $data['appointments'] ?? null;
         $this->container['serviceOrderId'] = $data['serviceOrderId'] ?? null;
+        $this->container['productOrderIds'] = $data['productOrderIds'] ?? null;
+        $this->container['trackingIds'] = $data['trackingIds'] ?? null;
         $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
         $this->container['storeId'] = $data['storeId'] ?? null;
         $this->container['buyer'] = $data['buyer'] ?? null;
@@ -593,6 +605,54 @@ class ServiceJob implements ModelInterface, ArrayAccess, \JsonSerializable
         }
 
         $this->container['serviceOrderId'] = $serviceOrderId;
+
+        return $this;
+    }
+
+    /**
+     * Gets productOrderIds
+     *
+     * @return string[]|null
+     */
+    public function getProductOrderIds()
+    {
+        return $this->container['productOrderIds'];
+    }
+
+    /**
+     * Sets productOrderIds
+     *
+     * @param string[]|null $productOrderIds A list of associated product order IDs for the service job.
+     *
+     * @return self
+     */
+    public function setProductOrderIds($productOrderIds)
+    {
+        $this->container['productOrderIds'] = $productOrderIds;
+
+        return $this;
+    }
+
+    /**
+     * Gets trackingIds
+     *
+     * @return string[]|null
+     */
+    public function getTrackingIds()
+    {
+        return $this->container['trackingIds'];
+    }
+
+    /**
+     * Sets trackingIds
+     *
+     * @param string[]|null $trackingIds A list of associated product tracking IDs for the service job.
+     *
+     * @return self
+     */
+    public function setTrackingIds($trackingIds)
+    {
+        $this->container['trackingIds'] = $trackingIds;
 
         return $this;
     }

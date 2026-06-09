@@ -66,7 +66,8 @@ class ShippingOptions20240911 implements ModelInterface, ArrayAccess, \JsonSeria
         'shipBy' => 'string',
         'carrierName' => 'string',
         'pickupWindow' => '\Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\TimeWindow20240911',
-        'timeSlot' => '\Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\TimeWindow20240911'
+        'timeSlot' => '\Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\TimeWindow20240911',
+        'handoverLocation' => '\Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\HandoverLocation20240911'
     ];
 
     /**
@@ -81,7 +82,8 @@ class ShippingOptions20240911 implements ModelInterface, ArrayAccess, \JsonSeria
         'shipBy' => null,
         'carrierName' => null,
         'pickupWindow' => null,
-        'timeSlot' => null
+        'timeSlot' => null,
+        'handoverLocation' => null
     ];
 
     /**
@@ -115,7 +117,8 @@ class ShippingOptions20240911 implements ModelInterface, ArrayAccess, \JsonSeria
         'shipBy' => 'shipBy',
         'carrierName' => 'carrierName',
         'pickupWindow' => 'pickupWindow',
-        'timeSlot' => 'timeSlot'
+        'timeSlot' => 'timeSlot',
+        'handoverLocation' => 'handoverLocation'
     ];
 
     /**
@@ -128,7 +131,8 @@ class ShippingOptions20240911 implements ModelInterface, ArrayAccess, \JsonSeria
         'shipBy' => 'setShipBy',
         'carrierName' => 'setCarrierName',
         'pickupWindow' => 'setPickupWindow',
-        'timeSlot' => 'setTimeSlot'
+        'timeSlot' => 'setTimeSlot',
+        'handoverLocation' => 'setHandoverLocation'
     ];
 
     /**
@@ -141,7 +145,8 @@ class ShippingOptions20240911 implements ModelInterface, ArrayAccess, \JsonSeria
         'shipBy' => 'getShipBy',
         'carrierName' => 'getCarrierName',
         'pickupWindow' => 'getPickupWindow',
-        'timeSlot' => 'getTimeSlot'
+        'timeSlot' => 'getTimeSlot',
+        'handoverLocation' => 'getHandoverLocation'
     ];
 
     /**
@@ -228,6 +233,7 @@ class ShippingOptions20240911 implements ModelInterface, ArrayAccess, \JsonSeria
         $this->container['carrierName'] = $data['carrierName'] ?? null;
         $this->container['pickupWindow'] = $data['pickupWindow'] ?? null;
         $this->container['timeSlot'] = $data['timeSlot'] ?? null;
+        $this->container['handoverLocation'] = $data['handoverLocation'] ?? null;
     }
 
     /**
@@ -395,6 +401,30 @@ class ShippingOptions20240911 implements ModelInterface, ArrayAccess, \JsonSeria
     public function setTimeSlot($timeSlot)
     {
         $this->container['timeSlot'] = $timeSlot;
+
+        return $this;
+    }
+
+    /**
+     * Gets handoverLocation
+     *
+     * @return \Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\HandoverLocation20240911|null
+     */
+    public function getHandoverLocation()
+    {
+        return $this->container['handoverLocation'];
+    }
+
+    /**
+     * Sets handoverLocation
+     *
+     * @param \Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\HandoverLocation20240911|null $handoverLocation handoverLocation
+     *
+     * @return self
+     */
+    public function setHandoverLocation($handoverLocation)
+    {
+        $this->container['handoverLocation'] = $handoverLocation;
 
         return $this;
     }

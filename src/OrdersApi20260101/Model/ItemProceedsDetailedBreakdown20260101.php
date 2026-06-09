@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ItemProceedsDetailedBreakdown20260101 Class Doc Comment
  *
  * @category Class
- * @description Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds type.
+ * @description Further granular breakdown of the subtotal of the proceeds breakdown, only available for TAX and DISCOUNT proceeds types.
  * @package  Webcom\Amazon\Rest\OrdersApi20260101
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

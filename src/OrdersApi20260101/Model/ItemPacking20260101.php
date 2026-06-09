@@ -62,7 +62,8 @@ class ItemPacking20260101 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'giftOption' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\GiftOption20260101'
+        'giftOption' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\GiftOption20260101',
+        'serialNumberRequirement' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\SerialNumberRequirement20260101'
     ];
 
     /**
@@ -73,7 +74,8 @@ class ItemPacking20260101 implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'giftOption' => null
+        'giftOption' => null,
+        'serialNumberRequirement' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class ItemPacking20260101 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'giftOption' => 'giftOption'
+        'giftOption' => 'giftOption',
+        'serialNumberRequirement' => 'serialNumberRequirement'
     ];
 
     /**
@@ -112,7 +115,8 @@ class ItemPacking20260101 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'giftOption' => 'setGiftOption'
+        'giftOption' => 'setGiftOption',
+        'serialNumberRequirement' => 'setSerialNumberRequirement'
     ];
 
     /**
@@ -121,7 +125,8 @@ class ItemPacking20260101 implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'giftOption' => 'getGiftOption'
+        'giftOption' => 'getGiftOption',
+        'serialNumberRequirement' => 'getSerialNumberRequirement'
     ];
 
     /**
@@ -185,6 +190,7 @@ class ItemPacking20260101 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function __construct(array $data = null)
     {
         $this->container['giftOption'] = $data['giftOption'] ?? null;
+        $this->container['serialNumberRequirement'] = $data['serialNumberRequirement'] ?? null;
     }
 
     /**
@@ -231,6 +237,30 @@ class ItemPacking20260101 implements ModelInterface, ArrayAccess, \JsonSerializa
     public function setGiftOption($giftOption)
     {
         $this->container['giftOption'] = $giftOption;
+
+        return $this;
+    }
+
+    /**
+     * Gets serialNumberRequirement
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\SerialNumberRequirement20260101|null
+     */
+    public function getSerialNumberRequirement()
+    {
+        return $this->container['serialNumberRequirement'];
+    }
+
+    /**
+     * Sets serialNumberRequirement
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApi20260101\Model\SerialNumberRequirement20260101|null $serialNumberRequirement serialNumberRequirement
+     *
+     * @return self
+     */
+    public function setSerialNumberRequirement($serialNumberRequirement)
+    {
+        $this->container['serialNumberRequirement'] = $serialNumberRequirement;
 
         return $this;
     }

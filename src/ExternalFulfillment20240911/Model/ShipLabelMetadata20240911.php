@@ -66,7 +66,8 @@ class ShipLabelMetadata20240911 implements ModelInterface, ArrayAccess, \JsonSer
         'carrierName' => 'string',
         'trackingId' => 'string',
         'pickupWindow' => '\Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\TimeWindow20240911',
-        'timeSlot' => '\Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\TimeWindow20240911'
+        'timeSlot' => '\Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\TimeWindow20240911',
+        'handoverLocation' => '\Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\HandoverLocation20240911'
     ];
 
     /**
@@ -81,7 +82,8 @@ class ShipLabelMetadata20240911 implements ModelInterface, ArrayAccess, \JsonSer
         'carrierName' => null,
         'trackingId' => null,
         'pickupWindow' => null,
-        'timeSlot' => null
+        'timeSlot' => null,
+        'handoverLocation' => null
     ];
 
     /**
@@ -115,7 +117,8 @@ class ShipLabelMetadata20240911 implements ModelInterface, ArrayAccess, \JsonSer
         'carrierName' => 'carrierName',
         'trackingId' => 'trackingId',
         'pickupWindow' => 'pickupWindow',
-        'timeSlot' => 'timeSlot'
+        'timeSlot' => 'timeSlot',
+        'handoverLocation' => 'handoverLocation'
     ];
 
     /**
@@ -128,7 +131,8 @@ class ShipLabelMetadata20240911 implements ModelInterface, ArrayAccess, \JsonSer
         'carrierName' => 'setCarrierName',
         'trackingId' => 'setTrackingId',
         'pickupWindow' => 'setPickupWindow',
-        'timeSlot' => 'setTimeSlot'
+        'timeSlot' => 'setTimeSlot',
+        'handoverLocation' => 'setHandoverLocation'
     ];
 
     /**
@@ -141,7 +145,8 @@ class ShipLabelMetadata20240911 implements ModelInterface, ArrayAccess, \JsonSer
         'carrierName' => 'getCarrierName',
         'trackingId' => 'getTrackingId',
         'pickupWindow' => 'getPickupWindow',
-        'timeSlot' => 'getTimeSlot'
+        'timeSlot' => 'getTimeSlot',
+        'handoverLocation' => 'getHandoverLocation'
     ];
 
     /**
@@ -209,6 +214,7 @@ class ShipLabelMetadata20240911 implements ModelInterface, ArrayAccess, \JsonSer
         $this->container['trackingId'] = $data['trackingId'] ?? null;
         $this->container['pickupWindow'] = $data['pickupWindow'] ?? null;
         $this->container['timeSlot'] = $data['timeSlot'] ?? null;
+        $this->container['handoverLocation'] = $data['handoverLocation'] ?? null;
     }
 
     /**
@@ -357,6 +363,30 @@ class ShipLabelMetadata20240911 implements ModelInterface, ArrayAccess, \JsonSer
     public function setTimeSlot($timeSlot)
     {
         $this->container['timeSlot'] = $timeSlot;
+
+        return $this;
+    }
+
+    /**
+     * Gets handoverLocation
+     *
+     * @return \Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\HandoverLocation20240911|null
+     */
+    public function getHandoverLocation()
+    {
+        return $this->container['handoverLocation'];
+    }
+
+    /**
+     * Sets handoverLocation
+     *
+     * @param \Webcom\Amazon\Rest\ExternalFulfillment20240911\Model\HandoverLocation20240911|null $handoverLocation handoverLocation
+     *
+     * @return self
+     */
+    public function setHandoverLocation($handoverLocation)
+    {
+        $this->container['handoverLocation'] = $handoverLocation;
 
         return $this;
     }

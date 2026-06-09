@@ -69,7 +69,8 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
         'buyerOrderId' => 'string',
         'orderStatesEligibleForRejection' => 'string[]',
         'orderPlacedTimestamp' => 'string',
-        'processingSource' => 'string'
+        'processingSource' => 'string',
+        'paymentMethod' => 'string'
     ];
 
     /**
@@ -87,7 +88,8 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
         'buyerOrderId' => null,
         'orderStatesEligibleForRejection' => null,
         'orderPlacedTimestamp' => null,
-        'processingSource' => null
+        'processingSource' => null,
+        'paymentMethod' => null
     ];
 
     /**
@@ -124,7 +126,8 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
         'buyerOrderId' => 'buyerOrderId',
         'orderStatesEligibleForRejection' => 'orderStatesEligibleForRejection',
         'orderPlacedTimestamp' => 'orderPlacedTimestamp',
-        'processingSource' => 'processingSource'
+        'processingSource' => 'processingSource',
+        'paymentMethod' => 'paymentMethod'
     ];
 
     /**
@@ -140,7 +143,8 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
         'buyerOrderId' => 'setBuyerOrderId',
         'orderStatesEligibleForRejection' => 'setOrderStatesEligibleForRejection',
         'orderPlacedTimestamp' => 'setOrderPlacedTimestamp',
-        'processingSource' => 'setProcessingSource'
+        'processingSource' => 'setProcessingSource',
+        'paymentMethod' => 'setPaymentMethod'
     ];
 
     /**
@@ -156,7 +160,8 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
         'buyerOrderId' => 'getBuyerOrderId',
         'orderStatesEligibleForRejection' => 'getOrderStatesEligibleForRejection',
         'orderPlacedTimestamp' => 'getOrderPlacedTimestamp',
-        'processingSource' => 'getProcessingSource'
+        'processingSource' => 'getProcessingSource',
+        'paymentMethod' => 'getPaymentMethod'
     ];
 
     /**
@@ -205,6 +210,8 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
     const SHIPMENT_TYPE_REPLACEMENT = 'REPLACEMENT';
     const PROCESSING_SOURCE_EXTERNAL_PLATFORM = 'EXTERNAL_PLATFORM';
     const PROCESSING_SOURCE_INTERNAL_PLATFORM = 'INTERNAL_PLATFORM';
+    const PAYMENT_METHOD_CASH_ON_DELIVERY = 'CASH_ON_DELIVERY';
+    const PAYMENT_METHOD_PREPAID = 'PREPAID';
     
 
     
@@ -235,6 +242,19 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
         ];
     }
     
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getPaymentMethodAllowableValues()
+    {
+        return [
+            self::PAYMENT_METHOD_CASH_ON_DELIVERY,
+            self::PAYMENT_METHOD_PREPAID,
+        ];
+    }
+    
 
     /**
      * Associative array for storing property values
@@ -259,6 +279,7 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
         $this->container['orderStatesEligibleForRejection'] = $data['orderStatesEligibleForRejection'] ?? null;
         $this->container['orderPlacedTimestamp'] = $data['orderPlacedTimestamp'] ?? null;
         $this->container['processingSource'] = $data['processingSource'] ?? null;
+        $this->container['paymentMethod'] = $data['paymentMethod'] ?? null;
     }
 
     /**
@@ -300,6 +321,15 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'processingSource', must be one of '%s'",
                 $this->container['processingSource'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getPaymentMethodAllowableValues();
+        if (!is_null($this->container['paymentMethod']) && !in_array($this->container['paymentMethod'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'paymentMethod', must be one of '%s'",
+                $this->container['paymentMethod'],
                 implode("', '", $allowedValues)
             );
         }
@@ -532,6 +562,40 @@ class ShipmentInfo20240911 implements ModelInterface, ArrayAccess, \JsonSerializ
             );
         }
         $this->container['processingSource'] = $processingSource;
+
+        return $this;
+    }
+
+    /**
+     * Gets paymentMethod
+     *
+     * @return string|null
+     */
+    public function getPaymentMethod()
+    {
+        return $this->container['paymentMethod'];
+    }
+
+    /**
+     * Sets paymentMethod
+     *
+     * @param string|null $paymentMethod The payment method for the shipment.
+     *
+     * @return self
+     */
+    public function setPaymentMethod($paymentMethod)
+    {
+        $allowedValues = $this->getPaymentMethodAllowableValues();
+        if (!is_null($paymentMethod) && !in_array($paymentMethod, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'paymentMethod', must be one of '%s'",
+                    $paymentMethod,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['paymentMethod'] = $paymentMethod;
 
         return $this;
     }

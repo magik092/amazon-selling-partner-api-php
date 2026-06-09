@@ -65,6 +65,7 @@ class GetSellingPartnerMetricsRequest20221107 implements ModelInterface, ArrayAc
         'aggregationFrequency' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\AggregationFrequency20221107',
         'timeInterval' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\TimeInterval20221107',
         'metrics' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\Metric20221107[]',
+        'filters' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\GetSellingPartnerMetricsRequestFilters20221107',
         'timePeriodType' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\TimePeriodType20221107',
         'marketplaceId' => 'string',
         'programTypes' => '\Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\ProgramType20221107[]'
@@ -81,6 +82,7 @@ class GetSellingPartnerMetricsRequest20221107 implements ModelInterface, ArrayAc
         'aggregationFrequency' => null,
         'timeInterval' => null,
         'metrics' => null,
+        'filters' => null,
         'timePeriodType' => null,
         'marketplaceId' => null,
         'programTypes' => null
@@ -116,6 +118,7 @@ class GetSellingPartnerMetricsRequest20221107 implements ModelInterface, ArrayAc
         'aggregationFrequency' => 'aggregationFrequency',
         'timeInterval' => 'timeInterval',
         'metrics' => 'metrics',
+        'filters' => 'filters',
         'timePeriodType' => 'timePeriodType',
         'marketplaceId' => 'marketplaceId',
         'programTypes' => 'programTypes'
@@ -130,6 +133,7 @@ class GetSellingPartnerMetricsRequest20221107 implements ModelInterface, ArrayAc
         'aggregationFrequency' => 'setAggregationFrequency',
         'timeInterval' => 'setTimeInterval',
         'metrics' => 'setMetrics',
+        'filters' => 'setFilters',
         'timePeriodType' => 'setTimePeriodType',
         'marketplaceId' => 'setMarketplaceId',
         'programTypes' => 'setProgramTypes'
@@ -144,6 +148,7 @@ class GetSellingPartnerMetricsRequest20221107 implements ModelInterface, ArrayAc
         'aggregationFrequency' => 'getAggregationFrequency',
         'timeInterval' => 'getTimeInterval',
         'metrics' => 'getMetrics',
+        'filters' => 'getFilters',
         'timePeriodType' => 'getTimePeriodType',
         'marketplaceId' => 'getMarketplaceId',
         'programTypes' => 'getProgramTypes'
@@ -212,6 +217,7 @@ class GetSellingPartnerMetricsRequest20221107 implements ModelInterface, ArrayAc
         $this->container['aggregationFrequency'] = $data['aggregationFrequency'] ?? null;
         $this->container['timeInterval'] = $data['timeInterval'] ?? null;
         $this->container['metrics'] = $data['metrics'] ?? null;
+        $this->container['filters'] = $data['filters'] ?? null;
         $this->container['timePeriodType'] = $data['timePeriodType'] ?? null;
         $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
         $this->container['programTypes'] = $data['programTypes'] ?? null;
@@ -321,6 +327,30 @@ class GetSellingPartnerMetricsRequest20221107 implements ModelInterface, ArrayAc
     public function setMetrics($metrics)
     {
         $this->container['metrics'] = $metrics;
+
+        return $this;
+    }
+
+    /**
+     * Gets filters
+     *
+     * @return \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\GetSellingPartnerMetricsRequestFilters20221107|null
+     */
+    public function getFilters()
+    {
+        return $this->container['filters'];
+    }
+
+    /**
+     * Sets filters
+     *
+     * @param \Webcom\Amazon\Rest\ReplenishmentApi20221107\Model\GetSellingPartnerMetricsRequestFilters20221107|null $filters filters
+     *
+     * @return self
+     */
+    public function setFilters($filters)
+    {
+        $this->container['filters'] = $filters;
 
         return $this;
     }

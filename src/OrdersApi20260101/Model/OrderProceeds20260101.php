@@ -62,7 +62,8 @@ class OrderProceeds20260101 implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var string[]
       */
     protected static $openAPITypes = [
-        'grandTotal' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\Money20260101'
+        'grandTotal' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\Money20260101',
+        'breakdowns' => '\Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderProceedsBreakdown20260101[]'
     ];
 
     /**
@@ -73,7 +74,8 @@ class OrderProceeds20260101 implements ModelInterface, ArrayAccess, \JsonSeriali
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'grandTotal' => null
+        'grandTotal' => null,
+        'breakdowns' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class OrderProceeds20260101 implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $attributeMap = [
-        'grandTotal' => 'grandTotal'
+        'grandTotal' => 'grandTotal',
+        'breakdowns' => 'breakdowns'
     ];
 
     /**
@@ -112,7 +115,8 @@ class OrderProceeds20260101 implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $setters = [
-        'grandTotal' => 'setGrandTotal'
+        'grandTotal' => 'setGrandTotal',
+        'breakdowns' => 'setBreakdowns'
     ];
 
     /**
@@ -121,7 +125,8 @@ class OrderProceeds20260101 implements ModelInterface, ArrayAccess, \JsonSeriali
      * @var string[]
      */
     protected static $getters = [
-        'grandTotal' => 'getGrandTotal'
+        'grandTotal' => 'getGrandTotal',
+        'breakdowns' => 'getBreakdowns'
     ];
 
     /**
@@ -185,6 +190,7 @@ class OrderProceeds20260101 implements ModelInterface, ArrayAccess, \JsonSeriali
     public function __construct(array $data = null)
     {
         $this->container['grandTotal'] = $data['grandTotal'] ?? null;
+        $this->container['breakdowns'] = $data['breakdowns'] ?? null;
     }
 
     /**
@@ -231,6 +237,30 @@ class OrderProceeds20260101 implements ModelInterface, ArrayAccess, \JsonSeriali
     public function setGrandTotal($grandTotal)
     {
         $this->container['grandTotal'] = $grandTotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets breakdowns
+     *
+     * @return \Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderProceedsBreakdown20260101[]|null
+     */
+    public function getBreakdowns()
+    {
+        return $this->container['breakdowns'];
+    }
+
+    /**
+     * Sets breakdowns
+     *
+     * @param \Webcom\Amazon\Rest\OrdersApi20260101\Model\OrderProceedsBreakdown20260101[]|null $breakdowns Categorized proceeds for the order. Proceed categories are either aggregated across all order items (such as `ITEM`, `SHIPPING`, and `TAX`) or applied at the order level (such as `DELIVERY_TIP`).
+     *
+     * @return self
+     */
+    public function setBreakdowns($breakdowns)
+    {
+        $this->container['breakdowns'] = $breakdowns;
 
         return $this;
     }

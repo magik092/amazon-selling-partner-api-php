@@ -172,6 +172,7 @@ class Dimension20240911 implements ModelInterface, ArrayAccess, \JsonSerializabl
 
     const DIMENSION_UNIT_CM = 'CM';
     const DIMENSION_UNIT_M = 'M';
+    const DIMENSION_UNIT_IN = 'IN';
     
 
     
@@ -185,6 +186,7 @@ class Dimension20240911 implements ModelInterface, ArrayAccess, \JsonSerializabl
         return [
             self::DIMENSION_UNIT_CM,
             self::DIMENSION_UNIT_M,
+            self::DIMENSION_UNIT_IN,
         ];
     }
     

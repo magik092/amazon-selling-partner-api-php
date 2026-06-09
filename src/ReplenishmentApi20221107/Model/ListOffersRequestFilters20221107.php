@@ -37,7 +37,7 @@ use \Webcom\Amazon\Rest\ObjectSerializer;
  * ListOffersRequestFilters20221107 Class Doc Comment
  *
  * @category Class
- * @description Use these parameters to filter results. Any result must match all provided parameters. For any parameter that is an array, the result must match at least one element in the provided array.
+ * @description Use these parameters to filter results. Any result must match all provided parameters. For parameters that accept multiple values (arrays), the API returns results that match at least one value in the array.
  * @package  Webcom\Amazon\Rest\ReplenishmentApi20221107
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
