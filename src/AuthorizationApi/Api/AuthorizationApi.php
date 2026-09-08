@@ -12,7 +12,7 @@ use Webcom\Amazon\Rest\AmazonTransportClient;
 use Webcom\Amazon\Rest\AuthorizationApi\ApiException;
 use Webcom\Amazon\Rest\CredentialsContainer;
 
-use function GuzzleHttp\Psr7\build_query;
+use GuzzleHttp\Psr7\Query;
 
 /**
  * Class AuthorizationClient
@@ -76,7 +76,7 @@ class AuthorizationApi
                 [
                     'Content-Type' => 'application/x-www-form-urlencoded',
                 ],
-                build_query(
+                Query::build(
                     [
                         'grant_type'    => 'authorization_code',
                         'code'          => $authorizationCode,
@@ -110,7 +110,7 @@ class AuthorizationApi
         $response = $this->client->send(
             new Request(
                 'GET',
-                self::HOST . self::AUTHORIZATION_EXCHANGE_URL . '?' . build_query($query)
+                self::HOST . self::AUTHORIZATION_EXCHANGE_URL . '?' . Query::build($query)
             )
         );
 
@@ -131,7 +131,7 @@ class AuthorizationApi
                 [
                     'Content-Type' => 'application/x-www-form-urlencoded',
                 ],
-                build_query(
+                Query::build(
                     [
                         'grant_type'    => 'refresh_token',
                         'refresh_token' => $this->credentials->getRefreshToken(),
