@@ -16,6 +16,13 @@ use Psr\Http\Message\UriInterface;
 
 /**
  * Class AmazonTransportClient
+ *
+ * Implements ClientInterface via composition rather than extending Guzzle's Client,
+ * because Guzzle 7's Client is marked @final and its ClientInterface::request()/getConfig()
+ * signatures are typed, while Guzzle 6's ClientInterface leaves $method/$option untyped.
+ * The $method/$option parameters below are intentionally left untyped so this class
+ * remains a valid implementation of ClientInterface under both Guzzle 6.5.x and 7.15.x.
+ *
  * @author magik092
  */
 class AmazonTransportClient implements ClientInterface
@@ -67,26 +74,29 @@ class AmazonTransportClient implements ClientInterface
 
     /**
      * @inheritDoc
+     * @param string $method
      * @param string|UriInterface $uri
      */
-    public function request(string $method, $uri, array $options = []): ResponseInterface
+    public function request($method, $uri, array $options = []): ResponseInterface
     {
         return $this->client->request($method, $uri, $options);
     }
 
     /**
      * @inheritDoc
+     * @param string $method
      * @param string|UriInterface $uri
      */
-    public function requestAsync(string $method, $uri, array $options = []): PromiseInterface
+    public function requestAsync($method, $uri, array $options = []): PromiseInterface
     {
         return $this->client->requestAsync($method, $uri, $options);
     }
 
     /**
      * @inheritDoc
+     * @param string|null $option
      */
-    public function getConfig(?string $option = null)
+    public function getConfig($option = null)
     {
         return $this->client->getConfig($option);
     }
