@@ -524,7 +524,7 @@ class DefaultApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
@@ -925,7 +925,7 @@ class DefaultApi
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
             }
@@ -945,7 +945,7 @@ class DefaultApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)

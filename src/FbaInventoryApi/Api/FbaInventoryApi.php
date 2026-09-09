@@ -462,7 +462,7 @@ class FbaInventoryApi
         // for model (json/xml)
         if (isset($addInventoryRequestBody)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($addInventoryRequestBody));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($addInventoryRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $addInventoryRequestBody;
             }
@@ -482,7 +482,7 @@ class FbaInventoryApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
@@ -843,7 +843,7 @@ class FbaInventoryApi
         // for model (json/xml)
         if (isset($createInventoryItemRequestBody)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($createInventoryItemRequestBody));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($createInventoryItemRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $createInventoryItemRequestBody;
             }
@@ -863,7 +863,7 @@ class FbaInventoryApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
@@ -1264,7 +1264,7 @@ class FbaInventoryApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
@@ -1750,7 +1750,7 @@ class FbaInventoryApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)

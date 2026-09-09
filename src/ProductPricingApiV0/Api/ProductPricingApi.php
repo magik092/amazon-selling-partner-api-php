@@ -550,7 +550,7 @@ class ProductPricingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
@@ -1001,7 +1001,7 @@ class ProductPricingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
@@ -1382,7 +1382,7 @@ class ProductPricingApi
         // for model (json/xml)
         if (isset($getItemOffersBatchRequestBody)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($getItemOffersBatchRequestBody));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($getItemOffersBatchRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $getItemOffersBatchRequestBody;
             }
@@ -1402,7 +1402,7 @@ class ProductPricingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
@@ -1853,7 +1853,7 @@ class ProductPricingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
@@ -2234,7 +2234,7 @@ class ProductPricingApi
         // for model (json/xml)
         if (isset($getListingOffersBatchRequestBody)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($getListingOffersBatchRequestBody));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($getListingOffersBatchRequestBody), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $getListingOffersBatchRequestBody;
             }
@@ -2254,7 +2254,7 @@ class ProductPricingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
@@ -2730,7 +2730,7 @@ class ProductPricingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode($formParams);
+                $httpBody = \json_encode($formParams, JSON_THROW_ON_ERROR);
 
             } else {
                 // for HTTP post (form)
