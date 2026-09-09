@@ -365,7 +365,7 @@ class QueriesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -766,7 +766,7 @@ class QueriesApi
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
             }
@@ -786,7 +786,7 @@ class QueriesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1209,7 +1209,7 @@ class QueriesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1684,7 +1684,7 @@ class QueriesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -2107,7 +2107,7 @@ class QueriesApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)

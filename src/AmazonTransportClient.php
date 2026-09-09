@@ -7,17 +7,22 @@
 namespace Webcom\Amazon\Rest;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\UriInterface;
 
 /**
  * Class AmazonTransportClient
  * @author magik092
  */
-class AmazonTransportClient extends Client
+class AmazonTransportClient implements ClientInterface
 {
     private ?RequestSigner $requestSigner = null;
     private string $userAgent;
+    private Client $client;
 
     /**
      * AmazonTransportClient constructor.
@@ -41,7 +46,49 @@ class AmazonTransportClient extends Client
             ]
         );
         $this->userAgent = $userAgent;
-        parent::__construct($config);
+        $this->client = new Client($config);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function send(RequestInterface $request, array $options = []): ResponseInterface
+    {
+        return $this->client->send($request, $options);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function sendAsync(RequestInterface $request, array $options = []): PromiseInterface
+    {
+        return $this->client->sendAsync($request, $options);
+    }
+
+    /**
+     * @inheritDoc
+     * @param string|UriInterface $uri
+     */
+    public function request(string $method, $uri, array $options = []): ResponseInterface
+    {
+        return $this->client->request($method, $uri, $options);
+    }
+
+    /**
+     * @inheritDoc
+     * @param string|UriInterface $uri
+     */
+    public function requestAsync(string $method, $uri, array $options = []): PromiseInterface
+    {
+        return $this->client->requestAsync($method, $uri, $options);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getConfig(?string $option = null)
+    {
+        return $this->client->getConfig($option);
     }
 
     /**

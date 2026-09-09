@@ -447,7 +447,7 @@ class ProductPricingApi
         // for model (json/xml)
         if (isset($requests)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($requests));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($requests));
             } else {
                 $httpBody = $requests;
             }
@@ -467,7 +467,7 @@ class ProductPricingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -848,7 +848,7 @@ class ProductPricingApi
         // for model (json/xml)
         if (isset($getFeaturedOfferExpectedPriceBatchRequestBody)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($getFeaturedOfferExpectedPriceBatchRequestBody));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($getFeaturedOfferExpectedPriceBatchRequestBody));
             } else {
                 $httpBody = $getFeaturedOfferExpectedPriceBatchRequestBody;
             }
@@ -868,7 +868,7 @@ class ProductPricingApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)

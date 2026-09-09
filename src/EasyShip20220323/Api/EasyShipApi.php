@@ -507,7 +507,7 @@ class EasyShipApi
         // for model (json/xml)
         if (isset($createScheduledPackageRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($createScheduledPackageRequest));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($createScheduledPackageRequest));
             } else {
                 $httpBody = $createScheduledPackageRequest;
             }
@@ -527,7 +527,7 @@ class EasyShipApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -948,7 +948,7 @@ class EasyShipApi
         // for model (json/xml)
         if (isset($createScheduledPackagesRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($createScheduledPackagesRequest));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($createScheduledPackagesRequest));
             } else {
                 $httpBody = $createScheduledPackagesRequest;
             }
@@ -968,7 +968,7 @@ class EasyShipApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1442,7 +1442,7 @@ class EasyShipApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -1857,7 +1857,7 @@ class EasyShipApi
         // for model (json/xml)
         if (isset($listHandoverSlotsRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($listHandoverSlotsRequest));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($listHandoverSlotsRequest));
             } else {
                 $httpBody = $listHandoverSlotsRequest;
             }
@@ -1877,7 +1877,7 @@ class EasyShipApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
@@ -2292,7 +2292,7 @@ class EasyShipApi
         // for model (json/xml)
         if (isset($updateScheduledPackagesRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($updateScheduledPackagesRequest));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($updateScheduledPackagesRequest));
             } else {
                 $httpBody = $updateScheduledPackagesRequest;
             }
@@ -2312,7 +2312,7 @@ class EasyShipApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
