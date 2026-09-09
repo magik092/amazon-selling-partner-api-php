@@ -561,7 +561,7 @@ class UploadsApi
                 $httpBody = new MultipartStream($multipartContents);
 
             } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
+                $httpBody = \json_encode($formParams);
 
             } else {
                 // for HTTP post (form)
