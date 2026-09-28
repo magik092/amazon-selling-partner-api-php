@@ -95,6 +95,7 @@ class AmazonTransportClient implements ClientInterface
     /**
      * @inheritDoc
      * @param string|null $option
+     * @return @mixed
      */
     public function getConfig($option = null)
     {
